@@ -1,5 +1,5 @@
 # --------------------------------------
-# Butterfly 主题配置 - 个人简历/作品集博客
+# Butterfly 主题配置 - 个人博客
 # 文档: https://butterfly.js.org/
 # --------------------------------------
 
@@ -17,35 +17,41 @@ menu:
   经历: /resume/ || fas fa-briefcase
   项目: /projects/ || fas fa-code
 
-# 代码块
+# 网站背景 (渐变 + 图片)
+background: '#f7f9fe'
+
+# 首页顶部图片
+index_img: ''
+
+# 代码块 (mac 风格更精致)
 code_blocks:
-  theme: light
-  macStyle: false
-  height_limit: false
-  word_wrap: false
+  theme: darker
+  macStyle: true
+  height_limit: 400
+  word_wrap: true
   copy: true
   language: true
 
-# 社交链接 (请替换为你的链接)
+# 社交链接
 social:
   fab fa-github: https://github.com/coderirse || Github || '#24292e'
   fas fa-envelope: mailto:caeamer@163.com || Email || '#4a7dbe'
 
-# 头像 (请替换为你自己的头像)
+# 头像 (hover 动效)
 avatar:
   img: /img/butterfly-icon.png
-  effect: false
+  effect: true
 
 # 副标题 - 打字机效果
 subtitle:
   enable: true
   effect: true
   sub:
-    - 热爱技术，持续学习
+    - 热爱技术，持续学习，keep moving
     - 欢迎来到我的个人博客
     - 记录成长，分享知识
 
-# 首页文章布局 (1-7, 3 为左右交替)
+# 首页文章布局
 index_layout: 3
 
 # 首页文章摘要
@@ -80,7 +86,7 @@ aside:
     category: true
   card_author:
     enable: true
-    description: 热爱技术，专注于 Web 开发与开源
+    description: USTB 本科生 · 热爱 AI Coding 与开源
     button:
       enable: true
       icon: fab fa-github
@@ -88,7 +94,7 @@ aside:
       link: https://github.com/coderirse
   card_announcement:
     enable: true
-    content: 欢迎来到我的个人博客！这里记录了我的学习、工作和项目经历。
+    content: 欢迎来到我的个人博客！这里记录了我的学习、项目和成长经历。
   card_recent_post:
     enable: true
     limit: 5
@@ -114,48 +120,68 @@ aside:
     runtime:
       enable: true
 
-# 暗色模式
+# 暗色模式 - 自动跟随系统
 darkmode:
   enable: true
-  autoChangeMode: false
+  autoChangeMode: 2
 
 # 页脚
 footer:
   owner:
     enable: true
     since: 2024
-  custom_text:
+  custom_text: Keep moving, keep coding.
   copyright: true
 
 # 右下角快捷按钮
 rightside_scroll_percent: true
 readmode: true
 
-# 繁简体转换 (不需要可以关)
+# 简繁转换
 translate:
   enable: false
 
-# 阅读模式
-# 搜索（本地搜索需要安装 hexo-generator-search）
+# 搜索 (关闭，需要时安装 hexo-generator-search 开启)
 search:
   use: null
 
-# 移除不需要的功能
+# 不蒜子访客统计
 busuanzi:
   site_uv: true
   site_pv: true
   page_pv: true
 
-# 主题颜色（可选，取消注释来自定义）
-# theme_color:
-#   enable: true
-#   main: '#3b70fc'
-#   paginator: '#3b70fc'
-#   link: '#3b70fc'
-#   button_hover: '#3b70fc'
-#   scrollbar_color: '#3b70fc'
+# 主题配色 - 现代化蓝紫色系
+theme_color:
+  enable: true
+  main: '#3b70fc'
+  paginator: '#3b70fc'
+  link: '#3b70fc'
+  button_hover: '#2563eb'
+  scrollbar_color: '#3b70fc'
+  meta_theme_color_light: '#ffffff'
+  meta_theme_color_dark: '#0d0d0d'
 
-# PWA (先关闭，需要时再开启)
+# 文章内页美化
+beautify:
+  enable: true
+  field: post
+  title_icon: '\f02e'
+  title_prefix: true
+
+# 全局字体 (使用系统默认 + 思源黑体兜底)
+font:
+  global_font_size: 16px
+  code_font_size: 14px
+
+# Canvas 动态背景 - 彩带动效
+canvas_ribbon:
+  enable: true
+  size: 200
+  alpha: 0.6
+  zIndex: -1
+
+# PWA
 pwa:
   enable: false
 

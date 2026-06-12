@@ -2,60 +2,41 @@
 title: 项目作品
 date: 2024-01-01 00:00:02
 type: projects
-description: 我的项目作品集
+description: 李志超的项目作品集
 aside: true
 ---
 
 ## 精选项目
 
 {% note info %}
-以下是我参与或独立完成的一些项目，每个项目都代表了我在技术道路上的一段探索历程。
+以下是我在学习过程中完成的一些项目，每一个都代表了我在技术道路上的一段探索历程。
 {% endnote %}
 
 ---
 
-### 🚀 [项目名称一]
+### 🚀 个人技术博客
 
-{% label primary @React %} {% label info @TypeScript %} {% label warning @Node.js %}
+{% label primary @Hexo %} {% label success @Butterfly %} {% label info @GitHub Pages %}
 
-[项目简介] — 这是一个 [项目类型]，解决了 [什么问题]。
+基于 Hexo 框架和 Butterfly 主题搭建的个人博客，用于记录学习心得和技术文章。部署于 GitHub Pages，使用 SSH 方式推送，集成了不蒜子访问统计。
 
 **核心亮点：**
-- 实现了 [关键功能]
-- 使用 [技术] 提升了 [指标]
-- 服务 [X] 用户，日均 [X] 访问量
+- 使用 Hexo 8.x 静态站点生成器
+- Butterfly 主题深度定制
+- 免费部署于 GitHub Pages
+- 集成不蒜子访客统计
 
-{% btn https://github.com/coderirse, 查看源码, fab fa-github %}
+{% btn https://github.com/coderirse/coderirse.github.io, 查看源码, fab fa-github %}
 
 ---
 
-### 🛠 [项目名称二]
+## 更多项目开发中
 
-{% label success @Vue.js %} {% label primary @Python %} {% label info @Docker %}
+{% label warning @Building %}
 
-[项目简介] — 这是一个 [项目类型]，用于 [用途]。
+正在不断学习和积累项目经验，更多有趣的项目即将到来。如果你有任何合作想法或技术讨论，欢迎联系我。
 
-**核心亮点：**
-- 搭建了 [架构]
-- 优化了 [流程/性能]
-- 支持 [X] 并发请求
-
-{% btn https://github.com/coderirse, 查看源码, fab fa-github %}
-
----
-
-### 📱 [项目名称三]
-
-{% label danger @Flutter %} {% label primary @Firebase %}
-
-[项目简介] — 一个跨平台移动应用。
-
-**核心亮点：**
-- 支持 iOS / Android 双平台
-- 实现 [核心功能]
-- 下载量超过 [X]
-
-{% btn https://github.com/coderirse, 查看源码, fab fa-github %}
+{% btn mailto:caeamer@163.com, 联系我, fas fa-envelope, outline %}
 
 ---
 
