@@ -2,7 +2,7 @@
 title: 项目作品
 date: 2024-01-01 00:00:02
 type: projects
-description: 李志超的项目作品集
+description: 李智超的项目作品集
 aside: true
 ---
 

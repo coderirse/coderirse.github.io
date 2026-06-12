@@ -2,11 +2,11 @@
 title: 关于我
 date: 2024-01-01 00:00:00
 type: about
-description: 了解更多关于李志超的信息
+description: 了解更多关于李智超的信息
 aside: true
 ---
 
-## 👋 你好，我是李志超
+## 👋 你好，我是李智超
 
 {% note success %}
 热爱技术，持续学习，keep moving。

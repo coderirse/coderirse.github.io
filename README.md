@@ -1,4 +1,4 @@
-# lizhichao's Blog / 李志超的个人博客
+# lizhichao's Blog / 李智超的个人博客
 
 [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-live-brightgreen)](https://coderirse.github.io)
 [![Hexo](https://img.shields.io/badge/Hexo-8.1.2-blue)](https://hexo.io)
