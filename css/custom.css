@@ -1,0 +1,94 @@
+/* ========== 首页头图渐变 ========== */
+#page-header {
+  background: linear-gradient(135deg, #3b70fc 0%, #8b5cf6 40%, #ec4899 100%) !important;
+}
+
+/* 头图容器高度 */
+#page-header.full_page {
+  height: 100vh;
+}
+
+/* 首页站点信息区域调整 */
+#site-info {
+  text-shadow: 0 2px 12px rgba(0,0,0,0.3);
+}
+
+/* ========== 侧边栏头像圆润 ========== */
+.card-author-img .avatar-img {
+  border-radius: 50%;
+  box-shadow: 0 4px 20px rgba(59,112,252,0.3);
+  transition: transform 0.3s ease;
+}
+
+.card-author-img .avatar-img:hover {
+  transform: rotate(360deg) scale(1.1);
+}
+
+/* ========== 卡片阴影增强 ========== */
+.card-widget,
+#post,
+#page {
+  box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+  border-radius: 12px;
+  transition: box-shadow 0.3s ease;
+}
+
+.card-widget:hover {
+  box-shadow: 0 4px 24px rgba(0,0,0,0.1);
+}
+
+/* ========== 按钮圆角 ========== */
+#article-container .btn-beautify {
+  border-radius: 8px;
+}
+
+/* ========== 文章标题增强 ========== */
+#article-container h1,
+#article-container h2,
+#article-container h3 {
+  position: relative;
+  padding-left: 16px;
+}
+
+#article-container h2::before,
+#article-container h3::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 60%;
+  background: linear-gradient(180deg, #3b70fc, #8b5cf6);
+  border-radius: 2px;
+}
+
+/* ========== 滚动条美化 ========== */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #3b70fc, #8b5cf6);
+  border-radius: 4px;
+}
+
+/* ========== 链接 hover 动效 ========== */
+a {
+  transition: color 0.2s ease;
+}
+
+/* ========== 标签颜色增强 ========== */
+.card-tag-cloud a {
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.card-tag-cloud a:hover {
+  transform: scale(1.08);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
