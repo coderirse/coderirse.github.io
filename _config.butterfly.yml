@@ -17,11 +17,11 @@ menu:
   经历: /resume/ || fas fa-briefcase
   项目: /projects/ || fas fa-code
 
-# 网站背景 (渐变 + 图片)
+# 网站背景
 background: '#f7f9fe'
 
-# 首页顶部图片
-index_img: ''
+# 首页顶部图片 (留空，由 custom.css 渐变背景接管)
+index_img:
 
 # 代码块 (mac 风格更精致)
 code_blocks:
@@ -37,9 +37,9 @@ social:
   fab fa-github: https://github.com/coderirse || Github || '#24292e'
   fas fa-envelope: mailto:caeamer@163.com || Email || '#4a7dbe'
 
-# 头像 (hover 动效)
+# 头像 (SVG 文字头像 + hover 动效)
 avatar:
-  img: /img/butterfly-icon.png
+  img: /img/avatar.svg
   effect: true
 
 # 副标题 - 打字机效果
@@ -187,3 +187,9 @@ pwa:
 
 # 图片灯箱
 lightbox: fancybox
+
+# 注入自定义 CSS
+inject:
+  head:
+    - <link rel="stylesheet" href="/css/custom.css">
+  bottom:
