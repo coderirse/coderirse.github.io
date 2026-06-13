@@ -83,25 +83,25 @@ a {
 }
 
 /* ========== 标签 (hl-label) 配色优化 ========== */
-:root {
-  --tags-blue-color: #3b70fc;
-  --tags-blue-color-lighten: #e8edfe;
-  --tags-pink-color: #e83e8c;
-  --tags-pink-color-lighten: #fce8f1;
-  --tags-red-color: #dc3545;
-  --tags-red-color-lighten: #fde8ea;
-  --tags-orange-color: #d97706;
-  --tags-orange-color-lighten: #fef3c7;
-  --tags-purple-color: #8b5cf6;
-  --tags-purple-color-lighten: #ede4fe;
-  --tags-green-color: #059669;
-  --tags-green-color-lighten: #d1fae5;
-}
-
 .hl-label {
   font-weight: 500;
   font-size: 0.9em;
+  color: #fff !important;
 }
+
+.hl-label.blue   { background-color: #3b70fc !important; }
+.hl-label.green  { background-color: #059669 !important; }
+.hl-label.pink   { background-color: #c44569 !important; }
+.hl-label.orange { background-color: #d97706 !important; }
+.hl-label.red    { background-color: #dc3545 !important; }
+.hl-label.purple { background-color: #8b5cf6 !important; }
+
+/* note 边框颜色也一起修 */
+.note.primary:not(.flat) { border-left-color: #3b70fc !important; }
+.note.success:not(.flat) { border-left-color: #059669 !important; }
+.note.info:not(.flat)    { border-left-color: #c44569 !important; }
+.note.warning:not(.flat) { border-left-color: #d97706 !important; }
+.note.danger:not(.flat)  { border-left-color: #dc3545 !important; }
 
 /* ========== 标签云颜色增强 ========== */
 .card-tag-cloud a {
