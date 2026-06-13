@@ -4,6 +4,7 @@ date: 2024-01-01 00:00:00
 type: about
 description: 了解更多关于李智超的信息
 aside: true
+top_img: https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1920&q=80
 ---
 
 ## 👋 你好，我是李智超

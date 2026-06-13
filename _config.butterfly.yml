@@ -23,6 +23,12 @@ background:
 # 首页顶部大图
 index_img: /img/louie-martinez-IocJwyqRv3M-unsplash.jpg
 
+# 各页面顶部大图 (Unsplash 免费高清)
+default_top_img: https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1920&q=80
+archive_img: https://images.unsplash.com/photo-1524995997946-a1c2e68a4f1a?w=1920&q=80
+tag_img: https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=1920&q=80
+category_img: https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=1920&q=80
+
 # 代码块 (mac 风格更精致)
 code_blocks:
   theme: darker

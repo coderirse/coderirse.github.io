@@ -4,6 +4,7 @@ date: 2024-01-01 00:00:01
 type: resume
 description: 李智超的学习和项目经历
 aside: true
+top_img: https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=1920&q=80
 ---
 
 ## 教育经历

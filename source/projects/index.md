@@ -4,6 +4,7 @@ date: 2024-01-01 00:00:02
 type: projects
 description: 李智超的项目作品集
 aside: true
+top_img: https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1920&q=80
 ---
 
 ## 精选项目
