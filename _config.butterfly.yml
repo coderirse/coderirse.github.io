@@ -17,8 +17,8 @@ menu:
   经历: /resume/ || fas fa-briefcase
   项目: /projects/ || fas fa-code
 
-# 网站背景
-background: '#f7f9fe'
+# 网站背景 (透明，避免遮挡首页头图)
+background:
 
 # 首页顶部大图
 index_img: /img/louie-martinez-IocJwyqRv3M-unsplash.jpg
