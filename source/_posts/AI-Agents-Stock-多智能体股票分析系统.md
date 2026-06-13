@@ -59,7 +59,7 @@ description: 基于多 AI 智能体协作的股票分析系统，覆盖 A 股、
 
 ## 技术栈
 
-{% label primary @Python %} {% label danger @Streamlit %} {% label info @Plotly %} {% label warning @pandas %} {% label success @AKShare %} {% label primary @LLM %}
+{% label Python blue %} {% label Streamlit red %} {% label Plotly pink %} {% label pandas orange %} {% label AKShare green %} {% label LLM blue %}
 
 - **前端**：Streamlit 交互式界面
 - **数据源**：AKShare、yfinance、Tushare、pywencai

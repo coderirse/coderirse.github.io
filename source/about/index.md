@@ -20,7 +20,7 @@ aside: true
 
 ### 技术栈
 
-{% label primary @JavaScript %} {% label success @TypeScript %} {% label info @React %} {% label warning @Vue.js %} {% label danger @Node.js %} {% label primary @Python %} {% label success @HTML5 %} {% label info @CSS3 %} {% label warning @Git %} {% label danger @Docker %}
+{% label JavaScript blue %} {% label TypeScript green %} {% label React pink %} {% label Vue.js orange %} {% label Node.js red %} {% label Python blue %} {% label HTML5 green %} {% label CSS3 pink %} {% label Git orange %} {% label Docker red %}
 
 ### 教育背景
 

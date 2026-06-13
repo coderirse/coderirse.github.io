@@ -38,7 +38,7 @@ aside: true
 
 ### 技术关键词
 
-{% label primary @React %} {% label info @TypeScript %} {% label success @Vue.js %} {% label warning @Node.js %} {% label primary @Python %} {% label danger @Docker %}
+{% label React blue %} {% label TypeScript pink %} {% label Vue.js green %} {% label Node.js orange %} {% label Python blue %} {% label Docker red %}
 
 <!-- endtimeline -->
 

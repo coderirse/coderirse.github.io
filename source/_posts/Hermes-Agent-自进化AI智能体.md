@@ -35,7 +35,7 @@ Hermes 是 OpenClaw 的后继项目，在架构上做了全面升级。
 
 Hermes 不只是命令行工具，它是一套完整的跨平台智能体系统：
 
-{% label primary @Telegram %} {% label info @Discord %} {% label warning @Slack %} {% label success @WhatsApp %} {% label danger @CLI %}
+{% label Telegram blue %} {% label Discord pink %} {% label Slack orange %} {% label WhatsApp green %} {% label CLI red %}
 
 ### 40+ 内置工具
 
@@ -54,7 +54,7 @@ Hermes 不只是命令行工具，它是一套完整的跨平台智能体系统�
 
 ### 灵活部署
 
-{% label primary @本地 %} {% label success @Docker %} {% label warning @SSH %} {% label info @Kubernetes %} {% label danger @沙箱 %}
+{% label 本地 blue %} {% label Docker green %} {% label SSH orange %} {% label Kubernetes pink %} {% label 沙箱 red %}
 
 ## 技术架构
 

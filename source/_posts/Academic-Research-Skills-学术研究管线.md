@@ -45,7 +45,7 @@ description: 为 Claude Code 构建的完整学术研究管线技能套件，覆
 - 格式转换（LaTeX / DOCX / PDF）
 - 双语摘要（中英文）
 
-{% label primary @APA 7.0 %} {% label success @IEEE %} {% label info @MLA %} {% label warning @Chicago %} {% label danger @Vancouver %}
+{% label APA 7.0 blue %} {% label IEEE green %} {% label MLA pink %} {% label Chicago orange %} {% label Vancouver red %}
 
 ### Academic Paper Reviewer — 同行评审
 
@@ -83,7 +83,7 @@ description: 为 Claude Code 构建的完整学术研究管线技能套件，覆
 
 ## 技术栈
 
-{% label primary @Python %} {% label warning @LaTeX %} {% label success @Pandoc %} {% label info @YAML %} {% label danger @GitHub Actions %}
+{% label Python blue %} {% label LaTeX orange %} {% label Pandoc green %} {% label YAML pink %} {% label GitHub Actions red %}
 
 ## 项目意义
 

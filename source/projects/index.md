@@ -16,7 +16,7 @@ aside: true
 
 ### 🤖 脚踝外骨骼机器人控制系统
 
-{% label primary @C++ %} {% label success @Python %} {% label warning @ROS %} {% label info @CAN总线 %}
+{% label C++ blue %} {% label Python green %} {% label ROS orange %} {% label CAN总线 pink %}
 
 基于 ROS Melodic 的脚踝外骨骼机器人完整控制系统，包含 CAN 总线电机驱动和 AHRS 惯性导航传感器驱动。
 
@@ -26,13 +26,13 @@ aside: true
 - 发布 IMU、GPS、姿态角、里程计等多种 ROS Topic
 - 集成实验数据录制与回放分析（ROS Bag）
 
-{% label success @机器人 %} {% label success @嵌入式 %} {% label success @传感器融合 %}
+{% label 机器人 green %} {% label 嵌入式 green %} {% label 传感器融合 green %}
 
 ---
 
 ### 📈 AI Agents Stock — 多智能体股票分析系统
 
-{% label primary @Python %} {% label danger @Streamlit %} {% label info @LLM %} {% label warning @Docker %}
+{% label Python blue %} {% label Streamlit red %} {% label LLM pink %} {% label Docker orange %}
 
 模拟专业分析师团队的复合多 AI 智能体股票分析系统，覆盖 A 股、港股、美股。
 
@@ -44,13 +44,13 @@ aside: true
 - **实时监控**：价格预警 + 钉钉/飞书 Webhook 通知
 - 支持 **MiniQMT 量化交易** 集成，Docker 一键部署
 
-{% label success @量化交易 %} {% label success @数据分析 %} {% label success @金融科技 %}
+{% label 量化交易 green %} {% label 数据分析 green %} {% label 金融科技 green %}
 
 ---
 
 ### 🧠 Hermes Agent — 自进化 AI 智能体
 
-{% label primary @Python %} {% label info @TypeScript %} {% label warning @LLM %} {% label danger @多平台 %}
+{% label Python blue %} {% label TypeScript pink %} {% label LLM orange %} {% label 多平台 red %}
 
 Nous Research 出品的通用自进化 AI 智能体，具备经验学习、持久记忆和跨平台运行能力。
 
@@ -61,13 +61,13 @@ Nous Research 出品的通用自进化 AI 智能体，具备经验学习、持�
 - 内置 **Cron 调度器**，支持无人值守自动化
 - 支持本地、Docker、SSH、K8s 等多种部署方式
 
-{% label success @AI Agent %} {% label success @自动化 %} {% label success @开源贡献 %}
+{% label AI Agent green %} {% label 自动化 green %} {% label 开源贡献 green %}
 
 ---
 
 ### 🎓 Academic Research Skills for Claude Code
 
-{% label primary @Python %} {% label info @YAML %} {% label warning @LaTeX %} {% label success @Pandoc %}
+{% label Python blue %} {% label YAML pink %} {% label LaTeX orange %} {% label Pandoc green %}
 
 为 Claude Code 构建的完整学术研究管线技能套件，覆盖从研究到发表的全流程。
 
@@ -78,13 +78,13 @@ Nous Research 出品的通用自进化 AI 智能体，具备经验学习、持�
 - **学术评审**：模拟 EIC + 3 位审稿人 + Devil's Advocate 的多角度评审
 - 强制**反幻觉校验**、风格校准、写作质量检查等质量门禁
 
-{% label success @学术工具 %} {% label success @AI辅助 %} {% label success @知识管理 %}
+{% label 学术工具 green %} {% label AI辅助 green %} {% label 知识管理 green %}
 
 ---
 
 ### 🌐 个人技术博客
 
-{% label primary @Hexo %} {% label success @Butterfly %} {% label info @GitHub Pages %}
+{% label Hexo blue %} {% label Butterfly green %} {% label GitHub Pages pink %}
 
 基于 Hexo 8.x 和 Butterfly 主题构建的个人博客，CSS 深度定制，部署于 GitHub Pages。
 
