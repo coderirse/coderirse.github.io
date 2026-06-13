@@ -84,24 +84,18 @@ a {
 
 /* ========== 标签 (hl-label) 配色优化 ========== */
 .hl-label {
-  font-weight: 500;
+  font-weight: 600;
   font-size: 0.9em;
   color: #fff !important;
 }
 
-.hl-label.blue   { background-color: #3b70fc !important; }
-.hl-label.green  { background-color: #059669 !important; }
-.hl-label.pink   { background-color: #c44569 !important; }
-.hl-label.orange { background-color: #d97706 !important; }
-.hl-label.red    { background-color: #dc3545 !important; }
-.hl-label.purple { background-color: #8b5cf6 !important; }
-
-/* note 边框颜色也一起修 */
-.note.primary:not(.flat) { border-left-color: #3b70fc !important; }
-.note.success:not(.flat) { border-left-color: #059669 !important; }
-.note.info:not(.flat)    { border-left-color: #c44569 !important; }
-.note.warning:not(.flat) { border-left-color: #d97706 !important; }
-.note.danger:not(.flat)  { border-left-color: #dc3545 !important; }
+.hl-label.default { background-color: #6b7280 !important; }
+.hl-label.blue    { background-color: #2563eb !important; }
+.hl-label.green   { background-color: #047857 !important; }
+.hl-label.pink    { background-color: #be185d !important; }
+.hl-label.orange  { background-color: #b45309 !important; }
+.hl-label.red     { background-color: #b91c1c !important; }
+.hl-label.purple  { background-color: #7c3aed !important; }
 
 /* ========== 标签云颜色增强 ========== */
 .card-tag-cloud a {
