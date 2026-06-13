@@ -1,6 +1,6 @@
-/* ========== 首页头图渐变 ========== */
-#page-header {
-  background: linear-gradient(135deg, #3b70fc 0%, #8b5cf6 40%, #ec4899 100%) !important;
+/* ========== 首页头图遮罩增强文字可读性 ========== */
+#page-header:before {
+  background: rgba(0,0,0,0.3) !important;
 }
 
 /* 头图容器高度 */
@@ -10,7 +10,7 @@
 
 /* 首页站点信息区域调整 */
 #site-info {
-  text-shadow: 0 2px 12px rgba(0,0,0,0.3);
+  text-shadow: 0 2px 12px rgba(0,0,0,0.5);
 }
 
 /* ========== 侧边栏头像圆润 ========== */
