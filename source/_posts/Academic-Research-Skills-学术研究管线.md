@@ -1,5 +1,6 @@
 ---
 title: Academic Research Skills — 学术研究管线
+translation_key: academic-research-skills
 date: 2026-06-13 22:28:16
 categories:
   - 项目

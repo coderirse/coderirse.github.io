@@ -6,3 +6,5 @@ node_modules/
 public/
 .deploy*/
 _multiconfig.yml
+source/generated/i18n-post-map.js
+source/generated/i18n-posts/

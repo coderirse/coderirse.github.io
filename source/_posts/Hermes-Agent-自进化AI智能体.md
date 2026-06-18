@@ -1,5 +1,6 @@
 ---
 title: Hermes Agent — 自进化的 AI 智能体
+translation_key: hermes-agent
 date: 2026-06-13 22:28:14
 categories:
   - 项目

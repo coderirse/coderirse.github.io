@@ -42,7 +42,7 @@ mixin indexPostUI()
                     i(class=dateIcon)
                     span.article-meta-label= dateTitle
                     time(datetime=date_xml(article[dateType]) title=dateTitle + ' ' + full_date(article[dateType]))= date(article[dateType], config.date_format)
-              if theme.post_meta.page.categories && article.categories.data.length > 0
+              if theme.post_meta.page.categories && article.categories && article.categories.data && article.categories.data.length > 0
                 span.article-meta
                   span.article-meta-separator |
                   each item, index in article.categories.data
@@ -50,7 +50,7 @@ mixin indexPostUI()
                     a(href=url_for(item.path)).article-meta__categories #[=item.name]
                     if index < article.categories.data.length - 1
                       i.fas.fa-angle-right.article-meta-link
-              if theme.post_meta.page.tags && article.tags.length > 0
+              if theme.post_meta.page.tags && article.tags && article.tags.length > 0
                 span.article-meta.tags
                   span.article-meta-separator |
                   each item, index in article.tags.data

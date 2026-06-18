@@ -1,5 +1,6 @@
 ---
 title: Welcome to My Blog
+translation_key: welcome
 date: 2026-06-12 00:00:00
 tags:
   - personal

@@ -200,4 +200,5 @@ inject:
   head:
     - <link rel="stylesheet" href="/css/custom.css">
   bottom:
+    - <script src="/generated/i18n-post-map.js"></script>
     - <script src="/js/lang-switcher.js"></script>

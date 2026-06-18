@@ -1,5 +1,6 @@
 ---
 title: 名言 — 技術と創造について
+translation_key: quotes-tech
 date: 2026-06-13 22:28:17
 categories:
   - 名言

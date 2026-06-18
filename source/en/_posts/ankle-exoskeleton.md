@@ -1,5 +1,6 @@
 ---
 title: Ankle Exoskeleton Robot Control System
+translation_key: ankle-exoskeleton
 date: 2026-06-13 22:28:11
 categories:
   - Projects

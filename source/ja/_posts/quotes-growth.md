@@ -1,5 +1,6 @@
 ---
 title: 名言 — 学習と成長について
+translation_key: quotes-growth
 date: 2026-06-13 22:28:19
 categories:
   - 名言

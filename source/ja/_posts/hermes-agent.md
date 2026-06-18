@@ -1,5 +1,6 @@
 ---
 title: Hermes Agent — 自己進化型AIエージェント
+translation_key: hermes-agent
 date: 2026-06-13 22:28:14
 categories:
   - プロジェクト

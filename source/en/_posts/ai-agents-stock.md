@@ -1,5 +1,6 @@
 ---
 title: AI Agents Stock — Multi-Agent Stock Analysis System
+translation_key: ai-agents-stock
 date: 2026-06-13 22:28:12
 categories:
   - Projects

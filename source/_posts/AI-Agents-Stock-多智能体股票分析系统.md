@@ -1,5 +1,6 @@
 ---
 title: AI Agents Stock — 多智能体股票分析系统
+translation_key: ai-agents-stock
 date: 2026-06-13 22:28:12
 categories:
   - 项目

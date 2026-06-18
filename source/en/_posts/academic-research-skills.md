@@ -1,5 +1,6 @@
 ---
 title: Academic Research Skills — Academic Research Pipeline
+translation_key: academic-research-skills
 date: 2026-06-13 22:28:16
 categories:
   - Projects
