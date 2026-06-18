@@ -1,3 +1,20 @@
+menu:
+  home: Home
+  about: About
+  resume: Resume
+  projects: Projects
+
+subtitle:
+  - Love tech, keep learning, keep moving
+  - Welcome to my personal blog
+  - Recording growth, sharing knowledge
+
+author_card:
+  description: 'USTB Undergrad · Passionate about AI Coding & Open Source<br><i class="fas fa-envelope"></i> caeamer@163.com<br><i class="fab fa-qq"></i> 87452310'
+  follow: Follow Me
+
+announcement_content: Welcome to my blog! Here I document my learning, projects, and growth.
+
 footer:
   framework: Framework
   theme: Theme

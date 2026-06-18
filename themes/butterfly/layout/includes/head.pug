@@ -70,7 +70,7 @@ if theme.blog_title_font && theme.blog_title_font.font_link
   link(rel='stylesheet' href=url_for(theme.blog_title_font.font_link) media="print" onload="this.media='all'")
 
 //- global config
-!=partial('includes/head/config', {}, {cache: true})
+!=partial('includes/head/config', {})
 
 include ./head/config_site.pug
 

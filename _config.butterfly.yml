@@ -12,10 +12,10 @@ nav:
 
 # 导航菜单
 menu:
-  首页: / || fas fa-home
-  关于: /about/ || fas fa-user
-  经历: /resume/ || fas fa-briefcase
-  项目: /projects/ || fas fa-code
+  home: / || fas fa-home
+  about: /about/ || fas fa-user
+  resume: /resume/ || fas fa-briefcase
+  projects: /projects/ || fas fa-code
 
 # 网站背景 (透明，避免遮挡首页头图)
 background:

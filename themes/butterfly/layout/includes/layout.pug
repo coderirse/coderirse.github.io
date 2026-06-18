@@ -6,11 +6,11 @@
 - pageType = page.type ? pageType + ' type-' + page.type : pageType
 
 doctype html
-html(lang=config.language data-theme=theme.display_mode class=htmlClassHideAside)
+html(lang=(page.lang || (Array.isArray(config.language) ? config.language[0] : config.language)) data-theme=theme.display_mode class=htmlClassHideAside)
   head
     include ./head.pug
   body
-    !=partial('includes/loading/index', {}, {cache: true})
+    !=partial('includes/loading/index', {})
 
     if theme.background
       if !Array.isArray(theme.background)
@@ -37,7 +37,7 @@ html(lang=config.language data-theme=theme.display_mode class=htmlClassHideAside
             document.addEventListener('DOMContentLoaded', setRandomBg)
           })()
 
-    !=partial('includes/sidebar', {}, {cache: true})
+    !=partial('includes/sidebar', {})
 
     #body-wrap(class=pageType)
       include ./header/index.pug
@@ -53,7 +53,7 @@ html(lang=config.language data-theme=theme.display_mode class=htmlClassHideAside
       - const footerBg = theme.footer_img
       - const footer_bg = footerBg ? footerBg === true ? bg_img : getBgPath(footerBg) : ''
       footer#footer(style=footer_bg)
-        !=partial('includes/footer', {}, {cache: true})
+        !=partial('includes/footer', {})
 
     include ./rightside.pug
     include ./additional-js.pug

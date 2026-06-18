@@ -1,5 +1,6 @@
 - const { effect, source, sub, typed_option } = theme.subtitle
-- let subContent = typeof sub === 'string' ? [sub] : (sub || new Array())
+- let langSub = _p('subtitle')
+- let subContent = (langSub && langSub !== 'subtitle') ? (Array.isArray(langSub) ? langSub : [langSub]) : (typeof sub === 'string' ? [sub] : (sub || new Array()))
 
 script.
   window.typedJSFn = {
