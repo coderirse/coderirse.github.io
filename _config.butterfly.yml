@@ -46,7 +46,7 @@ social:
 # 头像
 avatar:
   img: /img/touxiang.png
-  effect: true
+  effect: false
 
 # 副标题 - 打字机效果
 subtitle:
