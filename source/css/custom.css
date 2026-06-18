@@ -1,18 +1,4 @@
 /* ========== 多语言字体修复 ========== */
-/*
- * 问题根因：
- *   1. themes/butterfly 的 Stylus 编译后把 'Microsoft JhengHei'（繁体）
- *      写进了字体栈，$chineseFont 变量在编译时未正确取值。
- *   2. 浏览器 CJK 字体 fallback 时，日文字形可能优先于简体中文字形。
- *
- * 修复策略（三层兜底）：
- *   - CSS：用高优先级选择器 + !important 强制覆盖编译后的字体栈
- *   - HTML lang 属性：layout.pug 已修复，按 URL 路径正确输出 lang=...
- *   - JS：lang-switcher.js 在 DOMContentLoaded 前同步设置 fontFamily
- */
-
-/* ---- 中文（zh-CN） ---- */
-/* 用 body 级选择器，优先级高于编译后的 html 级规则 */
 html[lang="zh-CN"] body,
 html[lang="zh"] body {
   font-family:
@@ -25,7 +11,6 @@ html[lang="zh"] body {
     "WenQuanYi Micro Hei",
     sans-serif !important;
 }
-/* 代码块保持等宽字体，不被上面的规则覆盖 */
 html[lang="zh-CN"] pre,
 html[lang="zh-CN"] code,
 html[lang="zh-CN"] .highlight,
@@ -38,7 +23,6 @@ html[lang="zh"] .code-block {
     "PingFang SC", "Microsoft YaHei", sans-serif !important;
 }
 
-/* ---- 日文（ja） ---- */
 html[lang="ja"] body {
   font-family:
     -apple-system,
@@ -59,7 +43,6 @@ html[lang="ja"] .highlight {
     "Yu Gothic", "Hiragino Kaku Gothic ProN", sans-serif !important;
 }
 
-/* ---- 英文（en）---- */
 html[lang="en"] body {
   font-family:
     -apple-system,
@@ -71,33 +54,92 @@ html[lang="en"] body {
     sans-serif !important;
 }
 
-/* ========== 首页头图遮罩增强文字可读性 ========== */
+/* ================================================================
+   简约几何背景 — 替代单调纯色
+   ================================================================ */
+/* 页面底色：微渐变 + SVG 网格纹理 */
+#web_bg {
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(59,112,252,0.04) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(139,92,246,0.03) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 80%, rgba(59,112,252,0.03) 0%, transparent 50%),
+    linear-gradient(180deg, #f8f9fc 0%, #f0f3fa 30%, #f8f9fc 100%);
+  background-attachment: fixed;
+}
+
+/* 几何网格点阵（局部） */
+#body-wrap {
+  background-image:
+    radial-gradient(circle, rgba(59,112,252,0.06) 1px, transparent 1px);
+  background-size: 48px 48px;
+  background-attachment: fixed;
+}
+
+/* 暗色模式背景 */
+[data-theme="dark"] #web_bg {
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(59,112,252,0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(139,92,246,0.05) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 80%, rgba(59,112,252,0.06) 0%, transparent 50%),
+    linear-gradient(180deg, #0d1117 0%, #111820 50%, #0d1117 100%);
+  background-attachment: fixed;
+}
+
+[data-theme="dark"] #body-wrap {
+  background-image:
+    radial-gradient(circle, rgba(59,112,252,0.1) 1px, transparent 1px);
+  background-size: 48px 48px;
+  background-attachment: fixed;
+}
+
+/* 内容区域背景半透明，稍微露出底层纹理 */
+#content-inner,
+#post,
+#page {
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(6px);
+}
+
+[data-theme="dark"] #content-inner,
+[data-theme="dark"] #post,
+[data-theme="dark"] #page {
+  background: rgba(22,27,34,0.85);
+  backdrop-filter: blur(6px);
+}
+
+/* 侧边栏卡片也微透明 */
+.card-widget {
+  background: rgba(255,255,255,0.88);
+  backdrop-filter: blur(4px);
+}
+
+[data-theme="dark"] .card-widget {
+  background: rgba(22,27,34,0.88);
+  backdrop-filter: blur(4px);
+}
+
+/* ========== 头图遮罩 ========== */
 #page-header:before {
   background: rgba(0,0,0,0.3) !important;
 }
-
-/* 头图容器高度 */
 #page-header.full_page {
   height: 100vh;
 }
-
-/* 首页站点信息区域调整 */
 #site-info {
   text-shadow: 0 2px 12px rgba(0,0,0,0.5);
 }
 
-/* ========== 侧边栏头像圆润 ========== */
+/* ========== 头像 ========== */
 .card-author-img .avatar-img {
   border-radius: 50%;
   box-shadow: 0 4px 20px rgba(59,112,252,0.3);
   transition: transform 0.3s ease;
 }
-
 .card-author-img .avatar-img:hover {
   transform: rotate(360deg) scale(1.1);
 }
 
-/* ========== 卡片阴影增强 ========== */
+/* ========== 卡片增强 ========== */
 .card-widget,
 #post,
 #page {
@@ -105,24 +147,22 @@ html[lang="en"] body {
   border-radius: 12px;
   transition: box-shadow 0.3s ease;
 }
-
 .card-widget:hover {
-  box-shadow: 0 4px 24px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 24px rgba(59,112,252,0.12);
 }
 
-/* ========== 按钮圆角 ========== */
+/* ========== 按钮 ========== */
 #article-container .btn-beautify {
   border-radius: 8px;
 }
 
-/* ========== 文章标题增强 ========== */
+/* ========== 标题装饰线 ========== */
 #article-container h1,
 #article-container h2,
 #article-container h3 {
   position: relative;
   padding-left: 16px;
 }
-
 #article-container h2::before,
 #article-container h3::before {
   content: '';
@@ -136,32 +176,20 @@ html[lang="en"] body {
   border-radius: 2px;
 }
 
-/* ========== 滚动条美化 ========== */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-
+/* ========== 滚动条 ========== */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #f1f1f1; }
 ::-webkit-scrollbar-thumb {
   background: linear-gradient(180deg, #3b70fc, #8b5cf6);
   border-radius: 4px;
 }
 
-/* ========== 链接 hover 动效 ========== */
-a {
-  transition: color 0.2s ease;
-}
-
-/* ========== 标签 (hl-label) 配色优化 ========== */
+/* ========== hl-label 标签 ========== */
 .hl-label {
   font-weight: 600;
   font-size: 0.9em;
   color: #fff !important;
 }
-
 .hl-label.default { background-color: #6b7280 !important; }
 .hl-label.blue    { background-color: #2563eb !important; }
 .hl-label.green   { background-color: #047857 !important; }
@@ -170,25 +198,23 @@ a {
 .hl-label.red     { background-color: #b91c1c !important; }
 .hl-label.purple  { background-color: #7c3aed !important; }
 
-/* ========== 标签云颜色增强 ========== */
+/* ========== 标签云 ========== */
 .card-tag-cloud a {
   border-radius: 8px;
   transition: all 0.3s ease;
 }
-
 .card-tag-cloud a:hover {
   transform: scale(1.08);
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
-/* ========== 语言切换器 - 浮动下拉式 ========== */
+/* ========== 语言切换器 ========== */
 .lang-switcher {
   position: fixed;
   bottom: 28px;
   right: 20px;
   z-index: 1000;
 }
-
 .lang-btn {
   display: flex;
   align-items: center;
@@ -204,13 +230,11 @@ a {
   box-shadow: 0 2px 12px rgba(0,0,0,0.1);
   transition: all 0.25s ease;
 }
-
 .lang-btn:hover {
   box-shadow: 0 4px 20px rgba(59,112,252,0.25);
   border-color: #3b70fc;
   color: #3b70fc;
 }
-
 .lang-dropdown {
   position: absolute;
   bottom: 100%;
@@ -226,14 +250,12 @@ a {
   transition: all 0.2s ease;
   min-width: 130px;
 }
-
 .lang-switcher:hover .lang-dropdown,
 .lang-btn:focus + .lang-dropdown {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
 }
-
 .lang-dropdown a {
   display: block;
   padding: 10px 18px;
@@ -242,18 +264,15 @@ a {
   text-decoration: none;
   transition: background 0.15s ease;
 }
-
 .lang-dropdown a:hover {
   background: rgba(59,112,252,0.08);
   color: #3b70fc;
 }
-
 .lang-dropdown a.active {
   background: #3b70fc;
   color: #fff !important;
   font-weight: 600;
 }
-
 [data-theme="dark"] .lang-btn {
   background: #1e1e1e;
   border-color: #444;
@@ -273,7 +292,6 @@ a {
   background: rgba(59,112,252,0.15);
   color: #3b70fc;
 }
-
 @media screen and (max-width: 768px) {
   .lang-switcher {
     bottom: 16px;
