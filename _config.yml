@@ -5,10 +5,21 @@
 # Site
 title: lizhichao
 subtitle: ''
+title_en: lizhichao
+subtitle_en: ''
+description_en: Li Zhichao's Blog - Software Engineer, Tech & Open Source
+keywords_en: lizhichao,Li Zhichao,Software Engineer,Web Development,Personal Blog
+title_ja: lizhichao
+subtitle_ja: ''
+description_ja: リ・ジチャオのブログ - ソフトウェアエンジニア、技術とオープンソース
+keywords_ja: リジチャオ,lizhichao,ソフトウェアエンジニア,ウェブ開発,個人ブログ
 description: 李智超的个人博客 - 软件工程师，热爱技术与开源
 keywords: 李智超,lizhichao,软件工程师,Web开发,个人博客
 author: lizhichao
-language: zh-CN
+language:
+  - zh-CN
+  - en
+  - ja
 timezone: 'Asia/Shanghai'
 
 # URL
