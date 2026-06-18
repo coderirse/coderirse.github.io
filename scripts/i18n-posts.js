@@ -3,6 +3,7 @@ const path = require('path');
 
 const LANGS = ['zh-CN', 'en', 'ja'];
 const TRANSLATED_LANGS = ['en', 'ja'];
+const LOCALIZED_SLUGS = ['about', 'resume', 'projects', 'archives', 'tags', 'categories'];
 
 function ensureDir(dirPath) {
   fs.mkdirSync(dirPath, { recursive: true });
@@ -172,10 +173,45 @@ function generateI18nPosts(baseDir, logger) {
   }
 }
 
+function registerI18nHtmlFilter(hexo) {
+  hexo.extend.filter.register('after_render:html', function (str, data) {
+    if (!data || !data.path) return str;
+
+    var enMatch = data.path.match(/^en\//);
+    var jaMatch = data.path.match(/^ja\//);
+    if (!enMatch && !jaMatch) return str;
+
+    var lang = enMatch ? 'en' : 'ja';
+
+    // Fix nav menu links with class="site-page": /about/ → /en/about/ etc.
+    str = str.replace(
+      /(<a\s[^>]*\bclass="[^"]*\bsite-page\b[^"]*"\s[^>]*\bhref=")\/((?:about|resume|projects|archives|tags|categories)\/?)?"/gi,
+      function (match, prefix, pagePath) {
+        if (!pagePath) return prefix + '/' + lang + '/"';
+        var normalized = pagePath.charAt(pagePath.length - 1) === '/' ? pagePath : pagePath + '/';
+        return prefix + '/' + lang + '/' + normalized + '"';
+      }
+    );
+
+    // Fix site title link
+    str = str.replace(
+      /(<a\s[^>]*\bclass="[^"]*\bnav-site-title\b[^"]*"\s[^>]*\bhref=")\/?"/gi,
+      '$1/' + lang + '/"'
+    );
+
+    return str;
+  });
+}
+
+if (typeof hexo !== 'undefined' && hexo && hexo.extend) {
+  registerI18nHtmlFilter(hexo);
+}
+
 if (require.main === module) {
   generateI18nPosts(process.cwd(), console);
 }
 
 module.exports = {
-  generateI18nPosts
+  generateI18nPosts,
+  registerI18nHtmlFilter
 };
