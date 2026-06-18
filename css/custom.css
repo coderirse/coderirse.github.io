@@ -181,6 +181,26 @@ a {
   font-weight: 600;
 }
 
+[data-theme="dark"] .lang-btn {
+  background: #1e1e1e;
+  border-color: #444;
+  color: #ccc;
+}
+[data-theme="dark"] .lang-btn:hover {
+  border-color: #3b70fc;
+  color: #3b70fc;
+}
+[data-theme="dark"] .lang-dropdown {
+  background: #1e1e1e;
+}
+[data-theme="dark"] .lang-dropdown a {
+  color: #ccc;
+}
+[data-theme="dark"] .lang-dropdown a:hover {
+  background: rgba(59,112,252,0.15);
+  color: #3b70fc;
+}
+
 @media screen and (max-width: 768px) {
   .lang-switcher {
     bottom: 16px;
