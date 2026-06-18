@@ -1,0 +1,194 @@
+<!-- Detect language from URL path so <html lang> is correct for all language versions--><!DOCTYPE html><html lang="ja" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>足首外骨格ロボット制御システム | lizhichao</title><meta name="author" content="lizhichao"><meta name="copyright" content="lizhichao"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="ROS Melodicベースの足首外骨格ロボット完全制御システム。CANバスモーター制御とAHRS慣性航法センサードライバー搭載。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="足首外骨格ロボット制御システム">
+<meta property="og:url" content="https://caeamer.com/ja/2026/06/13/ankle-exoskeleton/index.html">
+<meta property="og:site_name" content="lizhichao">
+<meta property="og:description" content="ROS Melodicベースの足首外骨格ロボット完全制御システム。CANバスモーター制御とAHRS慣性航法センサードライバー搭載。">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://caeamer.com/img/touxiang.png">
+<meta property="article:published_time" content="2026-06-13T14:28:11.000Z">
+<meta property="article:modified_time" content="2026-06-18T16:42:57.505Z">
+<meta property="article:author" content="lizhichao">
+<meta property="article:tag" content="C++">
+<meta property="article:tag" content="ROS">
+<meta property="article:tag" content="ロボット">
+<meta property="article:tag" content="組込み">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://caeamer.com/img/touxiang.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "足首外骨格ロボット制御システム",
+  "url": "https://caeamer.com/ja/2026/06/13/ankle-exoskeleton/index.html",
+  "image": "https://caeamer.com/img/touxiang.png",
+  "datePublished": "2026-06-13T14:28:11.000Z",
+  "dateModified": "2026-06-18T16:42:57.505Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "lizhichao",
+      "url": "https://caeamer.com"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://caeamer.com/ja/2026/06/13/ankle-exoskeleton/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.5"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.14/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const hour = new Date().getHours()
+          const isNight = hour <= 6 || hour >= 18
+          if (theme === undefined) isNight ? activateDarkMode() : activateLightMode()
+          else theme === 'light' ? activateLightMode() : activateDarkMode()
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":400,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: 'コピー成功',
+    error: 'コピー失敗',
+    noSupport: 'ブラウザが対応していません'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'たった今',
+    min: '分前',
+    hour: '時間前',
+    day: '日前',
+    month: 'ヶ月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: 'もっと見る'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '足首外骨格ロボット制御システム',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 8.1.2"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/touxiang.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">記事</div><div class="length-num">7</div></a><a href="/tags/"><div class="headline">タグ</div><div class="length-num">19</div></a><a href="/categories/"><div class="headline">カテゴリ</div><div class="length-num">3</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> ホーム</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user"></i><span> 自己紹介</span></a></div><div class="menus_item"><a class="site-page" href="/resume/"><i class="fa-fw fas fa-briefcase"></i><span> 経歴</span></a></div><div class="menus_item"><a class="site-page" href="/projects/"><i class="fa-fw fas fa-code"></i><span> プロジェクト</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1920&amp;q=80);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">lizhichao</span></a><a class="nav-page-title" href="/"><span class="site-name">足首外骨格ロボット制御システム</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  ホームに戻る</span></span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> ホーム</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user"></i><span> 自己紹介</span></a></div><div class="menus_item"><a class="site-page" href="/resume/"><i class="fa-fw fas fa-briefcase"></i><span> 経歴</span></a></div><div class="menus_item"><a class="site-page" href="/projects/"><i class="fa-fw fas fa-code"></i><span> プロジェクト</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">足首外骨格ロボット制御システム</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">作成日</span><time class="post-meta-date-created" datetime="2026-06-13T14:28:11.000Z" title="作成日 2026-06-13 22:28:11">2026-06-13</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新日</span><time class="post-meta-date-updated" datetime="2026-06-18T16:42:57.505Z" title="更新日 2026-06-19 00:42:57">2026-06-19</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">閲覧数:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>外骨格ロボットは、リハビリテーション、産業支援、軍事分野で広く応用される注目の分野です。本プロジェクトはROS Melodicフレームワークに基づく<strong>足首外骨格ロボット制御システム</strong>を実装しました。</p>
+<h2 id="アーキテクチャ"><a href="#アーキテクチャ" class="headerlink" title="アーキテクチャ"></a>アーキテクチャ</h2><div class="note info flat"><p>システムはUbuntu 18.04 + ROS Melodic上で動作し、2つのコアROSパッケージで構成されています。</p>
+</div>
+
+<h3 id="can-ankle-—-CANバスモーター制御"><a href="#can-ankle-—-CANバスモーター制御" class="headerlink" title="can_ankle — CANバスモーター制御"></a>can_ankle — CANバスモーター制御</h3><p>CANopenプロトコルを介した足首関節モーター制御のコアパッケージ。</p>
+<p><strong>主な機能：</strong></p>
+<ul>
+<li><strong>トルクモード</strong> — リハビリ訓練向け精密トルク制御</li>
+<li><strong>速度モード</strong> — スムーズな速度調整</li>
+<li><strong>位置モード</strong> — 姿勢制御向け精密角度制御</li>
+<li><strong>CANopenスタック</strong> — libcontrolcanによる標準CANopenデバイス設定</li>
+</ul>
+<mark class="hl-label blue">C++</mark> <mark class="hl-label green">CANバス</mark> <mark class="hl-label Melodic">ROS</mark>
+
+<h3 id="fdilink-ahrs-—-AHRS-INSセンサードライバー"><a href="#fdilink-ahrs-—-AHRS-INSセンサードライバー" class="headerlink" title="fdilink_ahrs — AHRS&#x2F;INSセンサードライバー"></a>fdilink_ahrs — AHRS&#x2F;INSセンサードライバー</h3><p>FDILink Deta-10高性能AHRS&#x2F;INSセンサー用シリアル通信ドライバー：</p>
+<ul>
+<li><strong>IMUデータ</strong> — 加速度、角速度、磁場</li>
+<li><strong>GPS</strong> — 緯度経度、高度、速度</li>
+<li><strong>姿勢角</strong> — オイラー角（Roll&#x2F;Pitch&#x2F;Yaw）</li>
+<li><strong>オドメトリ</strong> — IMU+GPS融合位置推定</li>
+</ul>
+<mark class="hl-label blue">Python</mark> <mark class="hl-label pink">IMU</mark> <mark class="hl-label red">GPS融合</mark>
+
+<h2 id="システム構成"><a href="#システム構成" class="headerlink" title="システム構成"></a>システム構成</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">┌─────────────────────────────────────┐</span><br><span class="line">│         足首外骨格ロボット            │</span><br><span class="line">├──────────────┬──────────────────────┤</span><br><span class="line">│  can_ankle   │   fdilink_ahrs       │</span><br><span class="line">│  (C++)       │   (Python)           │</span><br><span class="line">├──────────────┼──────────────────────┤</span><br><span class="line">│  CANバス      │   シリアル/UART      │</span><br><span class="line">└──────────────┴──────────────────────┘</span><br><span class="line">          ↓ ROSトピック</span><br><span class="line">┌─────────────────────────────────────┐</span><br><span class="line">│       ROSバッグ（データ記録）         │</span><br><span class="line">└─────────────────────────────────────┘</span><br></pre></td></tr></table></figure>
+
+<h2 id="学び"><a href="#学び" class="headerlink" title="学び"></a>学び</h2><p>このプロジェクトを通じて、低レベルのハードウェア通信から高レベルのROSノード編成まで、ロボット制御システムの全体像を深く理解しました。CANバスのリアルタイム性、センサーフュージョンの数学的原理、ROSの分散アーキテクチャは、その後のプロジェクトに大きな影響を与えました。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>著者: </span><span class="post-copyright-info"><a href="https://caeamer.com">lizhichao</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>リンク: </span><span class="post-copyright-info"><a href="https://caeamer.com/ja/2026/06/13/ankle-exoskeleton/index.html">https://caeamer.com/ja/2026/06/13/ankle-exoskeleton/index.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>著作権表示: </span><span class="post-copyright-info">このブログのすべての記事は、<a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> ライセンスの下で提供されており、特に明記されていない限り、すべての権利を留保します。転載時には出典を明記してください: <a href="https://caeamer.com">lizhichao</a>。</span></div></div><div class="tag_share"><div class="post-share"><div class="social-share" data-image="/img/touxiang.png" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/touxiang.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">lizhichao</div><div class="author-info-description">USTB 学部生 · AIコーディングとOSSに情熱<br><i class="fas fa-envelope"></i> caeamer@163.com<br><i class="fab fa-qq"></i> 87452310</div><div class="site-data"><a href="/archives/"><div class="headline">記事</div><div class="length-num">7</div></a><a href="/tags/"><div class="headline">タグ</div><div class="length-num">19</div></a><a href="/categories/"><div class="headline">カテゴリ</div><div class="length-num">3</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/coderirse"><i class="fab fa-github"></i><span>フォロー</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/coderirse" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:caeamer@163.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>お知らせ</span></div><div class="announcement_content">私のブログへようこそ！学習、プロジェクト、成長の記録をつづっています。</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目次</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%83%8C%E6%99%AF"><span class="toc-number">1.</span> <span class="toc-text">背景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E3%82%A2%E3%83%BC%E3%82%AD%E3%83%86%E3%82%AF%E3%83%81%E3%83%A3"><span class="toc-number">2.</span> <span class="toc-text">アーキテクチャ</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#can-ankle-%E2%80%94-CAN%E3%83%90%E3%82%B9%E3%83%A2%E3%83%BC%E3%82%BF%E3%83%BC%E5%88%B6%E5%BE%A1"><span class="toc-number">2.1.</span> <span class="toc-text">can_ankle — CANバスモーター制御</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#fdilink-ahrs-%E2%80%94-AHRS-INS%E3%82%BB%E3%83%B3%E3%82%B5%E3%83%BC%E3%83%89%E3%83%A9%E3%82%A4%E3%83%90%E3%83%BC"><span class="toc-number">2.2.</span> <span class="toc-text">fdilink_ahrs — AHRS&#x2F;INSセンサードライバー</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E6%A7%8B%E6%88%90"><span class="toc-number">3.</span> <span class="toc-text">システム構成</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%A6%E3%81%B3"><span class="toc-number">4.</span> <span class="toc-text">学び</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最近の記事</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/06/13/%E5%90%8D%E4%BA%BA%E5%90%8D%E8%A8%80-%E5%85%B3%E4%BA%8E%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%88%90%E9%95%BF/" title="名人名言 — 关于学习与成长">名人名言 — 关于学习与成长</a><time datetime="2026-06-13T14:28:19.000Z" title="作成日 2026-06-13 22:28:19">2026-06-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/06/13/%E5%90%8D%E4%BA%BA%E5%90%8D%E8%A8%80-%E5%85%B3%E4%BA%8E%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%88%9B%E9%80%A0/" title="名人名言 — 关于技术与创造">名人名言 — 关于技术与创造</a><time datetime="2026-06-13T14:28:17.000Z" title="作成日 2026-06-13 22:28:17">2026-06-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/06/13/Academic-Research-Skills-%E5%AD%A6%E6%9C%AF%E7%A0%94%E7%A9%B6%E7%AE%A1%E7%BA%BF/" title="Academic Research Skills — 学术研究管线">Academic Research Skills — 学术研究管线</a><time datetime="2026-06-13T14:28:16.000Z" title="作成日 2026-06-13 22:28:16">2026-06-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/06/13/Hermes-Agent-%E8%87%AA%E8%BF%9B%E5%8C%96AI%E6%99%BA%E8%83%BD%E4%BD%93/" title="Hermes Agent — 自进化的 AI 智能体">Hermes Agent — 自进化的 AI 智能体</a><time datetime="2026-06-13T14:28:14.000Z" title="作成日 2026-06-13 22:28:14">2026-06-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/06/13/AI-Agents-Stock-%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E8%82%A1%E7%A5%A8%E5%88%86%E6%9E%90%E7%B3%BB%E7%BB%9F/" title="AI Agents Stock — 多智能体股票分析系统">AI Agents Stock — 多智能体股票分析系统</a><time datetime="2026-06-13T14:28:12.000Z" title="作成日 2026-06-13 22:28:12">2026-06-13</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2024 - 2026 By lizhichao</span></div><div class="footer_custom_text">Keep moving, keep coding.</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="読書モード"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="ライトモード/ダークモード切り替え"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="シングルカラムとダブルカラムの切り替え"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="設定"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目次"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="トップに戻る"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.5"></script><script src="/js/main.js?v=5.5.5"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.14/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script src="/generated/i18n-post-map.js"></script><script src="/js/lang-switcher.js"></script><script id="canvas_nest" defer="defer" color="59,112,252" opacity="0.4" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/dist/canvas-nest.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
