@@ -1,33 +1,31 @@
 ---
 title: ブログへようこそ
-date: 2026-06-18 00:00:00
-categories:
-  - ノート
+date: 2026-06-12 00:00:00
 tags:
   - 個人
-description: リ・ジチャオの個人ブログへようこそ。
+categories:
+  - ノート
 ---
 
 ## 👋 こんにちは！
 
-私の個人ブログへようこそ。北京科技大学（USTB）の機械工学専攻の2年生で、AIコーディングとオープンソース技術に情熱を持っています。
+{% note success %}
+リ・ジチャオの個人ブログです。ウェブ開発とオープンソース技術に情熱を持つ大学2年生です。
+{% endnote %}
 
-このブログで共有していること：
+### このブログについて
 
-- **プロジェクト** — ロボット、AIエージェント、フィンテック、学術ツール
-- **学習ノート** — 技術的な洞察と成長の記録
-- **個人経歴** — 学歴、スキル、コミュニティ貢献
+- **経歴紹介** — [学歴と経験](/ja/resume/)を見る
+- **プロジェクト共有** — [プロジェクトページ](/ja/projects/)で制作物を紹介
+- **成長記録** — 技術ノートや学びを共有
 
-### クイックリンク
+### 自己紹介
 
-- [私について](/ja/about/) — 詳しい情報
-- [履歴書](/ja/resume/) — 学歴と経験
-- [プロジェクト](/ja/projects/) — 制作したプロジェクト
+{% label JavaScript blue %} {% label TypeScript green %} {% label React pink %} {% label Vue.js orange %} {% label Node.js red %}
 
-### 技術的な興味
+- 技術的関心：フロントエンド、パフォーマンス最適化、オープンソース
+- 連絡先：caeamer@163.com
 
-{% label JavaScript blue %} {% label TypeScript green %} {% label React pink %} {% label Python blue %} {% label AI green %} {% label オープンソース orange %}
+### 最近の更新
 
----
-
-*ご覧いただきありがとうございます。[お問い合わせ](mailto:caeamer@163.com)はこちらまで。*
+技術学習の記録やプロジェクトの進捗をここに投稿していきます。

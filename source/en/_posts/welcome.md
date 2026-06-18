@@ -1,33 +1,31 @@
 ---
 title: Welcome to My Blog
-date: 2026-06-18 00:00:00
-categories:
-  - Notes
+date: 2026-06-12 00:00:00
 tags:
   - personal
-description: Welcome to Li Zhichao's personal blog.
+categories:
+  - Notes
 ---
 
 ## 👋 Hello, nice to meet you!
 
-Welcome to my personal blog. I'm a sophomore at USTB majoring in Mechanical Engineering, passionate about AI Coding and open-source technology.
+{% note success %}
+This is Li Zhichao's personal blog. I'm a sophomore passionate about web development and open-source technology.
+{% endnote %}
 
-This blog is where I share:
+### About This Blog
 
-- **Project showcases** — robotics, AI agents, fintech, and academic tools
-- **Learning notes** — technical insights and growth journal
-- **Personal experience** — education, skills, and community contributions
+- **Showcase Experience** — Check out my [education and experience](/en/resume/)
+- **Share Projects** — See what I've built on the [projects page](/en/projects/)
+- **Document Growth** — Technical notes and learning insights
 
-### Quick Links
+### Quick Facts
 
-- [About Me](/en/about/) — Learn more about who I am
-- [Resume](/en/resume/) — My education and experience
-- [Projects](/en/projects/) — Projects I've built
+{% label JavaScript blue %} {% label TypeScript green %} {% label React pink %} {% label Vue.js orange %} {% label Node.js red %}
 
-### Tech Interests
+- Tech interests: frontend architecture, performance optimization, open source
+- Contact: caeamer@163.com
 
-{% label JavaScript blue %} {% label TypeScript green %} {% label React pink %} {% label Python blue %} {% label AI green %} {% label Open Source orange %}
+### Recent Updates
 
----
-
-*Thanks for visiting! Feel free to [contact me](mailto:caeamer@163.com).*
+I'll be posting technical learnings and project progress here. Stay tuned.
