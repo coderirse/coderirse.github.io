@@ -183,21 +183,21 @@ function registerI18nHtmlFilter(hexo) {
 
     var lang = enMatch ? 'en' : 'ja';
 
-    // Fix nav menu links with class="site-page": /about/ → /en/about/ etc.
-    str = str.replace(
-      /(<a\s[^>]*\bclass="[^"]*\bsite-page\b[^"]*"\s[^>]*\bhref=")\/((?:about|resume|projects|archives|tags|categories)\/?)?"/gi,
-      function (match, prefix, pagePath) {
-        if (!pagePath) return prefix + '/' + lang + '/"';
-        var normalized = pagePath.charAt(pagePath.length - 1) === '/' ? pagePath : pagePath + '/';
-        return prefix + '/' + lang + '/' + normalized + '"';
-      }
-    );
+    // Use exact string replacements — never broad regex that can corrupt
+    // sidebar, tag cloud, or archive links
+    var swaps = [
+      ['<a class="site-page" href="/"',      '<a class="site-page" href="/' + lang + '/"'],
+      ['<a class="site-page" href="/about/"',   '<a class="site-page" href="/' + lang + '/about/"'],
+      ['<a class="site-page" href="/resume/"',  '<a class="site-page" href="/' + lang + '/resume/"'],
+      ['<a class="site-page" href="/projects/"','<a class="site-page" href="/' + lang + '/projects/"'],
+      ['<a class="nav-site-title" href="/"',    '<a class="nav-site-title" href="/' + lang + '/"'],
+    ];
 
-    // Fix site title link
-    str = str.replace(
-      /(<a\s[^>]*\bclass="[^"]*\bnav-site-title\b[^"]*"\s[^>]*\bhref=")\/?"/gi,
-      '$1/' + lang + '/"'
-    );
+    swaps.forEach(function (pair) {
+      while (str.indexOf(pair[0]) !== -1) {
+        str = str.replace(pair[0], pair[1]);
+      }
+    });
 
     return str;
   });
