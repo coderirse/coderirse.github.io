@@ -1,4 +1,18 @@
 (function() {
+  // ---- 同步字体修复：在 DOM 解析前执行，消除闪版 ----
+  (function fixFontSync() {
+    var p = window.location.pathname;
+    var lang = p.startsWith('/en/') ? 'en' : p.startsWith('/ja/') ? 'ja' : 'zh-CN';
+    var fonts = {
+      'zh-CN': '-apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif',
+      'ja':     '-apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", "Noto Sans JP", "BIZ UDPGothic", "PingFang SC", "Microsoft YaHei", sans-serif',
+      'en':     '-apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Roboto, Lato, sans-serif'
+    };
+    document.documentElement.style.fontFamily = fonts[lang];
+    // 同时修正 <html lang> 属性，让 CSS 选择器也能匹配
+    document.documentElement.setAttribute('lang', lang);
+  })();
+
   var LANGS = [
     { key: 'zh-CN', label: '中文', short: '中' },
     { key: 'en',    label: 'English', short: 'EN' },
@@ -37,28 +51,40 @@
     return '/' + lang + bare;
   }
 
-  // Rewrite all internal links to match the current language
-  // Only processes zh-CN pages (adds no prefix) or strips wrong-lang prefixes.
+  // Determine if a URL path looks like a blog post (/YYYY/MM/DD/slug/)
+  function isPostPath(path) {
+    return /^\/20\d{2}\/\d{2}\/\d{2}\//.test(path);
+  }
+
+  // Rewrite internal links to match the current language.
+  // IMPORTANT: post URLs (/YYYY/MM/DD/...) only exist in the default (zh-CN)
+  //   namespace. Do NOT add /en/ or /ja/ prefix to them, otherwise they 404.
+  //   Only page links (about, resume, projects, tags, categories, archives)
+  //   get the language prefix.
   function rewriteLinks() {
-    // Only rewrite when on a non-default language page
+    // On zh-CN: nothing to rewrite (posts & pages are at root, already correct)
     if (currentLang === 'zh-CN') return;
-    var base = langPrefix(currentLang);
+
+    var base = langPrefix(currentLang); // e.g. '/en'
     var links = document.querySelectorAll('a[href]');
     for (var i = 0; i < links.length; i++) {
       var a = links[i];
       var href = a.getAttribute('href');
       if (!href) continue;
-      // Only rewrite root-relative paths
+
+      // Only process root-relative paths
       if (href.charAt(0) !== '/') continue;
-      // Skip protocol-relative or absolute URLs
+      // Skip protocol-relative / absolute URLs
       if (/^\/\/|^https?:/.test(href)) continue;
-      // Skip anchor-only links like /#section
-      if (/^\/#/.test(href)) continue;
-      // Skip already correctly prefixed paths
+      // Skip anchor-only links
+      if (href === '/#' || href.indexOf('/#') === 0) continue;
+      // Skip already-prefixed paths
       if (href.indexOf(base + '/') === 0 || href === base) continue;
-      // Skip other language prefixes (don't cross-rewrite)
+      // Skip other language prefixes
       if (/^\/(en|ja)(\/|$)/.test(href)) continue;
-      // Apply current language prefix to bare internal paths
+      // === DO NOT prefix post URLs — they only exist at root ===
+      if (isPostPath(href)) continue;
+      // Apply current language prefix to page links only
       a.setAttribute('href', base + href);
     }
   }
