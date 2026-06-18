@@ -4,9 +4,13 @@
 - var hideAside = !theme.aside.enable || page.aside === false ? 'hide-aside' : ''
 - var pageType = globalPageType === 'post' ? 'post' : 'page'
 - pageType = page.type ? pageType + ' type-' + page.type : pageType
+// Detect language from URL path so <html lang> is correct for all language versions
+- var _path = page.path || ''
+- var _langFromPath = _path.startsWith('en/') ? 'en' : _path.startsWith('ja/') ? 'ja' : null
+- var htmlLang = page.lang || _langFromPath || (Array.isArray(config.language) ? config.language[0] : config.language)
 
 doctype html
-html(lang=(page.lang || (Array.isArray(config.language) ? config.language[0] : config.language)) data-theme=theme.display_mode class=htmlClassHideAside)
+html(lang=htmlLang data-theme=theme.display_mode class=htmlClassHideAside)
   head
     include ./head.pug
   body

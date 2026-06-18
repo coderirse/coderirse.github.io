@@ -1,21 +1,20 @@
 /* ========== 多语言字体修复 ========== */
 /*
- * 问题根因：浏览器 CJK 字体 fallback 链中，
- *   系统日文字体（Yu Gothic / Hiragino Kaku Gothic）优先级可能高于
- *   中文字体，导致中文页面部分汉字渲染成日文字形。
+ * 问题根因：
+ *   1. themes/butterfly 的 Stylus 编译后把 'Microsoft JhengHei'（繁体）
+ *      写进了字体栈，$chineseFont 变量在编译时未正确取值。
+ *   2. 浏览器 CJK 字体 fallback 时，日文字形可能优先于简体中文字形。
  *
- * 修复策略：
- *   - :root / html[lang="zh-CN"]  → 强制使用简体中文字体栈，
- *     把日文字体 Yu Gothic 等排在 Noto Sans SC / Microsoft YaHei 后面
- *   - html[lang="ja"]              → 优先日文字体，兼顾中文
- *   - html[lang="en"]              → 纯拉丁字体栈，无 CJK
+ * 修复策略（三层兜底）：
+ *   - CSS：用高优先级选择器 + !important 强制覆盖编译后的字体栈
+ *   - HTML lang 属性：layout.pug 已修复，按 URL 路径正确输出 lang=...
+ *   - JS：lang-switcher.js 在 DOMContentLoaded 前同步设置 fontFamily
  */
 
-/* 默认 / 中文（zh-CN）字体栈 */
-:root,
-html:not([lang]),
-html[lang="zh-CN"],
-html[lang="zh"] {
+/* ---- 中文（zh-CN） ---- */
+/* 用 body 级选择器，优先级高于编译后的 html 级规则 */
+html[lang="zh-CN"] body,
+html[lang="zh"] body {
   font-family:
     -apple-system,
     BlinkMacSystemFont,
@@ -24,14 +23,23 @@ html[lang="zh"] {
     "Noto Sans SC",
     "Microsoft YaHei",
     "WenQuanYi Micro Hei",
-    /* 日文字体放最后，仅作最终兜底 */
-    "Yu Gothic",
-    "Hiragino Kaku Gothic ProN",
     sans-serif !important;
 }
+/* 代码块保持等宽字体，不被上面的规则覆盖 */
+html[lang="zh-CN"] pre,
+html[lang="zh-CN"] code,
+html[lang="zh-CN"] .highlight,
+html[lang="zh-CN"] .code-block,
+html[lang="zh"] pre,
+html[lang="zh"] code,
+html[lang="zh"] .highlight,
+html[lang="zh"] .code-block {
+  font-family: consolas, Menlo, "Ubuntu Mono", monospace,
+    "PingFang SC", "Microsoft YaHei", sans-serif !important;
+}
 
-/* 日文（ja）字体栈 */
-html[lang="ja"] {
+/* ---- 日文（ja） ---- */
+html[lang="ja"] body {
   font-family:
     -apple-system,
     BlinkMacSystemFont,
@@ -40,14 +48,19 @@ html[lang="ja"] {
     "Yu Gothic",
     "Noto Sans JP",
     "BIZ UDPGothic",
-    /* 中文兜底 */
     "PingFang SC",
     "Microsoft YaHei",
     sans-serif !important;
 }
+html[lang="ja"] pre,
+html[lang="ja"] code,
+html[lang="ja"] .highlight {
+  font-family: consolas, Menlo, "Ubuntu Mono", monospace,
+    "Yu Gothic", "Hiragino Kaku Gothic ProN", sans-serif !important;
+}
 
-/* 英文（en）字体栈，不引入 CJK 字体避免干扰 */
-html[lang="en"] {
+/* ---- 英文（en）---- */
+html[lang="en"] body {
   font-family:
     -apple-system,
     BlinkMacSystemFont,
