@@ -1,3 +1,63 @@
+/* ========== 多语言字体修复 ========== */
+/*
+ * 问题根因：浏览器 CJK 字体 fallback 链中，
+ *   系统日文字体（Yu Gothic / Hiragino Kaku Gothic）优先级可能高于
+ *   中文字体，导致中文页面部分汉字渲染成日文字形。
+ *
+ * 修复策略：
+ *   - :root / html[lang="zh-CN"]  → 强制使用简体中文字体栈，
+ *     把日文字体 Yu Gothic 等排在 Noto Sans SC / Microsoft YaHei 后面
+ *   - html[lang="ja"]              → 优先日文字体，兼顾中文
+ *   - html[lang="en"]              → 纯拉丁字体栈，无 CJK
+ */
+
+/* 默认 / 中文（zh-CN）字体栈 */
+:root,
+html:not([lang]),
+html[lang="zh-CN"],
+html[lang="zh"] {
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "PingFang SC",
+    "Hiragino Sans GB",
+    "Noto Sans SC",
+    "Microsoft YaHei",
+    "WenQuanYi Micro Hei",
+    /* 日文字体放最后，仅作最终兜底 */
+    "Yu Gothic",
+    "Hiragino Kaku Gothic ProN",
+    sans-serif !important;
+}
+
+/* 日文（ja）字体栈 */
+html[lang="ja"] {
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans",
+    "Yu Gothic",
+    "Noto Sans JP",
+    "BIZ UDPGothic",
+    /* 中文兜底 */
+    "PingFang SC",
+    "Microsoft YaHei",
+    sans-serif !important;
+}
+
+/* 英文（en）字体栈，不引入 CJK 字体避免干扰 */
+html[lang="en"] {
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "Helvetica Neue",
+    Roboto,
+    Lato,
+    sans-serif !important;
+}
+
 /* ========== 首页头图遮罩增强文字可读性 ========== */
 #page-header:before {
   background: rgba(0,0,0,0.3) !important;

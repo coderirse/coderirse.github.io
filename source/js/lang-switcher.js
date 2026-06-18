@@ -5,48 +5,60 @@
     { key: 'ja',    label: '日本語', short: '日' }
   ];
 
-  // Detect current language from URL
+  // Detect current language from URL path
+  // Supports both /en/... and /en (root without trailing slash)
   function detectLang() {
     var p = window.location.pathname;
-    if (p.indexOf('/en/') === 0) return 'en';
-    if (p.indexOf('/ja/') === 0) return 'ja';
+    if (/^\/en(\/|$)/.test(p)) return 'en';
+    if (/^\/ja(\/|$)/.test(p)) return 'ja';
     return 'zh-CN';
   }
 
   var currentLang = detectLang();
 
+  // Sync <html lang="..."> so CSS font selectors (html[lang=...]) work correctly
+  // even when the page itself was rendered with a different lang value.
+  document.documentElement.setAttribute('lang', currentLang);
+
   function langPrefix(lang) {
     return lang === 'zh-CN' ? '' : '/' + lang;
   }
 
+  // Strip any existing /en or /ja prefix and return the bare path
   function stripLang(path) {
-    if (path.indexOf('/en/') === 0) return path.substring(3) || '/';
-    if (path.indexOf('/ja/') === 0) return path.substring(3) || '/';
-    return path;
+    return path.replace(/^\/(en|ja)(\/|$)/, '/') || '/';
   }
 
   function toLangPath(path, lang) {
     var bare = stripLang(path);
-    return langPrefix(lang) + (bare === '/' ? '/' : bare);
+    if (lang === 'zh-CN') return bare;
+    // Ensure bare starts with / before prepending prefix
+    if (bare.charAt(0) !== '/') bare = '/' + bare;
+    return '/' + lang + bare;
   }
 
-  // Rewrite all internal links to current language
+  // Rewrite all internal links to match the current language
+  // Only processes zh-CN pages (adds no prefix) or strips wrong-lang prefixes.
   function rewriteLinks() {
-    var base = langPrefix(currentLang) || '';
+    // Only rewrite when on a non-default language page
+    if (currentLang === 'zh-CN') return;
+    var base = langPrefix(currentLang);
     var links = document.querySelectorAll('a[href]');
     for (var i = 0; i < links.length; i++) {
       var a = links[i];
       var href = a.getAttribute('href');
       if (!href) continue;
-      // Only rewrite internal paths (start with /)
-      if (href.charAt(0) !== '/' || href.indexOf('//') === 0) continue;
-      // Skip anchor links
-      if (href.charAt(1) === '#') continue;
-      // Skip already-prefixed paths
-      if (href.indexOf('/en/') === 0 || href.indexOf('/ja/') === 0) continue;
-      // Don't rewrite external-looking paths
+      // Only rewrite root-relative paths
+      if (href.charAt(0) !== '/') continue;
+      // Skip protocol-relative or absolute URLs
       if (/^\/\/|^https?:/.test(href)) continue;
-      // Apply language prefix
+      // Skip anchor-only links like /#section
+      if (/^\/#/.test(href)) continue;
+      // Skip already correctly prefixed paths
+      if (href.indexOf(base + '/') === 0 || href === base) continue;
+      // Skip other language prefixes (don't cross-rewrite)
+      if (/^\/(en|ja)(\/|$)/.test(href)) continue;
+      // Apply current language prefix to bare internal paths
       a.setAttribute('href', base + href);
     }
   }
