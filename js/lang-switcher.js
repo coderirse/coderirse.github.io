@@ -123,6 +123,9 @@
       return l.key === currentLang;
     })[0];
 
+    var existing = document.querySelector('.lang-switcher');
+    if (existing) existing.remove();
+
     var wrap = document.createElement('div');
     wrap.className = 'lang-switcher';
 
@@ -135,7 +138,6 @@
 
     LANGS.forEach(function(l) {
       var a = document.createElement('a');
-      a.href = toLangPath(window.location.pathname, l.key);
       a.textContent = l.label;
 
       if (l.key === currentLang) {
@@ -144,6 +146,12 @@
         a.style.cursor = 'default';
         a.style.opacity = '0.5';
         a.style.pointerEvents = 'none';
+      } else {
+        a.href = 'javascript:void(0)';
+        a.onclick = function(e) {
+          e.preventDefault();
+          window.location.href = toLangPath(window.location.pathname, l.key);
+        };
       }
 
       menu.appendChild(a);
