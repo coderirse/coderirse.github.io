@@ -7,7 +7,8 @@
       "Bash(git push *)",
       "Bash(npm run *)",
       "Bash(ls public/en/index.html)",
-      "Bash(ls public/ja/index.html)"
+      "Bash(ls public/ja/index.html)",
+      "Bash(echo \"exit: $?\")"
     ]
   }
 }
