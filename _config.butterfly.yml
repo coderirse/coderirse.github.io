@@ -51,7 +51,11 @@ avatar:
 # 副标题 - 打字机效果
 subtitle:
   enable: true
-  effect: false
+  effect: true
+  typed_option:
+    typeSpeed: 100
+    backSpeed: 40
+    loop: true
   sub:
     - 热爱技术，持续学习，keep moving
     - 欢迎来到我的个人博客
