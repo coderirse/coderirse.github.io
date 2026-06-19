@@ -15,6 +15,22 @@ top_img: https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1920&q=80
 
 ---
 
+### 🧗 壁面爬行ロボット — 制御システム
+
+{% label Python blue %} {% label ROS2 green %} {% label CANバス orange %} {% label ロボティクス pink %}
+
+ROS2ベースの差動駆動壁面爬行ロボット制御システム。CAN + RS485デュアルプロトコルによる4モーター協調制御。
+
+**ハイライト:**
+- デュアルプロトコル制御：CANバス + RS485/Modbusで4台の独立モーターを制御
+- ROS2ネイティブ統合：`/cmd_vel` 購読、速度解算
+- ゲームパッド遠隔操作：十字キー + アナログスティック
+- 安全保護：加速度ランプ制御 + 500msタイムアウト自動停止
+
+{% label ロボティクス green %} {% label 組込み green %} {% label 制御アルゴリズム green %}
+
+---
+
 ### 🤖 足首外骨格ロボット制御システム
 
 {% label C++ blue %} {% label Python green %} {% label ROS orange %} {% label CANバス pink %}
