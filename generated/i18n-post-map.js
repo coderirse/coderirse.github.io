@@ -182,19 +182,33 @@ window.__I18N_POST_MAP__.byPath = {
   },
   "/2026/06/18/爬壁小车-壁面爬行机器人控制系统/": {
     "zh-CN": "/2026/06/18/爬壁小车-壁面爬行机器人控制系统/",
-    "en": "/en/2026/06/18/wall-climbing-robot/"
+    "en": "/en/2026/06/18/wall-climbing-robot/",
+    "ja": "/ja/2026/06/18/wall-climbing-robot/"
   },
   "/2026/06/18/爬壁小车-壁面爬行机器人控制系统": {
     "zh-CN": "/2026/06/18/爬壁小车-壁面爬行机器人控制系统/",
-    "en": "/en/2026/06/18/wall-climbing-robot/"
+    "en": "/en/2026/06/18/wall-climbing-robot/",
+    "ja": "/ja/2026/06/18/wall-climbing-robot/"
   },
   "/en/2026/06/18/wall-climbing-robot/": {
     "zh-CN": "/2026/06/18/爬壁小车-壁面爬行机器人控制系统/",
-    "en": "/en/2026/06/18/wall-climbing-robot/"
+    "en": "/en/2026/06/18/wall-climbing-robot/",
+    "ja": "/ja/2026/06/18/wall-climbing-robot/"
   },
   "/en/2026/06/18/wall-climbing-robot": {
     "zh-CN": "/2026/06/18/爬壁小车-壁面爬行机器人控制系统/",
-    "en": "/en/2026/06/18/wall-climbing-robot/"
+    "en": "/en/2026/06/18/wall-climbing-robot/",
+    "ja": "/ja/2026/06/18/wall-climbing-robot/"
+  },
+  "/ja/2026/06/18/wall-climbing-robot/": {
+    "zh-CN": "/2026/06/18/爬壁小车-壁面爬行机器人控制系统/",
+    "en": "/en/2026/06/18/wall-climbing-robot/",
+    "ja": "/ja/2026/06/18/wall-climbing-robot/"
+  },
+  "/ja/2026/06/18/wall-climbing-robot": {
+    "zh-CN": "/2026/06/18/爬壁小车-壁面爬行机器人控制系统/",
+    "en": "/en/2026/06/18/wall-climbing-robot/",
+    "ja": "/ja/2026/06/18/wall-climbing-robot/"
   },
   "/2026/06/13/脚踝外骨骼机器人控制系统/": {
     "zh-CN": "/2026/06/13/脚踝外骨骼机器人控制系统/",
