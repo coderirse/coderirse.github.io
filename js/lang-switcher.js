@@ -103,6 +103,10 @@
       if (/^\/\/|^https?:/.test(href)) continue;
       if (href === '/#' || href.indexOf('/#') === 0) continue;
 
+      // 安全检查：如果链接已经有正确的语言前缀，跳过重写
+      var langMatch = href.match(/^\/(en|ja)(\/|$)/);
+      if (langMatch && langMatch[1] === currentLang) continue;
+
       var nextHref = href;
       var translationEntry = getTranslationEntry(href);
 
