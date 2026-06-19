@@ -38,7 +38,7 @@
   function normalizePath(path) {
     var normalized = safeDecode(String(path || '').split('#')[0].split('?')[0] || '/');
 
-    if (normalized.indexOf('/index.html') === normalized.length - '/index.html'.length) {
+    if (normalized !== '/' && normalized.slice(-'/index.html'.length) === '/index.html') {
       normalized = normalized.slice(0, -'/index.html'.length) || '/';
     }
 
