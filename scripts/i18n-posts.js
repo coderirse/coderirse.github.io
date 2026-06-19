@@ -183,14 +183,13 @@ function registerI18nHtmlFilter(hexo) {
 
     var lang = enMatch ? 'en' : 'ja';
 
-    // Use exact string replacements — never broad regex that can corrupt
-    // sidebar, tag cloud, or archive links
+    // Fix nav links to point to correct language roots
     var swaps = [
-      ['<a class="site-page" href="/"',      '<a class="site-page" href="/' + lang + '/"'],
-      ['<a class="site-page" href="/about/"',   '<a class="site-page" href="/' + lang + '/about/"'],
-      ['<a class="site-page" href="/resume/"',  '<a class="site-page" href="/' + lang + '/resume/"'],
+      ['<a class="site-page" href="/"',       '<a class="site-page" href="/' + lang + '/"'],
+      ['<a class="site-page" href="/about/"',  '<a class="site-page" href="/' + lang + '/about/"'],
+      ['<a class="site-page" href="/resume/"', '<a class="site-page" href="/' + lang + '/resume/"'],
       ['<a class="site-page" href="/projects/"','<a class="site-page" href="/' + lang + '/projects/"'],
-      ['<a class="nav-site-title" href="/"',    '<a class="nav-site-title" href="/' + lang + '/"'],
+      ['<a class="nav-site-title" href="/"',   '<a class="nav-site-title" href="/' + lang + '/"'],
     ];
 
     swaps.forEach(function (pair) {
@@ -198,6 +197,17 @@ function registerI18nHtmlFilter(hexo) {
         str = str.replace(pair[0], pair[1]);
       }
     });
+
+    // ── Fix en/ja "home" page: inject a marker class so CSS can apply full-page styles ──
+    // en/ja index pages get type-home on body-wrap but not-home-page on header.
+    // We add a 'lang-home' class to the header so CSS can override it.
+    var isIndexPage = (data.path === 'en/index.html' || data.path === 'ja/index.html');
+    if (isIndexPage) {
+      str = str.replace(
+        '<header class="not-home-page" id="page-header"',
+        '<header class="not-home-page lang-home-header" id="page-header"'
+      );
+    }
 
     return str;
   });

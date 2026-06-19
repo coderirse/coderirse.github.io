@@ -123,6 +123,9 @@
       return l.key === currentLang;
     })[0];
 
+    var existing = document.querySelector('.lang-switcher');
+    if (existing) existing.remove();
+
     var wrap = document.createElement('div');
     wrap.className = 'lang-switcher';
 
@@ -135,7 +138,6 @@
 
     LANGS.forEach(function(l) {
       var a = document.createElement('a');
-      a.href = toLangPath(window.location.pathname, l.key);
       a.textContent = l.label;
 
       if (l.key === currentLang) {
@@ -144,6 +146,12 @@
         a.style.cursor = 'default';
         a.style.opacity = '0.5';
         a.style.pointerEvents = 'none';
+      } else {
+        a.href = 'javascript:void(0)';
+        a.onclick = function(e) {
+          e.preventDefault();
+          window.location.href = toLangPath(window.location.pathname, l.key);
+        };
       }
 
       menu.appendChild(a);
@@ -154,6 +162,47 @@
     document.body.appendChild(wrap);
   }
 
+  // ── en/ja 首页全屏头图增强 ──
+  // i18n-posts.js 已给 en/ja 首页的 header 加了 lang-home-header 类。
+  // 这里为其注入居中欢迎文字 + scroll-down 箭头。
+  function patchLangHomePage() {
+    var header = document.getElementById('page-header');
+    if (!header || !header.classList.contains('lang-home-header')) return;
+
+    // 隐藏原有的 page-site-info（普通页标题）
+    var pageSiteInfo = header.querySelector('#page-site-info');
+    if (pageSiteInfo) pageSiteInfo.style.display = 'none';
+
+    // 注入欢迎文字
+    var siteTitle = document.querySelector('#nav .site-name');
+    var titleText = siteTitle ? siteTitle.textContent : 'lizhichao';
+    var subtitleMap = {
+      'en': 'Passionate about AI Coding & Open Source',
+      'ja': 'AIコーディングとオープンソースに情熱を注いでいます'
+    };
+    var subtitle = subtitleMap[currentLang] || '';
+
+    var infoDiv = document.createElement('div');
+    infoDiv.className = 'lang-home-site-info';
+    infoDiv.innerHTML = '<h1>' + titleText + '</h1><p>' + subtitle + '</p>';
+    header.appendChild(infoDiv);
+
+    // 注入 scroll-down 箭头
+    var scrollBtn = document.createElement('div');
+    scrollBtn.className = 'lang-scroll-down';
+    scrollBtn.innerHTML = '<i class="fas fa-angle-down"></i>';
+    scrollBtn.onclick = function() {
+      var contentEl = document.getElementById('content-inner');
+      if (contentEl) {
+        contentEl.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        window.scrollBy({ top: window.innerHeight, behavior: 'smooth' });
+      }
+    };
+    header.appendChild(scrollBtn);
+  }
+
   rewriteLinks();
   buildSwitcher();
+  patchLangHomePage();
 })();
