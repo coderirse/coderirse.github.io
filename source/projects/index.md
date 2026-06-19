@@ -15,6 +15,23 @@ top_img: https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1920&q=80
 
 ---
 
+### 🧗 爬壁小车 — 壁面爬行机器人
+
+{% label Python blue %} {% label ROS2 green %} {% label CAN总线 orange %} {% label 机器人 pink %}
+
+基于 ROS2 的差速驱动壁面爬行机器人控制系统，支持 CAN + RS485 双协议四电机协同控制。
+
+**核心亮点：**
+- 双协议电机控制：CAN 总线 + RS485/Modbus 同时控制四台独立电机
+- ROS2 原生集成：订阅 `/cmd_vel`，线速度和角速度实时解算为电机转速
+- 游戏手柄远程操控：方向键 + 摇杆轴独立控制
+- 速度平滑控制：受限加速度斜坡 + 500ms 超时自动停机保护
+- 已标定物理参数：轮径 0.05m、轮距 0.30m
+
+{% label 机器人 green %} {% label 嵌入式 green %} {% label 控制算法 green %}
+
+---
+
 ### 🤖 脚踝外骨骼机器人控制系统
 
 {% label C++ blue %} {% label Python green %} {% label ROS orange %} {% label CAN总线 pink %}
