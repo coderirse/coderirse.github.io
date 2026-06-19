@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:caeamer.com)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git push *)",
+      "Bash(npm run *)",
+      "Bash(ls public/en/index.html)",
+      "Bash(ls public/ja/index.html)"
+    ]
+  }
+}
