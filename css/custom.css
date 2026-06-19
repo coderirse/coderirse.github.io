@@ -129,6 +129,51 @@ html[lang="en"] body {
   text-shadow: 0 2px 12px rgba(0,0,0,0.5);
 }
 
+/* ========== en/ja 首页全屏头图修复 ==========
+ * en/ja 首页（/en/ 和 /ja/）因为 type:home 被主题当做普通 page，
+ * header 会得到 not-home-page 而非 full_page 的 class。
+ * i18n-posts.js 会给这两个页面额外注入 lang-home-header 类，
+ * 我们在这里把它的样式补齐为 full_page 效果。
+ * ========================================== */
+#page-header.lang-home-header {
+  height: 100vh;
+}
+/* 让 not-home-page 被 lang-home-header 重置为居中布局 */
+#page-header.lang-home-header #page-site-info {
+  display: none; /* 隐藏普通页面的标题块 */
+}
+/* 由 JS 动态添加 site-info 风格的欢迎文字 */
+#page-header.lang-home-header .lang-home-site-info {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.5);
+  z-index: 2;
+}
+#page-header.lang-home-header .lang-home-site-info h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+#page-header.lang-home-header .lang-home-site-info p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+#page-header.lang-home-header .lang-scroll-down {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  font-size: 1.5rem;
+  animation: scroll-down-effect 1.5s infinite;
+  cursor: pointer;
+  z-index: 2;
+}
+
 /* ========== 头像 ========== */
 .card-author-img .avatar-img {
   border-radius: 50%;
