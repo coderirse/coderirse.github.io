@@ -92,32 +92,6 @@
     return encodePath(langPrefix(lang) + (bare === '/' ? '/' : bare));
   }
 
-  function rewriteLinks() {
-    var links = document.querySelectorAll('a[href]');
-
-    for (var i = 0; i < links.length; i++) {
-      var a = links[i];
-      var href = a.getAttribute('href');
-      if (!href) continue;
-      if (href.charAt(0) !== '/') continue;
-      if (/^\/\/|^https?:/.test(href)) continue;
-      if (href === '/#' || href.indexOf('/#') === 0) continue;
-
-      var nextHref = href;
-      var translationEntry = getTranslationEntry(href);
-
-      if (translationEntry && translationEntry[currentLang]) {
-        nextHref = encodePath(translationEntry[currentLang]);
-      } else if (isLocalizedPage(href)) {
-        nextHref = toLangPath(href, currentLang);
-      }
-
-      if (nextHref !== href) {
-        a.setAttribute('href', nextHref);
-      }
-    }
-  }
-
   function buildSwitcher() {
     var cur = LANGS.filter(function(l) {
       return l.key === currentLang;
@@ -202,7 +176,6 @@
     header.appendChild(scrollBtn);
   }
 
-  rewriteLinks();
   buildSwitcher();
   patchLangHomePage();
 })();
