@@ -18,7 +18,7 @@
     { key: 'ja', label: '日本語', short: '日' }
   ];
 
-  var LOCALIZED_PAGES = ['/', '/about/', '/resume/', '/projects/'];
+  var LOCALIZED_PAGES = ['/', '/about/', '/resume/', '/projects/', '/archives/', '/tags/', '/categories/'];
 
   function detectLang() {
     var p = window.location.pathname;
