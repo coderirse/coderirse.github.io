@@ -43,6 +43,9 @@ social:
   fab fa-github: https://github.com/coderirse || Github || '#24292e'
   fas fa-envelope: mailto:caeamer@163.com || Email || '#4a7dbe'
 
+# 网站图标
+favicon: /img/touxiang.png
+
 # 头像
 avatar:
   img: /img/touxiang.png
