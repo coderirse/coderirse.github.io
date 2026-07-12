@@ -1,0 +1,183 @@
+<!-- Detect language from URL path so <html lang> is correct for all language versions--><!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>标签: 数学 | lizhichao</title><meta name="author" content="lizhichao"><meta name="copyright" content="lizhichao"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="李智超的个人博客 - 软件工程师，热爱技术与开源">
+<meta property="og:type" content="website">
+<meta property="og:title" content="lizhichao">
+<meta property="og:url" content="https://caeamer.com/tags/%E6%95%B0%E5%AD%A6/index.html">
+<meta property="og:site_name" content="lizhichao">
+<meta property="og:description" content="李智超的个人博客 - 软件工程师，热爱技术与开源">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://caeamer.com/img/touxiang.png">
+<meta property="article:author" content="lizhichao">
+<meta property="article:tag" content="李智超,lizhichao,软件工程师,Web开发,个人博客">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://caeamer.com/img/touxiang.png"><script type="application/ld+json"></script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://caeamer.com/tags/%E6%95%B0%E5%AD%A6/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.5"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.14/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const hour = new Date().getHours()
+          const isNight = hour <= 6 || hour >= 18
+          if (theme === undefined) isNight ? activateDarkMode() : activateLightMode()
+          else theme === 'light' ? activateLightMode() : activateDarkMode()
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":400,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '标签: 数学',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'tag'
+}</script><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 8.1.2"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/touxiang.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">17</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">49</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/resume/"><i class="fa-fw fas fa-briefcase"></i><span> 经历</span></a></div><div class="menus_item"><a class="site-page" href="/projects/"><i class="fa-fw fas fa-code"></i><span> 项目</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="not-home-page" id="page-header" style="background-image: url(https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=1920&amp;q=80);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">lizhichao</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/resume/"><i class="fa-fw fas fa-briefcase"></i><span> 经历</span></a></div><div class="menus_item"><a class="site-page" href="/projects/"><i class="fa-fw fas fa-code"></i><span> 项目</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="page-site-info"><h1 id="site-title">数学</h1></div></header><main class="layout" id="content-inner"><div id="tag"><div class="article-sort-title">标签 - 数学</div><div class="article-sort"><div class="article-sort-item year">2026</div><div class="article-sort-item no-article-cover"><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2026-07-11T16:00:03.000Z" title="发表于 2026-07-12 00:00:03">2026-07-12</time></div><a class="article-sort-item-title" href="/2026/07/12/ScientificCalculator-Kotlin%E7%A7%91%E5%AD%A6%E8%AE%A1%E7%AE%97%E5%99%A8/" title="ScientificCalculator — Kotlin Compose 科学计算器">ScientificCalculator — Kotlin Compose 科学计算器</a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/touxiang.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">lizhichao</div><div class="author-info-description">USTB · 热爱 AI Coding 与开源<br><i class="fas fa-envelope"></i> caeamer@163.com<br><i class="fab fa-qq"></i> 87452310</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">17</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">49</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/coderirse"><i class="fab fa-github"></i><span>关注我</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/coderirse" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:caeamer@163.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到我的个人博客！这里记录了我的学习、项目和成长经历。</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/07/12/showwe-%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%A4%BE%E5%8C%BA%E5%B9%B3%E5%8F%B0/" title="ShowWe — 微信小程序社区平台">ShowWe — 微信小程序社区平台</a><time datetime="2026-07-11T16:00:08.000Z" title="发表于 2026-07-12 00:00:08">2026-07-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/07/12/awesome-claude-code%E7%94%9F%E6%80%81%E8%B5%84%E6%BA%90%E5%90%88%E9%9B%86/" title="awesome-claude-code — Claude Code 生态资源合集">awesome-claude-code — Claude Code 生态资源合集</a><time datetime="2026-07-11T16:00:07.000Z" title="发表于 2026-07-12 00:00:07">2026-07-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/07/12/WatchDog-AI-API%E9%A2%9D%E5%BA%A6%E7%9B%91%E6%8E%A7/" title="WatchDog — AI API 额度实时监控">WatchDog — AI API 额度实时监控</a><time datetime="2026-07-11T16:00:06.000Z" title="发表于 2026-07-12 00:00:06">2026-07-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/07/12/Sourcehub-%E6%95%B0%E5%AD%97%E8%B5%84%E6%BA%90%E4%BA%A4%E6%98%93%E5%B9%B3%E5%8F%B0/" title="Sourcehub — Android 数字资源交易平台">Sourcehub — Android 数字资源交易平台</a><time datetime="2026-07-11T16:00:05.000Z" title="发表于 2026-07-12 00:00:05">2026-07-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/07/12/Net-USTB-%E5%8C%97%E7%A7%91%E6%A0%A1%E5%9B%AD%E7%BD%91%E4%B8%80%E9%94%AE%E7%99%BB%E5%BD%95/" title="Net-USTB — 北科校园网一键登录">Net-USTB — 北科校园网一键登录</a><time datetime="2026-07-11T16:00:04.000Z" title="发表于 2026-07-12 00:00:04">2026-07-12</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            
+          </div>
+          <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%91%98%E5%BD%95/"><span class="card-category-list-name">摘录</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E9%9A%8F%E7%AC%94/"><span class="card-category-list-name">随笔</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E9%A1%B9%E7%9B%AE/"><span class="card-category-list-name">项目</span><span class="card-category-list-count">14</span></a></li>
+          </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/Python/" style="font-size: 1.45em; color: rgb(50, 50, 62);">Python</a><a href="/tags/AI-Agent/" style="font-size: 1.25em; color: rgb(99, 124, 50);">AI Agent</a><a href="/tags/%E9%87%8F%E5%8C%96%E4%BA%A4%E6%98%93/" style="font-size: 1.15em; color: rgb(70, 162, 195);">量化交易</a><a href="/tags/%E9%87%91%E8%9E%8D%E7%A7%91%E6%8A%80/" style="font-size: 1.15em; color: rgb(169, 166, 95);">金融科技</a><a href="/tags/%E5%AD%A6%E6%9C%AF%E5%B7%A5%E5%85%B7/" style="font-size: 1.15em; color: rgb(107, 195, 143);">学术工具</a><a href="/tags/AI%E8%BE%85%E5%8A%A9/" style="font-size: 1.15em; color: rgb(50, 195, 170);">AI辅助</a><a href="/tags/LaTeX/" style="font-size: 1.15em; color: rgb(50, 50, 150);">LaTeX</a><a href="/tags/%E8%87%AA%E5%8A%A8%E5%8C%96/" style="font-size: 1.15em; color: rgb(50, 94, 61);">自动化</a><a href="/tags/%E5%BC%80%E6%BA%90/" style="font-size: 1.45em; color: rgb(52, 187, 50);">开源</a><a href="/tags/Android/" style="font-size: 1.35em; color: rgb(151, 175, 50);">Android</a><a href="/tags/Kotlin/" style="font-size: 1.35em; color: rgb(50, 91, 90);">Kotlin</a><a href="/tags/Jetpack-Compose/" style="font-size: 1.35em; color: rgb(112, 188, 52);">Jetpack Compose</a><a href="/tags/%E7%94%B5%E5%95%86/" style="font-size: 1.15em; color: rgb(187, 192, 84);">电商</a><a href="/tags/%E5%AE%89%E5%85%A8/" style="font-size: 1.15em; color: rgb(50, 84, 50);">安全</a><a href="/tags/MVVM/" style="font-size: 1.15em; color: rgb(50, 58, 69);">MVVM</a><a href="/tags/USTB/" style="font-size: 1.25em; color: rgb(79, 50, 50);">USTB</a><a href="/tags/%E6%A0%A1%E5%9B%AD%E7%BD%91/" style="font-size: 1.15em; color: rgb(90, 50, 189);">校园网</a><a href="/tags/Chrome-Extension/" style="font-size: 1.15em; color: rgb(166, 50, 66);">Chrome Extension</a><a href="/tags/JavaScript/" style="font-size: 1.25em; color: rgb(108, 119, 158);">JavaScript</a><a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 1.15em; color: rgb(161, 132, 197);">工具</a></div></div><div class="card-widget card-archives">
+    <div class="item-headline">
+      <i class="fas fa-archive"></i>
+      <span>归档</span>
+      
+    </div>
+  
+    <ul class="card-archive-list">
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2026/07/">
+            <span class="card-archive-list-date">
+              七月 2026
+            </span>
+            <span class="card-archive-list-count">9</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2026/06/">
+            <span class="card-archive-list-date">
+              六月 2026
+            </span>
+            <span class="card-archive-list-count">8</span>
+          </a>
+        </li>
+      
+    </ul>
+  </div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">17</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-07-12T15:17:48.499Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2024 - 2026 By lizhichao</span></div><div class="footer_custom_text">Keep moving, keep coding.</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.5"></script><script src="/js/main.js?v=5.5.5"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.14/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script src="/generated/i18n-post-map.js"></script><script src="/js/lang-switcher.js"></script><script src="/js/lang-home-subtitle.js"></script><script id="canvas_nest" defer="defer" color="59,112,252" opacity="0.4" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/dist/canvas-nest.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
