@@ -11,7 +11,7 @@ top_img: https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=1920&q=8
 
 {% timeline %}
 
-<!-- timeline Sep 2024 — Present | USTB — Mechanical Engineering -->
+<!-- timeline Sep 2024 — Present | USTB  -->
 
 - Undergraduate, Sophomore
 - Self-taught computer science and programming, focusing on AI
