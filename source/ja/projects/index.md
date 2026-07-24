@@ -10,7 +10,7 @@ top_img: https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1920&q=80
 ## 主なプロジェクト
 
 {% note info %}
-ロボット制御、AIエージェント、フィンテック、学術ツールなど、幅広い分野のプロジェクトです。
+ロボット制御、Androidアプリ、AIエージェント、フィンテック、学術ツールなど、独力で開発または深く関わったプロジェクトの数々です。
 {% endnote %}
 
 ---
@@ -19,13 +19,14 @@ top_img: https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1920&q=80
 
 {% label Python blue %} {% label ROS2 green %} {% label CANバス orange %} {% label ロボティクス pink %}
 
-ROS2ベースの差動駆動壁面爬行ロボット制御システム。CAN + RS485デュアルプロトコルによる4モーター協調制御。
+ROS2ベースの差動駆動壁面爬行ロボット制御システム。CAN + RS485デュアルプロトコルによる4モーター協調制御に対応。
 
 **ハイライト:**
-- デュアルプロトコル制御：CANバス + RS485/Modbusで4台の独立モーターを制御
-- ROS2ネイティブ統合：`/cmd_vel` 購読、速度解算
-- ゲームパッド遠隔操作：十字キー + アナログスティック
-- 安全保護：加速度ランプ制御 + 500msタイムアウト自動停止
+- デュアルプロトコルモーター制御：CANバス + RS485/Modbusで4台の独立モーターを同時制御
+- ROS2ネイティブ統合：`/cmd_vel` を購読し、線速度・角速度をリアルタイムでモーター回転数に解算
+- ゲームパッド遠隔操作：十字キー + アナログスティック軸の独立制御
+- 速度平滑制御：加速度制限ランプ + 500msタイムアウト自動停止保護
+- 物理パラメータ校正済み：車輪径 0.05m、トレッド 0.30m
 
 {% label ロボティクス green %} {% label 組込み green %} {% label 制御アルゴリズム green %}
 
@@ -35,13 +36,13 @@ ROS2ベースの差動駆動壁面爬行ロボット制御システム。CAN + R
 
 {% label C++ blue %} {% label Python green %} {% label ROS orange %} {% label CANバス pink %}
 
-ROS Melodicベースの足首外骨格ロボット完全制御システム。CANバスモーター制御とAHRS慣性航法センサードライバーを搭載。
+ROS Melodicベースの足首外骨格ロボット完全制御システム。CANバスモータードライバーとAHRS慣性航法センサードライバーを含む。
 
 **ハイライト:**
-- トルク/速度/位置モード対応の `can_ankle` ROSパッケージ、CANopen設定サポート
-- FDILink Deta-10 AHRS/INSセンサー用 `fdilink_ahrs` ドライバー
-- IMU、GPS、姿勢角、オドメトリのROS Topicを配信
-- ROS Bagによる実験データ録音・再生分析
+- トルクモード、速度モード、CANopen設定対応の `can_ankle` ROSパッケージを実装
+- FDILink Deta-10 AHRS/INSセンサー用 `fdilink_ahrs` ROSドライバーを実装
+- IMU、GPS、姿勢角、オドメトリなど複数のROS Topicを配信
+- ROS Bagによる実験データ記録・再生分析を統合
 
 {% label ロボティクス green %} {% label 組込み green %} {% label センサー融合 green %}
 
@@ -51,12 +52,12 @@ ROS Melodicベースの足首外骨格ロボット完全制御システム。CAN
 
 {% label Python blue %} {% label Streamlit red %} {% label LLM pink %} {% label Docker orange %}
 
-プロのアナリストチームをシミュレートする複数AIエージェント株式分析システム。A株、香港株、米国株をカバー。
+プロのアナリストチームをシミュレートする複合型複数AIエージェント株式分析システム。A株、香港株、米国株をカバー。
 
 **ハイライト:**
 - **6つの専門分析エージェント**：テクニカル、ファンダメンタル、資金フロー、リスク評価、センチメント、ニュース
-- **戦略パネル**：4つのAIエージェントによるセクターローテーション、マクロ政策、資金フロー、センチメント分析
-- **龍虎リスト追跡**：5つのAIエージェントによる短期機会とホットセクターの特定
+- **戦略パネル**：4つのAIエージェントがセクターローテーション、マクロ政策、資金フロー、市場センチメントを毎日自動分析
+- **龍虎リスト追跡**：5つのAIエージェントが龍虎リストデータを追跡し、短期機会とホットセクターを特定
 - **銘柄選定**：機関投資家の資金動向を追跡し、3〜5つの優良銘柄をスクリーニング
 - **リアルタイム監視**：価格アラート＋DingTalk/Feishu Webhook通知
 - **MiniQMT量的取引**連携、Dockerワンクリックデプロイ
@@ -69,7 +70,7 @@ ROS Melodicベースの足首外骨格ロボット完全制御システム。CAN
 
 {% label Python blue %} {% label TypeScript pink %} {% label LLM orange %} {% label マルチプラットフォーム red %}
 
-Nous Researchによる汎用自己進化型AIエージェント。経験学習、永続メモリ、クロスプラットフォーム機能を搭載。
+Nous Researchによる汎用自己進化型AIエージェント。経験学習、永続メモリ、クロスプラットフォーム実行機能を搭載。
 
 **ハイライト:**
 - **クローズドループ学習**：タスク完了後にスキルを自動作成し、継続的に自己改善
@@ -78,7 +79,7 @@ Nous Researchによる汎用自己進化型AIエージェント。経験学習�
 - 内蔵**Cronスケジューラー**による無人自動化
 - ローカル、Docker、SSH、K8sなどのデプロイ方式をサポート
 
-{% label AIエージェント green %} {% label 自動化 green %} {% label オープンソース green %}
+{% label AIエージェント green %} {% label 自動化 green %} {% label オープンソース貢献 green %}
 
 ---
 
@@ -86,12 +87,12 @@ Nous Researchによる汎用自己進化型AIエージェント。経験学習�
 
 {% label Python blue %} {% label YAML pink %} {% label LaTeX orange %} {% label Pandoc green %}
 
-Claude Code向けの包括的な学術研究パイプラインスキルスイート。研究から出版までの全ワークフローをカバー。
+Claude Code向けに構築した包括的な学術研究パイプラインスキルスイート。研究から出版までの全ワークフローをカバー。
 
 **ハイライト:**
 - **4つのスキルパッケージ**：深度研究、論文執筆、ピアレビュー、学術パイプラインオーケストレーション
 - **深度研究**：13のエージェントチーム、7つのモード、PRISMAシステマティックレビュー対応
-- **論文執筆**：12のエージェントパイプライン、APA/IEEE/MLA/Chicago引用スタイル対応
+- **論文執筆**：12のエージェントパイプライン、APA/IEEE/MLA/Chicagoなどの引用スタイル対応
 - **学術レビュー**：EIC＋3名のレビュアー＋Devil's Advocateによる多角的評価シミュレーション
 - 必須の**幻覚防止チェック**、スタイル調整、文章品質ゲート
 
@@ -99,20 +100,164 @@ Claude Code向けの包括的な学術研究パイプラインスキルスイー
 
 ---
 
+### 📱 Net-USTB — 北科大キャンパスネットワーク ワンクリックログイン
+
+{% label Kotlin blue %} {% label Compose green %} {% label OkHttp orange %}
+
+北京科技大学キャンパスネットワーク（Dr.COM ePortal 4.x）向けのサードパーティ製ネイティブAndroidクライアント。ブラウザのWeb認証フローに代わり、ワンクリックログイン/ログアウトを実現。
+
+**ハイライト:**
+- ワンクリック認証：ePortal JSONP APIに直接接続、ブラウザ不要
+- 複数キャリア対応：キャンパスアカウント / 中国電信 / 中国聯通
+- AES-256-GCM暗号化による認証情報保存、解析ゼロ・広告ゼロ
+- 使用状況ダッシュボード：残高、利用時間、データ量、ログイン時刻、IPアドレスを一覧表示
+
+{% label Android green %} {% label キャンパスツール green %} {% label オープンソース green %}
+
+---
+
+### 🛒 Sourcehub — Androidデジタルコンテンツ取引プラットフォーム
+
+{% label Kotlin blue %} {% label Compose green %} {% label MVVM orange %} {% label Coil pink %}
+
+PDFやWord文書などのデジタルコンテンツのオンライン購入・ダウンロードに対応した完全なECアプリ。MVVM + Clean Architecture構成、107のKotlinソースファイル、包括的なセキュリティ保護体系を備える。
+
+**ハイライト:**
+- 完全なECループ：ユーザーシステム（JWT）、ショップ、カート、クーポンコード、モック決済、注文管理
+- WorkManagerバックグラウンドダウンロード + AES-256-GCM暗号化ストレージ
+- 7層セキュリティ：Root検出、エミュレータ検出、デバッグ対策、SSLピンニング、HMAC-SHA256リクエスト署名、スクリーンショット防止、Keystoreファイル暗号化
+
+{% label Android green %} {% label EC green %} {% label セキュリティ green %}
+
+---
+
+### 🐶 WatchDog — AI API残高リアルタイム監視
+
+{% label Kotlin blue %} {% label Compose green %} {% label Retrofit orange %}
+
+ヘビーなAI開発者向けのAndroidツール。DeepSeek、Kimi、Zhipu GLM、SiliconFlowの4プラットフォームのAPI残高と月間使用量をリアルタイム監視。リリースAPK公開済み。
+
+**ハイライト:**
+- 4プラットフォーム対応のカラーダッシュボード + Pull-to-refresh
+- スマート使用量追跡：月初残高スナップショットから月間使用量を自動計算
+- APIキーのローカル独立管理、自動更新間隔の設定が可能
+- 部分的な障害を許容：1プラットフォームの異常が全体に影響しない
+
+{% label Android green %} {% label AIツール green %} {% label 監視 green %}
+
+---
+
+### 🧮 ScientificCalculator — Kotlin Compose 関数電卓
+
+{% label Kotlin blue %} {% label Compose green %} {% label Material3 orange %}
+
+標準的な科学計算に加え、方程式ソルバーと行列計算機を統合した多機能Android関数電卓。
+
+**ハイライト:**
+- 式エンジン：Shunting-yardアルゴリズム + 再帰下降解析
+- 方程式求解：一元一次/二次方程式（判別式分析）、二元/三元連立方程式（クラメルの公式）
+- 行列計算：加減乗算、転置、行列式、逆行列、階数（ガウス消去法）
+- Material 3デザイン、三角関数のDEG/RAD切替
+
+{% label Android green %} {% label 科学計算 green %} {% label オープンソース green %}
+
+---
+
+### 💬 ShowWe — WeChatミニプログラム コミュニティプラットフォーム
+
+{% label WeChatミニプログラム blue %} {% label クラウド開発 green %} {% label JavaScript orange %}
+
+WeChatクラウド開発で構築したフル機能コミュニティ/ソーシャルミニプログラム（v1.1.0）。投稿、コメント・いいね、プライベートメッセージ、パーソナライズドプロフィールに対応。
+
+**ハイライト:**
+- 投稿システム：リッチテキスト + 最大9枚の画像 + 5つの添付ファイル、6カテゴリ、#ハッシュタグ#自動抽出
+- ソーシャル機能：コメント/いいね（楽観的UI + アトミックDB操作）、一対一のプライベートメッセージ、未読バッジ
+- 多層キャッシュ：メモリキャッシュ（TTL）+ ローカルストレージでページ瞬時表示
+- 画像自動圧縮 + 統一アップロードサービス（リトライ対応）
+
+{% label WeChatミニプログラム green %} {% label コミュニティ green %} {% label フルスタック green %}
+
+---
+
+### 🎓 USTB成績ランキング ブラウザ拡張
+
+{% label JavaScript blue %} {% label Chrome拡張 green %} {% label Manifest V3 orange %}
+
+北科大教務システム向けのChrome / Edge拡張。成績照会ページには順位が表示されないが、バックエンドAPIは実際にそのデータを返している——この拡張がそれを可視化する。典型的な「学生ハッカー」プロジェクト。
+
+**ハイライト:**
+- Page Hookでfetch/XHRをインターセプトし、成績APIが返す隠しフィールドをキャプチャ
+- DOMを動的に変更し、成績表に順位/総人数列を挿入
+- Manifest V3、ChromeとEdgeの両方に対応
+
+{% label ブラウザ拡張 green %} {% label キャンパスツール green %} {% label オープンソース green %}
+
+---
+
+### 🌟 awesome-claude-code — Claude Codeエコシステム リソース集
+
+{% label Markdown blue %} {% label Awesome List green %} {% label オープンソース orange %}
+
+コミュニティ主導のClaude Codeリソース集。Awesome Listの定番フォーマットで20以上のカテゴリを整理。コミュニティで広く引用され、新規ユーザー向けの推奨リソース索引。
+
+**ハイライト:**
+- 20以上のリソースカテゴリ：公式ドキュメント、Skills、プラグイン、マルチエージェントオーケストレーション、セキュリティ、可観測性など
+- Recently Addedマーキーで最新リソースを表示
+- 各エントリにGitHub Statsバッジを付与
+
+{% label ClaudeCode green %} {% label リソース集 green %} {% label コミュニティ green %}
+
+---
+
+## オープンソース詳解
+
+私に深い影響を与えた2つのオープンソースプロジェクトの詳解記事です。
+
+### 🔬 tinygrad — 極小ディープラーニングフレームワーク
+
+{% label Python blue %} {% label CUDA green %} {% label Metal orange %} {% label WebGPU red %}
+
+PyTorchとmicrogradの間に位置する極小ディープラーニングフレームワーク。約200のPythonソースファイル、わずか約25の低レベル演算子で新しいアクセラレータバックエンドに対応可能。CUDA / Metal / OpenCL / WebGPUをサポート。
+
+**ハイライト:**
+- PyTorchライクなEager API + 自動微分
+- IRコンパイラ：カーネル融合とlowering、JIT + グラフ実行
+- GGUFフォーマット対応、主要なオープンソースLLMを実行可能
+
+{% label ディープラーニング green %} {% label オープンソース解析 green %}
+
+---
+
+### 💻 Warp — ターミナルを再定義するAIプログラミング環境
+
+{% label Rust blue %} {% label Tokio green %} {% label AI Agent orange %}
+
+Rustベースのモダンなインテリジェントターミナル。AIエージェントをネイティブ統合し、Claude Code、Codex、Geminiなど主要AIコーディングツールに対応——ターミナルをAI時代の中核的なプログラミングインターフェースに。
+
+**ハイライト:**
+- GPUアクセラレーションによるターミナルレンダリング（Alacrittyベース）
+- NuShellによるモダンなシェル体験
+- 内蔵エージェント + 複数AIコーディングツール連携
+- 再起動をまたぐセッション永続化
+
+{% label DevTools green %} {% label オープンソース解析 green %} {% label ターミナル green %}
+
+---
+
 ### 🌐 個人技術ブログ
 
 {% label Hexo blue %} {% label Butterfly green %} {% label GitHub Pages pink %}
 
-Hexo 8.xとButterflyテーマで構築した個人ブログ。CSS深度カスタマイズ、GitHub Pagesにデプロイ。
+Hexo 8.xとButterflyテーマで構築した個人ブログ。GitHub Pagesにデプロイ。テーマの上に雑誌編集風の深いビジュアルリデザインを施した。
 
 **ハイライト:**
-- Butterflyテーマの深度カスタマイズ（カスタムCSS、グラデーション背景、Canvasアニメーション）
-- Busuanzi訪問者統計連携
-- 自動化CI/CD：`source`ブランチにソース、`hexo deploy`で`master`にデプロイ
-- 無料ホスティング、ゼロ運用コスト
+- 雑誌編集風デザインシステム：紙とインクの配色、セリフ書体、ドロップキャップ、ヘアライン
+- 中日英トリリンガルコンテンツ、独自のi18n記事マッピングスクリプト
+- 不蒜子（busuanzi）訪問者統計を統合
+- 自動デプロイ：ソースを`source`ブランチにプッシュ、`hexo deploy`で`master`に公開
 
 {% btn https://github.com/coderirse/coderirse.github.io, ソースコード, fab fa-github %}
 
 ---
 
-*その他のプロジェクトは [GitHub](https://github.com/coderirse) でご覧いただけます。*
+*その他のプロジェクトやコードの詳細は [GitHub](https://github.com/coderirse) でご覧いただけます。*

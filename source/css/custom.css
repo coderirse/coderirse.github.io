@@ -479,8 +479,8 @@ html[lang] .code-block {
   color: var(--ink);
 }
 
-/* 首字下沉（杂志开篇） */
-#article-container > p:first-of-type::first-letter {
+/* 首字下沉（杂志开篇，仅限文章页） */
+#post #article-container > p:first-of-type::first-letter {
   font-family: var(--font-serif);
   font-size: 3.1em;
   font-weight: 600;
@@ -922,4 +922,16 @@ html[lang] .code-block {
 .post-share .social-share-icon,
 #post .post-share .social-share-icon {
   color: var(--ink-mute) !important;
+}
+
+/* ---------- note 提示块：融入纸墨体系 ---------- */
+#article-container .note {
+  background: var(--paper-deep) !important;
+  border-color: var(--hairline) !important;
+  border-radius: 0 !important;
+  color: var(--ink-soft) !important;
+}
+#article-container .note .note-icon,
+#article-container .note i {
+  color: var(--accent) !important;
 }
