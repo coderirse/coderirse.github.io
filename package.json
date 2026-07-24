@@ -4,10 +4,10 @@
   "private": true,
   "scripts": {
     "prepare:i18n-posts": "node scripts/i18n-posts.js",
-    "build": "npm run prepare:i18n-posts && hexo generate",
+    "build": "pnpm run prepare:i18n-posts && hexo generate",
     "clean": "hexo clean",
-    "deploy": "npm run prepare:i18n-posts && hexo generate && hexo deploy",
-    "server": "npm run prepare:i18n-posts && hexo server"
+    "deploy": "pnpm run prepare:i18n-posts && hexo generate && hexo deploy",
+    "server": "pnpm run prepare:i18n-posts && hexo server"
   },
   "hexo": {
     "version": "8.1.2"
