@@ -20,14 +20,14 @@ menu:
 # 网站背景 (透明，避免遮挡首页头图)
 background:
 
-# 首页顶部大图
-index_img: /img/louie-martinez-IocJwyqRv3M-unsplash.jpg
+# 杂志编辑风：不使用照片头图，改用纸质刊头
+index_img:
 
-# 各页面顶部大图 (Unsplash 免费高清)
-default_top_img: https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1920&q=80
-archive_img: https://images.unsplash.com/photo-1524995997946-a1c2e68a4f1a?w=1920&q=80
-tag_img: https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=1920&q=80
-category_img: https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=1920&q=80
+# 各页面顶部同样走刊头风格
+default_top_img:
+archive_img:
+tag_img:
+category_img:
 
 # 代码块 (mac 风格更精致)
 code_blocks:
@@ -164,16 +164,16 @@ busuanzi:
   site_pv: true
   page_pv: true
 
-# 主题配色 - 现代化蓝紫色系
+# 主题配色 - 编辑风朱砂红 + 墨色
 theme_color:
   enable: true
-  main: '#3b70fc'
-  paginator: '#3b70fc'
-  link: '#3b70fc'
-  button_hover: '#2563eb'
-  scrollbar_color: '#3b70fc'
-  meta_theme_color_light: '#ffffff'
-  meta_theme_color_dark: '#0d0d0d'
+  main: '#a63d2a'
+  paginator: '#a63d2a'
+  link: '#a63d2a'
+  button_hover: '#1c1a16'
+  scrollbar_color: '#8a857a'
+  meta_theme_color_light: '#f6f2ea'
+  meta_theme_color_dark: '#171512'
 
 # 文章内页美化
 beautify:
@@ -187,13 +187,9 @@ font:
   global_font_size: 16px
   code_font_size: 14px
 
-# Canvas 动态背景 - 点线网络粒子
+# Canvas 动态背景 - 已关闭 (精简视觉，降低性能开销)
 canvas_nest:
-  enable: true
-  color: '59,112,252'
-  opacity: 0.4
-  zIndex: -1
-  count: 99
+  enable: false
 
 # PWA
 pwa:
@@ -202,9 +198,12 @@ pwa:
 # 图片灯箱
 lightbox: fancybox
 
-# 注入自定义 CSS
+# 注入自定义 CSS + Web 字体
 inject:
   head:
+    - <link rel="preconnect" href="https://fonts.googleapis.com">
+    - <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    - <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=JetBrains+Mono:wght@400;500&family=Noto+Serif+SC:wght@400;500;600;700&display=swap">
     - <link rel="stylesheet" href="/css/custom.css">
   bottom:
     - <script src="/generated/i18n-post-map.js"></script>
