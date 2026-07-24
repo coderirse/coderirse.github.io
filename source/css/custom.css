@@ -715,7 +715,8 @@ html[lang] .code-block {
 .lang-switcher {
   position: fixed;
   bottom: 28px;
-  right: 20px;
+  left: 20px;
+  right: auto;
   z-index: 1000;
 }
 .lang-btn {
@@ -743,7 +744,8 @@ html[lang] .code-block {
 .lang-dropdown {
   position: absolute;
   bottom: 100%;
-  right: 0;
+  left: 0;
+  right: auto;
   margin-bottom: 6px;
   background: var(--paper);
   border: 1px solid var(--ink);
@@ -783,7 +785,8 @@ html[lang] .code-block {
 @media screen and (max-width: 768px) {
   .lang-switcher {
     bottom: 16px;
-    right: 12px;
+    left: 12px;
+    right: auto;
   }
   #site-title,
   #page-header.lang-home-header .lang-home-site-info h1 {
