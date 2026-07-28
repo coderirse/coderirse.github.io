@@ -34,15 +34,15 @@ A ROS2-based differential-drive wall-crawling robot control system with CAN + RS
 
 ### 🤖 Ankle Exoskeleton Control System
 
-{% label C++ blue %} {% label Python green %} {% label ROS orange %} {% label CAN Bus pink %}
+{% label C++ blue %} {% label Python green %} {% label ROS2 green %} {% label CAN Bus orange %} {% label Modbus pink %}
 
-A ROS Melodic-based complete control system for an ankle exoskeleton robot, with CAN bus motor control and AHRS inertial navigation sensor driver.
+v2.0: Fully migrated to ROS2 Humble. 5-mode adaptive gait controller, CAN dual-protocol stack, Modbus RTU force sensor, 5A-A5 frame IMU driver.
 
 **Highlights:**
 - `can_ankle` ROS package with torque mode, velocity mode, and CANopen-configured motor control
 - `fdilink_ahrs` driver for the FDILink Deta-10 AHRS/INS sensor
-- Publishes IMU, GPS, attitude, and odometry ROS topics
-- Experimental data recording and playback analysis via ROS Bag
+- Modbus RTU force sensor + foot switch + encoder read
+- Safety: encoder limit ±45°, force overload 300N, sequence validation
 
 {% label Robotics green %} {% label Embedded green %} {% label Sensor Fusion green %}
 

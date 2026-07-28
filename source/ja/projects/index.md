@@ -34,7 +34,7 @@ ROS2ベースの差動駆動壁面爬行ロボット制御システム。CAN + R
 
 ### 🤖 足首外骨格ロボット制御システム
 
-{% label C++ blue %} {% label Python green %} {% label ROS orange %} {% label CANバス pink %}
+{% label C++ blue %} {% label Python green %} {% label ROS2 green %} {% label CANバス orange %} {% label Modbus pink %}
 
 ROS Melodicベースの足首外骨格ロボット完全制御システム。CANバスモータードライバーとAHRS慣性航法センサードライバーを含む。
 

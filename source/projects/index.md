@@ -34,15 +34,15 @@ top_img: https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1920&q=80
 
 ### 🤖 脚踝外骨骼机器人控制系统
 
-{% label C++ blue %} {% label Python green %} {% label ROS orange %} {% label CAN总线 pink %}
+{% label C++ blue %} {% label Python green %} {% label ROS2 green %} {% label CAN总线 orange %} {% label Modbus pink %}
 
-基于 ROS Melodic 的脚踝外骨骼机器人完整控制系统，包含 CAN 总线电机驱动和 AHRS 惯性导航传感器驱动。
+v2.0 全面升级：已迁移至 ROS2 Humble。5 模式自适应步态控制、CAN 双协议栈、Modbus RTU 力传感器、5A-A5 帧 IMU 驱动。
 
 **核心亮点：**
-- 实现 `can_ankle` ROS 包，支持力矩模式、速度模式和 CANopen 配置的电机控制
-- 实现 `fdilink_ahrs` ROS 驱动，适配 FDILink Deta-10 AHRS/INS 传感器
-- 发布 IMU、GPS、姿态角、里程计等多种 ROS Topic
-- 集成实验数据录制与回放分析（ROS Bag）
+- 5 模式状态机：STAND→TORQUE→PRE_TORQUE→DRIVE→VELOCITY，自适应步速估计 + PID 自调参
+- IMU v1.6.8+ 5A 5A 帧协议，7 个 ROS2 Topic + TF 广播
+- Modbus RTU 力传感器 + 足底开关 + 编码器读取
+- 安全保护：编码器限位 ±45°、力过载 300N、指令序列验证
 
 {% label 机器人 green %} {% label 嵌入式 green %} {% label 传感器融合 green %}
 
