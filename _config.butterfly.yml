@@ -209,5 +209,6 @@ inject:
     - <link rel="stylesheet" href="/css/fonts.css">
     - <link rel="stylesheet" href="/css/custom.css">
   bottom:
+    - <script src="/js/visitor-stats.js"></script>
     - <script src="/js/lang-switcher.js"></script>
     - <script src="/js/lang-home-subtitle.js"></script>

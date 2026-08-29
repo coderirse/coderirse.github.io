@@ -37,6 +37,15 @@ if theme.aside.card_webinfo.enable
           .item-name= `${_p('aside.card_webinfo.site_pv_name')} :`
           .item-count#busuanzi_value_site_pv
             i.fa-solid.fa-spinner.fa-spin
+      else if site.data['visitor-stats']
+        //- 自托管访客统计：Cloudflare Web Analytics + GitHub Actions（构建期兜底值，前端拉新覆盖）
+        - const stats = site.data['visitor-stats']
+        .webinfo-item
+          .item-name= `${_p('aside.card_webinfo.site_pv_name')} :`
+          .item-count#visitor-stats-pv= stats.pv.toLocaleString()
+        .webinfo-item
+          .item-name= `${_p('aside.card_webinfo.site_uv_name')} :`
+          .item-count#visitor-stats-uv= stats.visitors.toLocaleString()
       if theme.aside.card_webinfo.last_push_date
         .webinfo-item
           .item-name= `${_p('aside.card_webinfo.last_push_date.name')} :`

@@ -1,0 +1,44 @@
+name: Visitor Stats
+
+on:
+  schedule:
+    - cron: '23 * * * *' # 每小时刷新一次
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: visitor-stats
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: source
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Query Cloudflare and write stats
+        env:
+          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          CF_ACCOUNT_TAG: '808a6aa95fe9a0086f46b0fa3531b93f'
+          CF_SITE_TAG: 'fa3c2efe5f4b431a943eca6eb87657e2'
+        run: node tools/fetch-visitor-stats.cjs
+
+      - name: Commit updated stats
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet source/_data/visitor-stats.json; then
+            echo "No change"
+          else
+            git add source/_data/visitor-stats.json
+            git commit -m "chore: update visitor stats (automated)"
+            git push
+          fi
