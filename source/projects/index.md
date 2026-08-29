@@ -260,4 +260,108 @@ Nous Research 出品的通用自进化 AI 智能体，具备经验学习、持�
 
 ---
 
+### 🔢 BaseConversion — 程序员进制转换器
+
+{% label Android blue %} {% label Kotlin green %} {% label Compose orange %} {% label 开源 pink %}
+
+纯本地、零广告的安卓进制转换器：进制实时联动、补码与 IEEE 754 位模式可视化。
+
+**核心亮点：**
+- 四进制框实时联动，`BigInteger` 任意精度，8/16/32/64 位补码
+- 浮点模式实时展示 float32/64 的 IEEE 754 位模式（支持 NaN / ±Infinity / -0.0）
+- 智能键盘按进制禁用非法键，自动识别 `0x` / `0b` / `0o` 前缀
+- 纯 Kotlin domain 层 + JUnit 单测，唯一联网功能是检查更新
+
+{% label Android green %} {% label 工具 green %} {% label MVI green %}
+
+{% btn https://github.com/coderirse/BaseConversion, 查看源码, fab fa-github %}
+
+---
+
+### 📅 贝壳课表 — USTB 课表 App
+
+{% label Android blue %} {% label Kotlin green %} {% label Room orange %} {% label USTB pink %}
+
+北科大课表 App：教务一键导入、教学周日历精确映射、周视图课表与上课提醒。
+
+**核心亮点：**
+- WebView 统一认证一键导入课表，App 不接触学号密码
+- 官方校历教学周映射，长假不占教学周序号，假期自动定位
+- 大节排版周视图、单双周标注、上课前提醒（精确闹钟）
+- 直调教务 JSON 接口（无需解析 HTML），解析逻辑有单测覆盖
+
+{% label Android green %} {% label 课表 green %} {% label 隐私优先 green %}
+
+{% btn https://github.com/coderirse/BeikeSchedule, 查看源码, fab fa-github %} {% btn https://github.com/coderirse/BeikeSchedule/releases, 下载 APK, fas fa-download %}
+
+---
+
+### ⏳ 倒数日 App — 立项与产品设计
+
+{% label Android blue %} {% label Glance green %} {% label 产品设计 orange %}
+
+以桌面小组件为核心触点的倒数 / 正数日工具，目前完成完整 PRD 与技术选型（立项阶段）。
+
+**核心亮点：**
+- 产品定位：不是日历，而是"一眼感到时间距离"的情绪工具
+- 核心路径 3 步内完成首个事件，日常只看桌面 / 锁屏小组件
+- 技术路线选定 Jetpack Glance + Compose，Room + DataStore 数据层
+- 克制原则：无付费、无广告、无账号、无云同步，未来全开源
+
+{% label 产品设计 green %} {% label Glance green %} {% label 开源规划 green %}
+
+---
+
+### 🌍 LingoFlow — AI 翻译学习 App
+
+{% label Android blue %} {% label ML Kit green %} {% label LLM orange %} {% label Compose pink %}
+
+ML Kit 端侧翻译 + LLM 流式长文翻译 + 韦氏词典查词的安卓翻译学习应用。
+
+**核心亮点：**
+- 英中日韩端侧秒翻（离线可用），长文 LLM 流式润色并自动排版
+- 韦氏词典权威查词：音标、例句、词源，点词即查
+- 四种翻译风格（自然 / 简洁 / 正式 / 学习）+ TTS 逐句朗读
+- API Key 本地加密存储（EncryptedSharedPreferences），隐私优先
+
+{% label Android green %} {% label AI green %} {% label 开源 green %}
+
+{% btn https://github.com/coderirse/LingoFlow, 查看源码, fab fa-github %} {% btn https://github.com/coderirse/LingoFlow/releases, 下载 APK, fas fa-download %}
+
+---
+
+### 🧭 我的生活助手 — Tauri 桌面应用
+
+{% label Tauri blue %} {% label Rust green %} {% label SQLite orange %} {% label 效率 pink %}
+
+个人专属的学习生活管理桌面应用：计划、开发、健身、饮食、游戏一个应用全管。
+
+**核心亮点：**
+- 今日计划 / 开发工作（任务+时间记录）/ 健身（训练记录+体重趋势）/ 饮食 / 游戏时长全模块
+- GitHub 模块只读个人仓库、Issue、PR（唯一联网功能）
+- 数据本机 SQLite，令牌存 Windows 凭据管理器，完全离线可备份恢复
+- 数据层独立 crate（life-assistant-core），Rust + 前端双层测试
+
+{% label Rust green %} {% label 桌面 green %} {% label 隐私优先 green %}
+
+---
+
+### 🗺️ Trailmap — 我的足迹地图
+
+{% label Leaflet blue %} {% label Vite green %} {% label Globe.GL orange %} {% label 开源 pink %}
+
+交互式个人旅行地图：照片、故事、时间线播放与 3D 地球，数据驱动、推送即部署。
+
+**核心亮点：**
+- 发光标记 + 旅行故事导航 + 照片 Lightbox 画廊
+- 时间线播放器按日期自动播放轨迹，路线组流动虚线动画
+- Globe.GL 一键切 3D 地球（懒加载），三种底图 + 双主题
+- `/#/beijing` URL 直达地点，改 `locations.json` 即增删地点
+
+{% label 数据驱动 green %} {% label 地图 green %} {% label 自动部署 green %}
+
+{% btn https://github.com/coderirse/trailmap, 查看源码, fab fa-github %}
+
+---
+
 *更多项目和代码细节，欢迎访问我的 [GitHub](https://github.com/coderirse)。*

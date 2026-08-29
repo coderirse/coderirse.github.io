@@ -253,10 +253,114 @@ Hexo 8.xとButterflyテーマで構築した個人ブログ。GitHub Pagesにデ
 **ハイライト:**
 - 雑誌編集風デザインシステム：紙とインクの配色、セリフ書体、ドロップキャップ、ヘアライン
 - 中日英トリリンガルコンテンツ、独自のi18n記事マッピングスクリプト
-サードパーティフォントリンクなし（欧文フォントはセルフホスト）、Cloudflare Web Analytics アクセス統計
+- サードパーティフォントリンクなし（欧文フォントはセルフホスト）、Cloudflare Web Analytics アクセス統計
 - 自動デプロイ：ソースを`source`ブランチにプッシュ、`hexo deploy`で`master`に公開
 
 {% btn https://github.com/coderirse/coderirse.github.io, ソースコード, fab fa-github %}
+
+---
+
+### 🔢 BaseConversion — プログラマー向け進数変換ツール
+
+{% label Android blue %} {% label Kotlin green %} {% label Compose orange %} {% label オープンソース pink %}
+
+完全ローカル・広告なしの Android 進数変換アプリ。リアルタイム連携変換、2 の補数と IEEE 754 ビットパターン表示に対応。
+
+**ハイライト:**
+- 4 進数フィールドのリアルタイム連携、`BigInteger` 任意精度、8/16/32/64 ビット 2 の補数
+- float32/64 の IEEE 754 ビットパターンをリアルタイム表示（NaN / ±Infinity / -0.0 対応）
+- 進数ごとに不正キーを無効化するスマートキーボード、`0x` / `0b` / `0o` プレフィックス自動認識
+- 純 Kotlin domain レイヤー + JUnit 単体テスト。ネット通信は更新確認のみ
+
+{% label Android green %} {% label ツール green %} {% label MVI green %}
+
+{% btn https://github.com/coderirse/BaseConversion, ソースコード, fab fa-github %}
+
+---
+
+### 📅 BeikeSchedule ベイク課表 — USTB 時間割アプリ
+
+{% label Android blue %} {% label Kotlin green %} {% label Room orange %} {% label USTB pink %}
+
+北京科技大学の時間割アプリ。教務システムからのワンタップインポート、教学週カレンダーの正確なマッピング、週表示と授業リマインダー。
+
+**ハイライト:**
+- WebView 統一認証で時間割をワンタップインポート。アプリは学籍番号・パスワードに触れない
+- 公式学事カレンダーの教学週マッピング。長期休暇は自動処理
+- コマ単位の週表示、隔週マーカー、正確なアラームによる授業前リマインダー
+- 教務の構造化 JSON API を直接呼び出し（HTML パース不要）、パーサーは単体テスト済み
+
+{% label Android green %} {% label 時間割 green %} {% label プライバシー第一 green %}
+
+{% btn https://github.com/coderirse/BeikeSchedule, ソースコード, fab fa-github %} {% btn https://github.com/coderirse/BeikeSchedule/releases, APK をダウンロード, fas fa-download %}
+
+---
+
+### ⏳ カウントダウンアプリ — 企画とプロダクト設計
+
+{% label Android blue %} {% label Glance green %} {% label プロダクト設計 orange %}
+
+ホーム画面ウィジェットを核としたカウントダウン / カウントアップツール。PRD と技術選定が完了（企画段階）。
+
+**ハイライト:**
+- コンセプト：カレンダーではなく、時間の距離をひと目で感じるための感情ツール
+- 最初のイベントは 3 ステップ以内。日常ではホーム / ロック画面ウィジェットを見るだけ
+- ウィジェットは Jetpack Glance + Compose ルート、データ層は Room + DataStore
+- 抑制の原則：課金なし、広告なし、アカウント不要、クラウド同期なし。将来は完全オープンソース化
+
+{% label プロダクト設計 green %} {% label Glance green %} {% label オープンソース計画 green %}
+
+---
+
+### 🌍 LingoFlow — AI 翻訳学習アプリ
+
+{% label Android blue %} {% label ML Kit green %} {% label LLM orange %} {% label Compose pink %}
+
+ML Kit オンデバイス翻訳 + LLM ストリーミング長文翻訳 + Merriam-Webster 辞書検索の Android 翻訳アプリ。
+
+**ハイライト:**
+- 英中日韓のオフライン即翻訳。長文は LLM がストリーミングで整形
+- Merriam-Webster の権威ある辞書検索：発音記号、用例、語源。単語タップで検索
+- 4 つの翻訳スタイル（ナチュラル / 簡潔 / フォーマル / 学習）+ 文ごとの TTS 読み上げ
+- API キーは端末内で暗号化保存（EncryptedSharedPreferences）、プライバシー第一
+
+{% label Android green %} {% label AI green %} {% label オープンソース green %}
+
+{% btn https://github.com/coderirse/LingoFlow, ソースコード, fab fa-github %} {% btn https://github.com/coderirse/LingoFlow/releases, APK をダウンロード, fas fa-download %}
+
+---
+
+### 🧭 生活アシスタント — Tauri デスクトップアプリ
+
+{% label Tauri blue %} {% label Rust green %} {% label SQLite orange %} {% label 生産性 pink %}
+
+個人専用の学習・生活管理デスクトップアプリ。計画、開発、フィットネス、食事、ゲームを一元管理。
+
+**ハイライト:**
+- 今日の計画 / 開発作業（タスク + 作業時間）/ フィットネス（トレーニング記録 + 体重トレンド）/ 食事 / プレイ時間の全モジュール
+- GitHub モジュールはリポジトリ・Issue・PR を読み取り専用表示（唯一のオンライン機能）
+- データはローカル SQLite、トークンは Windows 資格情報マネージャーに保存。完全オフラインでバックアップ / リストア可能
+- データ層は独立 crate（life-assistant-core）。Rust とフロントエンドの二層でテスト
+
+{% label Rust green %} {% label デスクトップ green %} {% label プライバシー第一 green %}
+
+---
+
+### 🗺️ Trailmap — インタラクティブな旅の地図
+
+{% label Leaflet blue %} {% label Vite green %} {% label Globe.GL orange %} {% label オープンソース pink %}
+
+インタラクティブな個人旅行マップ。写真、ストーリー、タイムライン再生、3D 地球儀。データ駆動、プッシュで自動デプロイ。
+
+**ハイライト:**
+- 光るマーカー + 旅のストーリーナビゲーション + Lightbox フォトギャラリー
+- タイムラインプレーヤーが日付順に旅を自動再生、ルート間は流れる破線アニメーション
+- Globe.GL でワンクリック 3D 地球儀（遅延読み込み）、3 種類のベースマップ + デュアルテーマ
+- `/#/beijing` の URL で場所へ直接ジャンプ。`locations.json` を編集するだけで場所を追加
+
+{% label データ駆動 green %} {% label 地図 green %} {% label 自動デプロイ green %}
+
+{% btn https://github.com/coderirse/trailmap, ソースコード, fab fa-github %}
 
 ---
 

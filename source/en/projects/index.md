@@ -253,10 +253,114 @@ A personal blog built with Hexo 8.x and the Butterfly theme, deployed on GitHub 
 **Highlights:**
 - Magazine editorial design system: paper-and-ink color palette, serif typography, drop caps, hairlines
 - Trilingual content (Chinese, English, Japanese) with custom i18n article-mapping scripts
-- Busuanzi visitor analytics integration
+- Self-hosted Latin fonts, Cloudflare Web Analytics for visitor stats
 - Automated deployment: push source to the `source` branch, publish to `master` via `hexo deploy`
 
 {% btn https://github.com/coderirse/coderirse.github.io, View Source, fab fa-github %}
+
+---
+
+### 🔢 BaseConversion — Number Base Converter for Programmers
+
+{% label Android blue %} {% label Kotlin green %} {% label Compose orange %} {% label Open Source pink %}
+
+A local-first, ad-free Android base converter: live multi-base syncing, two's complement and IEEE 754 bit-pattern visualization.
+
+**Highlights:**
+- Four live-synced base fields, arbitrary-precision `BigInteger`, 8/16/32/64-bit two's complement
+- Real-time float32/64 IEEE 754 bit patterns (NaN / ±Infinity / -0.0 supported)
+- Smart keypad disables invalid keys per base, auto-detects `0x` / `0b` / `0o` prefixes
+- Pure-Kotlin domain layer + JUnit tests; the only networked feature is update checking
+
+{% label Android green %} {% label Tools green %} {% label MVI green %}
+
+{% btn https://github.com/coderirse/BaseConversion, View Source, fab fa-github %}
+
+---
+
+### 📅 BeikeSchedule — Course Schedule App for USTB
+
+{% label Android blue %} {% label Kotlin green %} {% label Room orange %} {% label USTB pink %}
+
+A USTB course schedule app: one-tap academic-system import, teaching-week calendar mapping, weekly timetable and class reminders.
+
+**Highlights:**
+- One-tap timetable import via WebView SSO — the app never touches your credentials
+- Official academic-calendar teaching-week mapping; holidays auto-handled
+- Block-period weekly layout, odd/even markers, pre-class reminders with exact alarms
+- Calls structured academic JSON APIs directly (no HTML scraping), parser logic unit-tested
+
+{% label Android green %} {% label Schedule green %} {% label Privacy-first green %}
+
+{% btn https://github.com/coderirse/BeikeSchedule, View Source, fab fa-github %} {% btn https://github.com/coderirse/BeikeSchedule/releases, Download APK, fas fa-download %}
+
+---
+
+### ⏳ Countdown App — Concept & Product Design
+
+{% label Android blue %} {% label Glance green %} {% label Product Design orange %}
+
+A countdown / count-up day tracker built around home-screen widgets — full PRD and tech selection done (concept stage).
+
+**Highlights:**
+- Positioning: not a calendar, but an emotional tool for feeling time distance at a glance
+- First event within 3 steps; daily use only needs a glance at the home / lock screen widget
+- Jetpack Glance + Compose chosen as the widget route, Room + DataStore data layer
+- Restraint by principle: no payments, ads, accounts, or cloud sync — fully open source later
+
+{% label Product Design green %} {% label Glance green %} {% label Open Source Planned green %}
+
+---
+
+### 🌍 LingoFlow — AI Translation & Learning App
+
+{% label Android blue %} {% label ML Kit green %} {% label LLM orange %} {% label Compose pink %}
+
+An Android translation app combining on-device ML Kit translation, streaming LLM rewriting, and Merriam-Webster dictionary lookup.
+
+**Highlights:**
+- Offline instant translation across English/Chinese/Japanese/Korean; long texts streamed through the LLM with auto-formatting
+- Authoritative Merriam-Webster lookups: phonetics, examples, etymology — tap any word
+- Four translation styles (Natural / Concise / Formal / Learning) + sentence-by-sentence TTS
+- API keys encrypted on-device (EncryptedSharedPreferences), privacy-first
+
+{% label Android green %} {% label AI green %} {% label Open Source green %}
+
+{% btn https://github.com/coderirse/LingoFlow, View Source, fab fa-github %} {% btn https://github.com/coderirse/LingoFlow/releases, Download APK, fas fa-download %}
+
+---
+
+### 🧭 Life Assistant — Personal Tauri Desktop App
+
+{% label Tauri blue %} {% label Rust green %} {% label SQLite orange %} {% label Productivity pink %}
+
+A personal study-and-life desktop app: plans, dev work, fitness, meals, and gaming in one place.
+
+**Highlights:**
+- Today's plan / dev work (tasks + time tracking) / fitness (training log + weight trends) / meals / playtime modules
+- GitHub module shows my repos, issues, and PRs read-only (the only online feature)
+- Local SQLite data, token in Windows Credential Manager, fully offline with backup & restore
+- Data layer as a standalone crate (life-assistant-core), tested at both Rust and frontend layers
+
+{% label Rust green %} {% label Desktop green %} {% label Privacy-first green %}
+
+---
+
+### 🗺️ Trailmap — My Interactive Travel Map
+
+{% label Leaflet blue %} {% label Vite green %} {% label Globe.GL orange %} {% label Open Source pink %}
+
+An interactive personal travel map with photos, stories, a timeline player, and a 3D globe — data-driven, deploy-on-push.
+
+**Highlights:**
+- Glowing markers + travel-story navigation + Lightbox photo gallery
+- Timeline player auto-plays the journey in date order with flowing dashed route animations
+- One-click 3D globe via Globe.GL (lazy-loaded), three basemaps + dual themes
+- `/#/beijing` URLs jump straight to a place; add places by editing `locations.json`
+
+{% label Data-driven green %} {% label Maps green %} {% label Auto Deploy green %}
+
+{% btn https://github.com/coderirse/trailmap, View Source, fab fa-github %}
 
 ---
 
