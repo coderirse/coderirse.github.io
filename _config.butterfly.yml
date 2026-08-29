@@ -158,11 +158,16 @@ translate:
 search:
   use: null
 
-# 不蒜子访客统计
+# 不蒜子访客统计 —— 已停用（第三方服务失稳）；改用下方 Cloudflare Web Analytics
 busuanzi:
-  site_uv: true
-  site_pv: true
-  page_pv: true
+  site_uv: false
+  site_pv: false
+  page_pv: false
+
+# 访客统计 —— Cloudflare Web Analytics（免费、无 Cookie，替代不蒜子）
+# token 来自 Cloudflare 控制台 → Web Analytics → 站点 caeamer.com。
+# 注意：Butterfly 5.x 此项为顶层配置键，不要嵌套在 analytics: 下。
+cloudflare_analytics: 'fa3c2efe5f4b431a943eca6eb87657e2'
 
 # 主题配色 - 编辑风朱砂红 + 墨色
 theme_color:
@@ -198,14 +203,11 @@ pwa:
 # 图片灯箱
 lightbox: fancybox
 
-# 注入自定义 CSS + Web 字体
+# 注入自定义 CSS + 自托管字体（西文；中文使用系统字体栈，不请求第三方）
 inject:
   head:
-    - <link rel="preconnect" href="https://fonts.googleapis.com">
-    - <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    - <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=JetBrains+Mono:wght@400;500&family=Noto+Serif+SC:wght@400;500;600;700&display=swap">
+    - <link rel="stylesheet" href="/css/fonts.css">
     - <link rel="stylesheet" href="/css/custom.css">
   bottom:
-    - <script src="/generated/i18n-post-map.js"></script>
     - <script src="/js/lang-switcher.js"></script>
     - <script src="/js/lang-home-subtitle.js"></script>

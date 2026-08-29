@@ -29,8 +29,10 @@
       !=partial('includes/widget/card_recent_post', {}, )
       !=partial('includes/widget/card_ad', {}, )
       !=partial('includes/widget/card_newest_comment', {}, )
-      !=partial('includes/widget/card_categories', {}, )
-      !=partial('includes/widget/card_tags', {}, )
-      !=partial('includes/widget/card_archives', {}, )
+      //- 归档/标签/分类是中文文章数据，en/ja 页面没有对应页面，隐藏避免跳回中文
+      if !page.lang || page.lang === 'zh-CN'
+        !=partial('includes/widget/card_categories', {}, )
+        !=partial('includes/widget/card_tags', {}, )
+        !=partial('includes/widget/card_archives', {}, )
       !=partial('includes/widget/card_webinfo', {}, )
       !=partial('includes/widget/card_bottom_self', {}, )

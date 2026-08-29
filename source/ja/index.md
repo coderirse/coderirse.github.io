@@ -3,7 +3,6 @@ title: lizhichao
 date: 2026-06-18 00:00:00
 type: home
 description: リ・ジチャオの個人ブログ
-top_img: /img/louie-martinez-IocJwyqRv3M-unsplash.jpg
 ---
 
 ## 👋 ようこそ

@@ -253,7 +253,7 @@ Hexo 8.xとButterflyテーマで構築した個人ブログ。GitHub Pagesにデ
 **ハイライト:**
 - 雑誌編集風デザインシステム：紙とインクの配色、セリフ書体、ドロップキャップ、ヘアライン
 - 中日英トリリンガルコンテンツ、独自のi18n記事マッピングスクリプト
-- 不蒜子（busuanzi）訪問者統計を統合
+サードパーティフォントリンクなし（欧文フォントはセルフホスト）、Cloudflare Web Analytics アクセス統計
 - 自動デプロイ：ソースを`source`ブランチにプッシュ、`hexo deploy`で`master`に公開
 
 {% btn https://github.com/coderirse/coderirse.github.io, ソースコード, fab fa-github %}

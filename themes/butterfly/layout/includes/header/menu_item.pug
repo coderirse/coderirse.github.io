@@ -4,7 +4,7 @@ if theme.menu
       if typeof value !== 'object'
         .menus_item
           - const [link, icon] = value.split('||').map(part => trim(part))
-          a.site-page(href=url_for(link))
+          a.site-page(href=lang_url_for(link))
             if icon
               i.fa-fw(class=icon)
             span= ' ' + _p('menu.' + label)
@@ -21,7 +21,7 @@ if theme.menu
             each val, lab in value
               - const [childLink, childIcon] = val.split('||').map(part => trim(part))
               li
-                a.site-page.child(href=url_for(childLink))
+                a.site-page.child(href=lang_url_for(childLink))
                   if childIcon
                     i.fa-fw(class=childIcon)
                   span= ' ' + _p('menu.' + lab)

@@ -253,7 +253,7 @@ Nous Research 出品的通用自进化 AI 智能体，具备经验学习、持�
 **核心亮点：**
 - 杂志编辑风设计系统：纸墨配色、衬线排版、首字下沉、发丝线
 - 中英日三语言内容，自建 i18n 文章映射脚本
-- 集成不蒜子访客统计
+- 无第三方字体外链（西文字体自托管），Cloudflare Web Analytics 访客统计
 - 自动化部署：源码推 `source` 分支，`hexo deploy` 发布至 `master`
 
 {% btn https://github.com/coderirse/coderirse.github.io, 查看源码, fab fa-github %}

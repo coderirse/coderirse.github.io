@@ -53,7 +53,6 @@
   }
 
   var currentLang = detectLang();
-  document.documentElement.setAttribute('lang', currentLang);
 
   function langPrefix(lang) {
     return lang === 'zh-CN' ? '' : '/' + lang;
@@ -121,7 +120,7 @@
         a.style.opacity = '0.5';
         a.style.pointerEvents = 'none';
       } else {
-        a.href = 'javascript:void(0)';
+        a.style.cursor = 'pointer';
         a.onclick = function(e) {
           e.preventDefault();
           window.location.href = toLangPath(window.location.pathname, l.key);
