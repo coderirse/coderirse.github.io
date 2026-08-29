@@ -10,16 +10,137 @@
   <rights>All rights reserved 2026, lizhichao</rights>
   <subtitle>李智超的个人博客 - 软件工程师，热爱技术与开源</subtitle>
   <title>lizhichao</title>
-  <updated>2026-07-11T16:00:08.000Z</updated>
+  <updated>2026-08-28T16:00:06.000Z</updated>
   <entry>
     <author>
       <name>lizhichao</name>
     </author>
     <category term="项目" scheme="https://caeamer.com/categories/%E9%A1%B9%E7%9B%AE/"/>
-    <category term="微信小程序" scheme="https://caeamer.com/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
-    <category term="云开发" scheme="https://caeamer.com/tags/%E4%BA%91%E5%BC%80%E5%8F%91/"/>
+    <category term="开源" scheme="https://caeamer.com/tags/%E5%BC%80%E6%BA%90/"/>
+    <category term="JavaScript" scheme="https://caeamer.com/tags/JavaScript/"/>
+    <category term="Leaflet" scheme="https://caeamer.com/tags/Leaflet/"/>
+    <category term="Vite" scheme="https://caeamer.com/tags/Vite/"/>
+    <category term="地图" scheme="https://caeamer.com/tags/%E5%9C%B0%E5%9B%BE/"/>
+    <content>
+      <![CDATA[<h2 id="项目概述"><a href="#项目概述" class="headerlink" title="项目概述"></a>项目概述</h2><p>Trailmap 是一个交互式个人旅行地图，用 Leaflet.js 构建，记录每一段旅程的照片与故事。增删地点只需要改一个 <code>locations.json</code> 数据文件，推送即通过 GitHub Actions 自动部署到 GitHub Pages。</p><mark class="hl-label blue">Leaflet</mark> <mark class="hl-label green">Vite</mark> <mark class="hl-label orange">Globe.GL</mark> <mark class="hl-label pink">数据驱动</mark><h3 id="关键特性"><a href="#关键特性" class="headerlink" title="关键特性"></a>关键特性</h3><ul><li><strong>交互式地图</strong>：发光标记点，hover 放大，点击聚焦并展示详情</li><li><strong>旅行故事</strong>：左侧导航列表展示地点、日期、标签与描述（移动端为底部抽屉）</li><li><strong>照片画廊</strong>：侧栏两列网格，点击 Lightbox 全屏查看，支持 ←&#x2F;→&#x2F;Esc 键操作</li><li><strong>时间线播放器</strong>：底部进度条按日期自动播放旅行轨迹（1.8 秒 &#x2F; 步），路线组之间有流动虚线动画</li><li><strong>标签筛选</strong>：顶部胶囊标签，一键筛选地图标记</li><li><strong>3D 地球</strong>：Globe.GL 一键切换（CDN 懒加载，不影响首屏）</li><li><strong>多底图与双主题</strong>：探索（默认深色）&#x2F; 标准 &#x2F; 卫星三种底图；暗黑与白昼风格一键切换，选择自动保存</li><li><strong>URL 路由</strong>：<code>/#/beijing</code> 直达地点，支持分享链接与浏览器前进 &#x2F; 后退</li></ul><h3 id="技术要点"><a href="#技术要点" class="headerlink" title="技术要点"></a>技术要点</h3><p>原生 JavaScript 组件化（Map &#x2F; Sidebar &#x2F; PhotoGallery &#x2F; Timeline 各自独立模块），Vite 构建；数据与展示完全分离——所有地点、照片、标签、路线组集中在 <code>src/data/locations.json</code>，改数据不改代码。</p><a class="btn-beautify " href="https://github.com/coderirse/trailmap" title="查看源码"><i class="fab fa-github"></i><span>查看源码</span></a>]]>
+    </content>
+    <id>https://caeamer.com/2026/08/29/trailmap/</id>
+    <link href="https://caeamer.com/2026/08/29/trailmap/"/>
+    <published>2026-08-28T16:00:06.000Z</published>
+    <summary>用 Leaflet.js 构建的交互式个人旅行地图：照片、故事、时间线播放与 3D 地球。</summary>
+    <title>Trailmap — 我的足迹地图</title>
+    <updated>2026-08-28T16:00:06.000Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>lizhichao</name>
+    </author>
+    <category term="项目" scheme="https://caeamer.com/categories/%E9%A1%B9%E7%9B%AE/"/>
+    <category term="Tauri" scheme="https://caeamer.com/tags/Tauri/"/>
+    <category term="Rust" scheme="https://caeamer.com/tags/Rust/"/>
+    <category term="桌面应用" scheme="https://caeamer.com/tags/%E6%A1%8C%E9%9D%A2%E5%BA%94%E7%94%A8/"/>
+    <category term="效率工具" scheme="https://caeamer.com/tags/%E6%95%88%E7%8E%87%E5%B7%A5%E5%85%B7/"/>
+    <content>
+      <![CDATA[<h2 id="项目概述"><a href="#项目概述" class="headerlink" title="项目概述"></a>项目概述</h2><p>「我的生活助手」是一款只供本人使用的学习生活专属桌面应用，基于 Tauri + Rust + WebView2 构建。所有数据保存在本机项目文件夹内，刷新、关闭、重启都不丢失；除 GitHub 模块外完全离线，并提供独立的备份与恢复。</p><mark class="hl-label blue">Tauri</mark> <mark class="hl-label green">Rust</mark> <mark class="hl-label orange">SQLite</mark> <mark class="hl-label pink">效率</mark><h3 id="功能模块"><a href="#功能模块" class="headerlink" title="功能模块"></a>功能模块</h3><ul><li><strong>首页总览</strong>：今日计划进度、快速备忘、各模块摘要</li><li><strong>今日计划</strong>：按时间安排当天事项，勾选完成</li><li><strong>开发工作</strong>：任务管理、时间记录、本周统计</li><li><strong>GitHub 项目</strong>：只读读取个人仓库、分给我的 Issue、我发起的 PR（需要令牌，唯一联网功能）</li><li><strong>健身计划</strong>：周计划、训练记录（动作 &#x2F; 组数 &#x2F; 次数 &#x2F; 重量）、体重趋势图</li><li><strong>饮食计划</strong>：三餐加餐记录、常用食物库、当日汇总</li><li><strong>游戏娱乐</strong>：游戏库、游玩时长记录、本周总时长</li><li><strong>数据与设置</strong>：备份 &#x2F; 恢复、浅色 &#x2F; 深色 &#x2F; 跟随系统主题</li></ul><h3 id="工程实践"><a href="#工程实践" class="headerlink" title="工程实践"></a>工程实践</h3><ul><li>数据层独立成 Rust crate（<code>life-assistant-core</code>），<code>cargo test</code> 覆盖数据逻辑，不依赖 Tauri 即可测试</li><li>SQLite 数据库与缓存全部落在项目 <code>data/</code> 目录，不占 C 盘；备份一键输出到 <code>backups/</code></li><li>GitHub 令牌存放在 Windows 凭据管理器（keyring），不进入备份文件</li><li>前端纯逻辑与数据层分层测试：<code>npm test</code> + <code>cargo test -p life-assistant-core</code></li></ul><p>这是典型的”为自己造工具”项目：功能围绕自己真实的生活流设计，不做通用化妥协，因此可以做到零账号、零追踪、完全离线。</p>]]>
+    </content>
+    <id>https://caeamer.com/2026/08/29/life-assistant/</id>
+    <link href="https://caeamer.com/2026/08/29/life-assistant/"/>
+    <published>2026-08-28T16:00:05.000Z</published>
+    <summary>个人专属的学习生活管理桌面应用：计划、开发、健身、饮食、游戏一个应用全管。</summary>
+    <title>我的生活助手 — Tauri 桌面应用</title>
+    <updated>2026-08-28T16:00:05.000Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>lizhichao</name>
+    </author>
+    <category term="项目" scheme="https://caeamer.com/categories/%E9%A1%B9%E7%9B%AE/"/>
+    <category term="开源" scheme="https://caeamer.com/tags/%E5%BC%80%E6%BA%90/"/>
+    <category term="Android" scheme="https://caeamer.com/tags/Android/"/>
+    <category term="Kotlin" scheme="https://caeamer.com/tags/Kotlin/"/>
+    <category term="Jetpack Compose" scheme="https://caeamer.com/tags/Jetpack-Compose/"/>
+    <category term="AI" scheme="https://caeamer.com/tags/AI/"/>
+    <category term="ML Kit" scheme="https://caeamer.com/tags/ML-Kit/"/>
+    <content>
+      <![CDATA[<h2 id="项目概述"><a href="#项目概述" class="headerlink" title="项目概述"></a>项目概述</h2><p>LingoFlow 是一款现代 Android 翻译应用，把端侧机器翻译、权威词典和大模型能力组合在一起：日常翻译离线秒翻，长文交给 LLM 流式润色，遇到生词随手查权威释义。已发布 Release APK。</p><mark class="hl-label blue">Kotlin</mark> <mark class="hl-label green">Compose</mark> <mark class="hl-label Kit">ML</mark> <mark class="hl-label pink">LLM</mark><h3 id="关键特性"><a href="#关键特性" class="headerlink" title="关键特性"></a>关键特性</h3><ul><li><strong>即时翻译</strong>：ML Kit 端侧翻译（英语 ↔ 中文 ↔ 日语 ↔ 韩语），无需联网；长文本走 LLM 流式输出，自动排版段落与列表，可随时取消</li><li><strong>词典查词</strong>：韦氏词典（Merriam-Webster）权威释义，含音标、例句与词源；点击译文中的任意单词即可查询</li><li><strong>AI 辅助学习</strong>：上下文感知的讲解与多种翻译风格（自然 &#x2F; 简洁 &#x2F; 正式 &#x2F; 学习），流式实时输出</li><li><strong>听音跟读</strong>：翻译结果 TTS 朗读，支持播放 &#x2F; 暂停状态，长文按句子逐段朗读</li><li><strong>隐私优先</strong>：API Key 仅保存在设备本地（EncryptedSharedPreferences）</li></ul><h3 id="技术栈"><a href="#技术栈" class="headerlink" title="技术栈"></a>技术栈</h3><p>Kotlin + Coroutines + Flow · Jetpack Compose（Material 3）· Hilt 依赖注入 · ML Kit Translation · OkHttp + kotlinx.serialization · DataStore + EncryptedSharedPreferences</p><p>未配置签名密钥时构建会自动回退 debug 签名，方便 CI 与侧载体验。</p><a class="btn-beautify " href="https://github.com/coderirse/LingoFlow" title="查看源码"><i class="fab fa-github"></i><span>查看源码</span></a> <a class="btn-beautify " href="https://github.com/coderirse/LingoFlow/releases" title="下载 APK"><i class="fas fa-download"></i><span>下载 APK</span></a>]]>
+    </content>
+    <id>https://caeamer.com/2026/08/29/lingoflow/</id>
+    <link href="https://caeamer.com/2026/08/29/lingoflow/"/>
+    <published>2026-08-28T16:00:04.000Z</published>
+    <summary>ML Kit 端侧翻译 + LLM 流式长文翻译 + 韦氏词典查词的安卓翻译学习应用。</summary>
+    <title>LingoFlow — AI 翻译学习 App</title>
+    <updated>2026-08-28T16:00:04.000Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>lizhichao</name>
+    </author>
+    <category term="项目" scheme="https://caeamer.com/categories/%E9%A1%B9%E7%9B%AE/"/>
+    <category term="Android" scheme="https://caeamer.com/tags/Android/"/>
+    <category term="Kotlin" scheme="https://caeamer.com/tags/Kotlin/"/>
+    <category term="Jetpack Compose" scheme="https://caeamer.com/tags/Jetpack-Compose/"/>
+    <category term="Glance" scheme="https://caeamer.com/tags/Glance/"/>
+    <category term="产品设计" scheme="https://caeamer.com/tags/%E4%BA%A7%E5%93%81%E8%AE%BE%E8%AE%A1/"/>
+    <content>
+      <![CDATA[<h2 id="项目概述"><a href="#项目概述" class="headerlink" title="项目概述"></a>项目概述</h2><p>这是一款正在立项中的倒数 &#x2F; 正数日 Android 应用——目前完成了完整的产品文档（PRD v0.1）与技术方案，尚未进入编码。把设计过程分享出来，也算一次”写作即设计”的实践。</p><p><strong>一句话定位</strong>：帮你把「重要的日子」放到打开手机就能看到的地方——桌面上放一个小组件，随时知道距目标还有多少天，或已经多少天。</p><mark class="hl-label blue">Android</mark> <mark class="hl-label Glance">Jetpack</mark> <mark class="hl-label orange">产品设计</mark><h3 id="产品思考"><a href="#产品思考" class="headerlink" title="产品思考"></a>产品思考</h3><ul><li><strong>不是日历，是情绪工具</strong>：核心价值不是管理日程，而是「一眼感到时间距离」的确定感与仪式感——恋爱天数、考试倒计时、宝宝出生天数、还款 &#x2F; 发薪日</li><li><strong>核心路径极简</strong>：首次打开 3 步内添加第 1 个事件并引导放置小组件；日常使用甚至不需要打开 App，看桌面 &#x2F; 锁屏小组件即可</li><li><strong>克制</strong>：无付费、无广告、无账号、无云同步，个人自用 + 未来全开源</li></ul><h3 id="场景驱动的事件类型"><a href="#场景驱动的事件类型" class="headerlink" title="场景驱动的事件类型"></a>场景驱动的事件类型</h3><ul><li>考试倒计时（高考 &#x2F; 四六级 &#x2F; 期末）——大数字 + 考前提醒</li><li>纪念日正数（在一起第 N 天、宝宝出生天数）</li><li>工作日倒计时（发薪 &#x2F; 还款 &#x2F; 项目截止）——锁屏可见</li><li>习惯打卡（坚持某件事第 N 天、连续天数与里程碑）</li></ul><h3 id="技术选型"><a href="#技术选型" class="headerlink" title="技术选型"></a>技术选型</h3><p>技术方案里对比了三条小组件路线，结论是以 <strong>Jetpack Glance + Compose</strong> 为主路线：声明式 DSL 与 Compose 心智一致，天然支持 Material You 动态取色，同一套 API 未来可复用到 Wear OS Tiles；复杂交互场景再用经典 AppWidgetProvider 补位。数据层规划 Room + DataStore，小组件的每日更新机制也在方案中做了推演。骨架已就绪（Kotlin 2.2 + Compose BOM 2026.02，minSdk 35 &#x2F; Android 15）。</p><p>后续进展会持续更新到这篇文章。</p>]]>
+    </content>
+    <id>https://caeamer.com/2026/08/29/countdown/</id>
+    <link href="https://caeamer.com/2026/08/29/countdown/"/>
+    <published>2026-08-28T16:00:03.000Z</published>
+    <summary>以桌面小组件为核心触点的倒数 / 正数日工具：完整 PRD 与技术选型分享（立项阶段）。</summary>
+    <title>倒数日 App — 立项与产品设计</title>
+    <updated>2026-08-28T16:00:03.000Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>lizhichao</name>
+    </author>
+    <category term="项目" scheme="https://caeamer.com/categories/%E9%A1%B9%E7%9B%AE/"/>
+    <category term="开源" scheme="https://caeamer.com/tags/%E5%BC%80%E6%BA%90/"/>
+    <category term="Android" scheme="https://caeamer.com/tags/Android/"/>
+    <category term="Kotlin" scheme="https://caeamer.com/tags/Kotlin/"/>
+    <category term="Jetpack Compose" scheme="https://caeamer.com/tags/Jetpack-Compose/"/>
+    <category term="USTB" scheme="https://caeamer.com/tags/USTB/"/>
+    <category term="课表" scheme="https://caeamer.com/tags/%E8%AF%BE%E8%A1%A8/"/>
+    <content>
+      <![CDATA[<h2 id="项目概述"><a href="#项目概述" class="headerlink" title="项目概述"></a>项目概述</h2><p>BeikeSchedule（贝壳课表）是一款北京科技大学课表 App：内置 WebView 登录本研一体化教务系统一键导入课表，本地周视图展示，支持上课提醒。已发布 Release APK，可直接覆盖升级。</p><mark class="hl-label blue">Kotlin</mark> <mark class="hl-label green">Compose</mark> <mark class="hl-label orange">Room</mark> <mark class="hl-label pink">AlarmManager</mark><h3 id="关键特性"><a href="#关键特性" class="headerlink" title="关键特性"></a>关键特性</h3><ul><li><strong>教务一键导入</strong>：WebView 完成统一身份认证（App 不接触学号密码），自动抓取学期课表 JSON，预览确认后入库</li><li><strong>官方教学周日历</strong>：导入时同步教务校历，教学周 ↔ 日期精确映射——国庆等长假周不占教学周序号；假期中自动定位到假期后第一个教学周</li><li><strong>周视图课表</strong>：按”大节”排版，滑动切周、周次下拉跳转、单双周标注、无固定时间课程单独列表、地点楼名 &#x2F; 房间号分行显示</li><li><strong>课程管理</strong>：手动增删改课程，教务数据与手动课程共存</li><li><strong>上课提醒</strong>：每大节课前 N 分钟系统通知（默认 15 分钟可调），支持精确闹钟，开机自动重排</li><li><strong>当前周定位</strong>：杀进程重启也能正确定位当前教学周；深色模式三态切换</li></ul><h3 id="技术要点"><a href="#技术要点" class="headerlink" title="技术要点"></a>技术要点</h3><ul><li>Kotlin + Jetpack Compose（Material 3），Room（课程 &#x2F; 节次时间）+ DataStore（学期配置 &#x2F; 校历 &#x2F; 提醒）</li><li>教务适配层：WebView 注入 JS 复用登录会话，直接调教务结构化 JSON 接口（课表 32 位周次位图、校历全量映射），无需解析 HTML</li><li>解析器 &#x2F; 周次逻辑有单元测试覆盖，fixture 为真实接口样本</li></ul><p><strong>隐私</strong>：学号密码只在系统 WebView 中由本人输入给学校认证页面，App 不读取、不存储、不上传任何凭证；课表数据仅保存在本机。</p><a class="btn-beautify " href="https://github.com/coderirse/BeikeSchedule" title="查看源码"><i class="fab fa-github"></i><span>查看源码</span></a> <a class="btn-beautify " href="https://github.com/coderirse/BeikeSchedule/releases" title="下载 APK"><i class="fas fa-download"></i><span>下载 APK</span></a>]]>
+    </content>
+    <id>https://caeamer.com/2026/08/29/beike-schedule/</id>
+    <link href="https://caeamer.com/2026/08/29/beike-schedule/"/>
+    <published>2026-08-28T16:00:02.000Z</published>
+    <summary>北科大课表 App：教务一键导入、教学周日历精确映射、周视图课表与上课提醒。</summary>
+    <title>BeikeSchedule 贝壳课表 — USTB 课表 App</title>
+    <updated>2026-08-28T16:00:02.000Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>lizhichao</name>
+    </author>
+    <category term="项目" scheme="https://caeamer.com/categories/%E9%A1%B9%E7%9B%AE/"/>
+    <category term="开源" scheme="https://caeamer.com/tags/%E5%BC%80%E6%BA%90/"/>
+    <category term="Android" scheme="https://caeamer.com/tags/Android/"/>
+    <category term="Kotlin" scheme="https://caeamer.com/tags/Kotlin/"/>
+    <category term="Jetpack Compose" scheme="https://caeamer.com/tags/Jetpack-Compose/"/>
+    <category term="工具" scheme="https://caeamer.com/tags/%E5%B7%A5%E5%85%B7/"/>
+    <content>
+      <![CDATA[<h2 id="项目概述"><a href="#项目概述" class="headerlink" title="项目概述"></a>项目概述</h2><p>BaseConversion 是一款面向程序员的安卓进制转换器，纯本地运行、零广告。打开即用，二进制 &#x2F; 八进制 &#x2F; 十进制 &#x2F; 十六进制四框实时联动转换，无需点击”转换”按钮，支持大整数、补码与 IEEE 754 浮点数位模式展示。</p><mark class="hl-label blue">Kotlin</mark> <mark class="hl-label green">Compose</mark> <mark class="hl-label orange">MVI</mark><h3 id="关键特性"><a href="#关键特性" class="headerlink" title="关键特性"></a>关键特性</h3><ul><li><strong>整数模式</strong>：四进制框双向实时联动；<code>BigInteger</code> 任意精度；固定位宽 8&#x2F;16&#x2F;32&#x2F;64 有符号补码，signed&#x2F;unsigned 切换，超范围自动截断并提示</li><li><strong>浮点模式</strong>：十进制输值，实时显示 float32 &#x2F; float64 的 IEEE 754 位模式与实际存储值，支持 <code>NaN</code> &#x2F; <code>±Infinity</code> &#x2F; <code>-0.0</code></li><li><strong>智能键盘</strong>：应用内自定义键盘，按进制动态禁用非法键、分区配色；长按退格连续删除；一键复制 &#x2F; 粘贴（自动识别 <code>0x</code> &#x2F; <code>0b</code> &#x2F; <code>0o</code> 前缀）</li><li><strong>个性化</strong>：主题三态切换、强调色可选、默认模式 &#x2F; 进制 &#x2F; 位宽 &#x2F; 精度均可配置，按键音效与震动反馈</li><li><strong>细节体验</strong>：中英双语、数值等宽字体；唯一联网功能是通过 GitHub Releases API 检查更新</li></ul><h3 id="技术栈"><a href="#技术栈" class="headerlink" title="技术栈"></a>技术栈</h3><p>Kotlin 2.0+ · Jetpack Compose (Material 3) · ViewModel + StateFlow (MVI) · Gradle Kotlin DSL · minSdk 29</p><p>架构上把转换算法抽成纯 Kotlin 的 <code>domain</code> 层，配合 JUnit 单元测试保证数值逻辑正确性；UI &#x2F; 数据 &#x2F; 领域三层清晰分离。</p><a class="btn-beautify " href="https://github.com/coderirse/BaseConversion" title="查看源码"><i class="fab fa-github"></i><span>查看源码</span></a>]]>
+    </content>
+    <id>https://caeamer.com/2026/08/29/base-conversion/</id>
+    <link href="https://caeamer.com/2026/08/29/base-conversion/"/>
+    <published>2026-08-28T16:00:01.000Z</published>
+    <summary>纯本地、零广告的安卓进制转换器：进制实时联动、补码与 IEEE 754 位模式可视化。</summary>
+    <title>BaseConversion — 程序员进制转换器</title>
+    <updated>2026-08-28T16:00:01.000Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>lizhichao</name>
+    </author>
+    <category term="项目" scheme="https://caeamer.com/categories/%E9%A1%B9%E7%9B%AE/"/>
     <category term="JavaScript" scheme="https://caeamer.com/tags/JavaScript/"/>
     <category term="社区" scheme="https://caeamer.com/tags/%E7%A4%BE%E5%8C%BA/"/>
+    <category term="微信小程序" scheme="https://caeamer.com/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    <category term="云开发" scheme="https://caeamer.com/tags/%E4%BA%91%E5%BC%80%E5%8F%91/"/>
     <category term="全栈" scheme="https://caeamer.com/tags/%E5%85%A8%E6%A0%88/"/>
     <content>
       <![CDATA[<h2 id="项目概述"><a href="#项目概述" class="headerlink" title="项目概述"></a>项目概述</h2><p>ShowWe 是一个基于微信云开发构建的全功能社区&#x2F;社交小程序，v1.1.0。用户登录后可发布帖子（图片+文件附件）、评论点赞、私信聊天，拥有通知系统和个性化主页。</p><mark class="hl-label blue">微信小程序</mark> <mark class="hl-label green">云开发</mark> <mark class="hl-label orange">JavaScript</mark><h3 id="核心功能"><a href="#核心功能" class="headerlink" title="核心功能"></a>核心功能</h3><ul><li><strong>帖子系统</strong>：富文本 + 最多9张图片 + 5个文件附件，6种分类，自动提取 #标签#</li><li><strong>社交互动</strong>：评论&#x2F;点赞（乐观 UI + 原子数据库操作）、浏览量去重追踪</li><li><strong>私信聊天</strong>：一对一文本+图片消息，未读计数红点徽章</li><li><strong>通知系统</strong>：点赞&#x2F;评论通知，TabBar 红点汇总</li><li><strong>搜索</strong>：正则表达式全文搜索（不区分大小写）</li></ul><h3 id="技术亮点"><a href="#技术亮点" class="headerlink" title="技术亮点"></a>技术亮点</h3><ul><li>微信云数据库+云存储+云函数</li><li>内存缓存（TTL 过期）+ 本地存储缓存实现秒开</li><li>图片自动压缩（质量80%）+ 统一上传服务（支持重试）</li><li>自定义组件：image-preview 画廊、load-more 状态指示器</li></ul><mark class="hl-label green">微信小程序</mark> <mark class="hl-label green">社区</mark> <mark class="hl-label green">全栈</mark>]]>
@@ -37,9 +158,9 @@
     </author>
     <category term="项目" scheme="https://caeamer.com/categories/%E9%A1%B9%E7%9B%AE/"/>
     <category term="开源" scheme="https://caeamer.com/tags/%E5%BC%80%E6%BA%90/"/>
-    <category term="社区" scheme="https://caeamer.com/tags/%E7%A4%BE%E5%8C%BA/"/>
     <category term="Claude Code" scheme="https://caeamer.com/tags/Claude-Code/"/>
     <category term="Awesome List" scheme="https://caeamer.com/tags/Awesome-List/"/>
+    <category term="社区" scheme="https://caeamer.com/tags/%E7%A4%BE%E5%8C%BA/"/>
     <category term="资源" scheme="https://caeamer.com/tags/%E8%B5%84%E6%BA%90/"/>
     <content>
       <![CDATA[<h2 id="项目概述"><a href="#项目概述" class="headerlink" title="项目概述"></a>项目概述</h2><p>awesome-claude-code 是一个社区驱动的 Claude Code 资源合集，以「Awesome List」的经典格式整理。被 Claude Code 社区广泛引用，已成为新用户入门的推荐资源索引。</p><mark class="hl-label blue">Markdown</mark> <mark class="hl-label green">开源</mark><h3 id="20-资源类别"><a href="#20-资源类别" class="headerlink" title="20+ 资源类别"></a>20+ 资源类别</h3><ul><li>Start Here &#x2F; From Anthropic &#x2F; Documentation</li><li>Runtime &amp; Infrastructure &#x2F; Alternative Clients</li><li>Skills &amp; Plugins &#x2F; Multi-Agent Orchestration</li><li>Memory &amp; Context &#x2F; Security &#x2F; Observability</li><li>Status Lines &#x2F; Design &amp; UI &#x2F; Writing &#x2F; Creative Media</li></ul><h3 id="特色"><a href="#特色" class="headerlink" title="特色"></a>特色</h3><ul><li>Recently Added 跑马灯展示最新资源</li><li>每个条目附带 GitHub Stats 徽章</li><li>历史版本保留在 README_ALTERNATIVES 目录</li></ul><mark class="hl-label green">ClaudeCode</mark> <mark class="hl-label green">资源合集</mark> <mark class="hl-label green">社区</mark>]]>
@@ -98,10 +219,10 @@
       <name>lizhichao</name>
     </author>
     <category term="项目" scheme="https://caeamer.com/categories/%E9%A1%B9%E7%9B%AE/"/>
-    <category term="USTB" scheme="https://caeamer.com/tags/USTB/"/>
     <category term="Android" scheme="https://caeamer.com/tags/Android/"/>
     <category term="Kotlin" scheme="https://caeamer.com/tags/Kotlin/"/>
     <category term="Jetpack Compose" scheme="https://caeamer.com/tags/Jetpack-Compose/"/>
+    <category term="USTB" scheme="https://caeamer.com/tags/USTB/"/>
     <category term="校园网" scheme="https://caeamer.com/tags/%E6%A0%A1%E5%9B%AD%E7%BD%91/"/>
     <content>
       <![CDATA[<h2 id="项目概述"><a href="#项目概述" class="headerlink" title="项目概述"></a>项目概述</h2><p>Net-USTB 是专为北京科技大学校园网（Dr.COM ePortal 4.x）开发的第三方原生 Android 客户端，用它替代浏览器端的网页认证流程，实现一键登录&#x2F;登出。</p><mark class="hl-label blue">Kotlin</mark> <mark class="hl-label green">Compose</mark> <mark class="hl-label orange">OkHttp</mark><h3 id="核心功能"><a href="#核心功能" class="headerlink" title="核心功能"></a>核心功能</h3><ul><li><strong>一键认证</strong>：通过 ePortal JSONP 接口完成登录&#x2F;登出，无需打开浏览器</li><li><strong>多运营商</strong>：校园用户 &#x2F; 中国电信 &#x2F; 中国联通</li><li><strong>AES-256-GCM</strong> 加密凭据存储</li><li><strong>使用看板</strong>：余额、时长、流量、登录时间、IP 地址</li><li><strong>校园公告</strong>：获取公告板信息</li></ul><h3 id="技术细节"><a href="#技术细节" class="headerlink" title="技术细节"></a>技术细节</h3><ul><li>OkHttp 4.12 + 自定义 CookieJar</li><li>Jsoup 1.18 HTML 解析</li><li>EncryptedSharedPreferences 加密存储</li><li>隐私优先：零分析、零广告</li></ul><mark class="hl-label green">USTB</mark> <mark class="hl-label green">Android</mark> <mark class="hl-label green">网络工具</mark>]]>
@@ -139,8 +260,8 @@
     </author>
     <category term="项目" scheme="https://caeamer.com/categories/%E9%A1%B9%E7%9B%AE/"/>
     <category term="USTB" scheme="https://caeamer.com/tags/USTB/"/>
-    <category term="JavaScript" scheme="https://caeamer.com/tags/JavaScript/"/>
     <category term="Chrome Extension" scheme="https://caeamer.com/tags/Chrome-Extension/"/>
+    <category term="JavaScript" scheme="https://caeamer.com/tags/JavaScript/"/>
     <category term="工具" scheme="https://caeamer.com/tags/%E5%B7%A5%E5%85%B7/"/>
     <content>
       <![CDATA[<h2 id="项目概述"><a href="#项目概述" class="headerlink" title="项目概述"></a>项目概述</h2><p>专为北京科技大学教务系统开发的浏览器扩展（Chrome &#x2F; Edge），解决了一个实际痛点：学校教务系统的成绩查询页面不显示排名信息，但后端 API 实际返回了这些数据。</p><div class="note info flat"><p>用技术解决身边的问题——一个典型的”学生黑客”项目。</p></div><h2 id="技术架构"><a href="#技术架构" class="headerlink" title="技术架构"></a>技术架构</h2><mark class="hl-label blue">JavaScript</mark> <mark class="hl-label Extension">Chrome</mark> <mark class="hl-label V3">Manifest</mark><h3 id="工作原理"><a href="#工作原理" class="headerlink" title="工作原理"></a>工作原理</h3><ol><li>注入 Page Hook 拦截 fetch&#x2F;XHR 请求</li><li>捕获成绩查询 API 的返回数据（含排名、总人数等隐藏字段）</li><li>Content Script 中解析数据</li><li>动态修改 DOM，在成绩表格中插入排序列</li></ol><h3 id="关键特性"><a href="#关键特性" class="headerlink" title="关键特性"></a>关键特性</h3><ul><li><strong>多 UI 框架支持</strong>：兼容 Element UI、iView UI 和原生 HTML 表格</li><li><strong>MutationObserver 监听</strong>：检测页面动态变化并自动重新渲染</li><li><strong>自定义列</strong>：用户可配置展示专业排名、班级排名、学分、绩点等</li><li><strong>Debug 模式</strong>：暴露所有 API 返回字段</li><li><strong>隐私保护</strong>：不收集、不存储任何账号或成绩数据</li></ul><mark class="hl-label green">USTB</mark> <mark class="hl-label green">浏览器扩展</mark> <mark class="hl-label green">工具</mark>]]>
@@ -159,9 +280,9 @@
     <category term="项目" scheme="https://caeamer.com/categories/%E9%A1%B9%E7%9B%AE/"/>
     <category term="开源" scheme="https://caeamer.com/tags/%E5%BC%80%E6%BA%90/"/>
     <category term="AI" scheme="https://caeamer.com/tags/AI/"/>
+    <category term="Rust" scheme="https://caeamer.com/tags/Rust/"/>
     <category term="Warp" scheme="https://caeamer.com/tags/Warp/"/>
     <category term="终端" scheme="https://caeamer.com/tags/%E7%BB%88%E7%AB%AF/"/>
-    <category term="Rust" scheme="https://caeamer.com/tags/Rust/"/>
     <category term="DevTools" scheme="https://caeamer.com/tags/DevTools/"/>
     <content>
       <![CDATA[<h2 id="项目概述"><a href="#项目概述" class="headerlink" title="项目概述"></a>项目概述</h2><p>Warp 是一个基于 Rust 构建的现代化智能终端，由 OpenAI 作为创始赞助商。它不仅仅是一个终端模拟器，而是一个完整的 AI 编程工作环境，原生集成了多种 AI 编程 Agent。</p><div class="note success flat"><p>Warp 的愿景：让终端成为 AI 时代的核心编程界面。</p></div><h2 id="技术架构"><a href="#技术架构" class="headerlink" title="技术架构"></a>技术架构</h2><mark class="hl-label blue">Rust</mark> <mark class="hl-label green">Tokio</mark> <mark class="hl-label orange">NuShell</mark> <mark class="hl-label Code">Claude</mark><h3 id="核心组件"><a href="#核心组件" class="headerlink" title="核心组件"></a>核心组件</h3><ul><li><strong>终端渲染</strong>：基于 Alacritty 的 GPU 加速终端</li><li><strong>Shell 集成</strong>：NuShell 提供现代化 Shell 体验</li><li><strong>AI Agent 集成</strong>：内置 Agent + Claude Code &#x2F; Codex &#x2F; Gemini CLI</li><li><strong>会话持久化</strong>：跨重启的工作状态保持</li></ul><h3 id="20-Agent-技能"><a href="#20-Agent-技能" class="headerlink" title="20+ Agent 技能"></a>20+ Agent 技能</h3><p>Warp 为开源社区提供了一套完整的开发自动化技能：PR Review、Issue Triage、Changelog 起草、Bug 复现、UI 规范检查、集成测试编排等。</p><h2 id="社区生态"><a href="#社区生态" class="headerlink" title="社区生态"></a>社区生态</h2><ul><li><strong>Oz for OSS</strong>：为开源项目维护者提供 AI Agent 额度</li><li><strong>AGPL v3 许可</strong></li></ul><mark class="hl-label green">终端</mark> <mark class="hl-label Agent">AI</mark> <mark class="hl-label green">开源</mark>]]>
@@ -273,8 +394,8 @@
       <name>lizhichao</name>
     </author>
     <category term="项目" scheme="https://caeamer.com/categories/%E9%A1%B9%E7%9B%AE/"/>
-    <category term="Python" scheme="https://caeamer.com/tags/Python/"/>
     <category term="AI Agent" scheme="https://caeamer.com/tags/AI-Agent/"/>
+    <category term="Python" scheme="https://caeamer.com/tags/Python/"/>
     <category term="自动化" scheme="https://caeamer.com/tags/%E8%87%AA%E5%8A%A8%E5%8C%96/"/>
     <category term="开源" scheme="https://caeamer.com/tags/%E5%BC%80%E6%BA%90/"/>
     <content>
@@ -286,63 +407,5 @@
     <summary>Nous Research 出品的通用自进化 AI 智能体，具备经验学习、持久记忆和跨平台运行能力。</summary>
     <title>Hermes Agent — 自进化的 AI 智能体</title>
     <updated>2026-06-13T14:28:14.000Z</updated>
-  </entry>
-  <entry>
-    <author>
-      <name>lizhichao</name>
-    </author>
-    <category term="项目" scheme="https://caeamer.com/categories/%E9%A1%B9%E7%9B%AE/"/>
-    <category term="Python" scheme="https://caeamer.com/tags/Python/"/>
-    <category term="AI Agent" scheme="https://caeamer.com/tags/AI-Agent/"/>
-    <category term="量化交易" scheme="https://caeamer.com/tags/%E9%87%8F%E5%8C%96%E4%BA%A4%E6%98%93/"/>
-    <category term="金融科技" scheme="https://caeamer.com/tags/%E9%87%91%E8%9E%8D%E7%A7%91%E6%8A%80/"/>
-    <content>
-      <![CDATA[<h2 id="项目概述"><a href="#项目概述" class="headerlink" title="项目概述"></a>项目概述</h2><p><strong>AI Agents Stock</strong> 是一个创新的多智能体股票分析平台，通过模拟一支完整的证券分析师团队，为投资者提供全方位、多维度的股票投资分析决策支持。</p><div class="note success flat"><p>核心理念：让多个专业化 AI Agent 像真正的分析师团队一样协作，从不同角度解读市场数据。</p></div><h2 id="功能模块"><a href="#功能模块" class="headerlink" title="功能模块"></a>功能模块</h2><h3 id="单股深度分析（6-大-AI-智能体）"><a href="#单股深度分析（6-大-AI-智能体）" class="headerlink" title="单股深度分析（6 大 AI 智能体）"></a>单股深度分析（6 大 AI 智能体）</h3><table><thead><tr><th>智能体</th><th>分析维度</th><th>核心能力</th></tr></thead><tbody><tr><td>技术面 Agent</td><td>K线形态、均线系统、MACD&#x2F;RSI</td><td>趋势判断与买卖点识别</td></tr><tr><td>基本面 Agent</td><td>财报数据、估值指标</td><td>公司价值评估</td></tr><tr><td>资金流向 Agent</td><td>大单追踪、北向资金</td><td>主力动向监测</td></tr><tr><td>风险评估 Agent</td><td>波动率、最大回撤、VaR</td><td>量化风险度量</td></tr><tr><td>情绪分析 Agent</td><td>新闻舆情、社交媒体</td><td>市场情绪感知</td></tr><tr><td>新闻 Agent</td><td>公告解读、行业动态</td><td>事件驱动分析</td></tr></tbody></table><h3 id="智策板块-—-板块轮动分析"><a href="#智策板块-—-板块轮动分析" class="headerlink" title="智策板块 — 板块轮动分析"></a>智策板块 — 板块轮动分析</h3><p>4 个 AI Agent 每日自动生成板块策略报告：</p><ul><li>板块轮动分析（行业趋势、资金轮动）</li><li>宏观政策解读（货币政策、产业政策）</li><li>资金流向监控（北向资金、主力资金）</li><li>市场情绪感知（恐慌&#x2F;贪婪指数）</li></ul><h3 id="智瞰龙虎-—-龙虎榜追踪"><a href="#智瞰龙虎-—-龙虎榜追踪" class="headerlink" title="智瞰龙虎 — 龙虎榜追踪"></a>智瞰龙虎 — 龙虎榜追踪</h3><p>5 个 AI Agent 分析每日龙虎榜数据：</p><ul><li>游资席位识别与追踪</li><li>机构席位动向分析</li><li>短线交易机会挖掘</li><li>热门板块与涨停逻辑分析</li></ul><h3 id="其他核心功能"><a href="#其他核心功能" class="headerlink" title="其他核心功能"></a>其他核心功能</h3><ul><li><strong>主力选股</strong>：机构资金流向筛选，3-5 只优质标的</li><li><strong>实时监控</strong>：价格预警 + 钉钉&#x2F;飞书通知</li><li><strong>MiniQMT 集成</strong>：量化交易策略执行</li><li><strong>Docker 部署</strong>：一键启动，开箱即用</li></ul><h2 id="技术栈"><a href="#技术栈" class="headerlink" title="技术栈"></a>技术栈</h2><mark class="hl-label blue">Python</mark> <mark class="hl-label red">Streamlit</mark> <mark class="hl-label pink">Plotly</mark> <mark class="hl-label orange">pandas</mark> <mark class="hl-label green">AKShare</mark> <mark class="hl-label blue">LLM</mark><ul><li><strong>前端</strong>：Streamlit 交互式界面</li><li><strong>数据源</strong>：AKShare、yfinance、Tushare、pywencai</li><li><strong>AI 模型</strong>：支持 DeepSeek、Qwen、GPT-4o 等大模型</li><li><strong>数据分析</strong>：pandas、numpy、ta（技术分析指标）</li><li><strong>可视化</strong>：Plotly 交互式图表</li><li><strong>存储</strong>：SQLite (peewee ORM)</li><li><strong>部署</strong>：Docker + Docker Compose</li></ul><h2 id="设计思想"><a href="#设计思想" class="headerlink" title="设计思想"></a>设计思想</h2><p>这个项目的核心在于 <strong>Agent 分工协作</strong> 的设计模式。单个 AI 的分析能力有限，但如果让 6 个分别专注于不同领域的 Agent 同时工作，再综合各方意见，就能产生远超单一视角的洞察力——就像真正的投资研究团队一样。</p><p>这种多 Agent 协作的架构不仅适用于金融分析，也可以迁移到其他需要多角度决策的领域。</p>]]>
-    </content>
-    <id>https://caeamer.com/2026/06/13/AI-Agents-Stock-%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E8%82%A1%E7%A5%A8%E5%88%86%E6%9E%90%E7%B3%BB%E7%BB%9F/</id>
-    <link href="https://caeamer.com/2026/06/13/AI-Agents-Stock-%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E8%82%A1%E7%A5%A8%E5%88%86%E6%9E%90%E7%B3%BB%E7%BB%9F/"/>
-    <published>2026-06-13T14:28:12.000Z</published>
-    <summary>基于多 AI 智能体协作的股票分析系统，覆盖 A 股、港股、美股，支持技术面、基本面、资金流向等多维度分析。</summary>
-    <title>AI Agents Stock — 多智能体股票分析系统</title>
-    <updated>2026-06-13T14:28:12.000Z</updated>
-  </entry>
-  <entry>
-    <author>
-      <name>lizhichao</name>
-    </author>
-    <category term="项目" scheme="https://caeamer.com/categories/%E9%A1%B9%E7%9B%AE/"/>
-    <category term="ROS2" scheme="https://caeamer.com/tags/ROS2/"/>
-    <category term="机器人" scheme="https://caeamer.com/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA/"/>
-    <category term="嵌入式" scheme="https://caeamer.com/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/"/>
-    <category term="CAN总线" scheme="https://caeamer.com/tags/CAN%E6%80%BB%E7%BA%BF/"/>
-    <category term="C++" scheme="https://caeamer.com/tags/C/"/>
-    <category term="控制算法" scheme="https://caeamer.com/tags/%E6%8E%A7%E5%88%B6%E7%AE%97%E6%B3%95/"/>
-    <content>
-      <![CDATA[<h2 id="项目背景"><a href="#项目背景" class="headerlink" title="项目背景"></a>项目背景</h2><p>外骨骼机器人在康复医疗、工业辅助和军事领域都有广泛的应用前景。本项目实现了一套完整的<strong>脚踝外骨骼机器人控制系统</strong>，已于近期完成 <strong>ROS1 → ROS2 平台迁移</strong>与<strong>硬件架构重设计</strong>。</p><div class="note success flat"><p>v2.0 重大升级：从 ROS1 Melodic (Ubuntu 18.04) 全面迁移至 ROS2 Humble (Ubuntu 22.04)，CAN 架构重写，IMU 协议升级，控制器能力大幅增强。</p></div><h2 id="技术架构"><a href="#技术架构" class="headerlink" title="技术架构"></a>技术架构</h2><p>整个系统运行在 <strong>Ubuntu 22.04 + ROS2 Humble</strong> 环境下，采用 colcon 构建系统。</p><mark class="hl-label blue">C++</mark> <mark class="hl-label green">Python</mark> <mark class="hl-label orange">CAN总线</mark> <mark class="hl-label pink">Modbus</mark> <mark class="hl-label Humble">ROS2</mark><h3 id="can-ankle-—-5-模式自适应步态控制器"><a href="#can-ankle-—-5-模式自适应步态控制器" class="headerlink" title="can_ankle — 5 模式自适应步态控制器"></a>can_ankle — 5 模式自适应步态控制器</h3><p>核心控制包已从简单的力矩&#x2F;速度控制升级为完整的<strong>5 模式状态机自适应步态控制器</strong>：</p><p><strong>状态机流程：</strong></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">STAND_MODE → TORQUE_MODE → PRE_TORQUE_MODE → TORQUE_DRIVE_MODE → VELOCITY_MODE → STAND_MODE</span><br></pre></td></tr></table></figure><p><strong>关键特性：</strong></p><ul><li><strong>自适应步速估计</strong>：根据支撑相时间通过指数模型 <code>pace = -ln((t2-c1)/a1) / b1</code> 实时计算步速</li><li><strong>PID 自适应调参</strong>：Kp&#x2F;Ki&#x2F;Kd 根据步速分 5 档动态调整（Kp 范围 20-60）</li><li><strong>坡度辅助力矩</strong>：利用 IMU 四元数 z 分量估计地面坡度，计算 <code>assist_torque = 8/π * atan(slope/2)</code></li><li><strong>浮动补偿</strong>：基于理论&#x2F;实际摆动时间差动态调整</li><li><strong>两种控制模式</strong>：Mode 1——余弦形力矩曲线 + 自适应上升&#x2F;下降时间；Mode 2——固定 0.18s&#x2F;0.21s 曲线</li><li><strong>支撑相位置补偿</strong>：交替记录位置，回位校正</li></ul><h3 id="CAN-总线架构-—-双协议重设计"><a href="#CAN-总线架构-—-双协议重设计" class="headerlink" title="CAN 总线架构 — 双协议重设计"></a>CAN 总线架构 — 双协议重设计</h3><div class="note info flat"><p>从旧版直接 VCI_USBCAN2 调用升级为 <strong>Python CAN Bridge + 内嵌 CAN 子进程</strong> 双层架构。</p></div><ul><li><strong>硬件</strong>：CANalyst-II (USB <code>04d8:0053</code>, 1 Mbps)，替代旧的 USBCAN2</li><li><strong>电机</strong>：CANopen Node 83，SDO COB-ID <code>0x653</code></li><li><strong>Layer 1</strong>：<code>can_bridge.py</code> — python-can + canalystii 接口，发布 <code>/can_rx</code> &#x2F; 订阅 <code>/can_tx</code></li><li><strong>Layer 2</strong>：C++ 内嵌 CAN 子进程，通过 <code>posix_spawn()</code> + 双向管道通信，避免 DDS 中断</li></ul><h3 id="fdilink-ahrs-—-IMU-协议升级：FC-→-5A-5A"><a href="#fdilink-ahrs-—-IMU-协议升级：FC-→-5A-5A" class="headerlink" title="fdilink_ahrs — IMU 协议升级：FC → 5A 5A"></a>fdilink_ahrs — IMU 协议升级：FC → 5A 5A</h3><p>IMU 驱动已完成重大协议升级：</p><table><thead><tr><th>对比项</th><th>旧版</th><th>新版</th></tr></thead><tbody><tr><td>帧头</td><td>FC</td><td><strong>0x5A 0xA5</strong></td></tr><tr><td>帧长</td><td>不定长</td><td><strong>82 字节</strong> (2H+2L+76B+2T)</td></tr><tr><td>波特率</td><td>921600</td><td><strong>115200</strong></td></tr><tr><td>固件</td><td>旧版</td><td><strong>v1.6.8+</strong> (2025-07-17)</td></tr></tbody></table><p><strong>发布 7 个 ROS2 Topic</strong>（原来 ~3 个）：</p><ul><li><code>/imu</code> — sensor_msgs&#x2F;Imu（Eigen 四元数坐标旋转）</li><li><code>/euler_angles</code> — Vector3 (roll&#x2F;pitch&#x2F;yaw)</li><li><code>/mag_pose_2d</code> — Pose2D 磁北极航向</li><li><code>/magnetic</code> — Vector3 磁力计</li><li><code>/gps/fix</code> — NavSatFix GPS</li><li><code>/system_speed</code> — Twist 机体速度</li><li><code>/NED_odometry</code> — Odometry NED 位姿估计</li></ul><p>新增 <strong>TF 广播节点</strong> (<code>imu_tf.cpp</code>)：world → gyro_link 变换 + 可配置位置偏移。</p><h3 id="力传感器-—-Modbus-RTU-重构"><a href="#力传感器-—-Modbus-RTU-重构" class="headerlink" title="力传感器 — Modbus RTU 重构"></a>力传感器 — Modbus RTU 重构</h3><mark class="hl-label blue">Modbus</mark> <mark class="hl-label green">CRC16</mark> <mark class="hl-label orange">19200bps</mark><p>从旧版 ASCII 文本协议彻底重构为<strong>工业 Modbus RTU 协议</strong>：</p><ul><li>功能码 0x03（读保持寄存器），寄存器 <code>0x0FA0</code>&#x2F;<code>0x0FA1</code></li><li>从站 ID 1，CRC16 Modbus 校验</li><li>可配置比例系数（默认 0.01），20Hz 循环</li><li>支持调试模式（TX&#x2F;RX hex dump）</li></ul><h3 id="新增节点"><a href="#新增节点" class="headerlink" title="新增节点"></a>新增节点</h3><table><thead><tr><th>节点</th><th>功能</th></tr></thead><tbody><tr><td><code>serial_sendCommand_node</code></td><td>足底开关串口读取 + 步态相位时序发布（6 个 Topic：单支撑&#x2F;双支撑&#x2F;摆动相等）</td></tr><tr><td><code>serial_encoder_node</code></td><td>Modbus RTU 编码器读取</td></tr><tr><td><code>storeTopicMSG_node</code></td><td>步态相位时间数据记录到文件</td></tr><tr><td><code>storeVelMSG_node</code></td><td>编码器角度&#x2F;力矩数据记录到文件</td></tr><tr><td><code>can_test_node</code></td><td>CAN 通信正弦速度测试</td></tr><tr><td><code>imu_tf</code></td><td>IMU 坐标系 TF 广播</td></tr></tbody></table><h3 id="安全保障"><a href="#安全保障" class="headerlink" title="安全保障"></a>安全保障</h3><ul><li>编码器限位：±45 度</li><li>力传感器过载：300N</li><li>站立超时：支撑相 &gt; 5s 触发</li><li>指令序列验证：严格 <code>0x41→0x42→0x43→0x44</code> 次序，违规自动回零</li><li>cmd_vel 超时 500ms 自动停机</li></ul><h2 id="开发心得"><a href="#开发心得" class="headerlink" title="开发心得"></a>开发心得</h2><p>这个项目是我深入理解机器人控制系统的入门之作。从 ROS1 到 ROS2 的迁移让我深刻体会到 DDS 中间件的优势与挑战；CAN 双协议架构的设计教会我处理实时通信的可靠性；5 模式状态机的调参过程则让我对控制理论有了切身的理解。</p><mark class="hl-label green">机器人</mark> <mark class="hl-label green">控制算法</mark> <mark class="hl-label green">ROS2</mark>]]>
-    </content>
-    <id>https://caeamer.com/2026/06/13/%E8%84%9A%E8%B8%9D%E5%A4%96%E9%AA%A8%E9%AA%BC%E6%9C%BA%E5%99%A8%E4%BA%BA%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F/</id>
-    <link href="https://caeamer.com/2026/06/13/%E8%84%9A%E8%B8%9D%E5%A4%96%E9%AA%A8%E9%AA%BC%E6%9C%BA%E5%99%A8%E4%BA%BA%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F/"/>
-    <published>2026-06-13T14:28:11.000Z</published>
-    <summary>基于 ROS2 Humble 的全新架构脚踝外骨骼控制系统 — 5 模式自适应步态控制、CAN 总线双协议栈、Modbus 力传感与 5A-A5 帧 IMU 驱动。</summary>
-    <title>脚踝外骨骼机器人控制系统</title>
-    <updated>2026-07-11T16:00:00.000Z</updated>
-  </entry>
-  <entry>
-    <author>
-      <name>lizhichao</name>
-    </author>
-    <category term="随笔" scheme="https://caeamer.com/categories/%E9%9A%8F%E7%AC%94/"/>
-    <category term="个人" scheme="https://caeamer.com/tags/%E4%B8%AA%E4%BA%BA/"/>
-    <content>
-      <![CDATA[<h2 id="👋-你好，很高兴认识你！"><a href="#👋-你好，很高兴认识你！" class="headerlink" title="👋 你好，很高兴认识你！"></a>👋 你好，很高兴认识你！</h2><div class="note success flat"><p>这里是 lizhichao 的个人博客。我是一名大二本科生，热爱 Web 开发与开源技术。</p></div><h3 id="关于这个博客"><a href="#关于这个博客" class="headerlink" title="关于这个博客"></a>关于这个博客</h3><p>这个博客主要用于：</p><ul><li><strong>展示个人经历</strong> — 你可以查看我的<a href="/resume/">工作与教育经历</a></li><li><strong>分享项目作品</strong> — 在<a href="/projects/">项目页面</a>了解我做过的项目</li><li><strong>记录技术成长</strong> — 我会在这里分享技术笔记和学习心得</li></ul><h3 id="快速了解我"><a href="#快速了解我" class="headerlink" title="快速了解我"></a>快速了解我</h3><mark class="hl-label blue">JavaScript</mark> <mark class="hl-label green">TypeScript</mark> <mark class="hl-label pink">React</mark> <mark class="hl-label orange">Vue.js</mark> <mark class="hl-label red">Node.js</mark><ul><li>🔭 技术兴趣：前端架构、性能优化、开源社区</li><li>📫 联系方式：<a href="mailto:&#99;&#97;&#x65;&#x61;&#x6d;&#x65;&#x72;&#x40;&#49;&#x36;&#51;&#x2e;&#x63;&#111;&#109;">caeamer@163.com</a></li></ul><h3 id="最近动态"><a href="#最近动态" class="headerlink" title="最近动态"></a>最近动态</h3><p>我会在这里记录技术学习心得和项目进展，欢迎持续关注。</p>]]>
-    </content>
-    <id>https://caeamer.com/2026/06/12/%E6%AC%A2%E8%BF%8E%E6%9D%A5%E5%88%B0%E6%88%91%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</id>
-    <link href="https://caeamer.com/2026/06/12/%E6%AC%A2%E8%BF%8E%E6%9D%A5%E5%88%B0%E6%88%91%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/"/>
-    <published>2026-06-11T16:00:00.000Z</published>
-    <summary>
-      <![CDATA[<h2 id="👋-你好，很高兴认识你！"><a href="#👋-你好，很高兴认识你！" class="headerlink" title="👋 你好，很高兴认识你！"></a>👋 你好，很高兴认识你！</h2><div class="note success flat]]>
-    </summary>
-    <title>欢迎来到我的个人博客</title>
-    <updated>2026-06-11T16:00:00.000Z</updated>
   </entry>
 </feed>

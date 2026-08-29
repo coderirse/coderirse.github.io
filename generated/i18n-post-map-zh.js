@@ -30,6 +30,36 @@ window.__I18N_POST_MAP__.byPath = {
     "en": "/en/2026/07/12/awesome-claude-code/",
     "ja": "/ja/2026/07/12/awesome-claude-code/"
   },
+  "/2026/08/29/base-conversion/": {
+    "zh-CN": "/2026/08/29/base-conversion/",
+    "en": "/en/2026/08/29/base-conversion/",
+    "ja": "/ja/2026/08/29/base-conversion/"
+  },
+  "/2026/08/29/base-conversion": {
+    "zh-CN": "/2026/08/29/base-conversion/",
+    "en": "/en/2026/08/29/base-conversion/",
+    "ja": "/ja/2026/08/29/base-conversion/"
+  },
+  "/2026/08/29/beike-schedule/": {
+    "zh-CN": "/2026/08/29/beike-schedule/",
+    "en": "/en/2026/08/29/beike-schedule/",
+    "ja": "/ja/2026/08/29/beike-schedule/"
+  },
+  "/2026/08/29/beike-schedule": {
+    "zh-CN": "/2026/08/29/beike-schedule/",
+    "en": "/en/2026/08/29/beike-schedule/",
+    "ja": "/ja/2026/08/29/beike-schedule/"
+  },
+  "/2026/08/29/countdown/": {
+    "zh-CN": "/2026/08/29/countdown/",
+    "en": "/en/2026/08/29/countdown/",
+    "ja": "/ja/2026/08/29/countdown/"
+  },
+  "/2026/08/29/countdown": {
+    "zh-CN": "/2026/08/29/countdown/",
+    "en": "/en/2026/08/29/countdown/",
+    "ja": "/ja/2026/08/29/countdown/"
+  },
   "/2026/06/13/Hermes-Agent-自进化AI智能体/": {
     "zh-CN": "/2026/06/13/Hermes-Agent-自进化AI智能体/",
     "en": "/en/2026/06/13/hermes-agent/",
@@ -39,6 +69,26 @@ window.__I18N_POST_MAP__.byPath = {
     "zh-CN": "/2026/06/13/Hermes-Agent-自进化AI智能体/",
     "en": "/en/2026/06/13/hermes-agent/",
     "ja": "/ja/2026/06/13/hermes-agent/"
+  },
+  "/2026/08/29/life-assistant/": {
+    "zh-CN": "/2026/08/29/life-assistant/",
+    "en": "/en/2026/08/29/life-assistant/",
+    "ja": "/ja/2026/08/29/life-assistant/"
+  },
+  "/2026/08/29/life-assistant": {
+    "zh-CN": "/2026/08/29/life-assistant/",
+    "en": "/en/2026/08/29/life-assistant/",
+    "ja": "/ja/2026/08/29/life-assistant/"
+  },
+  "/2026/08/29/lingoflow/": {
+    "zh-CN": "/2026/08/29/lingoflow/",
+    "en": "/en/2026/08/29/lingoflow/",
+    "ja": "/ja/2026/08/29/lingoflow/"
+  },
+  "/2026/08/29/lingoflow": {
+    "zh-CN": "/2026/08/29/lingoflow/",
+    "en": "/en/2026/08/29/lingoflow/",
+    "ja": "/ja/2026/08/29/lingoflow/"
   },
   "/2026/07/12/Net-USTB-北科校园网一键登录/": {
     "zh-CN": "/2026/07/12/Net-USTB-北科校园网一键登录/",
@@ -89,6 +139,16 @@ window.__I18N_POST_MAP__.byPath = {
     "zh-CN": "/2026/07/12/tinygrad-极简深度学习框架/",
     "en": "/en/2026/07/12/tinygrad/",
     "ja": "/ja/2026/07/12/tinygrad/"
+  },
+  "/2026/08/29/trailmap/": {
+    "zh-CN": "/2026/08/29/trailmap/",
+    "en": "/en/2026/08/29/trailmap/",
+    "ja": "/ja/2026/08/29/trailmap/"
+  },
+  "/2026/08/29/trailmap": {
+    "zh-CN": "/2026/08/29/trailmap/",
+    "en": "/en/2026/08/29/trailmap/",
+    "ja": "/ja/2026/08/29/trailmap/"
   },
   "/2026/07/12/USTB-成绩排名浏览器扩展/": {
     "zh-CN": "/2026/07/12/USTB-成绩排名浏览器扩展/",
