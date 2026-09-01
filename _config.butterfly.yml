@@ -139,12 +139,12 @@ darkmode:
   autoChangeMode: 2
 
 # 页脚
+# owner/copyright 关闭：版权行按指定格式写在 custom_text 里（名字用 caeamer）
 footer:
   owner:
-    enable: true
-    since: 2024
-  custom_text: Keep moving, keep coding.
-  copyright: true
+    enable: false
+  custom_text: 'Copyright &copy; 2026 caeamer. All rights reserved.<br>Keep moving, keep building.'
+  copyright: false
 
 # 右下角快捷按钮
 rightside_scroll_percent: true
