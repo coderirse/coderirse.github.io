@@ -642,7 +642,11 @@ html[lang] .code-block {
 #footer {
   background: transparent !important;
   border-top: 1px solid var(--hairline);
-  color: var(--ink-mute) !important;
+  color: var(--ink-soft) !important;
+}
+/* 主题对 #footer > * 设置了浅灰（浅色页脚配色），纸底上不可读，必须逐子元素覆盖 */
+#footer > * {
+  color: var(--ink-soft) !important;
 }
 #footer a {
   color: var(--ink-soft) !important;
