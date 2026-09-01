@@ -81,8 +81,11 @@ git add . && git commit -m "new post" && git push origin source
 
 | Branch | Purpose |
 |--------|---------|
-| `source` | Hexo source code (configs, posts, themes) |
-| `master` | Generated static site (served by GitHub Pages) |
+| `main` | Trunk / default branch — mirrors the latest stable state of `source` |
+| `source` | Development branch (all work happens here) |
+| `master` | Generated static site (GitHub Pages deploy artifact, auto-pushed by `hexo deploy`) |
+
+Releases are tagged on `source` (e.g. `v1.0.0`).
 
 ---
 
@@ -162,8 +165,11 @@ git add . && git commit -m "新文章" && git push origin source
 
 | 分支 | 用途 |
 |------|------|
-| `source` | Hexo 源码（配置、文章、主题） |
-| `master` | 生成的静态站点（GitHub Pages 部署源） |
+| `main` | 主干 / 默认分支——同步 `source` 的最新稳定状态 |
+| `source` | 日常开发分支（所有改动在此进行） |
+| `master` | 生成的静态站点（GitHub Pages 部署产物，由 `hexo deploy` 自动推送） |
+
+版本发布在 `source` 上打 tag（如 `v1.0.0`）。
 
 ---
 
