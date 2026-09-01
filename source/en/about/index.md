@@ -15,7 +15,7 @@ Passionate about technology. Keep learning. Keep moving.
 
 ### About
 
-Sophomore at University of Science and Technology Beijing (USTB). Passionate about AI Coding and solving problems with code.
+Junior at University of Science and Technology Beijing (USTB). Passionate about vibe coding and solving problems with code.
 
 I believe the value of technology lies in creation — whether building a complete web application or automating repetitive tasks with scripts. In my spare time, I contribute to open-source projects, share knowledge in tech communities, and document my learning journey on GitHub.
 

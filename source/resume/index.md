@@ -13,7 +13,7 @@ top_img: https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=1920&q=8
 
 <!-- timeline 2024年9月 — 至今 | 北京科技大学  -->
 
-- 本科在读，大二学生
+- 本科在读，大三学生
 - 自学计算机科学与编程，专注于人工智能方向
 - 主修课程：高等数学、程序设计基础等
 - 通过 CET-6 英语等级考试
@@ -54,7 +54,7 @@ top_img: https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=1920&q=8
 <!-- timeline 2025年 — 至今 | GitHub 开源社区 -->
 
 - 在 GitHub 上维护个人项目和学习笔记
-- 关注并参与 AI Coding 相关的开源讨论
+- 关注并参与 vibe coding 相关的开源讨论
 - 持续学习和分享技术知识
 
 <!-- endtimeline -->

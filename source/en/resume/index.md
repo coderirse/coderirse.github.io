@@ -13,7 +13,7 @@ top_img: https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=1920&q=8
 
 <!-- timeline Sep 2024 — Present | USTB  -->
 
-- Undergraduate, Sophomore
+- Undergraduate, Junior
 - Self-taught computer science and programming, focusing on AI
 - Core courses: Advanced Mathematics, Theoretical Mechanics, Mechanical Design, Programming Fundamentals
 - Passed CET-6
@@ -54,7 +54,7 @@ top_img: https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=1920&q=8
 <!-- timeline 2025 — Present | GitHub Community -->
 
 - Maintain personal projects and study notes on GitHub
-- Participate in AI Coding open-source discussions
+- Participate in vibe coding open-source discussions
 - Continuously learning and sharing technical knowledge
 
 <!-- endtimeline -->

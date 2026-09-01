@@ -16,7 +16,7 @@ description: Warp is a next-gen intelligent terminal/IDE with native AI agent in
 
 ## Overview
 
-Warp is a modern intelligent terminal built with Rust, with OpenAI as founding sponsor. It's not just a terminal emulator — it's a complete AI-powered development environment with native integration of multiple AI coding agents.
+Warp is a modern intelligent terminal built with Rust, with OpenAI as founding sponsor. It's not just a terminal emulator — it's a complete AI-powered development environment with native integration of multiple vibe coding agents.
 
 {% label Rust blue %} {% label Tokio green %} {% label AI pink %}
 

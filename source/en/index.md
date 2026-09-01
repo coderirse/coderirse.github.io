@@ -7,7 +7,7 @@ description: Li Zhichao's Personal Blog
 
 ## 👋 Welcome
 
-I'm Li Zhichao, a sophomore at USTB passionate about AI Coding and open source.
+I'm Li Zhichao, a junior at USTB passionate about vibe coding and open source.
 
 {% label JavaScript blue %} {% label TypeScript green %} {% label React pink %} {% label Python blue %} {% label AI green %} {% label Open Source orange %}
 

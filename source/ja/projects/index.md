@@ -232,12 +232,12 @@ PyTorchとmicrogradの間に位置する極小ディープラーニングフレ�
 
 {% label Rust blue %} {% label Tokio green %} {% label AI Agent orange %}
 
-Rustベースのモダンなインテリジェントターミナル。AIエージェントをネイティブ統合し、Claude Code、Codex、Geminiなど主要AIコーディングツールに対応——ターミナルをAI時代の中核的なプログラミングインターフェースに。
+Rustベースのモダンなインテリジェントターミナル。AIエージェントをネイティブ統合し、Claude Code、Codex、Geminiなど主要バイブコーディングツールに対応——ターミナルをAI時代の中核的なプログラミングインターフェースに。
 
 **ハイライト:**
 - GPUアクセラレーションによるターミナルレンダリング（Alacrittyベース）
 - NuShellによるモダンなシェル体験
-- 内蔵エージェント + 複数AIコーディングツール連携
+- 内蔵エージェント + 複数バイブコーディングツール連携
 - 再起動をまたぐセッション永続化
 
 {% label DevTools green %} {% label オープンソース解析 green %} {% label ターミナル green %}

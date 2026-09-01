@@ -7,7 +7,7 @@ description: リ・ジチャオの個人ブログ
 
 ## 👋 ようこそ
 
-北京科技大学の2年生。AIコーディングとオープンソースに情熱を注いでいます。
+北京科技大学の3年生。バイブコーディングとオープンソースに情熱を注いでいます。
 
 {% label JavaScript blue %} {% label TypeScript green %} {% label React pink %} {% label Python blue %} {% label AI green %} {% label オープンソース orange %}
 

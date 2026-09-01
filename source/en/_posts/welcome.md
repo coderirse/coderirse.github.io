@@ -11,7 +11,7 @@ categories:
 ## 👋 Hello, nice to meet you!
 
 {% note success %}
-This is Li Zhichao's personal blog. I'm a sophomore passionate about web development and open-source technology.
+This is Li Zhichao's personal blog. I'm a junior passionate about web development and open-source technology.
 {% endnote %}
 
 ### About This Blog

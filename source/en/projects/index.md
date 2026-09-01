@@ -228,16 +228,16 @@ A minimalist deep learning framework sitting between PyTorch and micrograd: roug
 
 ---
 
-### 💻 Warp — The AI Coding Environment That Redefines the Terminal
+### 💻 Warp — The Vibe Coding Environment That Redefines the Terminal
 
 {% label Rust blue %} {% label Tokio green %} {% label AI Agent orange %}
 
-A modern intelligent terminal built on Rust with natively integrated AI agents, supporting mainstream AI coding tools like Claude Code, Codex, and Gemini — making the terminal the core programming interface of the AI era.
+A modern intelligent terminal built on Rust with natively integrated AI agents, supporting mainstream vibe coding tools like Claude Code, Codex, and Gemini — making the terminal the core programming interface of the AI era.
 
 **Highlights:**
 - GPU-accelerated terminal rendering (based on Alacritty)
 - NuShell modern shell experience
-- Built-in agent + integration with multiple AI coding tools
+- Built-in agent + integration with multiple vibe coding tools
 - Session persistence across restarts
 
 {% label DevTools green %} {% label Open Source Analysis green %} {% label Terminal green %}

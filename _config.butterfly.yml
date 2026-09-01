@@ -99,7 +99,7 @@ aside:
     category: true
   card_author:
     enable: true
-    description: USTB · 热爱 AI Coding 与开源<br><i class="fas fa-envelope"></i> caeamer@163.com<br><i class="fab fa-qq"></i> 87452310
+    description: USTB · 热爱 vibe coding 与开源<br><i class="fas fa-envelope"></i> caeamer@163.com<br><i class="fab fa-qq"></i> 87452310
     button:
       enable: true
       icon: fab fa-github
