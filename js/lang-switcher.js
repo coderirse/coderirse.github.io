@@ -150,8 +150,8 @@
     var siteTitle = document.querySelector('#nav .site-name');
     var titleText = siteTitle ? siteTitle.textContent : 'lizhichao';
     var subtitleMap = {
-      'en': 'Passionate about AI Coding & Open Source',
-      'ja': 'AIコーディングとオープンソースに情熱を注いでいます'
+      'en': 'Passionate about vibe coding & Open Source',
+      'ja': 'バイブコーディングとオープンソースに情熱を注いでいます'
     };
     var subtitle = subtitleMap[currentLang] || '';
 
