@@ -13,3 +13,4 @@ source/generated/
 
 # Astro build output
 astro/dist/
+astro/.astro/
