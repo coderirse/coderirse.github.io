@@ -846,3 +846,148 @@ img { max-width: 100%; }
   .marquee .mq-track { animation: none; }
   .hero-scroll { animation: none; }
 }
+
+/* ================================================================
+   WORK WALL — 巨字拉伸背景 + 窗口卡片（wodniack WORK 复刻）
+   ================================================================ */
+.workwall {
+  position: relative;
+  background: var(--bg-deep);
+  overflow: clip;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+/* 背景巨字 */
+.ww-bg {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  user-select: none;
+}
+.ww-row {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 112%;
+  margin-left: -6%;
+  font-family: var(--font-serif);
+  font-weight: 600;
+  line-height: 0.9;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+  opacity: 0.92;
+  will-change: transform;
+}
+
+/* 窗口群 */
+.ww-windows {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+.ww-window {
+  position: absolute;
+  display: block;
+  background: var(--bg-raise);
+  border: 1px solid var(--line-strong);
+  text-decoration: none;
+  pointer-events: auto;
+  transition: border-color 0.25s ease, transform 0.25s ease;
+  will-change: transform;
+}
+.ww-window:hover {
+  border-color: var(--accent);
+  z-index: 5;
+}
+.ww-chrome {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--line);
+}
+.ww-chrome i {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--line-strong);
+}
+.ww-window:hover .ww-chrome i:first-child { background: var(--accent); }
+.ww-no {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  color: var(--mute);
+}
+.ww-body {
+  display: block;
+  padding: 0.95rem 1.1rem 1.15rem;
+}
+.ww-meta {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  margin-bottom: 0.55rem;
+}
+.ww-title {
+  display: block;
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: 1.12rem;
+  line-height: 1.35;
+  letter-spacing: 0.01em;
+  color: var(--ink);
+  transition: color 0.2s ease, font-style 0.2s ease;
+}
+.ww-window:hover .ww-title {
+  color: var(--accent);
+  font-style: italic;
+}
+.ww-excerpt {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-top: 0.6rem;
+  font-size: 0.78rem;
+  line-height: 1.7;
+  color: var(--ink-dim);
+}
+
+/* 移动端降级：去掉散布与视差，纵向排列 */
+@media screen and (max-width: 768px) {
+  .workwall {
+    height: auto !important;
+    padding: 4rem var(--gutter);
+  }
+  .ww-bg {
+    position: relative;
+    height: 30vh;
+    margin-bottom: 3rem;
+    opacity: 0.5;
+  }
+  .ww-row {
+    width: 100%;
+    margin-left: 0;
+  }
+  .ww-windows {
+    position: static;
+  }
+  .ww-window {
+    position: static !important;
+    width: auto !important;
+    margin-bottom: 1.2rem;
+    transform: none !important;
+  }
+}

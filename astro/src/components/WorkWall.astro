@@ -1,0 +1,63 @@
+---
+import { postUrl, dateStr, firstCategory, type Lang, type Post } from '../lib/site';
+
+interface Props {
+  lang: Lang;
+  posts: Post[];
+  word: string;
+}
+
+const { posts, word } = Astro.props;
+
+const letters = word.split('');
+
+/* 确定性散布布局：左右交错、尺寸不一 */
+const X = [4, 52, 14, 58, 8, 46, 22, 54, 2, 40, 16, 60, 10, 48, 26, 56, 6, 42, 18, 52, 0, 36, 24, 58];
+const W = [420, 350, 440, 340, 400, 380, 430, 350, 410, 370, 425, 345, 405, 385, 415, 355, 395, 375, 435, 365, 420, 360, 400, 380];
+
+const n = posts.length;
+const yStep = 90 / n;
+const wallHeight = Math.round(150 + n * 18); // vh
+---
+
+<section
+  class="workwall"
+  id="workwall"
+  style={`height:${wallHeight}vh`}
+  aria-label={word}
+>
+  <!-- 巨字拉伸背景（sticky） -->
+  <div class="ww-bg" aria-hidden="true">
+    {letters.map((l, ri) => (
+      <div
+        class="ww-row"
+        data-dir={ri % 2 === 0 ? '1' : '-1'}
+        style={`font-size:${(92 / letters.length).toFixed(2)}vh`}
+      >
+        {Array.from({ length: 5 }).map(() => <span>{l}</span>)}
+      </div>
+    ))}
+  </div>
+
+  <!-- 窗口群 -->
+  <div class="ww-windows">
+    {posts.map((p, i) => (
+      <a
+        class="ww-window"
+        href={postUrl(p)}
+        data-speed={(0.9 + (i % 5) * 0.08).toFixed(2)}
+        style={`left:${X[i % X.length]}%; top:${(4 + i * yStep).toFixed(2)}%; width:${W[i % W.length]}px`}
+      >
+        <span class="ww-chrome">
+          <i></i><i></i><i></i>
+          <span class="ww-no">#POST-{String(i + 1).padStart(4, '0')}/{String(n).padStart(2, '0')}</span>
+        </span>
+        <span class="ww-body">
+          <span class="ww-meta">{dateStr(p.data.date)}{firstCategory(p) ? ` · ${firstCategory(p)}` : ''}</span>
+          <span class="ww-title">{p.data.title}</span>
+          {p.data.description && <span class="ww-excerpt">{p.data.description}</span>}
+        </span>
+      </a>
+    ))}
+  </div>
+</section>

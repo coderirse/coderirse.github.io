@@ -1,28 +1,24 @@
 ---
 import Base from '../layouts/Base.astro';
-import { getPosts, postUrl, dateStr, firstCategory, T, LANG_PREFIX, type Lang } from '../lib/site';
+import WorkWall from './WorkWall.astro';
+import { getPosts, T, LANG_PREFIX, type Lang } from '../lib/site';
 import { readProjects } from '../lib/projects';
 
-interface Props { lang: Lang; page?: number }
-const { lang, page = 1 } = Astro.props;
+interface Props { lang: Lang }
+const { lang } = Astro.props;
 const t = T[lang];
 const prefix = LANG_PREFIX[lang];
 
-const PER_PAGE = 10;
 const posts = await getPosts(lang);
-const totalPages = Math.max(1, Math.ceil(posts.length / PER_PAGE));
-const shown = posts.slice((page - 1) * PER_PAGE, page * PER_PAGE);
 const projects = readProjects(lang).slice(0, 8);
 const siteName = 'lizhichao';
-const pageUrl = (n: number) => (n === 1 ? `${prefix}/` : `${prefix}/page/${n}/`);
 ---
 
 <Base
   lang={lang}
   title={`${siteName} — Create infinite possibilities`}
   description={t.aboutLine.replace(/<[^>]+>/g, '')}
-  veil={page === 1}
-  altUrls={page > 1 ? { zh: `/page/${page}/`, en: `/en/page/${page}/`, ja: `/ja/page/${page}/` } : undefined}
+  veil
 >
   <!-- 刊头 -->
   <header class="hero">
@@ -65,37 +61,8 @@ const pageUrl = (n: number) => (n === 1 ? `${prefix}/` : `${prefix}/page/${n}/`)
     <p data-reveal>{t.manifesto}</p>
   </section>
 
-  <!-- 目次 -->
-  <section class="act toc">
-    <div class="act-label">
-      <span class="no">ACT 01</span>
-      <span class="name">{t.toc}</span>
-      <span class="en">{t.tocEn}</span>
-    </div>
-    <div>
-      {shown.map((p, i) => (
-        <a class="toc-row" href={postUrl(p)} data-reveal>
-          <span class="idx">{String((page - 1) * PER_PAGE + i + 1).padStart(2, '0')}</span>
-          <span class="date">{dateStr(p.data.date)}</span>
-          <span class="title">{p.data.title}</span>
-          {firstCategory(p) && <span class="cat">{firstCategory(p)}</span>}
-          {p.data.description && <span class="excerpt">{p.data.description}</span>}
-        </a>
-      ))}
-    </div>
-    {totalPages > 1 && (
-      <nav class="pager">
-        {page > 1 && <a href={pageUrl(page - 1)} aria-label={t.prev}>‹</a>}
-        {Array.from({ length: totalPages }).map((_, i) => {
-          const n = i + 1;
-          return n === page
-            ? <span class="current">{n}</span>
-            : <a href={pageUrl(n)}>{n}</a>;
-        })}
-        {page < totalPages && <a href={pageUrl(page + 1)} aria-label={t.next}>›</a>}
-      </nav>
-    )}
-  </section>
+  <!-- 文章墙：巨字背景 + 窗口卡片 -->
+  <WorkWall lang={lang} posts={posts} word="WRITING" />
 
   <!-- 项目 -->
   <section class="act projects-act" style="padding-top: 5rem; padding-bottom: 5rem;">
