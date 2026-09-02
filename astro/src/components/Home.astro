@@ -27,9 +27,9 @@ const siteName = 'lizhichao';
     <div class="hero-inner">
       <div class="hero-eyebrow">{t.eyebrow}</div>
       <h1 class="hero-slogan">
-        <span class="row"><span class="word">Create</span></span>
-        <span class="row"><span class="word"><em>infinite</em></span></span>
-        <span class="row"><span class="word">possibilities</span></span>
+        <span class="row"><span class="word">{'Create'.split('').map((ch, i) => <span class="wl" style={`--i:${i}`}>{ch}</span>)}</span></span>
+        <span class="row"><span class="word"><em class="shimmer">infinite</em></span></span>
+        <span class="row"><span class="word">{'possibilities'.split('').map((ch, i) => <span class="wl" style={`--i:${i}`}>{ch}</span>)}</span></span>
       </h1>
       <div class="hero-sub"><span>{t.tagline}</span></div>
     </div>

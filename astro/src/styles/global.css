@@ -221,6 +221,42 @@ img { max-width: 100%; }
   will-change: transform;
 }
 .hero-slogan .word em { font-style: italic; font-weight: 500; color: var(--accent); }
+
+/* 字母波浪（循环） */
+.hero-slogan .wl {
+  display: inline-block;
+  animation: wl-wave 3.2s ease-in-out infinite;
+  animation-delay: calc(var(--i) * 0.09s);
+  will-change: transform;
+}
+@keyframes wl-wave {
+  0%, 100% { transform: translateY(0); }
+  12% { transform: translateY(-0.09em); }
+  24% { transform: translateY(0); }
+}
+
+/* "infinite" 流光（循环） */
+.hero-slogan .shimmer {
+  background: linear-gradient(
+    110deg,
+    var(--accent) 30%,
+    #f2d3c2 46%,
+    #f2d3c2 54%,
+    var(--accent) 70%
+  );
+  background-size: 250% 100%;
+  background-position: 100% 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer-sweep 4.2s ease-in-out infinite;
+}
+@keyframes shimmer-sweep {
+  0% { background-position: 100% 0; }
+  55% { background-position: 0% 0; }
+  100% { background-position: 0% 0; }
+}
 .hero-sub {
   margin-top: 2.4rem;
   display: inline-flex;
@@ -704,6 +740,57 @@ img { max-width: 100%; }
 .tl-title { font-family: var(--font-serif); font-weight: 600; font-size: 1.15rem; color: var(--ink); }
 .tl-body { color: var(--ink-dim); font-size: 0.95em; }
 
+/* ---------- 文章内目录导航 ---------- */
+.post-shell {
+  display: grid;
+  grid-template-columns: 1fr minmax(0, 46rem) 1fr;
+  padding: 0 var(--gutter);
+}
+.post-shell .post-body {
+  margin: 0;
+  max-width: none;
+  padding: 3.5rem 0 5rem;
+}
+.post-toc {
+  position: sticky;
+  top: 7rem;
+  align-self: start;
+  justify-self: start;
+  max-width: 230px;
+  padding-top: 3.8rem;
+}
+.post-toc .toc-cap {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.3em;
+  color: var(--mute);
+  margin-bottom: 1rem;
+}
+.post-toc a {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  line-height: 1.55;
+  color: var(--ink-dim);
+  text-decoration: none;
+  padding: 0.35rem 0 0.35rem 1rem;
+  border-left: 1px solid var(--line);
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.post-toc a.is-h3 {
+  padding-left: 2rem;
+  font-size: 0.7rem;
+}
+.post-toc a:hover { color: var(--ink); }
+.post-toc a.is-active {
+  color: var(--accent);
+  border-left-color: var(--accent);
+}
+@media screen and (max-width: 1200px) {
+  .post-toc { display: none; }
+  .post-shell { grid-template-columns: 1fr minmax(0, 46rem) 1fr; }
+}
+
 /* ---------- 上下篇 ---------- */
 .post-nav {
   display: grid;
@@ -845,6 +932,8 @@ img { max-width: 100%; }
   .js [data-reveal] { opacity: 1; transform: none; }
   .marquee .mq-track { animation: none; }
   .hero-scroll { animation: none; }
+  .hero-slogan .wl { animation: none; }
+  .hero-slogan .shimmer { animation: none; background: none; color: var(--accent); -webkit-text-fill-color: var(--accent); }
 }
 
 /* ================================================================

@@ -12,7 +12,8 @@ const lang = langOf(entry.id);
 const t = T[lang];
 const prefix = LANG_PREFIX[lang];
 
-const { Content } = await render(entry);
+const { Content, headings } = await render(entry);
+const toc = headings.filter((h) => h.depth === 2 || h.depth === 3);
 
 /* 上下篇（同语言，按日期） */
 const all = await getPosts(lang);
@@ -40,9 +41,24 @@ const tags = Array.isArray(entry.data.tags) ? entry.data.tags : entry.data.tags 
       <h1 class="post-title" data-reveal>{entry.data.title}</h1>
     </header>
 
-    <div class="post-body">
-      <Content />
-    </div>
+    {toc.length >= 2 ? (
+      <div class="post-shell">
+        <aside class="post-toc" aria-label="TOC">
+          <div class="toc-cap">CONTENTS</div>
+          {toc.map((h) => (
+            <a href={`#${h.slug}`} class:list={[{ 'is-h3': h.depth === 3 }]}>{h.text}</a>
+          ))}
+        </aside>
+        <div class="post-body">
+          <Content />
+        </div>
+        <span />
+      </div>
+    ) : (
+      <div class="post-body">
+        <Content />
+      </div>
+    )}
 
     {(prev || next) && (
       <nav class="post-nav">
