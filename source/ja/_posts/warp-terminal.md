@@ -11,6 +11,7 @@ tags:
   - Rust
   - OSS
 description: OpenAI創業スポンサーの次世代インテリジェントターミナル。Claude Code/Codex/Geminiをネイティブ統合。
+cover: /img/covers/cover-15.jpg
 ---
 
 ## 概要

@@ -1,5 +1,6 @@
 ---
 title: Hermes Agent — A Self-Improving AI Agent
+cover: /img/covers/cover-22.jpg
 translation_key: hermes-agent
 date: 2026-06-13 22:28:14
 categories:

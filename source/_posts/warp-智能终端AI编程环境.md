@@ -12,6 +12,7 @@ tags:
   - 开源
   - DevTools
 description: Warp 是新一代智能终端/IDE，原生集成 AI Agent，支持 Claude Code、Codex、Gemini 等主流 AI 编程工具。
+cover: /img/covers/cover-15.jpg
 ---
 
 ## 项目概述

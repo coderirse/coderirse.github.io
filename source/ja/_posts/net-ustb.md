@@ -10,6 +10,7 @@ tags:
   - Kotlin
   - キャンパスネットワーク
 description: 北京科技大学キャンパスネットワーク認証用Androidネイティブアプリ。ワンタップでログイン。
+cover: /img/covers/cover-12.jpg
 ---
 
 ## 概要

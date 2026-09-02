@@ -10,6 +10,7 @@ tags:
   - 桌面应用
   - 效率工具
 description: 个人专属的学习生活管理桌面应用：计划、开发、健身、饮食、游戏一个应用全管。
+cover: /img/covers/cover-03.jpg
 ---
 
 ## 项目概述

@@ -11,6 +11,7 @@ tags:
   - ツール
   - オープンソース
 description: 完全ローカル・広告なしの Android 進数変換アプリ。リアルタイム連携変換、2 の補数と IEEE 754 ビットパターン表示に対応。
+cover: /img/covers/cover-07.jpg
 ---
 
 ## 概要

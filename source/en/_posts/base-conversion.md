@@ -11,6 +11,7 @@ tags:
   - Tools
   - Open Source
 description: A local-first, ad-free Android base converter with live multi-base syncing, two's complement and IEEE 754 bit patterns.
+cover: /img/covers/cover-07.jpg
 ---
 
 ## Overview

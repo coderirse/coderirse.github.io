@@ -11,6 +11,7 @@ tags:
   - Python
   - Open Source
 description: A deep dive into tinygrad's design philosophy — only ~25 low-level ops needed for a new accelerator backend.
+cover: /img/covers/cover-16.jpg
 ---
 
 ## Overview

@@ -11,6 +11,7 @@ tags:
   - 地図
   - オープンソース
 description: Leaflet.js で構築したインタラクティブな個人旅行マップ。写真、ストーリー、タイムライン再生、3D 地球儀。
+cover: /img/covers/cover-02.jpg
 ---
 
 ## 概要

@@ -10,6 +10,7 @@ tags:
   - Python
   - LaTeX
 description: 为 Claude Code 构建的完整学术研究管线技能套件，覆盖从研究到发表的全流程。
+cover: /img/covers/cover-21.jpg
 ---
 
 ## 项目概述

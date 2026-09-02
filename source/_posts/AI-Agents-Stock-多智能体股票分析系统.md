@@ -10,6 +10,7 @@ tags:
   - 量化交易
   - 金融科技
 description: 基于多 AI 智能体协作的股票分析系统，覆盖 A 股、港股、美股，支持技术面、基本面、资金流向等多维度分析。
+cover: /img/covers/cover-23.jpg
 ---
 
 ## 项目概述

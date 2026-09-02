@@ -9,6 +9,7 @@ tags:
   - Education
   - Thoughts
 description: Reflections on Jiang Yanyan's claim that "CS students without tokens should drop out immediately" — after AI separates learning, credentials, and selection, what's left?
+cover: /img/covers/cover-01.jpg
 ---
 
 The start of the semester brought a viral post on Zhihu: **"CS students without tokens should drop out immediately."**

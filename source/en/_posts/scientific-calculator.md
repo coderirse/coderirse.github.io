@@ -11,6 +11,7 @@ tags:
   - Math
   - Open Source
 description: An Android scientific calculator built with Kotlin and Jetpack Compose, featuring equation solving and matrix operations.
+cover: /img/covers/cover-13.jpg
 ---
 
 ## Overview

@@ -1,5 +1,6 @@
 ---
 title: Quotes — On Technology & Creation
+cover: /img/covers/cover-20.jpg
 translation_key: quotes-tech
 date: 2026-06-13 22:28:17
 categories:

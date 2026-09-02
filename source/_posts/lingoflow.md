@@ -12,6 +12,7 @@ tags:
   - ML Kit
   - 开源
 description: ML Kit 端侧翻译 + LLM 流式长文翻译 + 韦氏词典查词的安卓翻译学习应用。
+cover: /img/covers/cover-04.jpg
 ---
 
 ## 项目概述

@@ -11,6 +11,7 @@ tags:
   - Glance
   - Product Design
 description: A countdown / count-up day tracker built around home-screen widgets — full PRD and tech selection notes (concept stage).
+cover: /img/covers/cover-05.jpg
 ---
 
 ## Overview

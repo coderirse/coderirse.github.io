@@ -11,6 +11,7 @@ tags:
   - 工具
   - 开源
 description: 纯本地、零广告的安卓进制转换器：进制实时联动、补码与 IEEE 754 位模式可视化。
+cover: /img/covers/cover-07.jpg
 ---
 
 ## 项目概述

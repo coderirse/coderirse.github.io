@@ -10,6 +10,7 @@ tags:
   - JavaScript
   - ツール
 description: 北京科技大学の学務システム用Chrome拡張。成績表にランキング列を追加表示。
+cover: /img/covers/cover-14.jpg
 ---
 
 ## 概要

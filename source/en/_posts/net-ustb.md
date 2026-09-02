@@ -11,6 +11,7 @@ tags:
   - Jetpack Compose
   - Campus Network
 description: A native Android client for USTB's campus network authentication system, replacing the web-based login flow.
+cover: /img/covers/cover-12.jpg
 ---
 
 ## Overview

@@ -12,6 +12,7 @@ tags:
   - 安全
   - MVVM
 description: 完整的 Android 数字资产交易市场应用，拥有用户认证、支付、下载、反爬安全等完整电商功能。
+cover: /img/covers/cover-11.jpg
 ---
 
 ## 项目概述

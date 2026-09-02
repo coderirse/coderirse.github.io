@@ -11,6 +11,7 @@ tags:
   - Jetpack Compose
   - 校园网
 description: 专为北科大校园网认证系统开发的 Android 原生应用，替代繁琐的网页端登录流程。
+cover: /img/covers/cover-12.jpg
 ---
 
 ## 项目概述

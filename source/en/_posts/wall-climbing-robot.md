@@ -11,6 +11,7 @@ tags:
   - Embedded
   - CAN Bus
 description: A ROS2-based differential-drive wall-climbing robot control system with CAN + RS485 dual-protocol motor control.
+cover: /img/covers/cover-17.jpg
 ---
 
 ## Overview

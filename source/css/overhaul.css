@@ -1,0 +1,562 @@
+/* ================================================================
+   VISUAL OVERHAUL — 数字刊物 2.0
+   在 custom.css 编辑风基底之上的动效与叙事层。
+   覆盖：过场 / 刊头 / 跑马灯 / 多幕首页 / 光标 / 页面过渡 / 文章头图
+   ================================================================ */
+
+/* ---------- 过场 Preloader ---------- */
+#vh-veil {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: var(--paper);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+#vh-veil .veil-line {
+  overflow: hidden;
+  line-height: 1.05;
+}
+#vh-veil .veil-word {
+  display: inline-block;
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: clamp(2.6rem, 8.5vw, 7rem);
+  letter-spacing: 0.02em;
+  color: var(--ink);
+  transform: translateY(110%);
+}
+#vh-veil .veil-word em {
+  font-style: italic;
+  font-weight: 500;
+  color: var(--accent);
+}
+#vh-veil .veil-counter {
+  position: absolute;
+  bottom: 32px;
+  left: 36px;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.3em;
+  color: var(--ink-mute);
+}
+#vh-veil .veil-tag {
+  position: absolute;
+  top: 36px;
+  left: 36px;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.4em;
+  color: var(--ink-mute);
+}
+
+/* ---------- 刊头主视觉 ---------- */
+/* 旧刊头装饰让位于新主视觉 */
+#site-info::before,
+#page-header.lang-home-header .lang-home-site-info::before {
+  display: none;
+}
+#site-info .mh-eyebrow,
+#page-header.lang-home-header .lang-home-site-info .mh-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.42em;
+  text-indent: 0.42em;
+  color: var(--ink-mute);
+  margin-bottom: 2rem;
+}
+.mh-slogan {
+  margin: 0;
+  line-height: 1.02;
+}
+.mh-slogan .mh-row {
+  display: block;
+  overflow: hidden;
+  padding: 0.06em 0;
+}
+.mh-slogan .mh-word {
+  display: inline-block;
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: clamp(3rem, 10.5vw, 8.6rem);
+  letter-spacing: 0.01em;
+  color: var(--ink);
+  white-space: nowrap;
+}
+.mh-slogan .mh-word em {
+  font-style: italic;
+  font-weight: 500;
+  color: var(--accent);
+}
+.mh-sub {
+  margin-top: 2.2rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 1.2rem;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.22em;
+  color: var(--ink-soft);
+}
+.mh-sub::before,
+.mh-sub::after {
+  content: "";
+  display: block;
+  width: 56px;
+  height: 1px;
+  background: var(--ink);
+}
+
+/* ---------- 跑马灯 ---------- */
+.vh-marquee {
+  width: 100%;
+  overflow: hidden;
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--hairline);
+  background: var(--paper);
+  padding: 0.9rem 0;
+  position: relative;
+  z-index: 3;
+}
+.vh-marquee .mq-track {
+  display: flex;
+  width: max-content;
+  animation: vh-mq 36s linear infinite;
+}
+.vh-marquee span {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  white-space: nowrap;
+  padding-right: 3rem;
+}
+.vh-marquee span b {
+  color: var(--accent);
+  font-weight: 500;
+}
+@keyframes vh-mq {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* ---------- 多幕通用 ---------- */
+.vh-act {
+  position: relative;
+  padding: 0 6vw;
+}
+.act-label {
+  display: flex;
+  align-items: baseline;
+  gap: 1.4rem;
+  border-top: 3px double var(--ink);
+  padding-top: 1.1rem;
+  margin-bottom: 3.2rem;
+}
+.act-label .no {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.2em;
+  color: var(--accent);
+}
+.act-label .name {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  letter-spacing: 0.03em;
+  color: var(--ink);
+}
+.act-label .en {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+}
+
+/* ---------- 第一幕：最新特写 ---------- */
+.vh-feature {
+  padding-top: 7rem;
+  padding-bottom: 6rem;
+  background: var(--paper);
+}
+.vh-feature .feat-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 4vw;
+  align-items: end;
+}
+.vh-feature .feat-cover {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  border: 1px solid var(--hairline);
+}
+.vh-feature .feat-cover img {
+  width: 100%;
+  height: 120%;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(0.45) saturate(0.75) contrast(1.06);
+  will-change: transform;
+}
+.vh-feature .feat-cover::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--accent);
+  mix-blend-mode: multiply;
+  opacity: 0.12;
+  pointer-events: none;
+}
+.vh-feature .feat-kicker {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1.2rem;
+}
+.vh-feature .feat-title {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: clamp(1.9rem, 3.6vw, 3rem);
+  line-height: 1.25;
+  letter-spacing: 0.02em;
+  margin: 0 0 1.4rem;
+}
+.vh-feature .feat-title a {
+  color: var(--ink) !important;
+  text-decoration: none !important;
+  background-image: linear-gradient(var(--accent), var(--accent));
+  background-size: 0% 2px;
+  background-repeat: no-repeat;
+  background-position: 0 96%;
+  transition: background-size 0.45s ease;
+}
+.vh-feature .feat-title a:hover {
+  background-size: 100% 2px;
+}
+.vh-feature .feat-excerpt {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink-soft);
+  margin-bottom: 2rem;
+}
+.vh-feature .feat-meta {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.12em;
+  color: var(--ink-mute);
+}
+.vh-feature .feat-meta i {
+  color: var(--accent);
+  font-style: normal;
+  margin: 0 0.5em;
+}
+@media screen and (max-width: 900px) {
+  .vh-feature .feat-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+/* ---------- 第二幕：项目横向滚动带（固定深墨幕间，不随明暗反转） ---------- */
+.vh-projects {
+  background: #1c1a16;
+  color: #e6dfd0;
+  position: relative;
+  z-index: 5;
+}
+.vh-projects .act-label {
+  border-top-color: #e6dfd0;
+}
+.vh-projects .act-label .no { color: #d0654e; }
+.vh-projects .act-label .name { color: #e6dfd0; }
+.vh-projects .act-label .en { color: rgba(230, 223, 208, 0.55); }
+.vh-projects .proj-pin {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  padding: 2rem 0 3rem;
+}
+.vh-projects .proj-track {
+  display: flex;
+  gap: 2.2rem;
+  width: max-content;
+  padding: 0 6vw;
+  will-change: transform;
+}
+.vh-proj-card {
+  flex: 0 0 auto;
+  width: min(400px, 78vw);
+  border: 1px solid rgba(230, 223, 208, 0.22);
+  padding: 2.2rem 2rem 2.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  background: transparent;
+  transition: background 0.3s ease, border-color 0.3s ease;
+  text-decoration: none !important;
+}
+.vh-proj-card:hover {
+  background: rgba(230, 223, 208, 0.06);
+  border-color: var(--accent);
+}
+.vh-proj-card .idx {
+  font-family: var(--font-serif);
+  font-size: 3.2rem;
+  font-weight: 600;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(230, 223, 208, 0.4);
+}
+.vh-proj-card:hover .idx {
+  -webkit-text-stroke-color: var(--accent);
+}
+.vh-proj-card .p-title {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: 1.35rem;
+  line-height: 1.4;
+  color: #e6dfd0;
+}
+.vh-proj-card .p-blurb {
+  font-size: 0.88rem;
+  line-height: 1.8;
+  color: rgba(230, 223, 208, 0.66);
+  flex: 1;
+}
+.vh-proj-card .p-more {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.vh-projects .proj-progress {
+  margin: 0 6vw;
+  height: 1px;
+  background: rgba(230, 223, 208, 0.18);
+  position: relative;
+}
+.vh-projects .proj-progress i {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0%;
+  background: var(--accent);
+}
+
+/* ---------- 第三幕：关于我 ---------- */
+.vh-about {
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+  background: var(--paper);
+}
+.vh-about .about-grid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 4vw;
+  align-items: center;
+}
+.vh-about .about-avatar {
+  width: clamp(120px, 16vw, 190px);
+  height: clamp(120px, 16vw, 190px);
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--hairline);
+  filter: grayscale(0.35) saturate(0.85);
+}
+.vh-about .about-line {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: clamp(1.4rem, 2.8vw, 2.2rem);
+  line-height: 1.6;
+  color: var(--ink);
+  margin: 0 0 1.6rem;
+}
+.vh-about .about-line em {
+  font-style: italic;
+  color: var(--accent);
+}
+.vh-about .about-links {
+  display: flex;
+  gap: 1.6rem;
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  letter-spacing: 0.16em;
+}
+.vh-about .about-links a {
+  color: var(--ink-soft) !important;
+  text-decoration: underline !important;
+  text-underline-offset: 4px;
+  text-decoration-color: var(--hairline) !important;
+}
+.vh-about .about-links a:hover {
+  color: var(--accent) !important;
+  text-decoration-color: var(--accent) !important;
+}
+@media screen and (max-width: 768px) {
+  .vh-about .about-grid {
+    grid-template-columns: 1fr;
+    gap: 1.6rem;
+  }
+}
+
+/* ---------- 目次悬浮预览图 ---------- */
+/* 全站封面统一低饱和处理 */
+.recent-post-item .post_cover img.post-bg,
+.aside-recent-item .post-bg,
+#vh-preview img {
+  filter: grayscale(0.45) saturate(0.75) contrast(1.06);
+}
+.recent-post-item .post_cover img.post-bg {
+  transition: filter 0.4s ease, transform 0.5s ease;
+}
+.recent-post-item:hover .post_cover img.post-bg {
+  filter: grayscale(0.1) saturate(0.95) contrast(1.04);
+}
+
+#vh-preview {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 300px;
+  aspect-ratio: 4 / 3;
+  z-index: 900;
+  pointer-events: none;
+  overflow: hidden;
+  opacity: 0;
+  border: 1px solid var(--hairline);
+  background: var(--paper-deep);
+}
+#vh-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(0.45) saturate(0.75) contrast(1.06);
+}
+
+/* ---------- 自定义光标 ---------- */
+.vh-cursor-dot,
+.vh-cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9998;
+  pointer-events: none;
+  border-radius: 50%;
+  mix-blend-mode: difference;
+}
+.vh-cursor-dot {
+  width: 6px;
+  height: 6px;
+  background: #fff;
+}
+.vh-cursor-ring {
+  width: 34px;
+  height: 34px;
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  transition: width 0.25s ease, height 0.25s ease, opacity 0.25s ease;
+}
+.vh-cursor-ring.is-hover {
+  width: 56px;
+  height: 56px;
+}
+@media (hover: none), (pointer: coarse) {
+  .vh-cursor-dot,
+  .vh-cursor-ring {
+    display: none;
+  }
+}
+
+/* ---------- 页面过渡幕布 ---------- */
+#vh-wipe {
+  position: fixed;
+  inset: 0;
+  z-index: 9997;
+  background: var(--ink);
+  transform: scaleY(0);
+  transform-origin: top;
+  pointer-events: none;
+}
+
+/* ---------- 文章页头图编辑化 ---------- */
+#page-header.post-bg {
+  height: 62vh;
+  min-height: 380px;
+}
+#page-header.post-bg {
+  background-image: var(--post-cover, none) !important;
+  background-color: var(--paper);
+}
+#page-header.post-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(246, 242, 234, 0.25) 0%, rgba(246, 242, 234, 0.88) 78%, var(--paper) 100%) !important;
+}
+[data-theme="dark"] #page-header.post-bg::before {
+  background:
+    linear-gradient(180deg, rgba(23, 21, 18, 0.3) 0%, rgba(23, 21, 18, 0.9) 78%, var(--paper) 100%) !important;
+}
+#page-header.post-bg .post-cover-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 115%;
+  object-fit: cover;
+  filter: grayscale(0.45) saturate(0.75) contrast(1.06);
+  will-change: transform;
+}
+#page-header #post-info {
+  top: auto;
+  bottom: 12%;
+  transform: none;
+  text-align: center;
+  z-index: 2;
+}
+
+/* ---------- 页脚终端纹理 ---------- */
+#footer .vh-term {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  opacity: 0.05;
+  pointer-events: none;
+}
+#footer {
+  position: relative;
+}
+#footer .vh-term canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* ---------- 入场动画初始态（无 JS 时保持可见） ---------- */
+.js-anim .will-reveal {
+  opacity: 0;
+  transform: translateY(36px);
+}
+@media (prefers-reduced-motion: reduce) {
+  .js-anim .will-reveal {
+    opacity: 1;
+    transform: none;
+  }
+  .vh-marquee .mq-track {
+    animation: none;
+  }
+}

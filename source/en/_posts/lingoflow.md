@@ -12,6 +12,7 @@ tags:
   - ML Kit
   - Open Source
 description: An Android translation app combining on-device ML Kit translation, streaming LLM rewriting, and Merriam-Webster dictionary lookup.
+cover: /img/covers/cover-04.jpg
 ---
 
 ## Overview

@@ -1,5 +1,6 @@
 ---
 title: Academic Research Skills — 学術研究パイプライン
+cover: /img/covers/cover-21.jpg
 translation_key: academic-research-skills
 date: 2026-06-13 22:28:16
 categories:

@@ -11,6 +11,7 @@ tags:
   - 数学
   - 开源
 description: 基于 Kotlin 和 Jetpack Compose 开发的 Android 科学计算器，支持方程求解和矩阵运算。
+cover: /img/covers/cover-13.jpg
 ---
 
 ## 项目概述

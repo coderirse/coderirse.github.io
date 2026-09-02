@@ -11,6 +11,7 @@ tags:
   - Python
   - 开源
 description: 深入解析 tinygrad 的设计哲学：仅约 25 个底层算子即可添加新加速器后端，支持 CUDA/Metal/OpenCL/WebGPU 等多种硬件。
+cover: /img/covers/cover-16.jpg
 ---
 
 ## 项目概述

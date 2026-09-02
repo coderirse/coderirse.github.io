@@ -11,6 +11,7 @@ tags:
   - Community
   - Full Stack
 description: A full-featured community mini program built on WeChat Cloud Development with posts, comments, chat, and notifications.
+cover: /img/covers/cover-08.jpg
 ---
 
 ## Overview

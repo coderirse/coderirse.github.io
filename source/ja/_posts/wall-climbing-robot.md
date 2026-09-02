@@ -11,6 +11,7 @@ tags:
   - 組込み
   - CANバス
 description: ROS2ベースの差動駆動壁面爬行ロボット制御システム。CAN + RS485デュアルプロトコル4モーター制御。
+cover: /img/covers/cover-17.jpg
 ---
 
 ## 概要

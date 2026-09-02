@@ -12,6 +12,7 @@ tags:
   - Security
   - MVVM
 description: A complete Android digital asset marketplace with authentication, payment, downloads, and 7-layer security.
+cover: /img/covers/cover-11.jpg
 ---
 
 ## Overview

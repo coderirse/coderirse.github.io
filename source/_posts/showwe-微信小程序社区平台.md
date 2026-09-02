@@ -11,6 +11,7 @@ tags:
   - 社区
   - 全栈
 description: 基于微信云开发的全功能社区小程序，支持帖子发布、评论点赞、私信聊天和个人主页定制。
+cover: /img/covers/cover-08.jpg
 ---
 
 ## 项目概述

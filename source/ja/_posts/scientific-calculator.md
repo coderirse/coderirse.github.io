@@ -11,6 +11,7 @@ tags:
   - 数学
   - OSS
 description: Kotlin + Jetpack Compose製のAndroid科学計算電卓。方程式解法と行列演算を搭載。
+cover: /img/covers/cover-13.jpg
 ---
 
 ## 概要

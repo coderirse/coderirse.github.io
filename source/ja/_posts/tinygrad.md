@@ -11,6 +11,7 @@ tags:
   - Python
   - オープンソース
 description: tinygradの設計哲学を掘り下げる — わずか25の低レベル演算で新しいアクセラレータバックエンドを追加可能。
+cover: /img/covers/cover-16.jpg
 ---
 
 ## 概要

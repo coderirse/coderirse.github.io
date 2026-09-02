@@ -11,6 +11,7 @@ tags:
   - コミュニティ
   - フルスタック
 description: WeChatクラウド開発ベースのフル機能コミュニティミニプログラム。投稿、コメント、チャット、通知機能を搭載。
+cover: /img/covers/cover-08.jpg
 ---
 
 ## 概要

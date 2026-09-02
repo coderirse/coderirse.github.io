@@ -11,6 +11,7 @@ tags:
   - Maps
   - Open Source
 description: An interactive personal travel map built with Leaflet.js — photos, stories, a timeline player, and a 3D globe.
+cover: /img/covers/cover-02.jpg
 ---
 
 ## Overview

@@ -11,6 +11,7 @@ tags:
   - Community
   - Resources
 description: A hand-picked curated list of the finest Claude Code resources across 20+ categories.
+cover: /img/covers/cover-09.jpg
 ---
 
 ## Overview

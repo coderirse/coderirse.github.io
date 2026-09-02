@@ -11,6 +11,7 @@ tags:
   - 地图
   - 开源
 description: 用 Leaflet.js 构建的交互式个人旅行地图：照片、故事、时间线播放与 3D 地球。
+cover: /img/covers/cover-02.jpg
 ---
 
 ## 项目概述

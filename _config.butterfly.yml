@@ -51,18 +51,9 @@ avatar:
   img: /img/touxiang.png
   effect: false
 
-# 副标题 - 打字机效果
+# 副标题 - 已停用打字机（visual-overhaul：slogan 刊头取而代之）
 subtitle:
-  enable: true
-  effect: true
-  typed_option:
-    typeSpeed: 100
-    backSpeed: 40
-    loop: true
-  sub:
-    - 热爱技术，持续学习，keep moving
-    - 欢迎来到我的个人博客
-    - 记录成长，分享知识
+  enable: false
 
 # 首页文章布局
 index_layout: 3
@@ -208,7 +199,12 @@ inject:
   head:
     - <link rel="stylesheet" href="/css/fonts.css">
     - <link rel="stylesheet" href="/css/custom.css">
+    - <link rel="stylesheet" href="/css/overhaul.css">
   bottom:
+    - <script src="/js/vendor/lenis.min.js"></script>
+    - <script src="/js/vendor/gsap.min.js"></script>
+    - <script src="/js/vendor/ScrollTrigger.min.js"></script>
     - <script src="/js/visitor-stats.js"></script>
     - <script src="/js/lang-switcher.js"></script>
     - <script src="/js/lang-home-subtitle.js"></script>
+    - <script src="/js/overhaul.js"></script>

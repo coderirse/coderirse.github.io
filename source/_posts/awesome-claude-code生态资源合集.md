@@ -11,6 +11,7 @@ tags:
   - 社区
   - 资源
 description: 精心策划的 Claude Code 资源列表，涵盖 20+ 类别，包括工具、技能、插件、安全、可观测性等。
+cover: /img/covers/cover-09.jpg
 ---
 
 ## 项目概述

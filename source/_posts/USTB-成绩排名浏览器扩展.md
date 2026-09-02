@@ -10,6 +10,7 @@ tags:
   - JavaScript
   - 工具
 description: 为北科大教务系统开发的 Chrome 扩展，在成绩页面显示排名和总人数等隐藏数据。
+cover: /img/covers/cover-14.jpg
 ---
 
 ## 项目概述

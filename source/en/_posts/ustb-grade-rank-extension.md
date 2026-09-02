@@ -10,6 +10,7 @@ tags:
   - JavaScript
   - Tool
 description: A Chrome extension for USTB's academic system that reveals hidden rank and enrollment data in grade tables.
+cover: /img/covers/cover-14.jpg
 ---
 
 ## Overview

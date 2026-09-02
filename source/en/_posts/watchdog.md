@@ -12,6 +12,7 @@ tags:
   - API
   - Monitoring
 description: Real-time API quota monitoring for DeepSeek, Kimi, Zhipu GLM, and SiliconFlow AI platforms.
+cover: /img/covers/cover-10.jpg
 ---
 
 ## Overview

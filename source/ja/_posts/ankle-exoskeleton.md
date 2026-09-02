@@ -13,6 +13,7 @@ tags:
   - 組込み
   - 制御アルゴリズム
 description: ROS2 Humbleに完全移行した足首外骨格制御システム — 5モード適応歩行制御、CANデュアルプロトコル、Modbus力覚センサー、5A-A5フレームIMUドライバー。
+cover: /img/covers/cover-24.jpg
 ---
 
 ## 概要

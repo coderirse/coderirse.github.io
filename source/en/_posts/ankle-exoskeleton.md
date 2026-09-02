@@ -13,6 +13,7 @@ tags:
   - Embedded
   - Control Algorithm
 description: A fully rebuilt ROS2 Humble ankle exoskeleton controller — 5-mode adaptive gait, CAN dual-protocol stack, Modbus force sensing, and 5A-A5 frame IMU driver.
+cover: /img/covers/cover-24.jpg
 ---
 
 ## Overview

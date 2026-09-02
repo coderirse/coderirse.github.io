@@ -12,6 +12,7 @@ tags:
   - Open Source
   - DevTools
 description: Warp is a next-gen intelligent terminal/IDE with native AI agent integration, supporting Claude Code, Codex, Gemini and more.
+cover: /img/covers/cover-15.jpg
 ---
 
 ## Overview

@@ -10,6 +10,7 @@ tags:
   - 自动化
   - 开源
 description: Nous Research 出品的通用自进化 AI 智能体，具备经验学习、持久记忆和跨平台运行能力。
+cover: /img/covers/cover-22.jpg
 ---
 
 ## 项目简介

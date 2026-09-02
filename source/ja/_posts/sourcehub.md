@@ -11,6 +11,7 @@ tags:
   - EC
   - セキュリティ
 description: 認証・決済・ダウンロード・7層セキュリティを備えた完全なAndroidデジタル資産マーケットプレイス。
+cover: /img/covers/cover-11.jpg
 ---
 
 ## 概要

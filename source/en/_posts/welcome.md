@@ -1,5 +1,6 @@
 ---
 title: Welcome to My Blog
+cover: /img/covers/cover-18.jpg
 translation_key: welcome
 date: 2026-06-12 00:00:00
 tags:

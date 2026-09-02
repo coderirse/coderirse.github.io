@@ -1,5 +1,6 @@
 ---
 title: AI Agents Stock — マルチAIエージェント株式分析システム
+cover: /img/covers/cover-23.jpg
 translation_key: ai-agents-stock
 date: 2026-06-13 22:28:12
 categories:

@@ -11,6 +11,7 @@ tags:
   - Glance
   - 产品设计
 description: 以桌面小组件为核心触点的倒数 / 正数日工具：完整 PRD 与技术选型分享（立项阶段）。
+cover: /img/covers/cover-05.jpg
 ---
 
 ## 项目概述

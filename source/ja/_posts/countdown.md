@@ -11,6 +11,7 @@ tags:
   - Glance
   - プロダクト設計
 description: ホーム画面ウィジェットを核としたカウントダウン / カウントアップツール。PRD と技術選定の共有（企画段階）。
+cover: /img/covers/cover-05.jpg
 ---
 
 ## 概要

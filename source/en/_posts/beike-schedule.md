@@ -12,6 +12,7 @@ tags:
   - USTB
   - Open Source
 description: A USTB course schedule app with one-tap academic-system import, teaching-week calendar mapping, weekly timetable and class reminders.
+cover: /img/covers/cover-06.jpg
 ---
 
 ## Overview

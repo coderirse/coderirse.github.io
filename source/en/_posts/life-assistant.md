@@ -10,6 +10,7 @@ tags:
   - Desktop
   - Productivity
 description: A personal study-and-life desktop app covering plans, dev work, fitness, meals and gaming — fully offline, local data only.
+cover: /img/covers/cover-03.jpg
 ---
 
 ## Overview

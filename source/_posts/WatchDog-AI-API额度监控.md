@@ -12,6 +12,7 @@ tags:
   - API
   - 监控
 description: 实时监控 DeepSeek、Kimi、智谱、SiliconFlow 四大 AI 平台的 API 余额和月度用量。
+cover: /img/covers/cover-10.jpg
 ---
 
 ## 项目概述

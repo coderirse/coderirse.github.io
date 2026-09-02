@@ -12,6 +12,7 @@ tags:
   - ML Kit
   - オープンソース
 description: ML Kit オンデバイス翻訳 + LLM ストリーミング長文翻訳 + Merriam-Webster 辞書検索を組み合わせた Android 翻訳アプリ。
+cover: /img/covers/cover-04.jpg
 ---
 
 ## 概要

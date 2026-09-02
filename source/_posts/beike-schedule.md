@@ -12,6 +12,7 @@ tags:
   - USTB
   - 开源
 description: 北科大课表 App：教务一键导入、教学周日历精确映射、周视图课表与上课提醒。
+cover: /img/covers/cover-06.jpg
 ---
 
 ## 项目概述

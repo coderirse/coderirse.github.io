@@ -11,6 +11,7 @@ tags:
   - API
   - 監視
 description: DeepSeek、Kimi、智譜GLM、SiliconFlowの4大AIプラットフォームAPI残高をリアルタイム監視。
+cover: /img/covers/cover-10.jpg
 ---
 
 ## 概要

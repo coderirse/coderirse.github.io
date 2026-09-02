@@ -10,6 +10,7 @@ tags:
   - OSS
   - コミュニティ
 description: Claude Codeの厳選リソースリスト。20以上のカテゴリ、ツール、スキル、プラグイン、セキュリティなどを網羅。
+cover: /img/covers/cover-09.jpg
 ---
 
 ## 概要
