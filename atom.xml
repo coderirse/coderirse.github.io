@@ -10,7 +10,26 @@
   <rights>All rights reserved 2026, lizhichao</rights>
   <subtitle>李智超的个人博客 - 软件工程师，热爱技术与开源</subtitle>
   <title>lizhichao</title>
-  <updated>2026-08-28T16:00:06.000Z</updated>
+  <updated>2026-09-01T16:00:00.000Z</updated>
+  <entry>
+    <author>
+      <name>lizhichao</name>
+    </author>
+    <category term="随笔" scheme="https://caeamer.com/categories/%E9%9A%8F%E7%AC%94/"/>
+    <category term="AI" scheme="https://caeamer.com/tags/AI/"/>
+    <category term="教育" scheme="https://caeamer.com/tags/%E6%95%99%E8%82%B2/"/>
+    <category term="思考" scheme="https://caeamer.com/tags/%E6%80%9D%E8%80%83/"/>
+    <category term="随笔" scheme="https://caeamer.com/tags/%E9%9A%8F%E7%AC%94/"/>
+    <content>
+      <![CDATA[<p>开学季，一句暴论冲上了知乎热榜：<strong>“没有Token的CS学生，应立即退学。”</strong></p><p>说这话的是南京大学计算机学院副教授蒋炎岩，写在他秋季新课《生成式软件工程》的课件里，还特意标注了”个人观点”。评论区出乎意料地一边倒：有人说这话”太保守了”，建议取消所有课堂、把课时费全换成Token按人头发给学生；还有人干脆说，不给学生买Token的计算机系应该立刻撤系。</p><p><img src="/img/essays/ai-learning-diploma/jyy-bilibili.png" alt="蒋炎岩的 B 站主页"></p><p>第一次读到时我也觉得味冲。但顺着他的<a href="https://jyywiki.cn/">官网</a>和知乎的文章一路看下来，我反而品出另一层味道：这不是哗众取宠，而是一位圈内顶尖的学者，在替所有人问一个不太好回答的问题——</p><p><strong>当AI把”学习”、”文凭”和”被选中”拆成三件不同的事之后，我们还剩下什么？</strong></p><h2 id="一、作业完成了，但学习发生了吗？"><a href="#一、作业完成了，但学习发生了吗？" class="headerlink" title="一、作业完成了，但学习发生了吗？"></a>一、作业完成了，但学习发生了吗？</h2><p>蒋老师在这门课上给学生摆了三重焦虑，每一重都扎得很准。</p><p>第一重：”AI替我上大学”。老师用豆包出题，学生用豆包做作业，一整个流程走下来，<strong>只有学生没有受到训练</strong>。他反问：假设每门课都开卷、都用AI答题，每门课都能拿高分——可等到毕业才发现，每门课都很好，自己却什么都没学会。</p><p>第二重：”听话学了四年，发现被大学骗了”。认真听讲、认真做作业的好学生，毕业时确实学会了一些东西，但这些东西AI全都会做。四年下来，”我这四年，到底学了个啥？”</p><p>第三重最扎心：”为了刷出一份完美的简历，输了人生。”蒋老师收到过一份堪称完美的简历——CCF期刊列表上的论文、Accept、在投，该有的都有。他给这份简历打了<strong>零分</strong>：没有GitHub链接，没有个人主页，甚至连一篇Preprint都没有。</p><p>理由只有一句：<strong>“你和你的竞争者已经完全无法区分了。”</strong></p><p><img src="/img/essays/ai-learning-diploma/classroom-slide.png" alt="蒋炎岩《生成式软件工程》课堂现场"></p><h2 id="二、头衔的通货膨胀"><a href="#二、头衔的通货膨胀" class="headerlink" title="二、头衔的通货膨胀"></a>二、头衔的通货膨胀</h2><p>这份”零分简历”让我在意的，不是简历本身，而是它背后那套评价体系。</p><p>过去，论文、录用通知、竞赛奖项之所以值钱，是因为它们<strong>稀缺且难以伪造</strong>，能大致代理一个人的能力。而现在，这个代理链条开始松动：作品不再等于能力留下的痕迹——同一份作业，可能对应着完全不同的能力。当”看起来有能力”的证据可以批量生产时，头衔和证书就进入了通货膨胀：单位面值越来越大，购买力却越来越低。</p><p>有意思的是，说这话的人恰恰是现行体系里最成功的玩家之一。蒋炎岩拿过两次ICPC区域赛金牌，拿过CCF优博，五次获CCF-A类会议论文奖，包括ICSE 2021唯一最佳论文奖和SOSP 2023最佳论文奖。可他在课程简介里怎么介绍自己？——“副教授，但是临时工。”</p><p>一个把现行游戏玩到顶配的人，却对这套游戏的计分方式如此刻薄。这大概是最值得玩味的地方：他不是酸，他是真的见过山顶，然后告诉你山顶的空气没有想象中好。他能给出的替代方案也朴素得近乎原始：GitHub、个人主页、Preprint——<strong>公开的、可链接的、可验证的产出</strong>。这些东西骗不了人，因为任何人点开就能看到你真正做过什么。</p><h2 id="三、Token是耗材，问题才是稀缺品"><a href="#三、Token是耗材，问题才是稀缺品" class="headerlink" title="三、Token是耗材，问题才是稀缺品"></a>三、Token是耗材，问题才是稀缺品</h2><p>回到那句暴论。蒋老师的完整逻辑其实有三条课堂准则：禁止古法编程、Token自费、不需要Tokenmaxxing。</p><p>所谓”Token自费”，不只是让学生掏钱。他的说法是：<strong>Token是AI时代的实验耗材，亲自使用，才能形成成本—质量—延迟的意识</strong>。就像化学系的学生必须亲手碰过试剂，才知道实验不是课本上的插画。他还补了一句极清醒的注脚：</p><blockquote><p>“真正稀缺的不是Token，而是值得花Token的问题、清晰约束和可靠验收。”</p></blockquote><p>这句话我认为是整门课的灵魂。AI把”生成”的成本打到近乎为零之后，价值的天平必然滑向两端：一端是<strong>提出正确问题的能力</strong>，另一端是<strong>验证答案的能力</strong>。中间那段”执行”，正在迅速贬值。他自己也说得直白：学生不只要会写代码，还要学会给AI拆任务、挑模型、控成本、验结果——模型生成得再快，如果人不知道它写得对不对，照样白搭。</p><p>而”禁止古法编程”也并非一刀切，他自己都调侃：真被关进小黑屋、AI工具一关，最后能救命的还是LeetCode和肌肉记忆——不过他觉得，总有一天，这个事情会改变的。</p><p><img src="/img/essays/ai-learning-diploma/token-policy.png" alt="蒋炎岩课件：Token 自费"></p><h2 id="四、人还剩下什么活？"><a href="#四、人还剩下什么活？" class="headerlink" title="四、人还剩下什么活？"></a>四、人还剩下什么活？</h2><p>那么，在AI写代码越来越快之后，人还剩下什么？</p><p>蒋老师给出的答案带着系统软件学者特有的冷峻：AI可以加速实现，却不会自动暴露未知、分配责任或验证结果；<strong>工程的目标不是让demo跑起来，而是让系统在约束、变化和协作中继续活着</strong>。他还举了Mars Climate Orbiter的单位接口事故——真正的工程能力，是建立能在发射前叫停错误的闭环。</p><p>至于大学还能教什么，他给了三个词：<strong>信息差</strong>（知道哪里不知道）、<strong>能坐牢</strong>（为取舍承担后果）、<strong>能驾驭</strong>（让人、Agent与反馈持续对齐目标）。</p><h2 id="五、写在最后：我在增长能力，还是在增长证据？"><a href="#五、写在最后：我在增长能力，还是在增长证据？" class="headerlink" title="五、写在最后：我在增长能力，还是在增长证据？"></a>五、写在最后：我在增长能力，还是在增长证据？</h2><p>这场讨论最终指向的，其实是每个人的那道自选题：</p><p><strong>我是在增长能力，还是在增长”看起来有能力”的证据？</strong></p><p>这两件事在过去是绑定的——想证明能力，只能真的去获得能力。而AI松开了这根绳子，让”证明”可以脱离”拥有”单独存在。于是每个人都被推到了岔路口：一条路通往堆积纸面证据的舒适区，越走越拥挤，也越走越廉价；另一条路通往真实但缓慢的能力增长，通向GitHub上一个个具体的commit、一篇篇被人真正读过的Preprint、一个个能被链接打开的作品。</p><p>蒋老师选择用一句冒犯所有人的暴论来提醒学生这件事，我倒觉得，被冒犯到的应该不止学生。科研的评价体系、职场的晋升逻辑、乃至我们每个人的年度总结，有多少是在验证能力，又有多少只是在收集证据？</p><p>头衔会通货膨胀，Token会降价，模型会一版比一版强。剩下真正保值的，大概只有那些<strong>公开、可验证、骗不了人的东西</strong>——以及那个持续生产它们的你。</p>]]>
+    </content>
+    <id>https://caeamer.com/2026/09/02/ai-learning-diploma/</id>
+    <link href="https://caeamer.com/2026/09/02/ai-learning-diploma/"/>
+    <published>2026-09-01T16:00:00.000Z</published>
+    <summary>读蒋炎岩&quot;没有Token的CS学生，应立即退学&quot;有感——当AI把&quot;学习&quot;、&quot;文凭&quot;和&quot;被选中&quot;拆成三件不同的事之后，我们还剩下什么？</summary>
+    <title>当AI把&quot;学习&quot;和&quot;文凭&quot;拆开之后</title>
+    <updated>2026-09-01T16:00:00.000Z</updated>
+  </entry>
   <entry>
     <author>
       <name>lizhichao</name>
@@ -388,24 +407,5 @@
     <summary>为 Claude Code 构建的完整学术研究管线技能套件，覆盖从研究到发表的全流程。</summary>
     <title>Academic Research Skills — 学术研究管线</title>
     <updated>2026-06-13T14:28:16.000Z</updated>
-  </entry>
-  <entry>
-    <author>
-      <name>lizhichao</name>
-    </author>
-    <category term="项目" scheme="https://caeamer.com/categories/%E9%A1%B9%E7%9B%AE/"/>
-    <category term="AI Agent" scheme="https://caeamer.com/tags/AI-Agent/"/>
-    <category term="Python" scheme="https://caeamer.com/tags/Python/"/>
-    <category term="自动化" scheme="https://caeamer.com/tags/%E8%87%AA%E5%8A%A8%E5%8C%96/"/>
-    <category term="开源" scheme="https://caeamer.com/tags/%E5%BC%80%E6%BA%90/"/>
-    <content>
-      <![CDATA[<h2 id="项目简介"><a href="#项目简介" class="headerlink" title="项目简介"></a>项目简介</h2><p><strong>Hermes Agent</strong> 是由 Nous Research 开发的新一代通用 AI 智能体。与传统的单次对话式 AI 不同，Hermes 拥有<strong>闭环学习能力</strong>——它能够从完成的任务中自主创建技能，不断积累经验，实现真正的自我进化。</p><div class="note info flat"><p>Hermes 是 OpenClaw 的后继项目，在架构上做了全面升级。</p></div><h2 id="核心特性"><a href="#核心特性" class="headerlink" title="核心特性"></a>核心特性</h2><h3 id="闭环学习机制"><a href="#闭环学习机制" class="headerlink" title="闭环学习机制"></a>闭环学习机制</h3><p>这是 Hermes 最核心的创新——智能体在完成复杂任务后，会自动将经验提炼为<strong>可复用的技能</strong>：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">任务执行 → 经验记录 → 技能创建 → 技能优化 → 知识持久化</span><br><span class="line">    ↑                                          ↓</span><br><span class="line">    └──────────── 后续任务自动调用 ←──────────────┘</span><br></pre></td></tr></table></figure><h3 id="多平台消息网关"><a href="#多平台消息网关" class="headerlink" title="多平台消息网关"></a>多平台消息网关</h3><p>Hermes 不只是命令行工具，它是一套完整的跨平台智能体系统：</p><mark class="hl-label blue">Telegram</mark> <mark class="hl-label pink">Discord</mark> <mark class="hl-label orange">Slack</mark> <mark class="hl-label green">WhatsApp</mark> <mark class="hl-label red">CLI</mark><h3 id="40-内置工具"><a href="#40-内置工具" class="headerlink" title="40+ 内置工具"></a>40+ 内置工具</h3><p>文件操作、网络请求、代码执行、数据查询、API 调用……覆盖面极广，且支持通过 <strong>MCP（Model Context Protocol）</strong> 扩展。</p><h3 id="持久化记忆"><a href="#持久化记忆" class="headerlink" title="持久化记忆"></a>持久化记忆</h3><ul><li>基于 <strong>SQLite + FTS5</strong> 的全文搜索</li><li>自动生成记忆摘要</li><li>定期”记忆唤醒”机制</li><li>跨会话知识延续</li></ul><h3 id="无人值守自动化"><a href="#无人值守自动化" class="headerlink" title="无人值守自动化"></a>无人值守自动化</h3><p>内置 <strong>Cron 调度器</strong>，可以自动执行每日行情报告、系统健康检查、数据备份、新闻推送等任务。</p><h3 id="灵活部署"><a href="#灵活部署" class="headerlink" title="灵活部署"></a>灵活部署</h3><mark class="hl-label blue">本地</mark> <mark class="hl-label green">Docker</mark> <mark class="hl-label orange">SSH</mark> <mark class="hl-label pink">Kubernetes</mark> <mark class="hl-label red">沙箱</mark><h2 id="技术架构"><a href="#技术架构" class="headerlink" title="技术架构"></a>技术架构</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">┌──────────────────────────────────────┐</span><br><span class="line">│          Hermes Agent Core           │</span><br><span class="line">├────────────┬────────────┬───────────┤</span><br><span class="line">│  Agent Loop│  Skill Mgr │  Memory   │</span><br><span class="line">│  (推理引擎) │  (技能管理) │  (FTS5)   │</span><br><span class="line">├────────────┴────────────┴───────────┤</span><br><span class="line">│           Tool System (40+)         │</span><br><span class="line">├──────────────────────────────────────┤</span><br><span class="line">│  TUI / Telegram / Discord / Slack... │</span><br><span class="line">└──────────────────────────────────────┘</span><br></pre></td></tr></table></figure><h2 id="实践感悟"><a href="#实践感悟" class="headerlink" title="实践感悟"></a>实践感悟</h2><p>参与 Hermes Agent 项目让我深刻理解了”智能体”的本质——它不是简单的”输入-输出”模型，而是一个<strong>持续学习的系统</strong>。真正强大的 Agent 需要有记忆、有技能、有自主进化的能力，而 Hermes 在这条路上走出了坚实的一步。</p>]]>
-    </content>
-    <id>https://caeamer.com/2026/06/13/Hermes-Agent-%E8%87%AA%E8%BF%9B%E5%8C%96AI%E6%99%BA%E8%83%BD%E4%BD%93/</id>
-    <link href="https://caeamer.com/2026/06/13/Hermes-Agent-%E8%87%AA%E8%BF%9B%E5%8C%96AI%E6%99%BA%E8%83%BD%E4%BD%93/"/>
-    <published>2026-06-13T14:28:14.000Z</published>
-    <summary>Nous Research 出品的通用自进化 AI 智能体，具备经验学习、持久记忆和跨平台运行能力。</summary>
-    <title>Hermes Agent — 自进化的 AI 智能体</title>
-    <updated>2026-06-13T14:28:14.000Z</updated>
   </entry>
 </feed>

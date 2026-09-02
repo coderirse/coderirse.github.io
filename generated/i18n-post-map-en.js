@@ -20,6 +20,16 @@ window.__I18N_POST_MAP__.byPath = {
     "en": "/en/2026/06/13/ai-agents-stock/",
     "ja": "/ja/2026/06/13/ai-agents-stock/"
   },
+  "/en/2026/09/02/ai-learning-diploma/": {
+    "zh-CN": "/2026/09/02/ai-learning-diploma/",
+    "en": "/en/2026/09/02/ai-learning-diploma/",
+    "ja": "/ja/2026/09/02/ai-learning-diploma/"
+  },
+  "/en/2026/09/02/ai-learning-diploma": {
+    "zh-CN": "/2026/09/02/ai-learning-diploma/",
+    "en": "/en/2026/09/02/ai-learning-diploma/",
+    "ja": "/ja/2026/09/02/ai-learning-diploma/"
+  },
   "/en/2026/07/12/awesome-claude-code/": {
     "zh-CN": "/2026/07/12/awesome-claude-code生态资源合集/",
     "en": "/en/2026/07/12/awesome-claude-code/",
