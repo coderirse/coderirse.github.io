@@ -1,0 +1,16 @@
+---
+import { getPosts, collectTerms } from '../../../lib/site';
+import TermPage from '../../../components/TermPage.astro';
+
+export async function getStaticPaths() {
+  const posts = await getPosts('en');
+  return [...collectTerms(posts, 'categories').entries()].map(([term, list]) => ({
+    params: { category: encodeURIComponent(term) },
+    props: { term, posts: list }
+  }));
+}
+
+const { term, posts } = Astro.props;
+---
+
+<TermPage lang="en" field="categories" term={term} posts={posts} />

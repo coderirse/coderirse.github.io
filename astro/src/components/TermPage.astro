@@ -1,0 +1,35 @@
+---
+import Base from '../layouts/Base.astro';
+import { postUrl, dateStr, firstCategory, T, type Lang, type Post } from '../lib/site';
+
+interface Props { lang: Lang; field: 'tags' | 'categories'; term: string; posts: Post[] }
+const { lang, field, term, posts } = Astro.props;
+const t = T[lang];
+
+const enc = encodeURIComponent(term);
+const kind = field === 'tags' ? t.tags : t.categories;
+---
+
+<Base
+  lang={lang}
+  title={`${term} — ${kind} — lizhichao`}
+  altUrls={{ zh: `/${field}/${enc}/`, en: `/en/${field}/${enc}/`, ja: `/ja/${field}/${enc}/` }}
+>
+  <header class="page-hero">
+    <h1 class="page-title" data-reveal>{term}</h1>
+    <p class="page-desc">{kind} · {t.postsTotal.replace('{n}', String(posts.length))}</p>
+  </header>
+
+  <div class="page-body wide">
+    <div>
+      {posts.map((p, i) => (
+        <a class="toc-row" href={postUrl(p)} data-reveal>
+          <span class="idx">{String(i + 1).padStart(2, '0')}</span>
+          <span class="date">{dateStr(p.data.date)}</span>
+          <span class="title">{p.data.title}</span>
+          {firstCategory(p) && <span class="cat">{firstCategory(p)}</span>}
+        </a>
+      ))}
+    </div>
+  </div>
+</Base>

@@ -10,3 +10,6 @@ source/generated/
 .uploads/
 .claude/
 .workbuddy/
+
+# Astro build output
+astro/dist/

@@ -1,0 +1,14 @@
+---
+import Base from '../layouts/Base.astro';
+import { T } from '../lib/site';
+
+const t = T.zh;
+---
+
+<Base lang="zh" title={`404 ${t.notFound} — lizhichao`}>
+  <header class="nf-hero">
+    <h1 class="nf-code" data-reveal>404</h1>
+    <p class="nf-msg" data-reveal>{t.notFoundDesc}</p>
+    <a class="hx-btn" href="/">{t.backHome} →</a>
+  </header>
+</Base>

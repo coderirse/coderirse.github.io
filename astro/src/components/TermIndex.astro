@@ -1,0 +1,43 @@
+---
+import Base from '../layouts/Base.astro';
+import { getPosts, collectTerms, T, LANG_PREFIX, type Lang } from '../lib/site';
+
+interface Props { lang: Lang; field: 'tags' | 'categories' }
+const { lang, field } = Astro.props;
+const t = T[lang];
+const prefix = LANG_PREFIX[lang];
+
+const posts = await getPosts(lang);
+const terms = [...collectTerms(posts, field).entries()]
+  .sort((a, b) => b[1].length - a[1].length || a[0].localeCompare(b[0]));
+const counts = terms.map(([, list]) => list.length);
+const max = Math.max(...counts, 1);
+const min = Math.min(...counts, max);
+const size = (n: number) => (max === min ? 1.2 : 0.9 + ((n - min) / (max - min)) * 0.9);
+
+const title = field === 'tags' ? t.tags : t.categories;
+const total = (field === 'tags' ? t.tagsTotal : t.catsTotal).replace('{n}', String(terms.length));
+---
+
+<Base
+  lang={lang}
+  title={`${title} — lizhichao`}
+  altUrls={{ zh: `/${field}/`, en: `/en/${field}/`, ja: `/ja/${field}/` }}
+>
+  <header class="page-hero">
+    <h1 class="page-title" data-reveal>{title}</h1>
+    <p class="page-desc">{total}</p>
+  </header>
+
+  <div class="page-body wide">
+    <div class="tag-cloud">
+      {terms.map(([term, list]) => (
+        <a
+          href={`${prefix}/${field}/${encodeURIComponent(term)}/`}
+          style={`font-size:${size(list.length).toFixed(2)}rem`}
+          data-reveal
+        >{term}<span class="n">{list.length}</span></a>
+      ))}
+    </div>
+  </div>
+</Base>

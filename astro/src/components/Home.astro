@@ -1,0 +1,144 @@
+---
+import Base from '../layouts/Base.astro';
+import { getPosts, postUrl, dateStr, firstCategory, T, LANG_PREFIX, type Lang } from '../lib/site';
+import { readProjects } from '../lib/projects';
+
+interface Props { lang: Lang; page?: number }
+const { lang, page = 1 } = Astro.props;
+const t = T[lang];
+const prefix = LANG_PREFIX[lang];
+
+const PER_PAGE = 10;
+const posts = await getPosts(lang);
+const totalPages = Math.max(1, Math.ceil(posts.length / PER_PAGE));
+const shown = posts.slice((page - 1) * PER_PAGE, page * PER_PAGE);
+const projects = readProjects(lang).slice(0, 8);
+const siteName = 'lizhichao';
+const pageUrl = (n: number) => (n === 1 ? `${prefix}/` : `${prefix}/page/${n}/`);
+---
+
+<Base
+  lang={lang}
+  title={`${siteName} — Create infinite possibilities`}
+  description={t.aboutLine.replace(/<[^>]+>/g, '')}
+  veil={page === 1}
+  altUrls={page > 1 ? { zh: `/page/${page}/`, en: `/en/page/${page}/`, ja: `/ja/page/${page}/` } : undefined}
+>
+  <!-- 刊头 -->
+  <header class="hero">
+    <canvas id="binary-rain"></canvas>
+    <div class="hero-fade"></div>
+    <div class="hero-inner">
+      <div class="hero-eyebrow">{t.eyebrow}</div>
+      <h1 class="hero-slogan">
+        <span class="row"><span class="word">Create</span></span>
+        <span class="row"><span class="word"><em>infinite</em></span></span>
+        <span class="row"><span class="word">possibilities</span></span>
+      </h1>
+      <div class="hero-sub"><span>{t.tagline}</span></div>
+    </div>
+    <div class="hero-scroll">SCROLL ↓</div>
+  </header>
+
+  <!-- 跑马灯 -->
+  <div class="marquee" aria-hidden="true">
+    <div class="mq-track">
+      {Array.from({ length: 2 }).map(() => (
+        <>
+          {Array.from({ length: 3 }).map(() => (
+            <>
+              <span>CREATE INFINITE POSSIBILITIES <b>◆</b></span>
+              <span>CODE <b>◆</b></span>
+              <span>ROBOTICS <b>◆</b></span>
+              <span>AI <b>◆</b></span>
+              <span>WRITING <b>◆</b></span>
+              <span>OPEN SOURCE <b>◆</b></span>
+            </>
+          ))}
+        </>
+      ))}
+    </div>
+  </div>
+
+  <!-- 宣言 -->
+  <section class="act manifesto">
+    <p data-reveal>{t.manifesto}</p>
+  </section>
+
+  <!-- 目次 -->
+  <section class="act toc">
+    <div class="act-label">
+      <span class="no">ACT 01</span>
+      <span class="name">{t.toc}</span>
+      <span class="en">{t.tocEn}</span>
+    </div>
+    <div>
+      {shown.map((p, i) => (
+        <a class="toc-row" href={postUrl(p)} data-reveal>
+          <span class="idx">{String((page - 1) * PER_PAGE + i + 1).padStart(2, '0')}</span>
+          <span class="date">{dateStr(p.data.date)}</span>
+          <span class="title">{p.data.title}</span>
+          {firstCategory(p) && <span class="cat">{firstCategory(p)}</span>}
+          {p.data.description && <span class="excerpt">{p.data.description}</span>}
+        </a>
+      ))}
+    </div>
+    {totalPages > 1 && (
+      <nav class="pager">
+        {page > 1 && <a href={pageUrl(page - 1)} aria-label={t.prev}>‹</a>}
+        {Array.from({ length: totalPages }).map((_, i) => {
+          const n = i + 1;
+          return n === page
+            ? <span class="current">{n}</span>
+            : <a href={pageUrl(n)}>{n}</a>;
+        })}
+        {page < totalPages && <a href={pageUrl(page + 1)} aria-label={t.next}>›</a>}
+      </nav>
+    )}
+  </section>
+
+  <!-- 项目 -->
+  <section class="act projects-act" style="padding-top: 5rem; padding-bottom: 5rem;">
+    <div class="act-label">
+      <span class="no">ACT 02</span>
+      <span class="name">{t.projects}</span>
+      <span class="en">{t.projectsEn}</span>
+    </div>
+    <div>
+      {projects.map((pr, i) => (
+        <a class="proj-row" href={`${prefix}/projects/`} data-reveal>
+          <span class="idx">{String(i + 1).padStart(2, '0')}</span>
+          <span>
+            <span class="p-title">{pr.title}</span>
+            {pr.blurb && <span class="p-blurb" style="display:block">{pr.blurb}</span>}
+          </span>
+          <span class="p-arrow">→</span>
+        </a>
+      ))}
+    </div>
+    <div style="margin-top:2.5rem">
+      <a class="hx-btn" href={`${prefix}/projects/`}>{t.allProjects} →</a>
+    </div>
+  </section>
+
+  <!-- 关于我 -->
+  <section class="act about-act">
+    <div class="act-label">
+      <span class="no">ACT 03</span>
+      <span class="name">{t.about}</span>
+      <span class="en">{t.aboutEn}</span>
+    </div>
+    <div class="about-grid">
+      <div class="about-mark" data-reveal>LZ</div>
+      <div>
+        <p class="about-line" data-reveal set:html={t.aboutLine} />
+        <div class="about-links" data-reveal>
+          <a href="https://github.com/coderirse" target="_blank" rel="noopener">GITHUB</a>
+          <a href="mailto:caeamer@163.com">EMAIL</a>
+          <a href={`${prefix}/about/`}>{t.nav.about.toUpperCase()}</a>
+          <a href={`${prefix}/resume/`}>{t.nav.resume.toUpperCase()}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

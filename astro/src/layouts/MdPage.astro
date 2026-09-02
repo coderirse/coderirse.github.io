@@ -1,0 +1,28 @@
+---
+import Base from './Base.astro';
+import { type Lang } from '../lib/site';
+
+const { frontmatter } = Astro.props;
+const lang: Lang = frontmatter.lang || 'zh';
+const seg = Astro.url.pathname.replace(/^\/(en|ja)(?=\/)/, '').replace(/^\//, '').replace(/\/$/, '');
+const altUrls = {
+  zh: `/${seg}/`,
+  en: `/en/${seg}/`,
+  ja: `/ja/${seg}/`
+};
+---
+
+<Base
+  lang={lang}
+  title={`${frontmatter.title} — lizhichao`}
+  description={frontmatter.description}
+  altUrls={altUrls}
+>
+  <header class="page-hero">
+    <h1 class="page-title" data-reveal>{frontmatter.title}</h1>
+    {frontmatter.description && <p class="page-desc">{frontmatter.description}</p>}
+  </header>
+  <div class="page-body post-body">
+    <slot />
+  </div>
+</Base>

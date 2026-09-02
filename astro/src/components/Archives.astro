@@ -1,0 +1,49 @@
+---
+import Base from '../layouts/Base.astro';
+import { getPosts, postUrl, dateStr, firstCategory, T, type Lang } from '../lib/site';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = T[lang];
+
+const posts = await getPosts(lang);
+const pad = (n: number) => String(n).padStart(2, '0');
+
+const byYear = new Map<number, typeof posts>();
+for (const p of posts) {
+  const y = p.data.date.getUTCFullYear();
+  const list = byYear.get(y) || [];
+  list.push(p);
+  byYear.set(y, list);
+}
+const years = [...byYear.entries()].sort((a, b) => b[0] - a[0]);
+---
+
+<Base
+  lang={lang}
+  title={`${t.archives} — lizhichao`}
+  altUrls={{ zh: '/archives/', en: '/en/archives/', ja: '/ja/archives/' }}
+>
+  <header class="page-hero">
+    <h1 class="page-title" data-reveal>{t.archives}</h1>
+    <p class="page-desc">{t.postsTotal.replace('{n}', String(posts.length))}</p>
+  </header>
+
+  <div class="page-body wide">
+    {years.map(([year, list]) => (
+      <section class="arch-block">
+        <h2 class="arch-year" data-reveal>{year}</h2>
+        <div>
+          {list.map((p) => (
+            <a class="toc-row" href={postUrl(p)} data-reveal>
+              <span class="idx">{pad(p.data.date.getUTCMonth() + 1)}-{pad(p.data.date.getUTCDate())}</span>
+              <span class="date">{dateStr(p.data.date)}</span>
+              <span class="title">{p.data.title}</span>
+              {firstCategory(p) && <span class="cat">{firstCategory(p)}</span>}
+            </a>
+          ))}
+        </div>
+      </section>
+    ))}
+  </div>
+</Base>

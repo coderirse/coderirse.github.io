@@ -1,0 +1,16 @@
+---
+import { getPosts, postUrl } from '../lib/site';
+import PostPage from '../components/PostPage.astro';
+
+export async function getStaticPaths() {
+  const posts = await getPosts('zh');
+  return posts.map((entry) => ({
+    params: { path: postUrl(entry).replace(/^\//, '').replace(/\/$/, '') },
+    props: { entry }
+  }));
+}
+
+const { entry } = Astro.props;
+---
+
+<PostPage entry={entry} />

@@ -1,0 +1,64 @@
+---
+import Base from '../layouts/Base.astro';
+import { render } from 'astro:content';
+import {
+  getPosts, buildPostMap, postUrl, dateStr, firstCategory,
+  T, LANG_PREFIX, langOf, type Post, type Lang
+} from '../lib/site';
+
+interface Props { entry: Post }
+const { entry } = Astro.props;
+const lang = langOf(entry.id);
+const t = T[lang];
+const prefix = LANG_PREFIX[lang];
+
+const { Content } = await render(entry);
+
+/* 上下篇（同语言，按日期） */
+const all = await getPosts(lang);
+const idx = all.findIndex((p) => p.id === entry.id);
+const prev = idx > 0 ? all[idx - 1] : null;   // 更新的一篇
+const next = idx >= 0 && idx < all.length - 1 ? all[idx + 1] : null; // 更旧的一篇
+
+/* 语言切换目标 */
+const map = await buildPostMap();
+const key = entry.data.translation_key || '';
+const altUrls = map[key] || {};
+
+const desc = entry.data.description || '';
+const tags = Array.isArray(entry.data.tags) ? entry.data.tags : entry.data.tags ? [entry.data.tags] : [];
+---
+
+<Base lang={lang} title={`${entry.data.title} — lizhichao`} description={desc} altUrls={altUrls}>
+  <article>
+    <header class="post-hero">
+      <div class="post-meta-top">
+        <span>{t.postedOn} <i>{dateStr(entry.data.date)}</i></span>
+        {firstCategory(entry) && <span><i>·</i> {firstCategory(entry)}</span>}
+        {tags.length > 0 && <span><i>·</i> {tags.join(' / ')}</span>}
+      </div>
+      <h1 class="post-title" data-reveal>{entry.data.title}</h1>
+    </header>
+
+    <div class="post-body">
+      <Content />
+    </div>
+
+    {(prev || next) && (
+      <nav class="post-nav">
+        {prev ? (
+          <a href={postUrl(prev)}>
+            <div class="dir">← {t.prev}</div>
+            <div class="t">{prev.data.title}</div>
+          </a>
+        ) : <span />}
+        {next && (
+          <a href={postUrl(next)}>
+            <div class="dir">{t.next} →</div>
+            <div class="t">{next.data.title}</div>
+          </a>
+        )}
+      </nav>
+    )}
+  </article>
+</Base>
