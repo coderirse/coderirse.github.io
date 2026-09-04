@@ -16,6 +16,7 @@ menu:
   about: /about/ || fas fa-user
   resume: /resume/ || fas fa-briefcase
   projects: /projects/ || fas fa-code
+  v2site: https://v2.caeamer.com/ || fas fa-rocket
 
 # 网站背景 (透明，避免遮挡首页头图)
 background:
