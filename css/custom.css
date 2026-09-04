@@ -936,6 +936,7 @@ html[lang] .code-block {
   color: var(--ink-soft) !important;
 }
 #article-container .note .note-icon,
-#article-container .note i {
+#article-container .note i,
+#article-container .note::before {
   color: var(--accent) !important;
 }
