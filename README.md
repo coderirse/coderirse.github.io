@@ -66,6 +66,23 @@ pnpm run deploy
 git add . && git commit -m "new post" && git push origin source
 ```
 
+### Writing Conventions (Figures & References)
+
+Every post must follow these conventions so content stays rigorous and machine-readable:
+
+1. **Images** live in `source/img/essays/<slug>/` and are referenced as
+   `/img/essays/<slug>/<file>`. The post cover goes in frontmatter `cover:`.
+2. **Figure captions** — place an italic caption line immediately below every image:
+   `*图 N：description。出处：source (license) [ref].*` (use `Fig. N` in EN/JA posts).
+   Numbering is continuous within a post (the cover image is not numbered).
+   The source must be traceable: link, author, date, license.
+3. **In-text citations** — cite external works as `[N]` at the end of the sentence,
+   numbered by first appearance.
+4. **References** — end the post with a `## 参考文献` section (simplified GB/T 7714):
+   `[N] Author. Title[EB/OL]. Source, date. URL.` — use `[DB/OL]` for images/data.
+5. **Frontmatter** — required: `title`, `translation_key`, `date`, `categories`,
+   `tags`, `description`; optional: `cover`.
+
 ### Tech Stack
 
 - **Framework:** [Hexo](https://hexo.io) 8.x
@@ -149,6 +166,21 @@ npx hexo new "文章标题"
 pnpm run deploy
 git add . && git commit -m "新文章" && git push origin source
 ```
+
+### 写作规范（图注与参考文献）
+
+所有文章需遵循以下约定，保证严谨性并便于 AI 协作与检索：
+
+1. **图片存放**：统一放 `source/img/essays/<slug>/`，正文引用 `/img/essays/<slug>/<文件名>`；
+   封面图写 frontmatter `cover:`。
+2. **图注**：每张图下方紧跟一行斜体图注，格式为
+   `*图 N：说明（可含图内标注、年份）。出处：来源（许可）[文献编号]。*`
+   编号在全文连续（题图不计入）；出处必须可追溯：链接、作者、日期、许可。
+3. **正文引用**：引用他人文章/数据处在句末标注 `[N]`，编号按首次出现顺序。
+4. **参考文献**：文末以 `## 参考文献` 起节，格式（GB/T 7714 简化）：
+   `[N] 作者. 标题[EB/OL]. 来源, 日期. URL.`，图片/数据用 `[DB/OL]`。
+5. **frontmatter**：必填 `title`、`translation_key`、`date`、`categories`、`tags`、`description`；
+   可选 `cover`。
 
 ### 技术栈
 
