@@ -60,6 +60,12 @@ window.__I18N_POST_MAP__.byPath = {
     "en": "/en/2026/08/29/beike-schedule/",
     "ja": "/ja/2026/08/29/beike-schedule/"
   },
+  "/2026/09/26/burying-talent-in-yesterday/": {
+    "zh-CN": "/2026/09/26/burying-talent-in-yesterday/"
+  },
+  "/2026/09/26/burying-talent-in-yesterday": {
+    "zh-CN": "/2026/09/26/burying-talent-in-yesterday/"
+  },
   "/2026/08/29/countdown/": {
     "zh-CN": "/2026/08/29/countdown/",
     "en": "/en/2026/08/29/countdown/",
