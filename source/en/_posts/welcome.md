@@ -1,6 +1,7 @@
 ---
 title: Welcome to My Blog
 translation_key: welcome
+description: Who I am and what this blog is for — showcasing projects, sharing technical notes, and documenting growth in web development and open source.
 date: 2026-06-12 00:00:00
 tags:
   - personal

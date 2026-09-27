@@ -1,6 +1,7 @@
 ---
 title: Hermes Agent — A Self-Improving AI Agent
 translation_key: hermes-agent
+description: Hermes, a general-purpose self-improving AI agent by Nous Research — experiential learning, persistent memory and cross-platform operation.
 date: 2026-06-13 22:28:14
 categories:
   - Projects

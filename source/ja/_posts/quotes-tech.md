@@ -1,6 +1,7 @@
 ---
 title: 名言 — 技術と創造について
 translation_key: quotes-tech
+description: 技術と創造に関する名言集。世界を変えた思想家たちに敬意を込めて。
 date: 2026-06-13 22:28:17
 categories:
   - 名言

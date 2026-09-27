@@ -1,6 +1,7 @@
 ---
 title: AI Agents Stock — マルチAIエージェント株式分析システム
 translation_key: ai-agents-stock
+description: 複数のAIエージェントが協調する株式分析システム。A株・香港株・米国株を対象に、テクニカル・ファンダメンタル・資金流向を多角的に分析します。
 date: 2026-06-13 22:28:12
 categories:
   - プロジェクト

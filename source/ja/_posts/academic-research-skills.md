@@ -1,6 +1,7 @@
 ---
 title: Academic Research Skills — 学術研究パイプライン
 translation_key: academic-research-skills
+description: Claude Code 向けに構築した学術研究パイプラインのスキルスイート。リサーチから論文発表までの全工程をカバーします。
 date: 2026-06-13 22:28:16
 categories:
   - プロジェクト

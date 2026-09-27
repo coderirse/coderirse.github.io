@@ -1,6 +1,7 @@
 ---
 title: 名言 — 学習と成長について
 translation_key: quotes-growth
+description: 学習・継続・個人の成長に関する名言を集めました。奮闘の日々を共に進む皆さんと共有します。
 date: 2026-06-13 22:28:19
 categories:
   - 名言

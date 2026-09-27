@@ -1,6 +1,7 @@
 ---
 title: Academic Research Skills — Academic Research Pipeline
 translation_key: academic-research-skills
+description: A complete academic research pipeline skill suite for Claude Code, covering the full journey from literature review to publication.
 date: 2026-06-13 22:28:16
 categories:
   - Projects

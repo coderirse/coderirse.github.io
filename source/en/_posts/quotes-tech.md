@@ -1,6 +1,7 @@
 ---
 title: Quotes — On Technology & Creation
 translation_key: quotes-tech
+description: A curated collection of quotes on technology and creation — a tribute to the minds that changed the world.
 date: 2026-06-13 22:28:17
 categories:
   - Quotes

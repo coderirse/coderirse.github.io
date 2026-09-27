@@ -1,6 +1,7 @@
 ---
 title: AI Agents Stock — Multi-Agent Stock Analysis System
 translation_key: ai-agents-stock
+description: A multi-agent stock analysis system covering A-share, Hong Kong and US markets, with technical, fundamental and capital-flow analysis.
 date: 2026-06-13 22:28:12
 categories:
   - Projects

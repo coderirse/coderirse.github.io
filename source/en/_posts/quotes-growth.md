@@ -1,6 +1,7 @@
 ---
 title: Quotes — On Learning & Growth
 translation_key: quotes-growth
+description: A curated collection of classic quotes on learning, persistence and personal growth — shared as encouragement on the long road.
 date: 2026-06-13 22:28:19
 categories:
   - Quotes
