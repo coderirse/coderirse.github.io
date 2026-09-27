@@ -31,6 +31,9 @@ The site uses a heavily customized **editorial / magazine** style layered on top
 - Every version of a post shares the same `translation_key` frontmatter; the language switcher
   uses the generated per-language route map (`i18n-post-map-{zh,en,ja}.js`).
 - Localized static pages (home / about / resume / projects) exist under `source/{en,ja}/`.
+- The localized homepages (`/en/`, `/ja/`) render the same magazine-style table of contents
+  as the Chinese homepage, listing all translated posts; the switcher greys out target
+  languages without a translation (and stays on the current page for archives / tags / categories).
 - hreflang alternates are injected automatically on every page.
 
 ### Getting Started
@@ -133,6 +136,8 @@ Releases are tagged on `source` (e.g. `v1.0.0`).
 - 同一篇文章的三个版本共享相同的 `translation_key`；语言切换器使用生成的
   分语言路由映射（`i18n-post-map-{zh,en,ja}.js`）。
 - 静态页面（首页 / 关于 / 简历 / 项目）在 `source/{en,ja}/` 下有对应语言版本。
+- `/en/`、`/ja/` 首页与中文首页同款杂志目次，列出全部已翻译文章；无译本的目标语言
+  在切换器中置灰提示（归档/标签/分类页切语言停留在原页），不再出现点击无反应或 404。
 - 每个页面自动注入 hreflang 备用链接。
 
 ### 快速开始
