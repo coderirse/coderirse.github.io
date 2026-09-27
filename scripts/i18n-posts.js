@@ -20,6 +20,10 @@ const TRANSLATED_LANGS = ['en', 'ja'];
 // 每个语言根下都存在对应版本的页面（与 source/<lang>/ 目录一一对应）
 const LOCALIZED_PAGES = ['/', '/about/', '/resume/', '/projects/'];
 const MAP_FILE_SUFFIX = { 'zh-CN': 'zh', en: 'en', ja: 'ja' };
+// 与 themes/butterfly/scripts/filters/random_cover.js 的判定一致：
+// 该过滤器只处理 Post，物化出的译文是 Page，不会被打上 cover_type，
+// 模板会把图片路径当成纯色背景渲染（封面空白），因此这里手动补齐。
+const IMG_TEST_REG = /\.(png|jpe?g|gif|svg|webp|avif)(\?.*)?$/i;
 
 // 渲染期使用的路由映射（由 generateI18nPosts 刷新）
 let postMap = { byPath: {} };
@@ -131,7 +135,8 @@ function generateI18nPosts(baseDir, logger) {
           filePath,
           routePath,
           frontmatterText: split.frontmatterText,
-          body: split.body
+          body: split.body,
+          cover: meta.cover
         };
       });
   }
@@ -171,12 +176,19 @@ function generateI18nPosts(baseDir, logger) {
       const outputFile = path.join(langDir, `${getSlug(entry.filePath)}.md`);
       expectedFiles.add(path.basename(outputFile));
 
+      // 封面是图片路径时补 cover_type（与主题对 Post 的处理保持一致）
+      const coverVal = entry.cover ? String(entry.cover) : '';
+      const coverTypeLine = coverVal && (coverVal.indexOf('//') !== -1 || IMG_TEST_REG.test(coverVal))
+        ? 'cover_type: img'
+        : null;
+
       const output = [
         '---',
         'layout: post',
         `lang: ${lang}`,
         `permalink: ${entry.routePath}`,
         safeFrontmatter,
+        ...(coverTypeLine ? [coverTypeLine] : []),
         '---',
         '',
         entry.body.trimStart()
