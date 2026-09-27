@@ -27,6 +27,12 @@ block content
         include includes/page/404.pug
       when 'shuoshuo'
         include includes/page/shuoshuo.pug
+      when 'home'
+        //- EN/JA 首页：Welcome 介绍 + 已翻译文章目次（zh-CN 首页由 index generator 负责，不走这里）
+        include includes/page/default-page.pug
+        if page.lang && page.lang !== 'zh-CN'
+          include includes/page/home-i18n.pug
+        +commentLoad
       default
         include includes/page/default-page.pug
         +commentLoad

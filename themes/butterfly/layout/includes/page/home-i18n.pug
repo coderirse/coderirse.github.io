@@ -1,0 +1,32 @@
+//- EN/JA 首页目次：与中文首页共用杂志目次排版，数据来自构建期物化的翻译页（layout: post + lang）
+//- 翻译页是 Page 而非 Post，没有 Query 形态的分类/标签，因此元信息只展示日期；
+//- warehouse 的 Query 不能被 pug each 直接迭代，取 .data 底层数组
+- const langPosts = site.pages.filter(function (p) { return p.layout === 'post' && p.lang === page.lang }).sort('date', -1).data || []
+if langPosts.length
+  #recent-posts.recent-posts.nc
+    .recent-post-items
+      each article, index in langPosts
+        .recent-post-item
+          - const link = (article.link || article.path || '').replace(/index\.html$/, '')
+          - const title = article.title || _p('no_title')
+          - const leftOrRight = theme.index_layout === 3 ? (index % 2 === 0 ? 'left' : 'right') : ''
+          - const postCover = article.cover
+          - const noCover = article.cover === false || !theme.cover.index_enable ? 'no-cover' : ''
+          if postCover && theme.cover.index_enable
+            .post_cover(class=leftOrRight)
+              a(href=url_for(link) title=title)
+                if article.cover_type === 'img'
+                  img.post-bg(src=url_for(postCover) onerror=`this.onerror=null;this.src='${url_for(theme.error_img.post_page)}'` alt=title)
+                else
+                  div.post-bg(style=`background: ${postCover}`)
+          .recent-post-info(class=noCover)
+            a.article-title(href=url_for(link) title=title)= title
+            .article-meta-wrap
+              if theme.post_meta.page.date_type
+                span.post-meta-date
+                  i.far.fa-calendar-alt
+                  span.article-meta-label=_p('post.created')
+                  time(datetime=date_xml(article.date) title=_p('post.created') + ' ' + full_date(article.date))= date(article.date, config.date_format)
+            - const desc = postDesc(article)
+            if desc
+              .content!=desc
