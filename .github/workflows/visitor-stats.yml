@@ -40,6 +40,7 @@ jobs:
             echo "No change"
           else
             git add source/_data/visitor-stats.json
-            git commit -m "chore: update visitor stats (automated)"
+            # [skip ci]：统计 JSON 由前端从 raw 直读，无需触发站点重建部署
+            git commit -m "chore: update visitor stats (automated) [skip ci]"
             git push
           fi
