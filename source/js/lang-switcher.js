@@ -18,7 +18,14 @@
     { key: 'ja', label: '日本語', short: '日' }
   ];
 
-  var LOCALIZED_PAGES = ['/', '/about/', '/resume/', '/projects/', '/archives/', '/tags/', '/categories/'];
+  // 本地化页面清单的单一来源是 scripts/i18n-posts.js（随路由映射下发）；
+  // 映射脚本万一缺失时退回这份快照。归档/标签/分类无译版，不在清单内。
+  var FALLBACK_LOCALIZED_PAGES = ['/', '/about/', '/resume/', '/projects/'];
+  var UNTRANSLATED_HINT = {
+    'zh-CN': '该文章暂无此语言的译本',
+    'en': 'No translation available for this page yet',
+    'ja': 'この言語の翻訳はまだありません'
+  };
 
   function detectLang() {
     var p = window.location.pathname;
@@ -54,6 +61,11 @@
 
   var currentLang = detectLang();
 
+  function localizedPages() {
+    var lp = window.__I18N_POST_MAP__ && window.__I18N_POST_MAP__.localizedPages;
+    return lp || FALLBACK_LOCALIZED_PAGES;
+  }
+
   function langPrefix(lang) {
     return lang === 'zh-CN' ? '' : '/' + lang;
   }
@@ -63,7 +75,7 @@
   }
 
   function isLocalizedPage(path) {
-    return LOCALIZED_PAGES.indexOf(stripLang(path)) !== -1;
+    return localizedPages().indexOf(stripLang(path)) !== -1;
   }
 
   function getPostMap() {
@@ -91,6 +103,17 @@
     return encodePath(langPrefix(lang) + (bare === '/' ? '/' : bare));
   }
 
+  // 目标语言下是否存在真实对应页：
+  // - 文章（路由映射命中）：有译本才可切换；
+  // - 本地化页面（首页/关于/经历/项目）：三语都有；
+  // - 其余（归档/标签/分类等）：切过去只会停留在当前页 → 按不可用处理。
+  function isAvailable(key) {
+    if (key === currentLang) return true;
+    var entry = getTranslationEntry(window.location.pathname);
+    if (entry) return !!entry[key];
+    return isLocalizedPage(window.location.pathname);
+  }
+
   function buildSwitcher() {
     var cur = LANGS.filter(function(l) {
       return l.key === currentLang;
@@ -104,6 +127,9 @@
 
     var btn = document.createElement('button');
     btn.className = 'lang-btn';
+    btn.type = 'button';
+    btn.setAttribute('aria-haspopup', 'true');
+    btn.setAttribute('aria-expanded', 'false');
     btn.innerHTML = '<i class="fas fa-globe"></i> ' + cur.short;
 
     var menu = document.createElement('div');
@@ -112,22 +138,42 @@
     LANGS.forEach(function(l) {
       var a = document.createElement('a');
       a.textContent = l.label;
+      a.href = toLangPath(window.location.pathname, l.key);
 
       if (l.key === currentLang) {
         a.className = 'active';
-        a.setAttribute('onclick', 'event.preventDefault()');
-        a.style.cursor = 'default';
-        a.style.opacity = '0.5';
-        a.style.pointerEvents = 'none';
+        a.setAttribute('aria-current', 'true');
+        a.addEventListener('click', function(e) { e.preventDefault(); });
+      } else if (!isAvailable(l.key)) {
+        a.className = 'unavailable';
+        a.setAttribute('aria-disabled', 'true');
+        a.title = UNTRANSLATED_HINT[currentLang] || '';
+        a.addEventListener('click', function(e) { e.preventDefault(); });
       } else {
-        a.style.cursor = 'pointer';
-        a.onclick = function(e) {
+        a.addEventListener('click', function(e) {
           e.preventDefault();
-          window.location.href = toLangPath(window.location.pathname, l.key);
-        };
+          window.location.href = a.href;
+        });
       }
 
       menu.appendChild(a);
+    });
+
+    function setOpen(open) {
+      wrap.classList.toggle('open', open);
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    }
+
+    // click 切换：触屏（尤其 iOS，tap 不触发 :focus/:hover）依赖这条路径
+    btn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      setOpen(!wrap.classList.contains('open'));
+    });
+    document.addEventListener('click', function(e) {
+      if (wrap.classList.contains('open') && !wrap.contains(e.target)) setOpen(false);
+    });
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') setOpen(false);
     });
 
     wrap.appendChild(btn);

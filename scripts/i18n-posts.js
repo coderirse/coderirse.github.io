@@ -98,8 +98,6 @@ function generateI18nPosts(baseDir, logger) {
   const generatedDir = path.join(sourceDir, 'generated');
   const generatedPagesDir = path.join(generatedDir, 'i18n-posts');
 
-  fs.rmSync(generatedPagesDir, { recursive: true, force: true });
-
   const postsByKey = new Map();
 
   function collectPosts(lang, dirPath) {
@@ -163,9 +161,15 @@ function generateI18nPosts(baseDir, logger) {
       .map((group) => group[lang])
       .filter(Boolean);
 
+    // 对账式清理：先算出预期文件集，再删除该语言目录下的陈旧产物。
+    // 不用 rmSync(recursive) 整目录删除——Windows 长路径下偶发 ENOTEMPTY。
+    const langDir = path.join(generatedPagesDir, lang);
+    const expectedFiles = new Set();
+
     entries.forEach((entry) => {
       const safeFrontmatter = sanitizeFrontmatter(entry.frontmatterText);
-      const outputFile = path.join(generatedPagesDir, lang, `${getSlug(entry.filePath)}.md`);
+      const outputFile = path.join(langDir, `${getSlug(entry.filePath)}.md`);
+      expectedFiles.add(path.basename(outputFile));
 
       const output = [
         '---',
@@ -180,6 +184,14 @@ function generateI18nPosts(baseDir, logger) {
 
       writeFileIfChanged(outputFile, `${output}\n`);
     });
+
+    if (fs.existsSync(langDir)) {
+      fs.readdirSync(langDir).forEach((fileName) => {
+        if (fileName.endsWith('.md') && !expectedFiles.has(fileName)) {
+          fs.rmSync(path.join(langDir, fileName), { force: true });
+        }
+      });
+    }
   });
 
   // 按语言拆分映射：客户端切换器只需查当前语言前缀下的路径
@@ -190,13 +202,16 @@ function generateI18nPosts(baseDir, logger) {
       const inLang = prefix === null
         ? !/^\/(en|ja)\//.test(routePath)
         : routePath.indexOf(prefix) === 0;
-      if (inLang) {
+      // 客户端只需带尾斜杠的规范路径（lang-switcher 查询前会 normalizePath），减半体积
+      if (inLang && routePath.endsWith('/')) {
         byPath[routePath] = mapByPath[routePath];
       }
     });
 
     const script = [
       'window.__I18N_POST_MAP__ = window.__I18N_POST_MAP__ || {};',
+      // 本地化页面清单单一来源：lang-switcher 据此判断切语言是否可用
+      `window.__I18N_POST_MAP__.localizedPages = ${JSON.stringify(LOCALIZED_PAGES)};`,
       `window.__I18N_POST_MAP__.byPath = ${JSON.stringify(byPath, null, 2)};`
     ].join('\n');
 
@@ -262,8 +277,8 @@ function registerI18nHtmlFilter(hexo) {
     const lang = detectLangFromRenderPath(renderPath);
 
     const injections = [];
-    // 每语言路由映射，head 内阻塞执行，先于底部加载的 lang-switcher.js
-    injections.push(`<script src="/generated/i18n-post-map-${MAP_FILE_SUFFIX[lang]}.js"></script>`);
+    // 每语言路由映射：defer 加载不阻塞解析；defer 保序，仍先于底部同样 defer 的 lang-switcher.js
+    injections.push(`<script defer src="/generated/i18n-post-map-${MAP_FILE_SUFFIX[lang]}.js"></script>`);
 
     const alternates = getHreflangAlternates(hexo, renderPath);
     if (alternates) {
