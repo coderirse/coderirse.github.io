@@ -763,10 +763,21 @@ html[lang] .code-block {
   min-width: 120px;
 }
 .lang-switcher:hover .lang-dropdown,
-.lang-btn:focus + .lang-dropdown {
+.lang-btn:focus + .lang-dropdown,
+.lang-switcher.open .lang-dropdown,
+.lang-switcher:focus-within .lang-dropdown {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
+}
+/* 无译本的语言：置灰禁用（触屏无 hover 提示，用 title 兜底说明） */
+.lang-dropdown a.unavailable {
+  opacity: 0.35;
+  cursor: default;
+}
+.lang-dropdown a.unavailable:hover {
+  background: transparent;
+  color: var(--ink-soft);
 }
 .lang-dropdown a {
   display: block;
@@ -791,6 +802,13 @@ html[lang] .code-block {
     bottom: 16px;
     left: 12px;
     right: auto;
+  }
+  /* 刊头小字行：收窄字距避免 375px 下折行 */
+  #site-info::before,
+  #page-header.lang-home-header .lang-home-site-info::before {
+    font-size: 0.6rem;
+    letter-spacing: 0.3em;
+    text-indent: 0.3em;
   }
   #site-title,
   #page-header.lang-home-header .lang-home-site-info h1 {

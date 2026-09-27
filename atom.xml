@@ -91,10 +91,10 @@
       <name>lizhichao</name>
     </author>
     <category term="项目" scheme="https://caeamer.com/categories/%E9%A1%B9%E7%9B%AE/"/>
-    <category term="开源" scheme="https://caeamer.com/tags/%E5%BC%80%E6%BA%90/"/>
     <category term="Android" scheme="https://caeamer.com/tags/Android/"/>
     <category term="Kotlin" scheme="https://caeamer.com/tags/Kotlin/"/>
     <category term="Jetpack Compose" scheme="https://caeamer.com/tags/Jetpack-Compose/"/>
+    <category term="开源" scheme="https://caeamer.com/tags/%E5%BC%80%E6%BA%90/"/>
     <category term="AI" scheme="https://caeamer.com/tags/AI/"/>
     <category term="ML Kit" scheme="https://caeamer.com/tags/ML-Kit/"/>
     <content>
@@ -132,11 +132,11 @@
       <name>lizhichao</name>
     </author>
     <category term="项目" scheme="https://caeamer.com/categories/%E9%A1%B9%E7%9B%AE/"/>
-    <category term="开源" scheme="https://caeamer.com/tags/%E5%BC%80%E6%BA%90/"/>
+    <category term="USTB" scheme="https://caeamer.com/tags/USTB/"/>
     <category term="Android" scheme="https://caeamer.com/tags/Android/"/>
     <category term="Kotlin" scheme="https://caeamer.com/tags/Kotlin/"/>
     <category term="Jetpack Compose" scheme="https://caeamer.com/tags/Jetpack-Compose/"/>
-    <category term="USTB" scheme="https://caeamer.com/tags/USTB/"/>
+    <category term="开源" scheme="https://caeamer.com/tags/%E5%BC%80%E6%BA%90/"/>
     <category term="课表" scheme="https://caeamer.com/tags/%E8%AF%BE%E8%A1%A8/"/>
     <content>
       <![CDATA[<h2 id="项目概述"><a href="#项目概述" class="headerlink" title="项目概述"></a>项目概述</h2><p>BeikeSchedule（贝壳课表）是一款北京科技大学课表 App：内置 WebView 登录本研一体化教务系统一键导入课表，本地周视图展示，支持上课提醒。已发布 Release APK，可直接覆盖升级。</p><mark class="hl-label blue">Kotlin</mark> <mark class="hl-label green">Compose</mark> <mark class="hl-label orange">Room</mark> <mark class="hl-label pink">AlarmManager</mark><h3 id="关键特性"><a href="#关键特性" class="headerlink" title="关键特性"></a>关键特性</h3><ul><li><strong>教务一键导入</strong>：WebView 完成统一身份认证（App 不接触学号密码），自动抓取学期课表 JSON，预览确认后入库</li><li><strong>官方教学周日历</strong>：导入时同步教务校历，教学周 ↔ 日期精确映射——国庆等长假周不占教学周序号；假期中自动定位到假期后第一个教学周</li><li><strong>周视图课表</strong>：按”大节”排版，滑动切周、周次下拉跳转、单双周标注、无固定时间课程单独列表、地点楼名 &#x2F; 房间号分行显示</li><li><strong>课程管理</strong>：手动增删改课程，教务数据与手动课程共存</li><li><strong>上课提醒</strong>：每大节课前 N 分钟系统通知（默认 15 分钟可调），支持精确闹钟，开机自动重排</li><li><strong>当前周定位</strong>：杀进程重启也能正确定位当前教学周；深色模式三态切换</li></ul><h3 id="技术要点"><a href="#技术要点" class="headerlink" title="技术要点"></a>技术要点</h3><ul><li>Kotlin + Jetpack Compose（Material 3），Room（课程 &#x2F; 节次时间）+ DataStore（学期配置 &#x2F; 校历 &#x2F; 提醒）</li><li>教务适配层：WebView 注入 JS 复用登录会话，直接调教务结构化 JSON 接口（课表 32 位周次位图、校历全量映射），无需解析 HTML</li><li>解析器 &#x2F; 周次逻辑有单元测试覆盖，fixture 为真实接口样本</li></ul><p><strong>隐私</strong>：学号密码只在系统 WebView 中由本人输入给学校认证页面，App 不读取、不存储、不上传任何凭证；课表数据仅保存在本机。</p><a class="btn-beautify " href="https://github.com/coderirse/BeikeSchedule" title="查看源码"><i class="fab fa-github"></i><span>查看源码</span></a> <a class="btn-beautify " href="https://github.com/coderirse/BeikeSchedule/releases" title="下载 APK"><i class="fas fa-download"></i><span>下载 APK</span></a>]]>
@@ -153,10 +153,10 @@
       <name>lizhichao</name>
     </author>
     <category term="项目" scheme="https://caeamer.com/categories/%E9%A1%B9%E7%9B%AE/"/>
-    <category term="开源" scheme="https://caeamer.com/tags/%E5%BC%80%E6%BA%90/"/>
     <category term="Android" scheme="https://caeamer.com/tags/Android/"/>
     <category term="Kotlin" scheme="https://caeamer.com/tags/Kotlin/"/>
     <category term="Jetpack Compose" scheme="https://caeamer.com/tags/Jetpack-Compose/"/>
+    <category term="开源" scheme="https://caeamer.com/tags/%E5%BC%80%E6%BA%90/"/>
     <category term="工具" scheme="https://caeamer.com/tags/%E5%B7%A5%E5%85%B7/"/>
     <content>
       <![CDATA[<h2 id="项目概述"><a href="#项目概述" class="headerlink" title="项目概述"></a>项目概述</h2><p>BaseConversion 是一款面向程序员的安卓进制转换器，纯本地运行、零广告。打开即用，二进制 &#x2F; 八进制 &#x2F; 十进制 &#x2F; 十六进制四框实时联动转换，无需点击”转换”按钮，支持大整数、补码与 IEEE 754 浮点数位模式展示。</p><mark class="hl-label blue">Kotlin</mark> <mark class="hl-label green">Compose</mark> <mark class="hl-label orange">MVI</mark><h3 id="关键特性"><a href="#关键特性" class="headerlink" title="关键特性"></a>关键特性</h3><ul><li><strong>整数模式</strong>：四进制框双向实时联动；<code>BigInteger</code> 任意精度；固定位宽 8&#x2F;16&#x2F;32&#x2F;64 有符号补码，signed&#x2F;unsigned 切换，超范围自动截断并提示</li><li><strong>浮点模式</strong>：十进制输值，实时显示 float32 &#x2F; float64 的 IEEE 754 位模式与实际存储值，支持 <code>NaN</code> &#x2F; <code>±Infinity</code> &#x2F; <code>-0.0</code></li><li><strong>智能键盘</strong>：应用内自定义键盘，按进制动态禁用非法键、分区配色；长按退格连续删除；一键复制 &#x2F; 粘贴（自动识别 <code>0x</code> &#x2F; <code>0b</code> &#x2F; <code>0o</code> 前缀）</li><li><strong>个性化</strong>：主题三态切换、强调色可选、默认模式 &#x2F; 进制 &#x2F; 位宽 &#x2F; 精度均可配置，按键音效与震动反馈</li><li><strong>细节体验</strong>：中英双语、数值等宽字体；唯一联网功能是通过 GitHub Releases API 检查更新</li></ul><h3 id="技术栈"><a href="#技术栈" class="headerlink" title="技术栈"></a>技术栈</h3><p>Kotlin 2.0+ · Jetpack Compose (Material 3) · ViewModel + StateFlow (MVI) · Gradle Kotlin DSL · minSdk 29</p><p>架构上把转换算法抽成纯 Kotlin 的 <code>domain</code> 层，配合 JUnit 单元测试保证数值逻辑正确性；UI &#x2F; 数据 &#x2F; 领域三层清晰分离。</p><a class="btn-beautify " href="https://github.com/coderirse/BaseConversion" title="查看源码"><i class="fab fa-github"></i><span>查看源码</span></a>]]>
@@ -255,10 +255,10 @@
       <name>lizhichao</name>
     </author>
     <category term="项目" scheme="https://caeamer.com/categories/%E9%A1%B9%E7%9B%AE/"/>
+    <category term="USTB" scheme="https://caeamer.com/tags/USTB/"/>
     <category term="Android" scheme="https://caeamer.com/tags/Android/"/>
     <category term="Kotlin" scheme="https://caeamer.com/tags/Kotlin/"/>
     <category term="Jetpack Compose" scheme="https://caeamer.com/tags/Jetpack-Compose/"/>
-    <category term="USTB" scheme="https://caeamer.com/tags/USTB/"/>
     <category term="校园网" scheme="https://caeamer.com/tags/%E6%A0%A1%E5%9B%AD%E7%BD%91/"/>
     <content>
       <![CDATA[<h2 id="项目概述"><a href="#项目概述" class="headerlink" title="项目概述"></a>项目概述</h2><p>Net-USTB 是专为北京科技大学校园网（Dr.COM ePortal 4.x）开发的第三方原生 Android 客户端，用它替代浏览器端的网页认证流程，实现一键登录&#x2F;登出。</p><mark class="hl-label blue">Kotlin</mark> <mark class="hl-label green">Compose</mark> <mark class="hl-label orange">OkHttp</mark><h3 id="核心功能"><a href="#核心功能" class="headerlink" title="核心功能"></a>核心功能</h3><ul><li><strong>一键认证</strong>：通过 ePortal JSONP 接口完成登录&#x2F;登出，无需打开浏览器</li><li><strong>多运营商</strong>：校园用户 &#x2F; 中国电信 &#x2F; 中国联通</li><li><strong>AES-256-GCM</strong> 加密凭据存储</li><li><strong>使用看板</strong>：余额、时长、流量、登录时间、IP 地址</li><li><strong>校园公告</strong>：获取公告板信息</li></ul><h3 id="技术细节"><a href="#技术细节" class="headerlink" title="技术细节"></a>技术细节</h3><ul><li>OkHttp 4.12 + 自定义 CookieJar</li><li>Jsoup 1.18 HTML 解析</li><li>EncryptedSharedPreferences 加密存储</li><li>隐私优先：零分析、零广告</li></ul><mark class="hl-label green">USTB</mark> <mark class="hl-label green">Android</mark> <mark class="hl-label green">网络工具</mark>]]>
@@ -275,11 +275,11 @@
       <name>lizhichao</name>
     </author>
     <category term="项目" scheme="https://caeamer.com/categories/%E9%A1%B9%E7%9B%AE/"/>
-    <category term="开源" scheme="https://caeamer.com/tags/%E5%BC%80%E6%BA%90/"/>
     <category term="Android" scheme="https://caeamer.com/tags/Android/"/>
     <category term="Kotlin" scheme="https://caeamer.com/tags/Kotlin/"/>
     <category term="Jetpack Compose" scheme="https://caeamer.com/tags/Jetpack-Compose/"/>
     <category term="数学" scheme="https://caeamer.com/tags/%E6%95%B0%E5%AD%A6/"/>
+    <category term="开源" scheme="https://caeamer.com/tags/%E5%BC%80%E6%BA%90/"/>
     <content>
       <![CDATA[<h2 id="项目概述"><a href="#项目概述" class="headerlink" title="项目概述"></a>项目概述</h2><p>一款功能完整的 Android 科学计算器应用，使用纯 Kotlin + Jetpack Compose 开发。不仅支持标准科学计算，还集成了方程求解器和矩阵计算器。</p><mark class="hl-label blue">Kotlin</mark> <mark class="hl-label green">Compose</mark> <mark class="hl-label orange">Material3</mark><h3 id="科学计算器"><a href="#科学计算器" class="headerlink" title="科学计算器"></a>科学计算器</h3><p>基础运算 + 三角函数（DEG&#x2F;RAD 切换）+ 对数函数 + 平方根&#x2F;绝对值。表达式求值引擎使用 Shunting-yard 算法 + 递归下降解析，支持可展开科学面板。</p><h3 id="方程求解器"><a href="#方程求解器" class="headerlink" title="方程求解器"></a>方程求解器</h3><p>一元一次&#x2F;二次方程（判别式分析）、二元一次&#x2F;三元一次方程组（Cramer 法则 + 行列式展开）。</p><h3 id="矩阵计算器"><a href="#矩阵计算器" class="headerlink" title="矩阵计算器"></a>矩阵计算器</h3><p>2x2&#x2F;3x3 矩阵加减乘、转置、行列式、逆矩阵（伴随矩阵法）、秩（高斯消元）。</p><mark class="hl-label green">Android</mark> <mark class="hl-label green">科学计算</mark> <mark class="hl-label green">开源</mark>]]>
     </content>
