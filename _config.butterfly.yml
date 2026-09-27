@@ -131,8 +131,8 @@ aside:
     enable: true
     post_count: true
     last_push_date: true
-    runtime:
-      enable: true
+    # 运行时间起点（与模板读取的 runtime_date 键对应；此前写成 runtime.enable 导致该行永不渲染）
+    runtime_date: 2026-06-12
 
 # 暗色模式 - 自动跟随系统
 darkmode:
@@ -205,11 +205,11 @@ pwa:
 lightbox: fancybox
 
 # 注入自定义 CSS + 自托管字体（西文；中文使用系统字体栈，不请求第三方）
+# lang-switcher.js 使用 defer：与 head 内 defer 的路由映射保持先后顺序，且不阻塞解析
 inject:
   head:
     - <link rel="stylesheet" href="/css/fonts.css">
     - <link rel="stylesheet" href="/css/custom.css">
   bottom:
     - <script src="/js/visitor-stats.js"></script>
-    - <script src="/js/lang-switcher.js"></script>
-    - <script src="/js/lang-home-subtitle.js"></script>
+    - <script defer src="/js/lang-switcher.js"></script>
