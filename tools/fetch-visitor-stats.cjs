@@ -55,20 +55,32 @@ async function gql(query, variables) {
   }
   // date_lt 取明天，把今天（进行中的部分）也计入
   const until = new Date(Date.now() + 86400000).toISOString().slice(0, 10);
-  const data = await gql(QUERY, {
-    accountTag: ACCOUNT_TAG,
-    siteTag: SITE_TAG,
-    since: SINCE,
-    until
-  });
 
-  // viewer.accounts 是数组，取第一个元素
-  const groups = data?.viewer?.accounts?.[0]?.pageloads || [];
+  // Cloudflare 对大跨度查询启用 adaptive sampling（数值取整到 10 的倍数，
+  // 且与仪表板/小窗口查询不一致）。按 ≤7 天分片查询，各片返回精确值后求和。
+  const CHUNK_DAYS = 7;
+  const chunks = [];
+  for (let t = Date.parse(`${SINCE}T00:00:00Z`); t < Date.parse(`${until}T00:00:00Z`); t += CHUNK_DAYS * 86400000) {
+    const chunkSince = new Date(t).toISOString().slice(0, 10);
+    const chunkUntil = new Date(Math.min(t + CHUNK_DAYS * 86400000, Date.parse(`${until}T00:00:00Z`)))
+      .toISOString().slice(0, 10);
+    chunks.push({ since: chunkSince, until: chunkUntil });
+  }
+
   let pv = 0;
   let visitors = 0;
-  for (const g of groups) {
-    pv += g.count || 0;
-    visitors += g.sum?.visits || 0;
+  for (const chunk of chunks) {
+    const data = await gql(QUERY, {
+      accountTag: ACCOUNT_TAG,
+      siteTag: SITE_TAG,
+      since: chunk.since,
+      until: chunk.until
+    });
+    const groups = data?.viewer?.accounts?.[0]?.pageloads || [];
+    for (const g of groups) {
+      pv += g.count || 0;
+      visitors += g.sum?.visits || 0;
+    }
   }
 
   let previous = {};
@@ -76,11 +88,15 @@ async function gql(query, variables) {
     previous = JSON.parse(fs.readFileSync(OUT, 'utf8'));
   } catch (e) { /* first run */ }
 
-  // 不允许回退：取新旧较大值（按天分组求和的去重值可能有微小抖动）
+  // 不允许回退：取新旧较大值。旧算法（单次全范围查询）的结果是采样估算值，
+  // 其历史峰值含取整虚高，换算法后一次性作废旧基准（method 不同则重置下限）。
+  const METHOD = 'chunked-exact-v1';
+  const prevUsable = previous.method === METHOD ? previous : {};
   const stats = {
-    pv: Math.max(pv, previous.pv || 0),
-    visitors: Math.max(visitors, previous.visitors || 0),
+    pv: Math.max(pv, prevUsable.pv || 0),
+    visitors: Math.max(visitors, prevUsable.visitors || 0),
     since: SINCE,
+    method: METHOD,
     updated: new Date().toISOString()
   };
   fs.mkdirSync(path.dirname(OUT), { recursive: true });
