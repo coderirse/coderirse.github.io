@@ -1,6 +1,7 @@
 {
-  "pv": 200,
-  "visitors": 100,
+  "pv": 182,
+  "visitors": 83,
   "since": "2026-08-29",
-  "updated": "2026-09-28T07:02:44.059Z"
+  "method": "chunked-exact-v1",
+  "updated": "2026-09-28T12:14:05.448Z"
 }
