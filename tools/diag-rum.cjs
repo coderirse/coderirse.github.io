@@ -47,6 +47,13 @@ async function gql(label, query, variables) {
   const since = new Date(now.getTime() - 7 * 86400000).toISOString().slice(0, 10);
   console.log('diag window:', since, '->', until, '(UTC)');
 
+  // 0. 全范围（与小时任务一致：2026-08-29 起），看保留期内最早的数据是哪天
+  await gql(
+    'FULL RANGE since 2026-08-29 (same as hourly job)',
+    q('filter: { siteTag: "78249947ead941a69c73fd9a8bea199e", date_geq: $since, date_lt: $until }', ''),
+    { accountTag: ACCOUNT_TAG, since: '2026-08-29', until }
+  );
+
   // 1. workflow 当前用的 siteTag
   await gql(
     'siteTag=78249947ead941a69c73fd9a8bea199e (workflow 现用)',
