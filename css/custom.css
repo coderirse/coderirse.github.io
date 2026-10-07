@@ -661,9 +661,9 @@ html[lang] .code-block {
   letter-spacing: 0.08em;
 }
 
-/* 右下角按钮 */
-#rightside .iconfont,
-#rightside i {
+/* 右下角按钮：浅色模式沿用主题默认白图标（朱砂红底上可见），暗色模式用暖纸灰 */
+[data-theme='dark'] #rightside .iconfont,
+[data-theme='dark'] #rightside i {
   color: var(--ink-soft) !important;
 }
 
