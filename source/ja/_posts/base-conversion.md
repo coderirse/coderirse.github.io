@@ -13,6 +13,10 @@ tags:
 description: 完全ローカル・広告なしの Android 進数変換アプリ。リアルタイム連携変換、2 の補数と IEEE 754 ビットパターン表示に対応。
 ---
 
+{% note info %}
+状態：保守中 · 担当：単独開発 · コード：公開 · 最終更新：2026-10
+{% endnote %}
+
 ## 概要
 
 BaseConversion はプログラマー向けの Android 進数変換アプリです。完全ローカル動作・広告なし。起動するだけで 2 進 / 8 進 / 10 進 / 16 進の 4 つのフィールドがリアルタイムで双方向連携し、「変換」ボタンは不要。大きな整数、2 の補数、IEEE 754 浮動小数点数のビットパターン表示に対応しています。
@@ -32,3 +36,9 @@ Kotlin 2.0+ · Jetpack Compose (Material 3) · ViewModel + StateFlow (MVI) · Gr
 変換アルゴリズムは純 Kotlin の `domain` レイヤーに分離し、JUnit 単体テストで数値ロジックの正しさを保証。UI / データ / ドメインの 3 層構造を明確に分けています。
 
 {% btn https://github.com/coderirse/BaseConversion, ソースコード, fab fa-github %}
+
+## 制限
+
+開発者の日常的な基数変換向けで、任意精度浮動小数点の完全なセマンティクスを目指したものではありません。IEEE 754 表示は学習・デバッグ用途で、専門的な数値ツールの代替ではありません。履歴や一括変換はありません。
+
+{% btn https://github.com/coderirse/BaseConversion, ソースを見る, fab fa-github %}

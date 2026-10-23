@@ -2,8 +2,9 @@
 title: 倒数日 App — 立项与产品设计
 translation_key: countdown
 date: 2026-08-29 00:00:03
+updated: 2026-10-23
 categories:
-  - 项目
+  - 进行中
 tags:
   - Android
   - Kotlin
@@ -12,6 +13,10 @@ tags:
   - 产品设计
 description: 以桌面小组件为核心触点的倒数 / 正数日工具：完整 PRD 与技术选型分享（立项阶段）。
 ---
+
+{% note info %}
+状态：进行中 · 角色：独立开发 · 代码：未开源
+{% endnote %}
 
 ## 项目概述
 

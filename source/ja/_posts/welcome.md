@@ -1,29 +1,38 @@
 ---
 title: ブログへようこそ
 translation_key: welcome
-description: リ・ジチャオの個人ブログの始まりの一篇。プロジェクト紹介、技術ノート、成長の記録——このブログで何を発信しているかをまとめました。
+description: lizhichao の個人ブログ。ロボット制御、Android ツール、AI 時代の学びと考えを記録します。
 date: 2026-06-12 00:00:00
+updated: 2026-10-23
 tags:
   - 個人
 categories:
-  - ノート
+  - エッセイ
 ---
 
-## 👋 こんにちは！
+## こんにちは
 
 {% note success %}
-リ・ジチャオの個人ブログです。ウェブ開発とオープンソース技術に情熱を持つ大学3年生です。
+lizhichao です。北京科技大学の学部生です。このブログでは、ロボット制御、Android ツール、AI 時代の学びと考えの3つを記録しています。
 {% endnote %}
 
 ### このブログについて
 
-- **経歴紹介** — [学歴と経験](/ja/resume/)を見る
-- **プロジェクト共有** — [プロジェクトページ](/ja/projects/)で制作物を紹介
-- **成長記録** — 技術ノートや学びを共有
+- **プロジェクト** — [プロジェクトページ](/ja/projects/)で、作ったものと担当範囲を紹介
+- **オープンソース観察** — 読んだプロジェクトのソースノートと使用記録
+- **エッセイ** — AI、教育、エンジニアリング能力についての考察
 
-### 自己紹介
+### 取り組んでいること
 
-{% label JavaScript blue %} {% label TypeScript green %} {% label React pink %} {% label Vue.js orange %} {% label Node.js red %}
+{% label ROS2 blue %} {% label C++ green %} {% label Python pink %} {% label Kotlin orange %} {% label Jetpack Compose red %} {% label AI Agent blue %}
 
-- 技術的関心：フロントエンド、パフォーマンス最適化、オープンソース
-- 連絡先：caeamer@163.com
+- ロボット制御：ROS2、CAN/Modbus、外骨格・壁面移動ロボット
+- Android ツール：時間割、翻訳、キャンパスネットワーク、基数変換
+- AI エージェント：マルチエージェント協調、メモリ、スキルシステム
+
+### 連絡先
+
+- メール：caeamer@163.com
+- GitHub：[coderirse](https://github.com/coderirse)
+
+ロボット、Android、AI エージェントに興味があれば、[プロジェクトページ](/ja/projects/)からどうぞ。

@@ -14,6 +14,10 @@ tags:
 description: 北京科技大学の時間割アプリ。教務システムからのワンタップインポート、教学週カレンダー、週表示と授業リマインダー。
 ---
 
+{% note info %}
+状態：保守中 · 担当：単独開発 · コード：公開 · 最終更新：2026-10
+{% endnote %}
+
 ## 概要
 
 BeikeSchedule（ベイク課表）は北京科技大学（USTB）の時間割アプリです。内蔵 WebView で教務システムにログインして時間割をワンタップでインポートし、週表示で確認、授業前のリマインダーにも対応。リリース APK を公開しており、上書きインストールで更新できます。
@@ -36,3 +40,9 @@ BeikeSchedule（ベイク課表）は北京科技大学（USTB）の時間割ア
 **プライバシー**：学籍番号とパスワードはシステム WebView 内で本人が大学の認証ページに入力するだけで、アプリは読み取り・保存・送信しません。時間割データも端末内にのみ保存されます。
 
 {% btn https://github.com/coderirse/BeikeSchedule, ソースコード, fab fa-github %} {% btn https://github.com/coderirse/BeikeSchedule/releases, APK をダウンロード, fas fa-download %}
+
+## 制限
+
+USTB の統合教務システムのみ対応しています。ページや API の変更で取り込みが壊れる可能性があります。リマインダーは正確なアラーム権限に依存し、一部の OEM ROM では手動で許可が必要です。端末間同期はありません。
+
+{% btn https://github.com/coderirse/BeikeSchedule, ソースを見る, fab fa-github %} {% btn https://github.com/coderirse/BeikeSchedule/releases, APK をダウンロード, fas fa-download %}

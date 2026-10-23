@@ -14,9 +14,13 @@ tags:
 description: Real-time API quota monitoring for DeepSeek, Kimi, Zhipu GLM, and SiliconFlow AI platforms.
 ---
 
+{% note info %}
+Status: maintained · Role: solo developer · Code: public · Updated: 2026-10
+{% endnote %}
+
 ## Overview
 
-WatchDog is an Android app for real-time monitoring of API balances across multiple AI platforms — essential for heavy AI API users. v1.0.4 released as APK.
+WatchDog is an Android app for real-time monitoring of API balances across multiple AI platforms. I use it daily to check balances and monthly usage; the latest version is available as an APK.
 
 {% label Kotlin blue %} {% label Compose green %} {% label Retrofit orange %}
 

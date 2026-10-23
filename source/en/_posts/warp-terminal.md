@@ -1,36 +1,49 @@
 ---
-title: Warp — Redefining the Terminal with AI
+title: Warp — Turning the Terminal into an Agent Workbench
 translation_key: warp-terminal
+description: A reading note on Warp 2.0 — Rust client, GPU rendering, built-in agents and AGPL/MIT open source. Not my project.
 date: 2026-07-12 00:00:01
+updated: 2026-10-23
 categories:
-  - Projects
+  - Open Source Notes
 tags:
   - Warp
   - Terminal
   - AI
   - Rust
   - Open Source
-  - DevTools
-description: Warp is a next-gen intelligent terminal/IDE with native AI agent integration, supporting Claude Code, Codex, Gemini and more.
 ---
 
-## Overview
+{% note info %}
+Project: [warpdotdev/warp](https://github.com/warpdotdev/warp) · Author: Warp · License: AGPL-3.0 client, MIT UI crates
+This is a reading note. I did not contribute to the project.
+{% endnote %}
 
-Warp is a modern intelligent terminal built with Rust, with OpenAI as founding sponsor. It's not just a terminal emulator — it's a complete AI-powered development environment with native integration of multiple vibe coding agents.
+## What it is
 
-{% label Rust blue %} {% label Tokio green %} {% label AI pink %}
+Warp is a terminal written in Rust. In April 2026 it open-sourced its client, with OpenAI joining as the founding sponsor of the repository. It no longer positions itself as just "a nicer terminal" but as an agentic development environment: terminal, code editor, agents and a team knowledge base in one interface.
 
-### Core Components
-- GPU-accelerated terminal rendering (Alacritty-based)
-- NuShell for modern shell experience
-- Built-in AI agent + Claude Code / Codex / Gemini CLI
-- Session persistence across restarts
+## Technical shape
 
-### 20+ Agent Skills
-PR Review, Issue Triage, Changelog drafting, Bug reproduction, UI guideline checks, integration testing — all automated.
+- **Rendering**: a custom GPU renderer; Alacritty is listed as a reference in the credits
+- **Shell integration**: NuShell for a modern parsing experience
+- **Agents**: a built-in agent plus Claude Code, Codex and Gemini CLI
+- **Session persistence**: work state survives restarts
 
-### Community
-- Oz for OSS — AI agent credits for open source maintainers
-- AGPL v3 license
+## The open-source boundary
 
-{% label Terminal green %} {% label AI Agent green %} {% label Open Source green %}
+The open source is layered:
+
+- `warpui` / `warpui_core`: MIT
+- Main client: AGPL-3.0
+- Oz cloud orchestration: closed source
+
+You can read the client and build it yourself, but the cloud agent platform remains a commercial service.
+
+## My take
+
+What Warp really changes is not how the terminal looks, but that **terminal output becomes structured data**: every command, output, error and context is a block that both humans and agents can consume. That is more thorough than putting a chat box next to a traditional terminal.
+
+The cost: login is required, cloud features matter, and AGPL constrains commercial reuse. Whether it fits depends on whether you want to hand your terminal to a combined "terminal + agent platform" product.
+
+{% btn https://github.com/warpdotdev/warp, View original project, fab fa-github %}

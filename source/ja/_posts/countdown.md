@@ -2,8 +2,9 @@
 title: カウントダウンアプリ — 企画とプロダクト設計
 translation_key: countdown
 date: 2026-08-29 00:00:03
+updated: 2026-10-23
 categories:
-  - プロジェクト
+  - 進行中
 tags:
   - Android
   - Kotlin
@@ -12,6 +13,10 @@ tags:
   - プロダクト設計
 description: ホーム画面ウィジェットを核としたカウントダウン / カウントアップツール。PRD と技術選定の共有（企画段階）。
 ---
+
+{% note info %}
+状態：進行中 · 担当：単独開発 · コード：非公開
+{% endnote %}
 
 ## 概要
 

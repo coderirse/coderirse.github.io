@@ -15,7 +15,7 @@
 
 const timeLineFn = (args, content) => {
   // Use named capture groups for better readability
-  const tlBlock = /<!--\s*timeline\s*(?<title>.*?)\s*-->\n(?<content>[\s\S]*?)<!--\s*endtimeline\s*-->/g
+  const tlBlock = /<!--\s*timeline\s*(?<title>.*?)\s*-->\r?\n(?<content>[\s\S]*?)<!--\s*endtimeline\s*-->/g
 
   // Pre-compile markdown render function
   const renderMd = text => hexo.render.renderSync({ text, engine: 'markdown' })

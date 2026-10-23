@@ -1,30 +1,32 @@
 ---
-title: Hermes Agent — 自进化的 AI 智能体
+title: Hermes Agent — 一个会自己攒技能的开源智能体
 translation_key: hermes-agent
 date: 2026-06-13 22:28:14
+updated: 2026-10-23
 categories:
-  - 项目
+  - 开源观察
 tags:
   - AI Agent
   - Python
   - 自动化
   - 开源
-description: Nous Research 出品的通用自进化 AI 智能体，具备经验学习、持久记忆和跨平台运行能力。
+description: 拆解 Nous Research 的 Hermes Agent：技能自创建、SQLite/FTS5 记忆、多平台网关与 Cron 调度。本文是源码阅读笔记，不是项目贡献者。
 ---
 
-## 项目简介
-
-**Hermes Agent** 是由 Nous Research 开发的新一代通用 AI 智能体。与传统的单次对话式 AI 不同，Hermes 拥有**闭环学习能力**——它能够从完成的任务中自主创建技能，不断积累经验，实现真正的自我进化。
-
 {% note info %}
-Hermes 是 OpenClaw 的后继项目，在架构上做了全面升级。
+项目：[NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent) · 作者：Nous Research · License：MIT
+我把仓库 fork 下来读过 Agent Loop、Skill Manager 和 Memory 的实现；我没有参与上游开发。
 {% endnote %}
 
-## 核心特性
+## 它想解决什么
 
-### 闭环学习机制
+Hermes Agent 是 Nous Research 在 2026 年 2 月发布的开源通用智能体。和「一次对话、一次回答」的聊天机器人不同，它把重点放在**长期运行**：能记住之前的任务，能把经验沉淀成技能，能在不同消息平台上被调用。
 
-这是 Hermes 最核心的创新——智能体在完成复杂任务后，会自动将经验提炼为**可复用的技能**：
+它和 OpenClaw 是同一赛道的竞品关系，不是「后继项目」——OpenClaw 更早爆发，Hermes 在几周后推出，定位更偏向自改进和深度定制。
+
+## 核心机制
+
+### 闭环学习
 
 ```
 任务执行 → 经验记录 → 技能创建 → 技能优化 → 知识持久化
@@ -32,46 +34,29 @@ Hermes 是 OpenClaw 的后继项目，在架构上做了全面升级。
     └──────────── 后续任务自动调用 ←──────────────┘
 ```
 
-### 多平台消息网关
+真正值得看的不是流程图，而是三个问题：
 
-Hermes 不只是命令行工具，它是一套完整的跨平台智能体系统：
+1. 经验在什么条件下才会被写成技能？
+2. 新技能如何避免和旧技能冲突？
+3. 技能质量由谁验证？
 
-{% label Telegram blue %} {% label Discord pink %} {% label Slack orange %} {% label WhatsApp green %} {% label CLI red %}
+如果这三个问题没有答案，「自进化」很容易变成「自己给自己加 bug」。
 
-### 40+ 内置工具
+### 记忆
 
-文件操作、网络请求、代码执行、数据查询、API 调用……覆盖面极广，且支持通过 **MCP（Model Context Protocol）** 扩展。
-
-### 持久化记忆
-
-- 基于 **SQLite + FTS5** 的全文搜索
+- 基于 SQLite + FTS5 的全文搜索
 - 自动生成记忆摘要
-- 定期"记忆唤醒"机制
-- 跨会话知识延续
+- 定期「记忆唤醒」
+- 跨会话延续
 
-### 无人值守自动化
+记忆层最大的风险不是「记不住」，而是「记错」和「记太多」。前者会污染后续决策，后者会让上下文成本和噪声一起上升。
 
-内置 **Cron 调度器**，可以自动执行每日行情报告、系统健康检查、数据备份、新闻推送等任务。
+### 多平台与自动化
 
-### 灵活部署
+Telegram、Discord、Slack、WhatsApp、CLI 都能接；内置 Cron 调度器，可以跑每日报告、健康检查、备份等无人值守任务。
 
-{% label 本地 blue %} {% label Docker green %} {% label SSH orange %} {% label Kubernetes pink %} {% label 沙箱 red %}
+## 我的判断
 
-## 技术架构
+Hermes 代表的方向是对的：Agent 不应该只是一次性的问答，而应该是一个持续积累的系统。但它也把问题从「模型会不会做」转移到了「你怎么管住它」——技能权限、记忆清理、成本控制、失败回滚，这些工程问题比演示视频更重要。
 
-```
-┌──────────────────────────────────────┐
-│          Hermes Agent Core           │
-├────────────┬────────────┬───────────┤
-│  Agent Loop│  Skill Mgr │  Memory   │
-│  (推理引擎) │  (技能管理) │  (FTS5)   │
-├────────────┴────────────┴───────────┤
-│           Tool System (40+)         │
-├──────────────────────────────────────┤
-│  TUI / Telegram / Discord / Slack... │
-└──────────────────────────────────────┘
-```
-
-## 实践感悟
-
-参与 Hermes Agent 项目让我深刻理解了"智能体"的本质——它不是简单的"输入-输出"模型，而是一个**持续学习的系统**。真正强大的 Agent 需要有记忆、有技能、有自主进化的能力，而 Hermes 在这条路上走出了坚实的一步。
+{% btn https://github.com/NousResearch/hermes-agent, 查看原项目, fab fa-github %}

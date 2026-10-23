@@ -14,6 +14,10 @@ tags:
 description: ML Kit オンデバイス翻訳 + LLM ストリーミング長文翻訳 + Merriam-Webster 辞書検索を組み合わせた Android 翻訳アプリ。
 ---
 
+{% note info %}
+状態：保守中 · 担当：単独開発 · コード：公開 · 最終更新：2026-10
+{% endnote %}
+
 ## 概要
 
 LingoFlow はモダンな Android 翻訳アプリです。オンデバイス機械翻訳、権威ある辞書、LLM の力を組み合わせました。日常のフレーズはオフラインで即座に翻訳、長文は LLM がストリーミングで整形、知らない単語はいつでも権威ある定義を検索できます。リリース APK を公開済み。
@@ -33,3 +37,9 @@ Kotlin + Coroutines + Flow · Jetpack Compose（Material 3）· Hilt 依存性�
 署名鍵が未設定の場合、リリースビルドは自動的に debug 署名へフォールバックするため、CI やサイドロードも手間なし。
 
 {% btn https://github.com/coderirse/LingoFlow, ソースコード, fab fa-github %} {% btn https://github.com/coderirse/LingoFlow/releases, APK をダウンロード, fas fa-download %}
+
+## 制限
+
+ML Kit のオンデバイス翻訳は品質に限界があり、長文の LLM 翻訳には自分の API Key が必要です。辞書と TTS の動作はシステムコンポーネントに依存します。アカウント体系と端末間同期はありません。
+
+{% btn https://github.com/coderirse/LingoFlow, ソースを見る, fab fa-github %} {% btn https://github.com/coderirse/LingoFlow/releases, APK をダウンロード, fas fa-download %}

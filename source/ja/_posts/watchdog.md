@@ -13,9 +13,13 @@ tags:
 description: DeepSeek、Kimi、智譜GLM、SiliconFlowの4大AIプラットフォームAPI残高をリアルタイム監視。
 ---
 
+{% note info %}
+状態：保守中 · 担当：単独開発 · コード：公開 · 最終更新：2026-10
+{% endnote %}
+
 ## 概要
 
-WatchDogは複数のAIプラットフォームのAPI残高をリアルタイム監視するAndroidアプリ。v1.0.4リリース済み。
+WatchDogは複数のAIプラットフォームのAPI残高をリアルタイム監視するAndroidアプリです。私は毎日、残高と月間使用量の確認に使っています。最新版は APK で公開しています。
 
 {% label Kotlin blue %} {% label Compose green %}
 

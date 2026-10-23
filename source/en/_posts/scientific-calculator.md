@@ -13,6 +13,10 @@ tags:
 description: An Android scientific calculator built with Kotlin and Jetpack Compose, featuring equation solving and matrix operations.
 ---
 
+{% note info %}
+Status: maintained · Role: solo developer · Code: public · Updated: 2026-10
+{% endnote %}
+
 ## Overview
 
 A feature-complete Android scientific calculator built with pure Kotlin + Jetpack Compose. Beyond standard scientific calculations, it integrates an equation solver and matrix calculator.

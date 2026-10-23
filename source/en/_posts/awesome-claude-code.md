@@ -1,30 +1,36 @@
 ---
-title: awesome-claude-code — Claude Code Resources
+title: awesome-claude-code — A Map of the Claude Code Ecosystem
 translation_key: awesome-claude-code
+description: A guide to hesreallyhim/awesome-claude-code, a curated list of 20+ Claude Code resource categories. A recommendation, not my project.
 date: 2026-07-12 00:00:07
+updated: 2026-10-23
 categories:
-  - Projects
+  - Open Source Notes
 tags:
   - Claude Code
   - Awesome List
-  - Open Source
-  - Community
   - Resources
-description: A hand-picked curated list of the finest Claude Code resources across 20+ categories.
 ---
 
-## Overview
+{% note info %}
+Project: [hesreallyhim/awesome-claude-code](https://github.com/hesreallyhim/awesome-claude-code) · Author: hesreallyhim
+This is a reading guide. I do not maintain the list.
+{% endnote %}
 
-awesome-claude-code is a community-driven curated resource list for Claude Code in the classic "Awesome List" format. Widely referenced in the community as the go-to resource index for new users.
+## What it is
 
-{% label Markdown blue %} {% label Open Source green %}
+awesome-claude-code is a community-maintained list of Claude Code resources, organised in the classic Awesome List format: tools, skills, plugins, multi-agent orchestration, security, observability and more than twenty categories.
 
-### 20+ Categories
-Start Here, From Anthropic, Documentation, Runtime & Infrastructure, Alternative Clients, Skills & Plugins, Multi-Agent Orchestration, Memory & Context, Security, Observability, Status Lines, Design & UI, and more.
+Its value is not "collecting everything" but **being selective**: the main list keeps only entries the maintainer considers worth reading, while older entries are frozen under `README_ALTERNATIVES`.
 
-### Highlights
-- Recently Added ticker for new resources
-- GitHub Stats badges for each entry
-- Legacy resources preserved in README_ALTERNATIVES
+## How I would use it
 
-{% label ClaudeCode green %} {% label Resources green %} {% label Community green %}
+1. Start with Start Here / Documentation and understand the official boundaries.
+2. Pick two or three tools for the problem you actually have, instead of installing the whole list.
+3. For each tool, check recent commits, issue response and license. Stars are only a signal.
+
+## A reminder
+
+Lists like this easily become link farms. What matters is **which problem you are using it to solve**, not how many entries you bookmarked. If you are new to Claude Code, the official docs plus two or three high-frequency tools will take you further than reading the entire list.
+
+{% btn https://github.com/hesreallyhim/awesome-claude-code, View original project, fab fa-github %}

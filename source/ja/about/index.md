@@ -2,29 +2,30 @@
 title: 私について
 date: 2024-01-01 00:00:00
 type: about
-description: リ・ジチャオについてもっと知る
+description: lizhichao — 北京科技大学の学部生。ロボット制御と Android ツール、AI エージェントと身体性知能に関心。
 aside: true
-top_img: https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1920&q=80
 ---
 
-## 👋 こんにちは、リ・ジチャオです
+## こんにちは、lizhichao です
 
 {% note success %}
-技術に情熱を持ち、学び続け、前に進み続ける。
+北京科技大学の学部生です。ロボット制御と Android ツールを作り、AI エージェントと身体性知能に関心があります。
 {% endnote %}
 
 ### 自己紹介
 
-北京科技大学（USTB）3年生。バイブコーディングに情熱を持ち、コードで問題を解決することに夢中です。
+北京科技大学の学部生で、工学系のバックグラウンドからコンピュータサイエンスとロボットソフトウェアを独学してきました。繰り返し作業を自動化すること、そしてシステムを分解して中身を理解することが好きです。
+
+現在は主に3つに取り組んでいます。ロボット制御（ROS2、CAN/Modbus、外骨格、壁面移動ロボット）、Android ツール（時間割、翻訳、キャンパスネットワーク、基数変換）、そして AI エージェントの読書と実験です。ブログは、作ったものを説明し、まだ答えが出ていない問いを記録するために書いています。
 
 ### 技術スタック
 
-{% label JavaScript blue %} {% label TypeScript green %} {% label React pink %} {% label Vue.js orange %} {% label Node.js red %} {% label Python blue %} {% label HTML5 green %} {% label CSS3 pink %} {% label Git orange %} {% label Docker red %}
+{% label Kotlin blue %} {% label Jetpack Compose green %} {% label Python pink %} {% label C++ orange %} {% label ROS2 red %} {% label CAN/Modbus blue %} {% label Rust green %} {% label Tauri pink %} {% label Docker orange %} {% label Git red %}
 
 ### 学歴
 
-- **[北京科技大学]** — 在学中
-- 英語: **CET-6**
+- 北京科技大学 — 在学中
+- 英語：CET-6
 
 ### 連絡先
 

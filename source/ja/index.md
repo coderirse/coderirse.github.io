@@ -2,13 +2,13 @@
 title: lizhichao
 date: 2026-06-18 00:00:00
 type: home
-description: リ・ジチャオの個人ブログ
+description: lizhichao の個人ブログ — ロボット制御、Android ツール、AI
 ---
 
-## 👋 ようこそ
+## ようこそ
 
-北京科技大学の3年生。バイブコーディングとオープンソースに情熱を注いでいます。
+lizhichao です。北京科技大学の学部生で、ロボット制御と Android ツールを作っています。AI エージェントと身体性知能に関心があります。
 
-{% label JavaScript blue %} {% label TypeScript green %} {% label React pink %} {% label Python blue %} {% label AI green %} {% label オープンソース orange %}
+{% label ROS2 blue %} {% label C++ green %} {% label Python pink %} {% label Kotlin orange %} {% label Jetpack Compose red %} {% label AI Agent blue %}
 
 [私について](/ja/about/) · [履歴書](/ja/resume/) · [プロジェクト](/ja/projects/)

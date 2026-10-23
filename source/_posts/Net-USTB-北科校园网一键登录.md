@@ -13,6 +13,10 @@ tags:
 description: 专为北科大校园网认证系统开发的 Android 原生应用，替代繁琐的网页端登录流程。
 ---
 
+{% note info %}
+状态：维护中 · 角色：独立开发 · 代码：公开 · 最后更新：2026-10
+{% endnote %}
+
 ## 项目概述
 
 Net-USTB 是专为北京科技大学校园网（Dr.COM ePortal 4.x）开发的第三方原生 Android 客户端，用它替代浏览器端的网页认证流程，实现一键登录/登出。
@@ -35,3 +39,13 @@ Net-USTB 是专为北京科技大学校园网（Dr.COM ePortal 4.x）开发的�
 - 隐私优先：零分析、零广告
 
 {% label USTB green %} {% label Android green %} {% label 网络工具 green %}
+
+## 局限与没做什么
+
+只覆盖 Dr.COM ePortal 4.x 的一种认证流程，学校接口变更会失效；没有处理多设备并发和异常网络环境；凭据只保存在本机，换机需要重新登录。
+
+{% note warning %}
+本项目仅用于个人学习与自用，与学校官方无关；请遵守学校网络与信息系统管理规定，风险自负。
+{% endnote %}
+
+{% btn https://github.com/coderirse/Netconnect_tool, 查看源码, fab fa-github %}

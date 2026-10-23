@@ -13,6 +13,10 @@ tags:
 description: Kotlin + Jetpack Compose製のAndroid科学計算電卓。方程式解法と行列演算を搭載。
 ---
 
+{% note info %}
+状態：保守中 · 担当：単独開発 · コード：公開 · 最終更新：2026-10
+{% endnote %}
+
 ## 概要
 
 純粋なKotlin + Jetpack Composeで構築されたAndroid科学計算電卓。標準的な科学計算に加え、方程式ソルバーと行列計算機を統合。

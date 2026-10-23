@@ -1,59 +1,59 @@
 ---
-title: Academic Research Skills — Academic Research Pipeline
+title: Academic Research Skills — A Research Pipeline for Claude Code
 translation_key: academic-research-skills
-description: A complete academic research pipeline skill suite for Claude Code, covering the full journey from literature review to publication.
+description: A reading note on Imbad0202/academic-research-skills — deep research, paper writing, peer review and a 10-stage pipeline. Not my project.
 date: 2026-06-13 22:28:16
+updated: 2026-10-23
 categories:
-  - Projects
+  - Open Source Notes
 tags:
   - Academic Tools
-  - AI-Assisted
-  - Python
+  - AI Assistance
+  - Claude Code
   - LaTeX
 ---
 
-## Overview
-
-**Academic Research Skills (ARS)** is a professional academic research toolkit for Claude Code, packaging the complete research workflow into orchestratable AI skill pipelines.
-
-{% note success %}
-A "tool for tools" — helping AI better assist researchers, not replace them.
+{% note info %}
+Project: [Imbad0202/academic-research-skills](https://github.com/Imbad0202/academic-research-skills) · Author: Imbad0202
+This note is based on the project documentation. I did not contribute to it.
 {% endnote %}
 
-## Four Skill Packages
+## What it is
 
-### Deep Research — 13 specialized agents, 7 working modes
+Academic Research Skills (ARS) is a set of Claude Code skills that turns the research workflow — literature review, writing, review, revision and finalisation — into an orchestrated pipeline. It is not meant to write the paper for you; it is meant to pin down the repetitive and easy-to-miss steps.
 
-| Mode | Purpose |
-|------|---------|
-| Full Research | End-to-end academic study |
-| Quick Brief | Rapid literature overview |
-| Lit Review | Systematic literature review |
-| Systematic Review | PRISMA protocol + meta-analysis |
-| Fact Check | Claim accuracy verification |
+## Four skill packs
 
-### Academic Paper — 12 agents, 10 modes
+### Deep Research
 
-{% label APA 7.0 blue %} {% label IEEE green %} {% label MLA pink %} {% label Chicago orange %} {% label Vancouver red %}
+Thirteen agents and seven modes: full research, quick brief, literature review, PRISMA systematic review, fact checking, Socratic guidance and pre-submission review.
+
+### Academic Paper
+
+A twelve-agent writing pipeline covering full papers, outlines, abstracts, literature reviews, revision, citation checks, LaTeX/DOCX/PDF export and bilingual abstracts.
 
 ### Academic Paper Reviewer
 
-5 independent reviewers simulating EIC + 3 peer reviewers + Devil's Advocate with 0-100 scoring rubric.
+Five independent reviewers: an editor-in-chief for the overall decision, three peers for methodology, theory and experiment design, plus a Devil's Advocate.
 
 ### Academic Pipeline
 
-10-stage workflow: Research → Write → Integrity Check → Review → Revise → Re-review → Re-revise → Final Check → Finalize. Each stage has a **mandatory quality gate**.
+A ten-stage workflow with quality gates:
 
-## Key Innovations
+```
+research → writing → integrity check → review → revision → re-review → re-revision → final check → submission
+```
 
-- **Anti-Hallucination Verification** — mandatory claim-to-source cross-checking
-- **Style Calibration** — automatic adaptation to target journal style
-- **Socratic Mentoring** — guides researchers through questions
+## The design worth borrowing
 
-## Tech Stack
+**Use process to fight hallucination.** ARS forces a claim-to-source comparison so key statements can be traced back to the literature. Citation checks, fact checks and reviewer roles are all constraints on generated output.
 
-{% label Python blue %} {% label LaTeX orange %} {% label Pandoc green %} {% label YAML pink %} {% label GitHub Actions red %}
+That is more realistic than "make the model smarter": hallucination does not disappear because of a prompt, but it can be caught by a process.
 
-## Why This Matters
+## My take
 
-Academic writing demands extreme rigor, and AI hallucination is the biggest obstacle. ARS fights hallucination with **process and verification**.
+ARS fits people who already have a clear research question and want to automate literature organisation and format checks. It cannot choose your question, your method or your argument — those remain the researcher's job.
+
+Also, the repository does not declare a standard license. If you plan to redistribute or use it commercially, ask the author first.
+
+{% btn https://github.com/Imbad0202/academic-research-skills, View original project, fab fa-github %}

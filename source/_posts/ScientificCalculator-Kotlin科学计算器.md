@@ -13,6 +13,10 @@ tags:
 description: 基于 Kotlin 和 Jetpack Compose 开发的 Android 科学计算器，支持方程求解和矩阵运算。
 ---
 
+{% note info %}
+状态：维护中 · 角色：独立开发 · 代码：公开 · 最后更新：2026-10
+{% endnote %}
+
 ## 项目概述
 
 一款功能完整的 Android 科学计算器应用，使用纯 Kotlin + Jetpack Compose 开发。不仅支持标准科学计算，还集成了方程求解器和矩阵计算器。
@@ -32,3 +36,5 @@ description: 基于 Kotlin 和 Jetpack Compose 开发的 Android 科学计算器
 2x2/3x3 矩阵加减乘、转置、行列式、逆矩阵（伴随矩阵法）、秩（高斯消元）。
 
 {% label Android green %} {% label 科学计算 green %} {% label 开源 green %}
+
+{% btn https://github.com/coderirse/ScientificCalculator, 查看源码, fab fa-github %} {% btn https://github.com/coderirse/ScientificCalculator/releases, 下载 APK, fas fa-download %}

@@ -14,6 +14,10 @@ tags:
 description: 北科大课表 App：教务一键导入、教学周日历精确映射、周视图课表与上课提醒。
 ---
 
+{% note info %}
+状态：维护中 · 角色：独立开发 · 代码：公开 · 最后更新：2026-10
+{% endnote %}
+
 ## 项目概述
 
 BeikeSchedule（贝壳课表）是一款北京科技大学课表 App：内置 WebView 登录本研一体化教务系统一键导入课表，本地周视图展示，支持上课提醒。已发布 Release APK，可直接覆盖升级。
@@ -34,5 +38,9 @@ BeikeSchedule（贝壳课表）是一款北京科技大学课表 App：内置 We
 - 解析器 / 周次逻辑有单元测试覆盖，fixture 为真实接口样本
 
 **隐私**：学号密码只在系统 WebView 中由本人输入给学校认证页面，App 不读取、不存储、不上传任何凭证；课表数据仅保存在本机。
+
+## 局限与没做什么
+
+只适配北科大本研一体化教务系统，教务页面或接口变更可能导致导入失效；上课提醒依赖系统的精确闹钟权限，部分国产 ROM 需要手动允许自启动；没有做跨设备同步。
 
 {% btn https://github.com/coderirse/BeikeSchedule, 查看源码, fab fa-github %} {% btn https://github.com/coderirse/BeikeSchedule/releases, 下载 APK, fas fa-download %}

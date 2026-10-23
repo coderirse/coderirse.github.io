@@ -2,21 +2,20 @@
 title: Resume
 date: 2024-01-01 00:00:01
 type: resume
-description: Li Zhichao's education and project experience
+description: lizhichao's education and project experience — robotics control, Android tools and AI agents
 aside: true
-top_img: https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=1920&q=80
 ---
 
 ## Education
 
 {% timeline %}
 
-<!-- timeline Sep 2024 — Present | USTB  -->
+<!-- timeline Sep 2024 — Present | USTB -->
 
-- Undergraduate, Junior
-- Self-taught computer science and programming, focusing on AI
-- Core courses: Advanced Mathematics, Theoretical Mechanics, Mechanical Design, Programming Fundamentals
-- Passed CET-6
+- Undergraduate
+- Engineering background, self-taught in computer science and robotics software
+- Focus: robotics control / Android tools / AI agents
+- English: CET-6
 
 <!-- endtimeline -->
 
@@ -28,18 +27,29 @@ top_img: https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=1920&q=8
 
 {% timeline %}
 
-<!-- timeline 2025 — Present | Tech Learning & Projects -->
+<!-- timeline 2025 — Present | Personal and lab projects -->
 
-### Technical Exploration
+### Robotics Control
 
-- Frontend: HTML / CSS / JavaScript / TypeScript / React / Vue.js
-- Backend: Node.js / Python
-- DevOps: Git, Docker, GitHub Pages
-- Built personal blog with Hexo + Butterfly theme
+- Ankle exoskeleton control system: ROS2 Humble, C++/Python, dual CAN protocols, Modbus RTU force sensing, five-mode gait control
+- Wall-climbing robot: ROS2, CAN + RS485 control of four motors, differential kinematics, timeout stop and acceleration protection
+
+### Android Tools
+
+- BeikeSchedule: one-tap academic import, teaching-week mapping, week view and reminders
+- LingoFlow: on-device ML Kit translation + streaming LLM translation + dictionary lookup
+- BaseConversion: linked bases, two's complement and IEEE 754 bit patterns
+- Net-USTB: one-tap campus network login with AES-256-GCM credential storage
+
+### AI and Desktop Tools
+
+- llmhub: self-hosted LLM gateway with local GPU, reverse tunnel and cloud API fallback
+- Zotero Full-PDF Translate: bilingual PDF translation with a local engine and your own LLM API
+- Source-reading notes on Hermes Agent, tinygrad and Warp
 
 ### Keywords
 
-{% label React blue %} {% label TypeScript pink %} {% label Vue.js green %} {% label Node.js orange %} {% label Python blue %} {% label Docker red %}
+{% label ROS2 blue %} {% label C++ green %} {% label Python pink %} {% label Kotlin orange %} {% label Jetpack Compose red %} {% label CAN/Modbus blue %} {% label Rust green %} {% label Tauri pink %} {% label Docker orange %} {% label Git red %}
 
 <!-- endtimeline -->
 
@@ -47,15 +57,15 @@ top_img: https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=1920&q=8
 
 ---
 
-## Open Source
+## Open Source and Community
 
 {% timeline %}
 
-<!-- timeline 2025 — Present | GitHub Community -->
+<!-- timeline 2025 — Present | GitHub -->
 
-- Maintain personal projects and study notes on GitHub
-- Participate in vibe coding open-source discussions
-- Continuously learning and sharing technical knowledge
+- Maintain Android tools, robotics control and self-hosted service projects on GitHub
+- Publish source-reading notes on open-source projects, focused on AI agents, embodied intelligence and engineering practice
+- Keep recording trade-offs and lessons from projects on the blog
 
 <!-- endtimeline -->
 
@@ -63,4 +73,4 @@ top_img: https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=1920&q=8
 
 ---
 
-*For more details, visit my [GitHub](https://github.com/coderirse).*
+*For more details, visit my [GitHub](https://github.com/coderirse) and [projects page](/en/projects/).*
