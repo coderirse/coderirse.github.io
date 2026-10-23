@@ -2,7 +2,7 @@
 title: プロジェクト
 date: 2024-01-01 00:00:02
 type: projects
-description: lizhichao のプロジェクト集 — ロボット制御、Android ツール、AI エージェント
+description: lizhichao のプロジェクト集 — Android ツール、AI エージェント
 aside: true
 ---
 
@@ -11,26 +11,6 @@ aside: true
 {% note info %}
 ここにあるのは、私が単独で作った、またはチームの一員として深く関わったプロジェクトです。状態、担当、コード公開の有無を明記しています。「作ったもの」と「読んだもの」を分けて書いています。
 {% endnote %}
-
-### 足首外骨格ロボット制御システム
-
-研究室プロジェクト · 保守中 · 担当：制御系（ROS2 / CAN / IMU / 力覚センサ）
-
-ROS1 から ROS2 Humble へ移行し、5モード適応歩行制御、CAN デュアルプロトコル、Modbus RTU 力覚センサ、IMU ドライバを実装。
-
-[記事を読む](/ja/2026/06/13/ankle-exoskeleton/) · [コード](https://github.com/coderirse/Ankle_Exoskeleton_ustb)
-
----
-
-### 壁登りロボット制御システム
-
-研究室プロジェクト · アーカイブ · 担当：制御系（ROS2 / CAN / RS485）
-
-差動駆動の壁面移動ロボット。CAN + RS485 で4モーターを制御し、加速度制限と500msタイムアウト停止を実装。
-
-[記事を読む](/ja/2026/06/18/wall-climbing-robot/) · コード非公開
-
----
 
 ### BeikeSchedule — USTB 時間割アプリ
 
@@ -76,6 +56,26 @@ USTB キャンパスネットワーク（Dr.COM ePortal 4.x）向けのサード
 
 ---
 
+### Reps — オフライン問題集アプリ
+
+個人プロジェクト · ベータ · 単独開発 · コード公開
+
+先生配布の CSV 問題集を、スマホで繰り返し解けるオフラインアプリに変換。4つの練習モード、誤答ノート、進捗復元に対応。
+
+[記事を読む](/ja/2026/10/23/reps-offline-quiz/) · [コード](https://github.com/coderirse/Reps) · [APK](https://github.com/coderirse/Reps/releases)
+
+---
+
+### Zotero 全文 PDF 翻訳プラグイン
+
+個人プロジェクト · 保守中 · 単独開発 · コード公開
+
+Zotero 内で PDF 全体を、レイアウトを保った対訳 PDF に翻訳。自分の LLM API Key を使い、エンジンはローカルで動作。
+
+[記事を読む](/ja/2026/10/23/zotero-fulltext-pdf-translate/) · [コード](https://github.com/coderirse/zotero-fulltext-pdf-translate) · [XPI](https://github.com/coderirse/zotero-fulltext-pdf-translate/releases)
+
+---
+
 ## ツールと小さな作品
 
 ### WatchDog — AI API 残高モニター
@@ -105,26 +105,6 @@ Shunting-yard と再帰下降パーサによる式評価、方程式求解、行
 Leaflet.js で作ったインタラクティブな旅行地図。データはすべて `locations.json` にあり、push で自動デプロイ。
 
 [記事を読む](/ja/2026/08/29/trailmap/) · [コード](https://github.com/coderirse/trailmap)
-
----
-
-### Reps — オフライン問題集アプリ
-
-個人プロジェクト · ベータ · 単独開発 · コード公開
-
-先生配布の CSV 問題集を、スマホで繰り返し解けるオフラインアプリに変換。4つの練習モード、誤答ノート、進捗復元に対応。
-
-[記事を読む](/ja/2026/10/23/reps-offline-quiz/) · [コード](https://github.com/coderirse/Reps) · [APK](https://github.com/coderirse/Reps/releases)
-
----
-
-### Zotero 全文 PDF 翻訳プラグイン
-
-個人プロジェクト · 保守中 · 単独開発 · コード公開
-
-Zotero 内で PDF 全体を、レイアウトを保った対訳 PDF に翻訳。自分の LLM API Key を使い、エンジンはローカルで動作。
-
-[記事を読む](/ja/2026/10/23/zotero-fulltext-pdf-translate/) · [コード](https://github.com/coderirse/zotero-fulltext-pdf-translate) · [XPI](https://github.com/coderirse/zotero-fulltext-pdf-translate/releases)
 
 ---
 

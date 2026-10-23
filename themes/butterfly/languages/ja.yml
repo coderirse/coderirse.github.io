@@ -11,10 +11,10 @@ subtitle:
   - 成長を記録し、知識を共有する
 
 author_card:
-  description: 'USTB · ロボット制御 / Android ツール / AI エージェント<br><i class="fas fa-envelope"></i> caeamer@163.com<br><i class="fab fa-qq"></i> 87452310'
+  description: 'USTB · Android ツール / AI エージェント<br><i class="fas fa-envelope"></i> caeamer@163.com<br><i class="fab fa-qq"></i> 87452310'
   follow: フォロー
 
-announcement_content: ロボット制御、Android ツール、AI についての記録です。プロジェクトとオープンソース観察はプロジェクトページにまとめています。
+announcement_content: Android ツール、AI エージェント、AI についての記録です。プロジェクトとオープンソース観察はプロジェクトページにまとめています。
 
 footer:
   framework: フレームワーク

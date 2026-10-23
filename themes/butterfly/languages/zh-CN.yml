@@ -11,10 +11,10 @@ subtitle:
   - 记录成长，分享知识
 
 author_card:
-  description: 'USTB · 机器人控制 / Android 工具 / AI Agent<br><i class="fas fa-envelope"></i> caeamer@163.com<br><i class="fab fa-qq"></i> 87452310'
+  description: 'USTB · Android 工具 / AI Agent<br><i class="fas fa-envelope"></i> caeamer@163.com<br><i class="fab fa-qq"></i> 87452310'
   follow: 关注我
 
-announcement_content: 这里记录机器人控制、Android 工具和 AI 时代的一些思考。项目与开源观察见项目页。
+announcement_content: 这里记录 Android 工具、AI Agent 和 AI 时代的一些思考。项目与开源观察见项目页。
 
 footer:
   framework: 框架

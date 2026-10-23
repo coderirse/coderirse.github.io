@@ -2,7 +2,7 @@
 title: 履歴書
 date: 2024-01-01 00:00:01
 type: resume
-description: lizhichao の学歴とプロジェクト経験 — ロボット制御、Android ツール、AI エージェント
+description: lizhichao の学歴とプロジェクト経験 — Android ツール、AI エージェント
 aside: true
 ---
 
@@ -13,8 +13,8 @@ aside: true
 <!-- timeline 2024年9月 — 現在 | 北京科技大学 -->
 
 - 学部在学中
-- 工学系バックグラウンドから、コンピュータサイエンスとロボットソフトウェアを独学
-- 方向：ロボット制御 / Android ツール / AI エージェント
+- 工学系バックグラウンドから、コンピュータサイエンスとモバイル開発を独学
+- 方向：Android ツール / AI エージェント
 - 英語：CET-6
 
 <!-- endtimeline -->
@@ -27,12 +27,7 @@ aside: true
 
 {% timeline %}
 
-<!-- timeline 2025年 — 現在 | 個人・研究室プロジェクト -->
-
-### ロボット制御
-
-- 足首外骨格制御システム：ROS2 Humble、C++/Python、CAN デュアルプロトコル、Modbus RTU 力覚センサ、5モード歩行制御
-- 壁登りロボット：ROS2、CAN + RS485 による4モーター制御、差動運動学、タイムアウト停止と加速度保護
+<!-- timeline 2025年 — 現在 | 個人プロジェクト -->
 
 ### Android ツール
 
@@ -40,6 +35,7 @@ aside: true
 - LingoFlow：ML Kit オンデバイス翻訳 + LLM ストリーミング翻訳 + 辞書検索
 - BaseConversion：基数連動、2の補数、IEEE 754 ビット表現
 - Net-USTB：キャンパスネットワーク一括ログイン、AES-256-GCM 認証情報保存
+- Reps：CSV 問題集の取り込み、4つの練習モード、誤答ノート、進捗復元
 
 ### AI・デスクトップツール
 
@@ -49,7 +45,7 @@ aside: true
 
 ### キーワード
 
-{% label ROS2 blue %} {% label C++ green %} {% label Python pink %} {% label Kotlin orange %} {% label Jetpack Compose red %} {% label CAN/Modbus blue %} {% label Rust green %} {% label Tauri pink %} {% label Docker orange %} {% label Git red %}
+{% label Kotlin blue %} {% label Jetpack Compose green %} {% label Python pink %} {% label Rust orange %} {% label Tauri red %} {% label JavaScript blue %} {% label Docker green %} {% label Git orange %}
 
 <!-- endtimeline -->
 
@@ -63,8 +59,8 @@ aside: true
 
 <!-- timeline 2025年 — 現在 | GitHub -->
 
-- GitHub で Android ツール、ロボット制御、セルフホストサービスのプロジェクトを保守
-- オープンソースプロジェクトのソース読書ノートを公開。AI エージェント、身体性知能、エンジニアリング実践に関心
+- GitHub で Android ツールとセルフホストサービスのプロジェクトを保守
+- オープンソースプロジェクトのソース読書ノートを公開。AI エージェントとエンジニアリング実践に関心
 - プロジェクトでのトレードオフと躓きをブログに記録
 
 <!-- endtimeline -->

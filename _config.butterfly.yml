@@ -61,7 +61,7 @@ subtitle:
     backSpeed: 40
     loop: true
   sub:
-    - 机器人控制 · Android 工具 · AI Agent
+    - Android 工具 · AI Agent · 开源观察
     - 记录做过的项目，也记录没想明白的问题
     - 北京科技大学本科生
 
@@ -100,7 +100,7 @@ aside:
     category: true
   card_author:
     enable: true
-    description: USTB · 机器人控制 / Android 工具 / AI Agent<br><i class="fas fa-envelope"></i> caeamer@163.com<br><i class="fab fa-qq"></i> 87452310
+    description: USTB · Android 工具 / AI Agent<br><i class="fas fa-envelope"></i> caeamer@163.com<br><i class="fab fa-qq"></i> 87452310
     button:
       enable: true
       icon: fab fa-github
@@ -108,7 +108,7 @@ aside:
       link: https://github.com/coderirse
   card_announcement:
     enable: true
-    content: 这里记录机器人控制、Android 工具和 AI 时代的一些思考。项目与开源观察见项目页。
+    content: 这里记录 Android 工具、AI Agent 和 AI 时代的一些思考。项目与开源观察见项目页。
   card_recent_post:
     enable: true
     limit: 5

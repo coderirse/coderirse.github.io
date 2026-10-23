@@ -2,7 +2,7 @@
 title: 项目作品
 date: 2024-01-01 00:00:02
 type: projects
-description: lizhichao 的项目作品集：机器人控制、Android 工具与 AI Agent
+description: lizhichao 的项目作品集：Android 工具与 AI Agent
 aside: true
 ---
 
@@ -11,26 +11,6 @@ aside: true
 {% note info %}
 这里是我独立完成或作为团队一员深度参与的项目。每个项目都标了状态、我的角色和代码是否公开——「我做的」和「我读的」分开写，读者不用猜。
 {% endnote %}
-
-### 脚踝外骨骼机器人控制系统
-
-实验室项目 · 维护中 · 我负责控制系统（ROS2 / CAN / IMU / 力传感）
-
-从 ROS1 迁移到 ROS2 Humble，做 5 模式自适应步态控制、CAN 双协议栈、Modbus RTU 力传感和 IMU 驱动。
-
-{% post_link 脚踝外骨骼机器人控制系统 '阅读项目文章' %} · [代码](https://github.com/coderirse/Ankle_Exoskeleton_ustb)
-
----
-
-### 爬壁小车 — 壁面爬行机器人控制系统
-
-实验室项目 · 已归档 · 我负责控制系统（ROS2 / CAN / RS485）
-
-差速驱动壁面爬行机器人，CAN + RS485 双协议控制四台电机，带 500ms 超时停机与加速度斜坡保护。
-
-{% post_link 爬壁小车-壁面爬行机器人控制系统 '阅读项目文章' %} · 代码未公开
-
----
 
 ### BeikeSchedule 贝壳课表
 
@@ -76,6 +56,26 @@ ML Kit 端侧翻译 + LLM 流式长文翻译 + 韦氏词典查词，API Key 仅�
 
 ---
 
+### Reps — 离线刷题 App
+
+个人项目 · 公测 · 独立开发 · 代码公开
+
+把老师下发的题库 CSV 变成手机上可反复背诵的离线刷题应用，支持四种练习模式、错题本和进度恢复。
+
+{% post_link Reps-离线刷题App '阅读项目文章' %} · [代码](https://github.com/coderirse/Reps) · [下载 APK](https://github.com/coderirse/Reps/releases)
+
+---
+
+### Zotero 全文翻译插件
+
+个人项目 · 维护中 · 独立开发 · 代码公开
+
+在 Zotero 里把整篇 PDF 翻译成保留排版的双语对照 PDF，使用自己的 LLM API Key，引擎本地运行。
+
+{% post_link Zotero-全文PDF翻译插件 '阅读项目文章' %} · [代码](https://github.com/coderirse/zotero-fulltext-pdf-translate) · [下载 XPI](https://github.com/coderirse/zotero-fulltext-pdf-translate/releases)
+
+---
+
 ## 工具与小作品
 
 ### WatchDog — AI API 额度监控
@@ -105,26 +105,6 @@ ML Kit 端侧翻译 + LLM 流式长文翻译 + 韦氏词典查词，API Key 仅�
 用 Leaflet.js 做的交互式旅行地图，数据全部在 `locations.json`，推送即自动部署。
 
 {% post_link trailmap '阅读项目文章' %} · [代码](https://github.com/coderirse/trailmap)
-
----
-
-### Reps — 离线刷题 App
-
-个人项目 · 公测 · 独立开发 · 代码公开
-
-把老师下发的题库 CSV 变成手机上可反复背诵的离线刷题应用，支持四种练习模式、错题本和进度恢复。
-
-{% post_link Reps-离线刷题App '阅读项目文章' %} · [代码](https://github.com/coderirse/Reps) · [下载 APK](https://github.com/coderirse/Reps/releases)
-
----
-
-### Zotero 全文翻译插件
-
-个人项目 · 维护中 · 独立开发 · 代码公开
-
-在 Zotero 里把整篇 PDF 翻译成保留排版的双语对照 PDF，使用自己的 LLM API Key，引擎本地运行。
-
-{% post_link Zotero-全文PDF翻译插件 '阅读项目文章' %} · [代码](https://github.com/coderirse/zotero-fulltext-pdf-translate) · [下载 XPI](https://github.com/coderirse/zotero-fulltext-pdf-translate/releases)
 
 ---
 

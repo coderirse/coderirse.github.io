@@ -1,9 +1,9 @@
 ---
 title: ブログへようこそ
 translation_key: welcome
-description: lizhichao の個人ブログ。ロボット制御、Android ツール、AI 時代の学びと考えを記録します。
+description: lizhichao の個人ブログ。Android ツール、AI エージェント、AI 時代の学びと考えを記録します。
 date: 2026-06-12 00:00:00
-updated: 2026-10-23
+updated: 2026-10-24
 tags:
   - 個人
 categories:
@@ -13,7 +13,7 @@ categories:
 ## こんにちは
 
 {% note success %}
-lizhichao です。北京科技大学の学部生です。このブログでは、ロボット制御、Android ツール、AI 時代の学びと考えの3つを記録しています。
+lizhichao です。北京科技大学の学部生です。このブログでは、Android ツール、AI エージェント、AI 時代の学びと考えを記録しています。
 {% endnote %}
 
 ### このブログについて
@@ -24,15 +24,15 @@ lizhichao です。北京科技大学の学部生です。このブログでは�
 
 ### 取り組んでいること
 
-{% label ROS2 blue %} {% label C++ green %} {% label Python pink %} {% label Kotlin orange %} {% label Jetpack Compose red %} {% label AI Agent blue %}
+{% label Kotlin blue %} {% label Jetpack Compose green %} {% label Python pink %} {% label Rust orange %} {% label AI Agent blue %}
 
-- ロボット制御：ROS2、CAN/Modbus、外骨格・壁面移動ロボット
-- Android ツール：時間割、翻訳、キャンパスネットワーク、基数変換
+- Android ツール：時間割、翻訳、キャンパスネットワーク、基数変換、問題集アプリ
 - AI エージェント：マルチエージェント協調、メモリ、スキルシステム
+- オープンソース観察：ソースを読み、ノートを書く
 
 ### 連絡先
 
 - メール：caeamer@163.com
 - GitHub：[coderirse](https://github.com/coderirse)
 
-ロボット、Android、AI エージェントに興味があれば、[プロジェクトページ](/ja/projects/)からどうぞ。
+Android や AI エージェントに興味があれば、[プロジェクトページ](/ja/projects/)からどうぞ。

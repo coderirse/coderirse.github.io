@@ -2,7 +2,7 @@
 title: 个人经历
 date: 2024-01-01 00:00:01
 type: resume
-description: lizhichao 的学习和项目经历：机器人控制、Android 工具与 AI Agent
+description: lizhichao 的学习和项目经历：Android 工具与 AI Agent
 aside: true
 ---
 
@@ -13,8 +13,8 @@ aside: true
 <!-- timeline 2024年9月 — 至今 | 北京科技大学 -->
 
 - 本科在读
-- 工科背景，自学计算机与机器人软件
-- 方向：机器人控制 / Android 工具 / AI Agent
+- 工科背景，自学计算机与移动端开发
+- 方向：Android 工具 / AI Agent
 - 英语水平：CET-6
 
 <!-- endtimeline -->
@@ -27,12 +27,7 @@ aside: true
 
 {% timeline %}
 
-<!-- timeline 2025年 — 至今 | 个人与实验室项目 -->
-
-### 机器人控制
-
-- 脚踝外骨骼控制系统：ROS2 Humble、C++/Python、CAN 双协议、Modbus RTU 力传感、5 模式步态控制
-- 爬壁小车：ROS2、CAN + RS485 四电机控制、差速运动学、超时停机与加速度保护
+<!-- timeline 2025年 — 至今 | 个人项目 -->
 
 ### Android 工具
 
@@ -40,6 +35,7 @@ aside: true
 - LingoFlow：ML Kit 端侧翻译 + LLM 流式翻译 + 词典查词
 - BaseConversion：进制联动、补码与 IEEE 754 位模式
 - Net-USTB：校园网一键登录、AES-256-GCM 凭据存储
+- Reps：题库 CSV 导入、四种练习模式、错题本与进度恢复
 
 ### AI 与桌面工具
 
@@ -49,7 +45,7 @@ aside: true
 
 ### 技术关键词
 
-{% label ROS2 blue %} {% label C++ green %} {% label Python pink %} {% label Kotlin orange %} {% label Jetpack Compose red %} {% label CAN/Modbus blue %} {% label Rust green %} {% label Tauri pink %} {% label Docker orange %} {% label Git red %}
+{% label Kotlin blue %} {% label Jetpack Compose green %} {% label Python pink %} {% label Rust orange %} {% label Tauri red %} {% label JavaScript blue %} {% label Docker green %} {% label Git orange %}
 
 <!-- endtimeline -->
 
@@ -63,11 +59,11 @@ aside: true
 
 <!-- timeline 2025年 — 至今 | GitHub -->
 
-- 在 GitHub 维护 Android 工具、机器人控制与自托管服务项目
-- 写开源项目源码阅读笔记，关注 AI Agent、具身智能与工程实践
+- 在 GitHub 维护 Android 工具与自托管服务项目
+- 写开源项目源码阅读笔记，关注 AI Agent 与工程实践
 - 持续把项目中的取舍和踩坑记录到博客
 
-<!-- endtimeline -->
+<!-- endtimeline %}
 
 {% endtimeline %}
 

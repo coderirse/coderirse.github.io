@@ -2,7 +2,7 @@
 title: Projects
 date: 2024-01-01 00:00:02
 type: projects
-description: lizhichao's project portfolio — robotics control, Android tools and AI agents
+description: lizhichao's project portfolio — Android tools and AI agents
 aside: true
 ---
 
@@ -11,26 +11,6 @@ aside: true
 {% note info %}
 These are projects I built independently or contributed to deeply as part of a team. Each entry lists status, my role and whether the code is public — so it is clear what I built and what I only read.
 {% endnote %}
-
-### Ankle Exoskeleton Control System
-
-Lab project · Maintained · My role: control system (ROS2 / CAN / IMU / force sensor)
-
-Migrated from ROS1 to ROS2 Humble, with a five-mode adaptive gait controller, dual CAN protocol stack, Modbus RTU force sensing and an IMU driver.
-
-[Read post](/en/2026/06/13/ankle-exoskeleton/) · [Code](https://github.com/coderirse/Ankle_Exoskeleton_ustb)
-
----
-
-### Wall-Climbing Robot Control System
-
-Lab project · Archived · My role: control system (ROS2 / CAN / RS485)
-
-A differential-drive wall-crawling robot with CAN + RS485 control of four motors, acceleration ramping and a 500 ms timeout stop.
-
-[Read post](/en/2026/06/18/wall-climbing-robot/) · Code not public
-
----
 
 ### BeikeSchedule — USTB Timetable App
 
@@ -76,6 +56,26 @@ Campus network tools are for personal learning only and are not affiliated with 
 
 ---
 
+### Reps — Offline Quiz App
+
+Personal project · Beta · Solo · Code public
+
+Turns a teacher-provided CSV question bank into an offline Android study app with four practice modes, a wrong-answer book and progress recovery.
+
+[Read post](/en/2026/10/23/reps-offline-quiz/) · [Code](https://github.com/coderirse/Reps) · [APK](https://github.com/coderirse/Reps/releases)
+
+---
+
+### Zotero Full-PDF Translate
+
+Personal project · Maintained · Solo · Code public
+
+Translates a whole PDF inside Zotero into a layout-preserving bilingual PDF, using your own LLM API key with a local engine.
+
+[Read post](/en/2026/10/23/zotero-fulltext-pdf-translate/) · [Code](https://github.com/coderirse/zotero-fulltext-pdf-translate) · [XPI](https://github.com/coderirse/zotero-fulltext-pdf-translate/releases)
+
+---
+
 ## Tools and Small Projects
 
 ### WatchDog — AI API Balance Monitor
@@ -105,26 +105,6 @@ Personal project · Maintained · Solo · Code public
 An interactive travel map built with Leaflet.js. All data lives in `locations.json`; pushing deploys it automatically.
 
 [Read post](/en/2026/08/29/trailmap/) · [Code](https://github.com/coderirse/trailmap)
-
----
-
-### Reps — Offline Quiz App
-
-Personal project · Beta · Solo · Code public
-
-Turns a teacher-provided CSV question bank into an offline Android study app with four practice modes, a wrong-answer book and progress recovery.
-
-[Read post](/en/2026/10/23/reps-offline-quiz/) · [Code](https://github.com/coderirse/Reps) · [APK](https://github.com/coderirse/Reps/releases)
-
----
-
-### Zotero Full-PDF Translate
-
-Personal project · Maintained · Solo · Code public
-
-Translates a whole PDF inside Zotero into a layout-preserving bilingual PDF, using your own LLM API key with a local engine.
-
-[Read post](/en/2026/10/23/zotero-fulltext-pdf-translate/) · [Code](https://github.com/coderirse/zotero-fulltext-pdf-translate) · [XPI](https://github.com/coderirse/zotero-fulltext-pdf-translate/releases)
 
 ---
 

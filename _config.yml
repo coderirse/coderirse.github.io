@@ -4,9 +4,9 @@
 
 # Site
 title: lizhichao
-subtitle: 机器人 · Android · AI Agent
-description: lizhichao 的个人博客 —— 记录机器人控制、Android 工具与 AI 时代的思考
-keywords: lizhichao,caeamer,北京科技大学,机器人,ROS2,Android,Kotlin,AI Agent,具身智能
+subtitle: Android · AI Agent
+description: lizhichao 的个人博客 —— 记录 Android 工具、AI Agent 与一些思考
+keywords: lizhichao,caeamer,北京科技大学,Android,Kotlin,Jetpack Compose,AI Agent,个人博客
 author: lizhichao
 language:
   - zh-CN

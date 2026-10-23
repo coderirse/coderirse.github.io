@@ -11,10 +11,10 @@ subtitle:
   - Recording growth, sharing knowledge
 
 author_card:
-  description: 'USTB · Robotics Control / Android Tools / AI Agents<br><i class="fas fa-envelope"></i> caeamer@163.com<br><i class="fab fa-qq"></i> 87452310'
+  description: 'USTB · Android Tools / AI Agents<br><i class="fas fa-envelope"></i> caeamer@163.com<br><i class="fab fa-qq"></i> 87452310'
   follow: Follow Me
 
-announcement_content: Notes on robotics control, Android tools and AI. Projects and open-source notes live on the projects page.
+announcement_content: Notes on Android tools, AI agents and AI. Projects and open-source notes live on the projects page.
 
 footer:
   framework: Framework

@@ -1,9 +1,9 @@
 ---
 title: Welcome to My Blog
 translation_key: welcome
-description: lizhichao's blog — robotics control, Android tools and notes on AI.
+description: lizhichao's blog — Android tools, AI agents and notes on AI.
 date: 2026-06-12 00:00:00
-updated: 2026-10-23
+updated: 2026-10-24
 tags:
   - personal
 categories:
@@ -13,7 +13,7 @@ categories:
 ## Hello, nice to meet you
 
 {% note success %}
-I am lizhichao, an undergraduate at the University of Science and Technology Beijing. This blog covers three things: robotics control, Android tools, and learning and thinking in the AI era.
+I am lizhichao, an undergraduate at the University of Science and Technology Beijing. This blog covers Android tools, AI agents, and learning and thinking in the AI era.
 {% endnote %}
 
 ### About this blog
@@ -24,15 +24,15 @@ I am lizhichao, an undergraduate at the University of Science and Technology Bei
 
 ### What I work on
 
-{% label ROS2 blue %} {% label C++ green %} {% label Python pink %} {% label Kotlin orange %} {% label Jetpack Compose red %} {% label AI Agent blue %}
+{% label Kotlin blue %} {% label Jetpack Compose green %} {% label Python pink %} {% label Rust orange %} {% label AI Agent blue %}
 
-- Robotics control: ROS2, CAN/Modbus, exoskeletons and wall-climbing robots
-- Android tools: timetables, translation, campus network, base conversion
+- Android tools: timetables, translation, campus network, base conversion, quiz apps
 - AI agents: multi-agent collaboration, memory and skill systems
+- Open-source notes: reading code and writing notes
 
 ### Contact
 
 - Email: caeamer@163.com
 - GitHub: [coderirse](https://github.com/coderirse)
 
-If robotics, Android or AI agents interest you, start from the [projects page](/en/projects/).
+If Android or AI agents interest you, start from the [projects page](/en/projects/).
