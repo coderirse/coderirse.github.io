@@ -10,12 +10,16 @@ tags:
   - JavaScript
   - Community
   - Full Stack
-description: A full-featured community mini program built on WeChat Cloud Development with posts, comments, chat, and notifications.
+description: A community mini program built on WeChat Cloud Development with posts, comments, chat, and notifications.
 ---
+
+{% note info %}
+Status: maintained · Role: solo developer · Code: public · Updated: 2026-10
+{% endnote %}
 
 ## Overview
 
-ShowWe is a full-featured community/social mini program built on WeChat Cloud Development, v1.1.0. Users can create posts, comment, like, chat privately, and customize their profiles — all within the WeChat ecosystem.
+ShowWe is a community/social mini program built on WeChat Cloud Development, v1.1.0. Users can create posts, comment, like, chat privately, and customize their profiles — all within the WeChat ecosystem.
 
 {% label WeChat Mini Program blue %} {% label Cloud Dev green %} {% label JavaScript orange %}
 
@@ -28,7 +32,7 @@ ShowWe is a full-featured community/social mini program built on WeChat Cloud De
 
 ### Tech Highlights
 - WeChat Cloud DB + Storage + Cloud Functions
-- Memory cache (TTL) + local storage cache for instant load
+- Memory cache (TTL) + local storage cache for smoother page switches
 - Auto image compression (80% quality) + retry-capable upload service
 - Custom components: image-preview gallery, load-more indicator
 

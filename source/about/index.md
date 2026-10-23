@@ -2,31 +2,30 @@
 title: 关于我
 date: 2024-01-01 00:00:00
 type: about
-description: 了解更多关于李智超的信息
+description: lizhichao：北京科技大学本科生，做机器人控制与 Android 工具，关注 AI Agent 与具身智能。
 aside: true
-top_img: https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1920&q=80
 ---
 
-## 👋 你好，我是李智超
+## 你好，我是 lizhichao
 
 {% note success %}
-热爱技术，持续学习，keep moving。
+北京科技大学本科生，做机器人控制与 Android 工具，关注 AI Agent 与具身智能。
 {% endnote %}
 
 ### 个人简介
 
-北京科技大学（USTB）本科生，热爱 vibe coding，痴迷用代码解决问题。
+我是北京科技大学本科生，工科背景，自学计算机与机器人软件。喜欢把重复劳动自动化，也喜欢把系统拆开看看它到底怎么工作。
 
-我相信技术的价值在于创造——无论是搭建一个完整的 Web 应用，还是用脚本自动化重复的工作，每一个项目都是一次探索和成长。课余时间喜欢参与开源项目，在技术社区分享知识，也持续在 GitHub 上记录自己的学习轨迹。
+我目前主要做三件事：机器人控制（ROS2、CAN/Modbus、外骨骼与壁面爬行）、Android 工具（课表、翻译、校园网、进制转换），以及 AI Agent 相关的阅读和实验。写博客是为了把做过的东西讲清楚，也记录一些还没想明白的问题。
 
 ### 技术栈
 
-{% label JavaScript blue %} {% label TypeScript green %} {% label React pink %} {% label Vue.js orange %} {% label Node.js red %} {% label Python blue %} {% label HTML5 green %} {% label CSS3 pink %} {% label Git orange %} {% label Docker red %}
+{% label Kotlin blue %} {% label Jetpack Compose green %} {% label Python pink %} {% label C++ orange %} {% label ROS2 red %} {% label CAN/Modbus blue %} {% label Rust green %} {% label Tauri pink %} {% label Docker orange %} {% label Git red %}
 
 ### 教育背景
 
-- **[北京科技大学]** — 本科在读
-- 英语水平：**CET-6**
+- 北京科技大学 — 本科在读
+- 英语水平：CET-6
 
 ### 联系方式
 

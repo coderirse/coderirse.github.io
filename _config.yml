@@ -4,9 +4,9 @@
 
 # Site
 title: lizhichao
-subtitle: ''
-description: 李智超的个人博客 - 软件工程师，热爱技术与开源
-keywords: 李智超,lizhichao,软件工程师,Web开发,个人博客
+subtitle: 机器人 · Android · AI Agent
+description: lizhichao 的个人博客 —— 记录机器人控制、Android 工具与 AI 时代的思考
+keywords: lizhichao,caeamer,北京科技大学,机器人,ROS2,Android,Kotlin,AI Agent,具身智能
 author: lizhichao
 language:
   - zh-CN

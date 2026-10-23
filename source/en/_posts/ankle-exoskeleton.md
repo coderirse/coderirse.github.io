@@ -15,6 +15,10 @@ tags:
 description: A fully rebuilt ROS2 Humble ankle exoskeleton controller — 5-mode adaptive gait, CAN dual-protocol stack, Modbus force sensing, and 5A-A5 frame IMU driver.
 ---
 
+{% note info %}
+Status: maintained · Role: lab project, I own the control system (ROS2 / CAN / IMU / force sensor) · Code: public
+{% endnote %}
+
 ## Overview
 
 Exoskeleton robots have broad applications in rehabilitation, industrial assistance, and military domains. This project implements a complete **ankle exoskeleton control system**, recently upgraded with a **ROS1 → ROS2 migration** and **hardware architecture redesign**.
@@ -93,3 +97,9 @@ Complete redesign from ASCII text protocol to industrial **Modbus RTU**: Functio
 Encoder limit (±45°), force overload (300N), standing timeout (>5s), command sequence validation, cmd_vel timeout auto-stop.
 
 {% label Robotics green %} {% label Control Algorithm green %} {% label ROS2 green %}
+
+## Limitations
+
+This system has only been validated on a lab test rig; clinical or industrial use is still far away. Gait parameters need recalibration for each user, and the Python CAN bridge adds an extra process with room for improvement in real-time behaviour and recovery. The public code covers control and drivers; hardware parameters apply only to the current rig.
+
+{% btn https://github.com/coderirse/Ankle_Exoskeleton_ustb, View Source, fab fa-github %}

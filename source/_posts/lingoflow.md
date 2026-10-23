@@ -14,6 +14,10 @@ tags:
 description: ML Kit 端侧翻译 + LLM 流式长文翻译 + 韦氏词典查词的安卓翻译学习应用。
 ---
 
+{% note info %}
+状态：维护中 · 角色：独立开发 · 代码：公开 · 最后更新：2026-10
+{% endnote %}
+
 ## 项目概述
 
 LingoFlow 是一款现代 Android 翻译应用，把端侧机器翻译、权威词典和大模型能力组合在一起：日常翻译离线秒翻，长文交给 LLM 流式润色，遇到生词随手查权威释义。已发布 Release APK。
@@ -31,5 +35,9 @@ LingoFlow 是一款现代 Android 翻译应用，把端侧机器翻译、权威�
 Kotlin + Coroutines + Flow · Jetpack Compose（Material 3）· Hilt 依赖注入 · ML Kit Translation · OkHttp + kotlinx.serialization · DataStore + EncryptedSharedPreferences
 
 未配置签名密钥时构建会自动回退 debug 签名，方便 CI 与侧载体验。
+
+## 局限与没做什么
+
+ML Kit 端侧翻译质量有限，长文 LLM 翻译需要你自备 API Key；词典和 TTS 的能力受系统组件影响；目前没有账号体系和跨设备同步。
 
 {% btn https://github.com/coderirse/LingoFlow, 查看源码, fab fa-github %} {% btn https://github.com/coderirse/LingoFlow/releases, 下载 APK, fas fa-download %}

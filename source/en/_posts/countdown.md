@@ -2,8 +2,9 @@
 title: Countdown App — Concept & Product Design
 translation_key: countdown
 date: 2026-08-29 00:00:03
+updated: 2026-10-23
 categories:
-  - Projects
+  - In Progress
 tags:
   - Android
   - Kotlin
@@ -12,6 +13,10 @@ tags:
   - Product Design
 description: A countdown / count-up day tracker built around home-screen widgets — full PRD and tech selection notes (concept stage).
 ---
+
+{% note info %}
+Status: in progress · Role: solo developer · Code: not open source
+{% endnote %}
 
 ## Overview
 

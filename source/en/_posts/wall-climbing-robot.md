@@ -13,6 +13,10 @@ tags:
 description: A ROS2-based differential-drive wall-climbing robot control system with CAN + RS485 dual-protocol motor control.
 ---
 
+{% note info %}
+Status: archived · Role: lab project, I own the control system (ROS2 / CAN / RS485) · Code: not public
+{% endnote %}
+
 ## Overview
 
 Wall-Climbing Robot v2.0 is a differential-drive wall-climbing robot control system that controls four motors via CAN bus and RS485 dual communication protocols for stable wall climbing. The system integrates ROS2 command control and gamepad real-time operation, with a Qt5 host GUI tool for motor debugging.
@@ -92,3 +96,7 @@ This wall-climbing robot project was an important practice in robot control, cov
 - Real-time control system safety design
 
 This project laid a solid foundation for my subsequent ankle exoskeleton robot project.
+
+## Limitations
+
+This is a differential-drive prototype in a lab environment. Wall adhesion and slip, load changes and long-term reliability have not been systematically tested. The code is not public, and the parameters only apply to the current hardware.

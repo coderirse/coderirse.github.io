@@ -1,4 +1,4 @@
-# lizhichao's Blog / 李智超的个人博客
+# lizhichao's Blog
 
 [![Build](https://github.com/coderirse/coderirse.github.io/actions/workflows/build.yml/badge.svg)](../../actions)
 [![Hexo](https://img.shields.io/badge/Hexo-8.1.2-blue)](https://hexo.io)

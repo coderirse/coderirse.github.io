@@ -10,12 +10,16 @@ tags:
   - JavaScript
   - 社区
   - 全栈
-description: 基于微信云开发的全功能社区小程序，支持帖子发布、评论点赞、私信聊天和个人主页定制。
+description: 基于微信云开发的社区小程序，支持帖子发布、评论点赞、私信聊天和个人主页定制。
 ---
+
+{% note info %}
+状态：维护中 · 角色：独立开发 · 代码：公开 · 最后更新：2026-10
+{% endnote %}
 
 ## 项目概述
 
-ShowWe 是一个基于微信云开发构建的全功能社区/社交小程序，v1.1.0。用户登录后可发布帖子（图片+文件附件）、评论点赞、私信聊天，拥有通知系统和个性化主页。
+ShowWe 是一个基于微信云开发构建的社区/社交小程序，v1.1.0。用户登录后可发布帖子（图片+文件附件）、评论点赞、私信聊天，拥有通知系统和个性化主页。
 
 {% label 微信小程序 blue %} {% label 云开发 green %} {% label JavaScript orange %}
 
@@ -28,8 +32,10 @@ ShowWe 是一个基于微信云开发构建的全功能社区/社交小程序，
 
 ### 技术亮点
 - 微信云数据库+云存储+云函数
-- 内存缓存（TTL 过期）+ 本地存储缓存实现秒开
+- 内存缓存（TTL 过期）+ 本地存储缓存，让页面切换更顺畅
 - 图片自动压缩（质量80%）+ 统一上传服务（支持重试）
 - 自定义组件：image-preview 画廊、load-more 状态指示器
 
 {% label 微信小程序 green %} {% label 社区 green %} {% label 全栈 green %}
+
+{% btn https://github.com/coderirse/showwe, 查看源码, fab fa-github %} {% btn https://github.com/coderirse/showwe/releases, 下载 APK, fas fa-download %}

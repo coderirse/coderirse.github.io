@@ -12,6 +12,10 @@ tags:
 description: A personal study-and-life desktop app covering plans, dev work, fitness, meals and gaming — fully offline, local data only.
 ---
 
+{% note info %}
+Status: maintained · Role: solo developer · Code: not open source (personal use) · Updated: 2026-10
+{% endnote %}
+
 ## Overview
 
 Life Assistant is a personal study-and-life desktop app built with Tauri + Rust + WebView2, for my own use only. All data lives in a local project folder and survives refreshes, closes, and reboots; the app is fully offline except for the GitHub module, with standalone backup & restore built in.

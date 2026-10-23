@@ -13,6 +13,10 @@ tags:
 description: Leaflet.js で構築したインタラクティブな個人旅行マップ。写真、ストーリー、タイムライン再生、3D 地球儀。
 ---
 
+{% note info %}
+状態：保守中 · 担当：単独開発 · コード：公開 · 最終更新：2026-10
+{% endnote %}
+
 ## 概要
 
 Trailmap は Leaflet.js で構築したインタラクティブな個人旅行マップで、旅ごとの写真とストーリーを記録します。場所の追加・編集は `locations.json` データファイル 1 つを触るだけで、プッシュすると GitHub Actions が GitHub Pages へ自動デプロイします。

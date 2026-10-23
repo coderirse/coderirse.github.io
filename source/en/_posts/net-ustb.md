@@ -13,6 +13,10 @@ tags:
 description: A native Android client for USTB's campus network authentication system, replacing the web-based login flow.
 ---
 
+{% note info %}
+Status: maintained · Role: solo developer · Code: public · Updated: 2026-10
+{% endnote %}
+
 ## Overview
 
 Net-USTB is a third-party native Android client for USTB's campus network (Dr.COM ePortal 4.x). It replaces the browser-based web authentication with a one-tap native experience.
@@ -28,3 +32,13 @@ Net-USTB is a third-party native Android client for USTB's campus network (Dr.CO
 - Privacy-first: zero analytics, zero ads
 
 {% label USTB green %} {% label Android green %} {% label Network Tool green %}
+
+## Limitations
+
+Only one Dr.COM ePortal 4.x authentication flow is covered; changes to the university API will break it. Concurrent devices and unusual networks are not handled. Credentials stay on the device, so a new phone needs a fresh login.
+
+{% note warning %}
+This project is for personal learning only and is not affiliated with the university. Follow the university's network and information system rules; use at your own risk.
+{% endnote %}
+
+{% btn https://github.com/coderirse/Netconnect_tool, View Source, fab fa-github %}

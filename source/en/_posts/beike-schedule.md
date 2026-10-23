@@ -14,6 +14,10 @@ tags:
 description: A USTB course schedule app with one-tap academic-system import, teaching-week calendar mapping, weekly timetable and class reminders.
 ---
 
+{% note info %}
+Status: maintained · Role: solo developer · Code: public · Updated: 2026-10
+{% endnote %}
+
 ## Overview
 
 BeikeSchedule is a course schedule app for the University of Science and Technology Beijing (USTB): sign in to the academic system through a built-in WebView to import your timetable in one tap, view it as a weekly schedule, and get class reminders. Release APKs are published for direct in-place upgrades.
@@ -34,5 +38,10 @@ BeikeSchedule is a course schedule app for the University of Science and Technol
 - Parsers and week logic are unit-tested against real API fixtures
 
 **Privacy**: credentials are only entered by you into the university's own login page inside the system WebView; the app never reads, stores, or uploads them, and timetable data stays on-device.
+
+
+## Limitations
+
+Only the USTB integrated academic system is supported; changes to the page or API can break the import. Reminders depend on exact-alarm permission, which some OEM ROMs require you to enable manually. There is no cross-device sync.
 
 {% btn https://github.com/coderirse/BeikeSchedule, View Source, fab fa-github %} {% btn https://github.com/coderirse/BeikeSchedule/releases, Download APK, fas fa-download %}

@@ -14,6 +14,10 @@ tags:
 description: An Android translation app combining on-device ML Kit translation, streaming LLM rewriting, and Merriam-Webster dictionary lookup.
 ---
 
+{% note info %}
+Status: maintained · Role: solo developer · Code: public · Updated: 2026-10
+{% endnote %}
+
 ## Overview
 
 LingoFlow is a modern Android translation app that combines on-device machine translation, an authoritative dictionary, and LLM power: everyday phrases translate offline in a snap, long passages get streamed through an LLM with clean formatting, and any word can be looked up instantly. Release APKs are available.
@@ -31,5 +35,10 @@ LingoFlow is a modern Android translation app that combines on-device machine tr
 Kotlin + Coroutines + Flow · Jetpack Compose (Material 3) · Hilt DI · ML Kit Translation · OkHttp + kotlinx.serialization · DataStore + EncryptedSharedPreferences
 
 Release builds automatically fall back to debug signing when no keystore is configured, which keeps CI and sideloading friction-free.
+
+
+## Limitations
+
+ML Kit on-device translation is limited in quality, and long-text LLM translation requires your own API key. Dictionary and TTS behaviour depends on system components. There is no account system or cross-device sync.
 
 {% btn https://github.com/coderirse/LingoFlow, View Source, fab fa-github %} {% btn https://github.com/coderirse/LingoFlow/releases, Download APK, fas fa-download %}

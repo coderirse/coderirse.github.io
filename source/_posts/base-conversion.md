@@ -13,6 +13,10 @@ tags:
 description: 纯本地、零广告的安卓进制转换器：进制实时联动、补码与 IEEE 754 位模式可视化。
 ---
 
+{% note info %}
+状态：维护中 · 角色：独立开发 · 代码：公开 · 最后更新：2026-10
+{% endnote %}
+
 ## 项目概述
 
 BaseConversion 是一款面向程序员的安卓进制转换器，纯本地运行、零广告。打开即用，二进制 / 八进制 / 十进制 / 十六进制四框实时联动转换，无需点击"转换"按钮，支持大整数、补码与 IEEE 754 浮点数位模式展示。
@@ -30,5 +34,9 @@ BaseConversion 是一款面向程序员的安卓进制转换器，纯本地运�
 Kotlin 2.0+ · Jetpack Compose (Material 3) · ViewModel + StateFlow (MVI) · Gradle Kotlin DSL · minSdk 29
 
 架构上把转换算法抽成纯 Kotlin 的 `domain` 层，配合 JUnit 单元测试保证数值逻辑正确性；UI / 数据 / 领域三层清晰分离。
+
+## 局限与没做什么
+
+主要面向开发者的日常换算，不追求任意精度浮点的完整语义；IEEE 754 展示偏教学和调试，不替代专业数值工具；没有做历史记录和批量转换。
 
 {% btn https://github.com/coderirse/BaseConversion, 查看源码, fab fa-github %}

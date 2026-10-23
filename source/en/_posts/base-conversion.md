@@ -13,6 +13,10 @@ tags:
 description: A local-first, ad-free Android base converter with live multi-base syncing, two's complement and IEEE 754 bit patterns.
 ---
 
+{% note info %}
+Status: maintained · Role: solo developer · Code: public · Updated: 2026-10
+{% endnote %}
+
 ## Overview
 
 BaseConversion is a local-first, ad-free Android base converter built for programmers. Open it and start typing: binary / octal / decimal / hexadecimal fields stay in live two-way sync — no "convert" button. It supports big integers, two's complement, and IEEE 754 floating-point bit-pattern visualization.
@@ -30,5 +34,10 @@ BaseConversion is a local-first, ad-free Android base converter built for progra
 Kotlin 2.0+ · Jetpack Compose (Material 3) · ViewModel + StateFlow (MVI) · Gradle Kotlin DSL · minSdk 29
 
 The conversion algorithms live in a pure-Kotlin `domain` layer covered by JUnit tests; UI / data / domain layers are cleanly separated.
+
+
+## Limitations
+
+It is aimed at everyday programmer conversions, not full arbitrary-precision floating-point semantics. The IEEE 754 view is for teaching and debugging, not a replacement for a numerical tool. There is no history or batch conversion.
 
 {% btn https://github.com/coderirse/BaseConversion, View Source, fab fa-github %}

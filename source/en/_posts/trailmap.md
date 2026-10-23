@@ -13,6 +13,10 @@ tags:
 description: An interactive personal travel map built with Leaflet.js — photos, stories, a timeline player, and a 3D globe.
 ---
 
+{% note info %}
+Status: maintained · Role: solo developer · Code: public · Updated: 2026-10
+{% endnote %}
+
 ## Overview
 
 Trailmap is an interactive personal travel map built with Leaflet.js, recording the photos and stories behind every trip. Adding or editing places only touches one data file (`locations.json`), and every push auto-deploys to GitHub Pages via GitHub Actions.

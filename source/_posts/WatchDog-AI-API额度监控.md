@@ -14,9 +14,13 @@ tags:
 description: 实时监控 DeepSeek、Kimi、智谱、SiliconFlow 四大 AI 平台的 API 余额和月度用量。
 ---
 
+{% note info %}
+状态：维护中 · 角色：独立开发 · 代码：公开 · 最后更新：2026-10
+{% endnote %}
+
 ## 项目概述
 
-WatchDog 是一款 Android 应用，用于实时监控多个 AI 平台的 API 余额和使用情况。对重度 AI 开发者来说是一个必备工具，已发布 Release APK。
+WatchDog 是一款 Android 应用，用于实时监控多个 AI 平台的 API 余额和使用情况。我自己每天用它看余额和月用量；最新版本以 Release APK 发布。
 
 {% label Kotlin blue %} {% label Compose green %} {% label Retrofit orange %}
 
@@ -34,3 +38,5 @@ WatchDog 是一款 Android 应用，用于实时监控多个 AI 平台的 API �
 - 部分失败容忍
 
 {% label Android green %} {% label API监控 green %} {% label AI green %}
+
+{% btn https://github.com/coderirse/WatchDog, 查看源码, fab fa-github %} {% btn https://github.com/coderirse/WatchDog/releases, 下载 APK, fas fa-download %}
