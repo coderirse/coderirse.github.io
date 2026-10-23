@@ -105,15 +105,5 @@ window.__I18N_POST_MAP__.byPath = {
     "zh-CN": "/2026/06/12/欢迎来到我的个人博客/",
     "en": "/en/2026/06/12/welcome/",
     "ja": "/ja/2026/06/12/welcome/"
-  },
-  "/ja/2026/06/18/wall-climbing-robot/": {
-    "zh-CN": "/2026/06/18/爬壁小车-壁面爬行机器人控制系统/",
-    "en": "/en/2026/06/18/wall-climbing-robot/",
-    "ja": "/ja/2026/06/18/wall-climbing-robot/"
-  },
-  "/ja/2026/06/13/ankle-exoskeleton/": {
-    "zh-CN": "/2026/06/13/脚踝外骨骼机器人控制系统/",
-    "en": "/en/2026/06/13/ankle-exoskeleton/",
-    "ja": "/ja/2026/06/13/ankle-exoskeleton/"
   }
 };

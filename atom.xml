@@ -8,7 +8,7 @@
   <link href="https://caeamer.com/" rel="alternate"/>
   <link href="https://caeamer.com/atom.xml" rel="self"/>
   <rights>All rights reserved 2026, lizhichao</rights>
-  <subtitle>机器人 · Android · AI Agent</subtitle>
+  <subtitle>Android · AI Agent</subtitle>
   <title>lizhichao</title>
   <updated>2026-10-22T16:00:00.000Z</updated>
   <entry>
@@ -75,8 +75,8 @@
     </author>
     <category term="项目" scheme="https://caeamer.com/categories/%E9%A1%B9%E7%9B%AE/"/>
     <category term="开源" scheme="https://caeamer.com/tags/%E5%BC%80%E6%BA%90/"/>
-    <category term="JavaScript" scheme="https://caeamer.com/tags/JavaScript/"/>
     <category term="Leaflet" scheme="https://caeamer.com/tags/Leaflet/"/>
+    <category term="JavaScript" scheme="https://caeamer.com/tags/JavaScript/"/>
     <category term="Vite" scheme="https://caeamer.com/tags/Vite/"/>
     <category term="地图" scheme="https://caeamer.com/tags/%E5%9C%B0%E5%9B%BE/"/>
     <content>
@@ -155,10 +155,10 @@
     </author>
     <category term="项目" scheme="https://caeamer.com/categories/%E9%A1%B9%E7%9B%AE/"/>
     <category term="开源" scheme="https://caeamer.com/tags/%E5%BC%80%E6%BA%90/"/>
-    <category term="USTB" scheme="https://caeamer.com/tags/USTB/"/>
     <category term="Android" scheme="https://caeamer.com/tags/Android/"/>
     <category term="Kotlin" scheme="https://caeamer.com/tags/Kotlin/"/>
     <category term="Jetpack Compose" scheme="https://caeamer.com/tags/Jetpack-Compose/"/>
+    <category term="USTB" scheme="https://caeamer.com/tags/USTB/"/>
     <category term="课表" scheme="https://caeamer.com/tags/%E8%AF%BE%E8%A1%A8/"/>
     <content>
       <![CDATA[<div class="note info flat"><p>状态：维护中 · 角色：独立开发 · 代码：公开 · 最后更新：2026-10</p></div><h2 id="项目概述"><a href="#项目概述" class="headerlink" title="项目概述"></a>项目概述</h2><p>BeikeSchedule（贝壳课表）是一款北京科技大学课表 App：内置 WebView 登录本研一体化教务系统一键导入课表，本地周视图展示，支持上课提醒。已发布 Release APK，可直接覆盖升级。</p><mark class="hl-label blue">Kotlin</mark> <mark class="hl-label green">Compose</mark> <mark class="hl-label orange">Room</mark> <mark class="hl-label pink">AlarmManager</mark><h3 id="关键特性"><a href="#关键特性" class="headerlink" title="关键特性"></a>关键特性</h3><ul><li><strong>教务一键导入</strong>：WebView 完成统一身份认证（App 不接触学号密码），自动抓取学期课表 JSON，预览确认后入库</li><li><strong>官方教学周日历</strong>：导入时同步教务校历，教学周 ↔ 日期精确映射——国庆等长假周不占教学周序号；假期中自动定位到假期后第一个教学周</li><li><strong>周视图课表</strong>：按”大节”排版，滑动切周、周次下拉跳转、单双周标注、无固定时间课程单独列表、地点楼名 &#x2F; 房间号分行显示</li><li><strong>课程管理</strong>：手动增删改课程，教务数据与手动课程共存</li><li><strong>上课提醒</strong>：每大节课前 N 分钟系统通知（默认 15 分钟可调），支持精确闹钟，开机自动重排</li><li><strong>当前周定位</strong>：杀进程重启也能正确定位当前教学周；深色模式三态切换</li></ul><h3 id="技术要点"><a href="#技术要点" class="headerlink" title="技术要点"></a>技术要点</h3><ul><li>Kotlin + Jetpack Compose（Material 3），Room（课程 &#x2F; 节次时间）+ DataStore（学期配置 &#x2F; 校历 &#x2F; 提醒）</li><li>教务适配层：WebView 注入 JS 复用登录会话，直接调教务结构化 JSON 接口（课表 32 位周次位图、校历全量映射），无需解析 HTML</li><li>解析器 &#x2F; 周次逻辑有单元测试覆盖，fixture 为真实接口样本</li></ul><p><strong>隐私</strong>：学号密码只在系统 WebView 中由本人输入给学校认证页面，App 不读取、不存储、不上传任何凭证；课表数据仅保存在本机。</p><h2 id="局限与没做什么"><a href="#局限与没做什么" class="headerlink" title="局限与没做什么"></a>局限与没做什么</h2><p>只适配北科大本研一体化教务系统，教务页面或接口变更可能导致导入失效；上课提醒依赖系统的精确闹钟权限，部分国产 ROM 需要手动允许自启动；没有做跨设备同步。</p><a class="btn-beautify " href="https://github.com/coderirse/BeikeSchedule" title="查看源码"><i class="fab fa-github"></i><span>查看源码</span></a> <a class="btn-beautify " href="https://github.com/coderirse/BeikeSchedule/releases" title="下载 APK"><i class="fas fa-download"></i><span>下载 APK</span></a>]]>
@@ -195,9 +195,9 @@
       <name>lizhichao</name>
     </author>
     <category term="项目" scheme="https://caeamer.com/categories/%E9%A1%B9%E7%9B%AE/"/>
+    <category term="JavaScript" scheme="https://caeamer.com/tags/JavaScript/"/>
     <category term="微信小程序" scheme="https://caeamer.com/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
     <category term="云开发" scheme="https://caeamer.com/tags/%E4%BA%91%E5%BC%80%E5%8F%91/"/>
-    <category term="JavaScript" scheme="https://caeamer.com/tags/JavaScript/"/>
     <category term="社区" scheme="https://caeamer.com/tags/%E7%A4%BE%E5%8C%BA/"/>
     <category term="全栈" scheme="https://caeamer.com/tags/%E5%85%A8%E6%A0%88/"/>
     <content>
@@ -275,10 +275,10 @@
       <name>lizhichao</name>
     </author>
     <category term="项目" scheme="https://caeamer.com/categories/%E9%A1%B9%E7%9B%AE/"/>
-    <category term="USTB" scheme="https://caeamer.com/tags/USTB/"/>
     <category term="Android" scheme="https://caeamer.com/tags/Android/"/>
     <category term="Kotlin" scheme="https://caeamer.com/tags/Kotlin/"/>
     <category term="Jetpack Compose" scheme="https://caeamer.com/tags/Jetpack-Compose/"/>
+    <category term="USTB" scheme="https://caeamer.com/tags/USTB/"/>
     <category term="校园网" scheme="https://caeamer.com/tags/%E6%A0%A1%E5%9B%AD%E7%BD%91/"/>
     <content>
       <![CDATA[<div class="note info flat"><p>状态：维护中 · 角色：独立开发 · 代码：公开 · 最后更新：2026-10</p></div><h2 id="项目概述"><a href="#项目概述" class="headerlink" title="项目概述"></a>项目概述</h2><p>Net-USTB 是专为北京科技大学校园网（Dr.COM ePortal 4.x）开发的第三方原生 Android 客户端，用它替代浏览器端的网页认证流程，实现一键登录&#x2F;登出。</p><mark class="hl-label blue">Kotlin</mark> <mark class="hl-label green">Compose</mark> <mark class="hl-label orange">OkHttp</mark><h3 id="核心功能"><a href="#核心功能" class="headerlink" title="核心功能"></a>核心功能</h3><ul><li><strong>一键认证</strong>：通过 ePortal JSONP 接口完成登录&#x2F;登出，无需打开浏览器</li><li><strong>多运营商</strong>：校园用户 &#x2F; 中国电信 &#x2F; 中国联通</li><li><strong>AES-256-GCM</strong> 加密凭据存储</li><li><strong>使用看板</strong>：余额、时长、流量、登录时间、IP 地址</li><li><strong>校园公告</strong>：获取公告板信息</li></ul><h3 id="技术细节"><a href="#技术细节" class="headerlink" title="技术细节"></a>技术细节</h3><ul><li>OkHttp 4.12 + 自定义 CookieJar</li><li>Jsoup 1.18 HTML 解析</li><li>EncryptedSharedPreferences 加密存储</li><li>隐私优先：零分析、零广告</li></ul><mark class="hl-label green">USTB</mark> <mark class="hl-label green">Android</mark> <mark class="hl-label green">网络工具</mark><h2 id="局限与没做什么"><a href="#局限与没做什么" class="headerlink" title="局限与没做什么"></a>局限与没做什么</h2><p>只覆盖 Dr.COM ePortal 4.x 的一种认证流程，学校接口变更会失效；没有处理多设备并发和异常网络环境；凭据只保存在本机，换机需要重新登录。</p><div class="note warning flat"><p>本项目仅用于个人学习与自用，与学校官方无关；请遵守学校网络与信息系统管理规定，风险自负。</p></div><a class="btn-beautify " href="https://github.com/coderirse/Netconnect_tool" title="查看源码"><i class="fab fa-github"></i><span>查看源码</span></a>]]>
@@ -354,26 +354,6 @@
     <author>
       <name>lizhichao</name>
     </author>
-    <category term="项目" scheme="https://caeamer.com/categories/%E9%A1%B9%E7%9B%AE/"/>
-    <category term="Python" scheme="https://caeamer.com/tags/Python/"/>
-    <category term="ROS2" scheme="https://caeamer.com/tags/ROS2/"/>
-    <category term="机器人" scheme="https://caeamer.com/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA/"/>
-    <category term="嵌入式" scheme="https://caeamer.com/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/"/>
-    <category term="CAN总线" scheme="https://caeamer.com/tags/CAN%E6%80%BB%E7%BA%BF/"/>
-    <content>
-      <![CDATA[<div class="note info flat"><p>状态：已归档 · 角色：实验室项目，我负责控制系统（ROS2 &#x2F; CAN &#x2F; RS485） · 代码：未公开</p></div><h2 id="项目概述"><a href="#项目概述" class="headerlink" title="项目概述"></a>项目概述</h2><p>爬壁小车 v2.0 是一个差速驱动壁面爬行机器人控制系统，通过 CAN 总线和 RS485 双通信协议控制四台电机，实现壁面稳定爬行。系统集成 ROS2 指令控制和游戏手柄实时操控，配合 Qt5 上位机 GUI 工具进行电机调试。</p><div class="note info flat"><p>这是一个完整的嵌入式机器人控制系统，从底层通信协议到上层控制算法全部自主实现。</p></div><h2 id="核心技术"><a href="#核心技术" class="headerlink" title="核心技术"></a>核心技术</h2><h3 id="双协议电机控制"><a href="#双协议电机控制" class="headerlink" title="双协议电机控制"></a>双协议电机控制</h3><mark class="hl-label blue">CAN总线</mark> <mark class="hl-label orange">RS485</mark><p>系统同时使用两种工业通信协议控制四台独立电机：</p><ul><li><strong>CAN 总线</strong>（COM4，921600 波特率）：控制电机 1&#x2F;2</li><li><strong>RS485&#x2F;Modbus</strong>（COM8，115200 波特率）：控制电机 3&#x2F;4，含 CRC16-Modbus 校验</li></ul><h3 id="ROS2-原生集成"><a href="#ROS2-原生集成" class="headerlink" title="ROS2 原生集成"></a>ROS2 原生集成</h3><mark class="hl-label green">ROS2</mark> <mark class="hl-label blue">CmdVel</mark><p>系统原生订阅 ROS2 的 <code>/cmd_vel</code> 话题，实时接收 <code>geometry_msgs/Twist</code> 消息：</p><ul><li>将线速度（m&#x2F;s）和角速度（rad&#x2F;s）解算为左右两侧电机转速</li><li>20 Hz 控制环路频率</li><li>基于 <code>rclpy</code> 框架实现</li></ul><h3 id="游戏手柄远程操控"><a href="#游戏手柄远程操控" class="headerlink" title="游戏手柄远程操控"></a>游戏手柄远程操控</h3><mark class="hl-label pink">Pygame</mark> <mark class="hl-label blue">手柄控制</mark><p>支持通过游戏手柄进行直观的机器人操控：</p><ul><li><strong>方向键</strong>：四台电机同步前进&#x2F;后退</li><li><strong>摇杆轴</strong>：左右两侧独立控制，实现差速转向</li></ul><h3 id="安全保护机制"><a href="#安全保护机制" class="headerlink" title="安全保护机制"></a>安全保护机制</h3><mark class="hl-label red">安全保护</mark><ul><li><strong>受限加速度斜坡控制</strong>：防止电机速度突变</li><li><strong>500ms cmd_vel 超时自动停机</strong>：通信丢失时自动保护</li><li><strong>电流限幅 2A</strong>：防止电机过载</li></ul><h2 id="物理参数"><a href="#物理参数" class="headerlink" title="物理参数"></a>物理参数</h2><p>系统已在实际硬件上标定验证：</p><table><thead><tr><th>参数</th><th>值</th></tr></thead><tbody><tr><td>轮径</td><td>0.05 m</td></tr><tr><td>轮距</td><td>0.30 m</td></tr><tr><td>最高速度</td><td>5 rad&#x2F;s</td></tr><tr><td>电流限幅</td><td>2A</td></tr><tr><td>加速度</td><td>10 rad&#x2F;s²</td></tr></tbody></table><h2 id="技术栈"><a href="#技术栈" class="headerlink" title="技术栈"></a>技术栈</h2><mark class="hl-label blue">Python</mark> <mark class="hl-label green">ROS2</mark> <mark class="hl-label pink">Pygame</mark> <mark class="hl-label orange">CAN总线</mark> <mark class="hl-label red">RS485</mark><ul><li><strong>控制语言</strong>：Python 3</li><li><strong>框架</strong>：ROS2（<code>rclpy</code>）</li><li><strong>手柄库</strong>：Pygame</li><li><strong>通信库</strong>：<code>pyserial</code></li><li><strong>上位机</strong>：Qt5 GUI（<code>motor_tool.exe</code>）</li><li><strong>驱动器</strong>：ZE300 系列电机驱动器</li></ul><h2 id="项目意义"><a href="#项目意义" class="headerlink" title="项目意义"></a>项目意义</h2><p>爬壁小车项目是我在机器人控制领域的一次重要实践，涵盖了从底层通信协议到上层控制算法的完整技术栈。通过这个项目，我深入理解了：</p><ul><li>工业通信协议（CAN、RS485&#x2F;Modbus）的实际应用</li><li>ROS2 的节点通信和消息机制</li><li>差速驱动运动学模型</li><li>实时控制系统的安全保护设计</li></ul><p>这个项目为我后续的脚踝外骨骼机器人项目奠定了坚实的基础。</p><h2 id="局限与没做什么"><a href="#局限与没做什么" class="headerlink" title="局限与没做什么"></a>局限与没做什么</h2><p>这是实验室环境下的差速驱动原型：壁面吸附与打滑、负载变化和长时间可靠性还没有系统测试；代码未公开，参数只对当前硬件有效。</p>]]>
-    </content>
-    <id>https://caeamer.com/2026/06/18/%E7%88%AC%E5%A3%81%E5%B0%8F%E8%BD%A6-%E5%A3%81%E9%9D%A2%E7%88%AC%E8%A1%8C%E6%9C%BA%E5%99%A8%E4%BA%BA%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F/</id>
-    <link href="https://caeamer.com/2026/06/18/%E7%88%AC%E5%A3%81%E5%B0%8F%E8%BD%A6-%E5%A3%81%E9%9D%A2%E7%88%AC%E8%A1%8C%E6%9C%BA%E5%99%A8%E4%BA%BA%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F/"/>
-    <published>2026-06-17T16:00:00.000Z</published>
-    <summary>基于 ROS2 的差速驱动壁面爬行机器人控制系统，支持 CAN + RS485 双协议四电机协同控制。</summary>
-    <title>爬壁小车 — 壁面爬行机器人控制系统</title>
-    <updated>2026-06-17T16:00:00.000Z</updated>
-  </entry>
-  <entry>
-    <author>
-      <name>lizhichao</name>
-    </author>
     <category term="开源观察" scheme="https://caeamer.com/categories/%E5%BC%80%E6%BA%90%E8%A7%82%E5%AF%9F/"/>
     <category term="学术工具" scheme="https://caeamer.com/tags/%E5%AD%A6%E6%9C%AF%E5%B7%A5%E5%85%B7/"/>
     <category term="AI辅助" scheme="https://caeamer.com/tags/AI%E8%BE%85%E5%8A%A9/"/>
@@ -406,6 +386,25 @@
     <published>2026-06-13T14:28:14.000Z</published>
     <summary>拆解 Nous Research 的 Hermes Agent：技能自创建、SQLite/FTS5 记忆、多平台网关与 Cron 调度。本文是源码阅读笔记，不是项目贡献者。</summary>
     <title>Hermes Agent — 一个会自己攒技能的开源智能体</title>
+    <updated>2026-10-22T16:00:00.000Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>lizhichao</name>
+    </author>
+    <category term="开源观察" scheme="https://caeamer.com/categories/%E5%BC%80%E6%BA%90%E8%A7%82%E5%AF%9F/"/>
+    <category term="Python" scheme="https://caeamer.com/tags/Python/"/>
+    <category term="AI Agent" scheme="https://caeamer.com/tags/AI-Agent/"/>
+    <category term="量化交易" scheme="https://caeamer.com/tags/%E9%87%8F%E5%8C%96%E4%BA%A4%E6%98%93/"/>
+    <category term="金融科技" scheme="https://caeamer.com/tags/%E9%87%91%E8%9E%8D%E7%A7%91%E6%8A%80/"/>
+    <content>
+      <![CDATA[<div class="note info flat"><p>项目：<a href="https://github.com/oficcejo/aiagents-stock">oficcejo&#x2F;aiagents-stock</a> · 作者：oficcejo · 仓库未声明 License<br>本文是阅读笔记，我没有参与这个项目的开发。</p></div><h2 id="它解决什么问题"><a href="#它解决什么问题" class="headerlink" title="它解决什么问题"></a>它解决什么问题</h2><p>AI Agents Stock 是一个用多个 AI Agent 模拟证券分析师团队的开源项目。它把「看一只股票」拆成技术面、基本面、资金流向、风险评估、情绪、新闻六个维度，每个维度交给一个 Agent，最后汇总成一份分析报告。</p><p>项目还包含两个横向模块：</p><ul><li><strong>智策板块</strong>：4 个 Agent 做板块轮动、宏观政策、资金流向和市场情绪分析</li><li><strong>智瞰龙虎</strong>：5 个 Agent 分析每日龙虎榜，跟踪游资与机构席位</li></ul><p>技术栈是 Python + Streamlit + Plotly，数据源包括 AKShare、Tushare、yfinance、pywencai，支持 Docker 部署，并预留了 MiniQMT 量化交易接口。</p><h2 id="我关注的设计"><a href="#我关注的设计" class="headerlink" title="我关注的设计"></a>我关注的设计</h2><p><strong>多 Agent 的价值不在于「更准」，而在于把判断拆开。</strong> 单模型一次性给出结论时，你很难知道它哪一步错了；拆成六个 Agent 后，技术面、基本面、资金面各自留下分析过程，至少可以逐项核对证据。</p><p>但这也带来两个问题：</p><ol><li><strong>一致性</strong>：六个 Agent 可能给出互相矛盾的结论，最后仍需要人来裁决。</li><li><strong>成本与延迟</strong>：每次分析要调用多次模型，长文本和实时行情会让 token 成本迅速上升。</li></ol><p>项目文档里还提到「筛选 3–5 只优质标的」「短线交易机会挖掘」这类能力。我的理解是：它们更适合作为研究线索，而不是直接照着下单。</p><div class="note warning flat"><p>本文不构成任何投资建议。AI 输出、数据源和回测结果都可能出错，实盘风险自负。</p></div><h2 id="适合谁"><a href="#适合谁" class="headerlink" title="适合谁"></a>适合谁</h2><ul><li>想学习多 Agent 编排、Prompt 分工和报告生成的开发者</li><li>需要一套本地可跑的 A 股分析工作台、愿意自己维护数据源的人</li><li>对量化交易接口（MiniQMT）感兴趣、但清楚它只是执行端的人</li></ul><p>如果你想要的是「开箱即用的稳赚策略」，这个项目不适合你——没有任何开源项目适合。</p><h2 id="我的判断"><a href="#我的判断" class="headerlink" title="我的判断"></a>我的判断</h2><p>它更像一个<strong>可改造的研究沙盒</strong>：Agent 分工、报告结构、数据源降级这些都值得借鉴；但把「分析」变成「交易」之间，还隔着风控、回测、执行和合规四道墙。</p><a class="btn-beautify " href="https://github.com/oficcejo/aiagents-stock" title="查看原项目"><i class="fab fa-github"></i><span>查看原项目</span></a>]]>
+    </content>
+    <id>https://caeamer.com/2026/06/13/AI-Agents-Stock-%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E8%82%A1%E7%A5%A8%E5%88%86%E6%9E%90%E7%B3%BB%E7%BB%9F/</id>
+    <link href="https://caeamer.com/2026/06/13/AI-Agents-Stock-%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E8%82%A1%E7%A5%A8%E5%88%86%E6%9E%90%E7%B3%BB%E7%BB%9F/"/>
+    <published>2026-06-13T14:28:12.000Z</published>
+    <summary>拆解 oficcejo/aiagents-stock：6 个分析 Agent、板块轮动、龙虎榜追踪与 MiniQMT 接口。本文是阅读笔记，不是项目作者。</summary>
+    <title>AI Agents Stock — 一个多智能体股票分析开源项目</title>
     <updated>2026-10-22T16:00:00.000Z</updated>
   </entry>
 </feed>
