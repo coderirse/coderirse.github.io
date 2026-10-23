@@ -11,11 +11,6 @@ window.__I18N_POST_MAP__.byPath = {
     "en": "/en/2026/06/13/ai-agents-stock/",
     "ja": "/ja/2026/06/13/ai-agents-stock/"
   },
-  "/2026/09/02/ai-learning-diploma/": {
-    "zh-CN": "/2026/09/02/ai-learning-diploma/",
-    "en": "/en/2026/09/02/ai-learning-diploma/",
-    "ja": "/ja/2026/09/02/ai-learning-diploma/"
-  },
   "/2026/07/12/awesome-claude-code生态资源合集/": {
     "zh-CN": "/2026/07/12/awesome-claude-code生态资源合集/",
     "en": "/en/2026/07/12/awesome-claude-code/",
@@ -30,11 +25,6 @@ window.__I18N_POST_MAP__.byPath = {
     "zh-CN": "/2026/08/29/beike-schedule/",
     "en": "/en/2026/08/29/beike-schedule/",
     "ja": "/ja/2026/08/29/beike-schedule/"
-  },
-  "/2026/09/26/burying-talent-in-yesterday/": {
-    "zh-CN": "/2026/09/26/burying-talent-in-yesterday/",
-    "en": "/en/2026/09/26/burying-talent-in-yesterday/",
-    "ja": "/ja/2026/09/26/burying-talent-in-yesterday/"
   },
   "/2026/08/29/countdown/": {
     "zh-CN": "/2026/08/29/countdown/",
@@ -56,10 +46,20 @@ window.__I18N_POST_MAP__.byPath = {
     "en": "/en/2026/08/29/lingoflow/",
     "ja": "/ja/2026/08/29/lingoflow/"
   },
+  "/2026/10/23/llmhub-自托管LLM网关/": {
+    "zh-CN": "/2026/10/23/llmhub-自托管LLM网关/",
+    "en": "/en/2026/10/23/llmhub-self-hosted-gateway/",
+    "ja": "/ja/2026/10/23/llmhub-self-hosted-gateway/"
+  },
   "/2026/07/12/Net-USTB-北科校园网一键登录/": {
     "zh-CN": "/2026/07/12/Net-USTB-北科校园网一键登录/",
     "en": "/en/2026/07/12/net-ustb/",
     "ja": "/ja/2026/07/12/net-ustb/"
+  },
+  "/2026/10/23/Reps-离线刷题App/": {
+    "zh-CN": "/2026/10/23/Reps-离线刷题App/",
+    "en": "/en/2026/10/23/reps-offline-quiz/",
+    "ja": "/ja/2026/10/23/reps-offline-quiz/"
   },
   "/2026/07/12/ScientificCalculator-Kotlin科学计算器/": {
     "zh-CN": "/2026/07/12/ScientificCalculator-Kotlin科学计算器/",
@@ -86,11 +86,6 @@ window.__I18N_POST_MAP__.byPath = {
     "en": "/en/2026/08/29/trailmap/",
     "ja": "/ja/2026/08/29/trailmap/"
   },
-  "/2026/07/12/USTB-成绩排名浏览器扩展/": {
-    "zh-CN": "/2026/07/12/USTB-成绩排名浏览器扩展/",
-    "en": "/en/2026/07/12/ustb-grade-rank-extension/",
-    "ja": "/ja/2026/07/12/ustb-grade-rank-extension/"
-  },
   "/2026/07/12/warp-智能终端AI编程环境/": {
     "zh-CN": "/2026/07/12/warp-智能终端AI编程环境/",
     "en": "/en/2026/07/12/warp-terminal/",
@@ -101,15 +96,10 @@ window.__I18N_POST_MAP__.byPath = {
     "en": "/en/2026/07/12/watchdog/",
     "ja": "/ja/2026/07/12/watchdog/"
   },
-  "/2026/06/13/名人名言-关于学习与成长/": {
-    "zh-CN": "/2026/06/13/名人名言-关于学习与成长/",
-    "en": "/en/2026/06/13/quotes-growth/",
-    "ja": "/ja/2026/06/13/quotes-growth/"
-  },
-  "/2026/06/13/名人名言-关于技术与创造/": {
-    "zh-CN": "/2026/06/13/名人名言-关于技术与创造/",
-    "en": "/en/2026/06/13/quotes-tech/",
-    "ja": "/ja/2026/06/13/quotes-tech/"
+  "/2026/10/23/Zotero-全文PDF翻译插件/": {
+    "zh-CN": "/2026/10/23/Zotero-全文PDF翻译插件/",
+    "en": "/en/2026/10/23/zotero-fulltext-pdf-translate/",
+    "ja": "/ja/2026/10/23/zotero-fulltext-pdf-translate/"
   },
   "/2026/06/12/欢迎来到我的个人博客/": {
     "zh-CN": "/2026/06/12/欢迎来到我的个人博客/",
