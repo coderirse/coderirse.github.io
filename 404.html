@@ -1,0 +1,198 @@
+<!-- Detect language from URL path so <html lang> is correct for all language versions--><!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>404 | lizhichao</title><meta name="author" content="lizhichao"><meta name="copyright" content="lizhichao"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#f6f2ea"><meta name="description" content="(function () {   &#x2F;&#x2F; 已下线文章的旧 URL → 最相关页面。key 为解码后的 pathname（含尾部斜杠）。   var REDIRECTS &#x3D; {     &#39;&#x2F;2026&#x2F;06&#x2F;13&#x2F;名人名言-关于学习与成长&#x2F;&#39;: &#39;&#x2F;&#39;,     &#39;&#x2F;2026&#x2F;06&#x2F;13&#x2F;名人名言-关于技术与创造&#x2F;&#39;: &#39;&#x2F;&#39;,     &#39;&#x2F;2026&#x2F;06&#x2F;13&#x2F;脚踝外骨骼机器人控制系统&#x2F;&#39;: &#39;&#x2F;p">
+<meta property="og:type" content="website">
+<meta property="og:title" content="404">
+<meta property="og:url" content="https://caeamer.com/404.html">
+<meta property="og:site_name" content="lizhichao">
+<meta property="og:description" content="(function () {   &#x2F;&#x2F; 已下线文章的旧 URL → 最相关页面。key 为解码后的 pathname（含尾部斜杠）。   var REDIRECTS &#x3D; {     &#39;&#x2F;2026&#x2F;06&#x2F;13&#x2F;名人名言-关于学习与成长&#x2F;&#39;: &#39;&#x2F;&#39;,     &#39;&#x2F;2026&#x2F;06&#x2F;13&#x2F;名人名言-关于技术与创造&#x2F;&#39;: &#39;&#x2F;&#39;,     &#39;&#x2F;2026&#x2F;06&#x2F;13&#x2F;脚踝外骨骼机器人控制系统&#x2F;&#39;: &#39;&#x2F;p">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://caeamer.com/img/touxiang.png">
+<meta property="article:published_time" content="2026-10-23T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-10-23T16:00:00.000Z">
+<meta property="article:author" content="lizhichao">
+<meta property="article:tag" content="lizhichao,caeamer,北京科技大学,Android,Kotlin,Jetpack Compose,AI Agent,个人博客">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://caeamer.com/img/touxiang.png"><script type="application/ld+json"></script><link rel="shortcut icon" href="/img/touxiang.png"><link rel="canonical" href="https://caeamer.com/404.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//static.cloudflareinsights.com"/><link rel="stylesheet" href="/css/index.css?v=5.5.5"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.14/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#171512')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f6f2ea')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const hour = new Date().getHours()
+          const isNight = hour <= 6 || hour >= 18
+          if (theme === undefined) isNight ? activateDarkMode() : activateLightMode()
+          else theme === 'light' ? activateLightMode() : activateDarkMode()
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script defer="defer" data-pjax="data-pjax" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="{&quot;token&quot;: &quot;fa3c2efe5f4b431a943eca6eb87657e2&quot;}"></script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":400,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '404',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'page'
+}</script><link rel="stylesheet" href="/css/fonts.css"><link rel="stylesheet" href="/css/custom.css?v=20261007"><meta name="generator" content="Hexo 8.1.2"><link rel="alternate" href="/atom.xml" title="lizhichao" type="application/atom+xml">
+<script defer src="/generated/i18n-post-map-zh.js"></script></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/touxiang.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">21</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">54</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/resume/"><i class="fa-fw fas fa-briefcase"></i><span> 经历</span></a></div><div class="menus_item"><a class="site-page" href="/projects/"><i class="fa-fw fas fa-code"></i><span> 项目</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://v2.caeamer.com/"><i class="fa-fw fas fa-rocket"></i><span> 新版体验</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="not-home-page" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">lizhichao</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/resume/"><i class="fa-fw fas fa-briefcase"></i><span> 经历</span></a></div><div class="menus_item"><a class="site-page" href="/projects/"><i class="fa-fw fas fa-code"></i><span> 项目</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://v2.caeamer.com/"><i class="fa-fw fas fa-rocket"></i><span> 新版体验</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="page-site-info"><h1 id="site-title">404</h1></div></header><main class="layout hide-aside" id="content-inner"><div id="page"><div class="container" id="article-container"><script>
+(function () {
+  // 已下线文章的旧 URL → 最相关页面。key 为解码后的 pathname（含尾部斜杠）。
+  var REDIRECTS = {
+    '/2026/06/13/名人名言-关于学习与成长/': '/',
+    '/2026/06/13/名人名言-关于技术与创造/': '/',
+    '/2026/06/13/脚踝外骨骼机器人控制系统/': '/projects/',
+    '/2026/06/18/爬壁小车-壁面爬行机器人控制系统/': '/projects/',
+    '/2026/07/12/USTB-成绩排名浏览器扩展/': '/projects/',
+    '/2026/09/02/ai-learning-diploma/': '/',
+    '/2026/09/26/burying-talent-in-yesterday/': '/',
+    '/en/2026/06/13/quotes-growth/': '/en/',
+    '/en/2026/06/13/quotes-tech/': '/en/',
+    '/en/2026/06/13/ankle-exoskeleton/': '/en/projects/',
+    '/en/2026/06/18/wall-climbing-robot/': '/en/projects/',
+    '/en/2026/07/12/ustb-grade-rank-extension/': '/en/projects/',
+    '/en/2026/09/02/ai-learning-diploma/': '/en/',
+    '/en/2026/09/26/burying-talent-in-yesterday/': '/en/',
+    '/ja/2026/06/13/quotes-growth/': '/ja/',
+    '/ja/2026/06/13/quotes-tech/': '/ja/',
+    '/ja/2026/06/13/ankle-exoskeleton/': '/ja/projects/',
+    '/ja/2026/06/18/wall-climbing-robot/': '/ja/projects/',
+    '/ja/2026/07/12/ustb-grade-rank-extension/': '/ja/projects/',
+    '/ja/2026/09/02/ai-learning-diploma/': '/ja/',
+    '/ja/2026/09/26/burying-talent-in-yesterday/': '/ja/'
+  };
+  var target = REDIRECTS[decodeURIComponent(location.pathname)];
+  if (target) location.replace(target);
+})();
+</script>
+
+<div style="text-align:center; padding:2rem 0 1rem;">
+  <div style="font-size:5rem; font-weight:700; line-height:1;">404</div>
+</div>
+
+<div class="note info flat"><p>这个页面不存在，或者内容已经下线&#x2F;移动。</p>
+<p>The page you’re looking for doesn’t exist, or was taken down. &#x2F; お探しのページは存在しないか、公開を終了しています。</p>
+</div>
+
+<p>可以从这些地方继续：</p>
+<p>
+<a class="btn-beautify " href="/" title="回到首页 / Home"><i class="fas fa-home"></i><span>回到首页 / Home</span></a> <a class="btn-beautify " href="/projects/" title="项目作品 / Projects"><i class="fas fa-code"></i><span>项目作品 / Projects</span></a> <a class="btn-beautify " href="/archives/" title="文章归档 / Archives"><i class="fas fa-archive"></i><span>文章归档 / Archives</span></a>
+</p>
+
+<p>
+<a class="btn-beautify " href="/en/" title="English"><i class="fas fa-language"></i><span>English</span></a> <a class="btn-beautify " href="/ja/" title="日本語"><i class="fas fa-language"></i><span>日本語</span></a>
+</p>
+</div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"></div><div class="footer_custom_text">Copyright &copy; 2026 caeamer. All rights reserved.<br>Keep moving, keep building.</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.5"></script><script src="/js/main.js?v=5.5.5"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.14/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script src="/js/visitor-stats.js"></script><script defer src="/js/lang-switcher.js"></script></div></body></html>
