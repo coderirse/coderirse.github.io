@@ -58,11 +58,11 @@ Campus network tools are for personal learning only and are not affiliated with 
 
 ### Reps — Offline Quiz App
 
-Personal project · Beta · Solo · Code public
+Personal project · Beta · Solo · Not open source
 
 Turns a teacher-provided CSV question bank into an offline Android study app with four practice modes, a wrong-answer book and progress recovery.
 
-[Read post](/en/2026/10/23/reps-offline-quiz/) · [Code](https://github.com/coderirse/Reps) · [APK](https://github.com/coderirse/Reps/releases)
+[Read post](/en/2026/10/23/reps-offline-quiz/)
 
 ---
 
@@ -120,11 +120,11 @@ Connects a local GPU Ollama instance to a cloud gateway through a reverse tunnel
 
 ### ShowWe — WeChat Mini-Program Community
 
-Personal project · Maintained · Solo · Code public
+Personal project · Maintained · Solo · Not open source
 
 A community mini-program on WeChat Cloud Development: posts, comments, likes, direct messages, notifications and multi-level caching.
 
-[Read post](/en/2026/07/12/showwe/) · [Code](https://github.com/coderirse/showwe)
+[Read post](/en/2026/07/12/showwe/)
 
 ---
 

@@ -15,7 +15,7 @@ description: Turn a teacher-provided CSV question bank into an offline Android s
 ---
 
 {% note info %}
-Status: beta · Role: solo developer · Code: [public](https://github.com/coderirse/Reps) · Updated: 2026-10
+Status: beta · Role: solo developer · Code: not open source · Updated: 2026-10
 {% endnote %}
 
 ## Why I built it
@@ -51,5 +51,3 @@ The network boundary is deliberately narrow: login, online banks, activation cod
 {% note warning %}
 Reps is a personal project, not an official university app, and is not affiliated with the university, the academic affairs office or the academic system operator. Question content is not guaranteed to match exams; exam arrangements and grades are governed by the university.
 {% endnote %}
-
-{% btn https://github.com/coderirse/Reps, View source, fab fa-github %} {% btn https://github.com/coderirse/Reps/releases, Download APK, fas fa-download %}

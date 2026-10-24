@@ -58,11 +58,11 @@ ML Kit 端侧翻译 + LLM 流式长文翻译 + 韦氏词典查词，API Key 仅�
 
 ### Reps — 离线刷题 App
 
-个人项目 · 公测 · 独立开发 · 代码公开
+个人项目 · 公测 · 独立开发 · 未开源
 
 把老师下发的题库 CSV 变成手机上可反复背诵的离线刷题应用，支持四种练习模式、错题本和进度恢复。
 
-<p>{% post_link Reps-离线刷题App '阅读项目文章' %} · <a href="https://github.com/coderirse/Reps">代码</a> · <a href="https://github.com/coderirse/Reps/releases">下载 APK</a></p>
+<p>{% post_link Reps-离线刷题App '阅读项目文章' %}</p>
 
 ---
 
@@ -120,11 +120,11 @@ ML Kit 端侧翻译 + LLM 流式长文翻译 + 韦氏词典查词，API Key 仅�
 
 ### ShowWe — 微信小程序社区
 
-个人项目 · 维护中 · 独立开发 · 代码公开
+个人项目 · 维护中 · 独立开发 · 未开源
 
 基于微信云开发的社区小程序：帖子、评论点赞、私信、通知和多级缓存。
 
-<p>{% post_link showwe-微信小程序社区平台 '阅读项目文章' %} · <a href="https://github.com/coderirse/showwe">代码</a></p>
+<p>{% post_link showwe-微信小程序社区平台 '阅读项目文章' %}</p>
 
 ---
 

@@ -14,7 +14,7 @@ description: A community mini program built on WeChat Cloud Development with pos
 ---
 
 {% note info %}
-Status: maintained · Role: solo developer · Code: public · Updated: 2026-10
+Status: maintained · Role: solo developer · Code: not open source · Updated: 2026-10
 {% endnote %}
 
 ## Overview

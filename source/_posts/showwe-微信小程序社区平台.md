@@ -14,7 +14,7 @@ description: 基于微信云开发的社区小程序，支持帖子发布、评�
 ---
 
 {% note info %}
-状态：维护中 · 角色：独立开发 · 代码：公开 · 最后更新：2026-10
+状态：维护中 · 角色：独立开发 · 代码：未开源 · 最后更新：2026-10
 {% endnote %}
 
 ## 项目概述
@@ -37,5 +37,3 @@ ShowWe 是一个基于微信云开发构建的社区/社交小程序，v1.1.0。
 - 自定义组件：image-preview 画廊、load-more 状态指示器
 
 {% label 微信小程序 green %} {% label 社区 green %} {% label 全栈 green %}
-
-{% btn https://github.com/coderirse/showwe, 查看源码, fab fa-github %} {% btn https://github.com/coderirse/showwe/releases, 下载 APK, fas fa-download %}

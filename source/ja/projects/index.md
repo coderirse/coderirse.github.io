@@ -58,11 +58,11 @@ USTB キャンパスネットワーク（Dr.COM ePortal 4.x）向けのサード
 
 ### Reps — オフライン問題集アプリ
 
-個人プロジェクト · ベータ · 単独開発 · コード公開
+個人プロジェクト · ベータ · 単独開発 · コード非公開
 
 先生配布の CSV 問題集を、スマホで繰り返し解けるオフラインアプリに変換。4つの練習モード、誤答ノート、進捗復元に対応。
 
-[記事を読む](/ja/2026/10/23/reps-offline-quiz/) · [コード](https://github.com/coderirse/Reps) · [APK](https://github.com/coderirse/Reps/releases)
+[記事を読む](/ja/2026/10/23/reps-offline-quiz/)
 
 ---
 
@@ -120,11 +120,11 @@ Leaflet.js で作ったインタラクティブな旅行地図。データはす
 
 ### ShowWe — WeChat ミニプログラムコミュニティ
 
-個人プロジェクト · 保守中 · 単独開発 · コード公開
+個人プロジェクト · 保守中 · 単独開発 · コード非公開
 
 WeChat クラウド開発によるコミュニティアプリ。投稿、コメント、いいね、DM、通知、多段キャッシュ。
 
-[記事を読む](/ja/2026/07/12/showwe/) · [コード](https://github.com/coderirse/showwe)
+[記事を読む](/ja/2026/07/12/showwe/)
 
 ---
 

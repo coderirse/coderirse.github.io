@@ -15,7 +15,7 @@ description: 先生配布の CSV 問題集を、スマホで繰り返し解け�
 ---
 
 {% note info %}
-状態：ベータ · 担当：単独開発 · コード：[公開](https://github.com/coderirse/Reps) · 最終更新：2026-10
+状態：ベータ · 担当：単独開発 · コード：非公開 · 最終更新：2026-10
 {% endnote %}
 
 ## なぜ作ったか
@@ -51,5 +51,3 @@ Kotlin + Jetpack Compose（Material 3）+ Room/SQLite。CSV 解析は独立モ�
 {% note warning %}
 Reps は個人開発のアプリで、学校公式ではありません。学校、教務課、教務システム運営者とは無関係です。問題内容は試験と一致することを保証せず、試験日程と成績は学校の教務に従います。
 {% endnote %}
-
-{% btn https://github.com/coderirse/Reps, ソースを見る, fab fa-github %} {% btn https://github.com/coderirse/Reps/releases, APK をダウンロード, fas fa-download %}
