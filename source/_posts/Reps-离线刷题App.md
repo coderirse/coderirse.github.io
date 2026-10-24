@@ -15,7 +15,7 @@ description: 把老师下发的题库 CSV 变成手机上可反复背诵的离�
 ---
 
 {% note info %}
-状态：公测 · 角色：独立开发 · 代码：[公开](https://github.com/coderirse/Reps) · 最后更新：2026-10
+状态：公测 · 角色：独立开发 · 代码：未开源 · 最后更新：2026-10
 {% endnote %}
 
 ## 为什么做
@@ -51,5 +51,3 @@ Kotlin + Jetpack Compose（Material 3）+ Room/SQLite。CSV 解析抽成独立�
 {% note warning %}
 Reps 是个人开发者作品，非学校官方应用，与学校、教务处及教务系统运营方无关。题库内容不保证与考试一致，考试安排与成绩以学校教务为准。
 {% endnote %}
-
-{% btn https://github.com/coderirse/Reps, 查看源码, fab fa-github %} {% btn https://github.com/coderirse/Reps/releases, 下载 APK, fas fa-download %}
