@@ -63,7 +63,7 @@ aside: true
 - 写开源项目源码阅读笔记，关注 AI Agent 与工程实践
 - 持续把项目中的取舍和踩坑记录到博客
 
-<!-- endtimeline %}
+<!-- endtimeline -->
 
 {% endtimeline %}
 
