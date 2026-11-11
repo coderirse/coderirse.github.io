@@ -2,16 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://caeamer.com/2026/06/12/%E6%AC%A2%E8%BF%8E%E6%9D%A5%E5%88%B0%E6%88%91%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</loc>
+    <loc>https://caeamer.com/2026/11/11/meme-collector/</loc>
     
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-11-10</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://caeamer.com/ja/2026/06/12/welcome/index.html</loc>
+    <loc>https://caeamer.com/en/2026/11/11/meme-collector/index.html</loc>
+    
+    <lastmod>2026-11-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://caeamer.com/ja/2026/11/11/meme-collector/index.html</loc>
+    
+    <lastmod>2026-11-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://caeamer.com/2026/06/12/%E6%AC%A2%E8%BF%8E%E6%9D%A5%E5%88%B0%E6%88%91%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</loc>
     
     <lastmod>2026-10-23</lastmod>
     
@@ -29,25 +47,16 @@
   </url>
   
   <url>
+    <loc>https://caeamer.com/ja/2026/06/12/welcome/index.html</loc>
+    
+    <lastmod>2026-10-23</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://caeamer.com/2026/06/13/AI-Agents-Stock-%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E8%82%A1%E7%A5%A8%E5%88%86%E6%9E%90%E7%B3%BB%E7%BB%9F/</loc>
-    
-    <lastmod>2026-10-22</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://caeamer.com/2026/06/13/Hermes-Agent-%E8%87%AA%E8%BF%9B%E5%8C%96AI%E6%99%BA%E8%83%BD%E4%BD%93/</loc>
-    
-    <lastmod>2026-10-22</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://caeamer.com/2026/06/13/Academic-Research-Skills-%E5%AD%A6%E6%9C%AF%E7%A0%94%E7%A9%B6%E7%AE%A1%E7%BA%BF/</loc>
     
     <lastmod>2026-10-22</lastmod>
     
@@ -65,7 +74,16 @@
   </url>
   
   <url>
-    <loc>https://caeamer.com/2026/10/23/Zotero-%E5%85%A8%E6%96%87PDF%E7%BF%BB%E8%AF%91%E6%8F%92%E4%BB%B6/</loc>
+    <loc>https://caeamer.com/2026/06/13/Academic-Research-Skills-%E5%AD%A6%E6%9C%AF%E7%A0%94%E7%A9%B6%E7%AE%A1%E7%BA%BF/</loc>
+    
+    <lastmod>2026-10-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://caeamer.com/2026/06/13/Hermes-Agent-%E8%87%AA%E8%BF%9B%E5%8C%96AI%E6%99%BA%E8%83%BD%E4%BD%93/</loc>
     
     <lastmod>2026-10-22</lastmod>
     
@@ -84,6 +102,15 @@
   
   <url>
     <loc>https://caeamer.com/2026/07/12/awesome-claude-code%E7%94%9F%E6%80%81%E8%B5%84%E6%BA%90%E5%90%88%E9%9B%86/</loc>
+    
+    <lastmod>2026-10-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://caeamer.com/2026/10/23/Zotero-%E5%85%A8%E6%96%87PDF%E7%BF%BB%E8%AF%91%E6%8F%92%E4%BB%B6/</loc>
     
     <lastmod>2026-10-22</lastmod>
     
@@ -128,7 +155,97 @@
   </url>
   
   <url>
-    <loc>https://caeamer.com/ja/2026/06/13/ai-agents-stock/index.html</loc>
+    <loc>https://caeamer.com/en/2026/06/13/academic-research-skills/index.html</loc>
+    
+    <lastmod>2026-10-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://caeamer.com/en/2026/07/12/awesome-claude-code/index.html</loc>
+    
+    <lastmod>2026-10-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://caeamer.com/en/2026/06/13/ai-agents-stock/index.html</loc>
+    
+    <lastmod>2026-10-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://caeamer.com/en/2026/06/13/hermes-agent/index.html</loc>
+    
+    <lastmod>2026-10-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://caeamer.com/en/2026/10/23/llmhub-self-hosted-gateway/index.html</loc>
+    
+    <lastmod>2026-10-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://caeamer.com/en/2026/08/29/countdown/index.html</loc>
+    
+    <lastmod>2026-10-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://caeamer.com/en/2026/10/23/reps-offline-quiz/index.html</loc>
+    
+    <lastmod>2026-10-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://caeamer.com/en/2026/07/12/tinygrad/index.html</loc>
+    
+    <lastmod>2026-10-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://caeamer.com/en/2026/07/12/warp-terminal/index.html</loc>
+    
+    <lastmod>2026-10-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://caeamer.com/en/2026/10/23/zotero-fulltext-pdf-translate/index.html</loc>
+    
+    <lastmod>2026-10-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://caeamer.com/en/2026/07/12/sourcehub/index.html</loc>
     
     <lastmod>2026-10-22</lastmod>
     
@@ -138,6 +255,15 @@
   
   <url>
     <loc>https://caeamer.com/ja/2026/06/13/academic-research-skills/index.html</loc>
+    
+    <lastmod>2026-10-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://caeamer.com/ja/2026/06/13/ai-agents-stock/index.html</loc>
     
     <lastmod>2026-10-22</lastmod>
     
@@ -182,15 +308,6 @@
   </url>
   
   <url>
-    <loc>https://caeamer.com/ja/2026/07/12/sourcehub/index.html</loc>
-    
-    <lastmod>2026-10-22</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://caeamer.com/ja/2026/10/23/reps-offline-quiz/index.html</loc>
     
     <lastmod>2026-10-22</lastmod>
@@ -218,106 +335,16 @@
   </url>
   
   <url>
+    <loc>https://caeamer.com/ja/2026/07/12/sourcehub/index.html</loc>
+    
+    <lastmod>2026-10-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://caeamer.com/ja/2026/10/23/zotero-fulltext-pdf-translate/index.html</loc>
-    
-    <lastmod>2026-10-22</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://caeamer.com/en/2026/06/13/ai-agents-stock/index.html</loc>
-    
-    <lastmod>2026-10-22</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://caeamer.com/en/2026/06/13/academic-research-skills/index.html</loc>
-    
-    <lastmod>2026-10-22</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://caeamer.com/en/2026/07/12/awesome-claude-code/index.html</loc>
-    
-    <lastmod>2026-10-22</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://caeamer.com/en/2026/06/13/hermes-agent/index.html</loc>
-    
-    <lastmod>2026-10-22</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://caeamer.com/en/2026/08/29/countdown/index.html</loc>
-    
-    <lastmod>2026-10-22</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://caeamer.com/en/2026/10/23/llmhub-self-hosted-gateway/index.html</loc>
-    
-    <lastmod>2026-10-22</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://caeamer.com/en/2026/10/23/reps-offline-quiz/index.html</loc>
-    
-    <lastmod>2026-10-22</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://caeamer.com/en/2026/07/12/tinygrad/index.html</loc>
-    
-    <lastmod>2026-10-22</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://caeamer.com/en/2026/07/12/sourcehub/index.html</loc>
-    
-    <lastmod>2026-10-22</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://caeamer.com/en/2026/07/12/warp-terminal/index.html</loc>
-    
-    <lastmod>2026-10-22</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://caeamer.com/en/2026/10/23/zotero-fulltext-pdf-translate/index.html</loc>
     
     <lastmod>2026-10-22</lastmod>
     
@@ -335,7 +362,7 @@
   </url>
   
   <url>
-    <loc>https://caeamer.com/ja/2026/08/29/trailmap/index.html</loc>
+    <loc>https://caeamer.com/en/2026/08/29/trailmap/index.html</loc>
     
     <lastmod>2026-08-28</lastmod>
     
@@ -344,7 +371,7 @@
   </url>
   
   <url>
-    <loc>https://caeamer.com/en/2026/08/29/trailmap/index.html</loc>
+    <loc>https://caeamer.com/ja/2026/08/29/trailmap/index.html</loc>
     
     <lastmod>2026-08-28</lastmod>
     
@@ -362,7 +389,7 @@
   </url>
   
   <url>
-    <loc>https://caeamer.com/ja/2026/08/29/life-assistant/index.html</loc>
+    <loc>https://caeamer.com/en/2026/08/29/life-assistant/index.html</loc>
     
     <lastmod>2026-08-28</lastmod>
     
@@ -371,7 +398,7 @@
   </url>
   
   <url>
-    <loc>https://caeamer.com/en/2026/08/29/life-assistant/index.html</loc>
+    <loc>https://caeamer.com/ja/2026/08/29/life-assistant/index.html</loc>
     
     <lastmod>2026-08-28</lastmod>
     
@@ -389,7 +416,7 @@
   </url>
   
   <url>
-    <loc>https://caeamer.com/ja/2026/08/29/lingoflow/index.html</loc>
+    <loc>https://caeamer.com/en/2026/08/29/lingoflow/index.html</loc>
     
     <lastmod>2026-08-28</lastmod>
     
@@ -398,7 +425,7 @@
   </url>
   
   <url>
-    <loc>https://caeamer.com/en/2026/08/29/lingoflow/index.html</loc>
+    <loc>https://caeamer.com/ja/2026/08/29/lingoflow/index.html</loc>
     
     <lastmod>2026-08-28</lastmod>
     
@@ -416,7 +443,7 @@
   </url>
   
   <url>
-    <loc>https://caeamer.com/ja/2026/08/29/beike-schedule/index.html</loc>
+    <loc>https://caeamer.com/en/2026/08/29/beike-schedule/index.html</loc>
     
     <lastmod>2026-08-28</lastmod>
     
@@ -425,7 +452,7 @@
   </url>
   
   <url>
-    <loc>https://caeamer.com/en/2026/08/29/beike-schedule/index.html</loc>
+    <loc>https://caeamer.com/ja/2026/08/29/beike-schedule/index.html</loc>
     
     <lastmod>2026-08-28</lastmod>
     
@@ -443,7 +470,7 @@
   </url>
   
   <url>
-    <loc>https://caeamer.com/ja/2026/08/29/base-conversion/index.html</loc>
+    <loc>https://caeamer.com/en/2026/08/29/base-conversion/index.html</loc>
     
     <lastmod>2026-08-28</lastmod>
     
@@ -452,7 +479,7 @@
   </url>
   
   <url>
-    <loc>https://caeamer.com/en/2026/08/29/base-conversion/index.html</loc>
+    <loc>https://caeamer.com/ja/2026/08/29/base-conversion/index.html</loc>
     
     <lastmod>2026-08-28</lastmod>
     
@@ -470,7 +497,7 @@
   </url>
   
   <url>
-    <loc>https://caeamer.com/ja/2026/07/12/showwe/index.html</loc>
+    <loc>https://caeamer.com/en/2026/07/12/showwe/index.html</loc>
     
     <lastmod>2026-07-11</lastmod>
     
@@ -479,7 +506,7 @@
   </url>
   
   <url>
-    <loc>https://caeamer.com/en/2026/07/12/showwe/index.html</loc>
+    <loc>https://caeamer.com/ja/2026/07/12/showwe/index.html</loc>
     
     <lastmod>2026-07-11</lastmod>
     
@@ -497,7 +524,7 @@
   </url>
   
   <url>
-    <loc>https://caeamer.com/ja/2026/07/12/watchdog/index.html</loc>
+    <loc>https://caeamer.com/en/2026/07/12/watchdog/index.html</loc>
     
     <lastmod>2026-07-11</lastmod>
     
@@ -506,7 +533,7 @@
   </url>
   
   <url>
-    <loc>https://caeamer.com/en/2026/07/12/watchdog/index.html</loc>
+    <loc>https://caeamer.com/ja/2026/07/12/watchdog/index.html</loc>
     
     <lastmod>2026-07-11</lastmod>
     
@@ -524,7 +551,7 @@
   </url>
   
   <url>
-    <loc>https://caeamer.com/ja/2026/07/12/net-ustb/index.html</loc>
+    <loc>https://caeamer.com/en/2026/07/12/net-ustb/index.html</loc>
     
     <lastmod>2026-07-11</lastmod>
     
@@ -533,7 +560,7 @@
   </url>
   
   <url>
-    <loc>https://caeamer.com/en/2026/07/12/net-ustb/index.html</loc>
+    <loc>https://caeamer.com/ja/2026/07/12/net-ustb/index.html</loc>
     
     <lastmod>2026-07-11</lastmod>
     
@@ -668,7 +695,7 @@
   </url>
   
   <url>
-    <loc>https://caeamer.com/en/about/index.html</loc>
+    <loc>https://caeamer.com/ja/about/index.html</loc>
     
     <lastmod>2023-12-31</lastmod>
     
@@ -677,7 +704,7 @@
   </url>
   
   <url>
-    <loc>https://caeamer.com/ja/about/index.html</loc>
+    <loc>https://caeamer.com/en/about/index.html</loc>
     
     <lastmod>2023-12-31</lastmod>
     
@@ -688,7 +715,7 @@
 
   <url>
     <loc>https://caeamer.com/</loc>
-    <lastmod>2026-10-24</lastmod>
+    <lastmod>2026-11-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -696,378 +723,385 @@
   
   <url>
     <loc>https://caeamer.com/tags/Python/</loc>
-    <lastmod>2026-10-24</lastmod>
+    <lastmod>2026-11-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://caeamer.com/tags/AI-Agent/</loc>
-    <lastmod>2026-10-24</lastmod>
+    <lastmod>2026-11-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://caeamer.com/tags/%E9%87%8F%E5%8C%96%E4%BA%A4%E6%98%93/</loc>
-    <lastmod>2026-10-24</lastmod>
+    <lastmod>2026-11-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://caeamer.com/tags/%E9%87%91%E8%9E%8D%E7%A7%91%E6%8A%80/</loc>
-    <lastmod>2026-10-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://caeamer.com/tags/%E8%87%AA%E5%8A%A8%E5%8C%96/</loc>
-    <lastmod>2026-10-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://caeamer.com/tags/%E5%BC%80%E6%BA%90/</loc>
-    <lastmod>2026-10-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://caeamer.com/tags/%E5%AD%A6%E6%9C%AF%E5%B7%A5%E5%85%B7/</loc>
-    <lastmod>2026-10-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://caeamer.com/tags/AI%E8%BE%85%E5%8A%A9/</loc>
-    <lastmod>2026-10-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://caeamer.com/tags/Claude-Code/</loc>
-    <lastmod>2026-10-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://caeamer.com/tags/LaTeX/</loc>
-    <lastmod>2026-10-24</lastmod>
+    <lastmod>2026-11-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://caeamer.com/tags/Android/</loc>
-    <lastmod>2026-10-24</lastmod>
+    <lastmod>2026-11-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://caeamer.com/tags/Kotlin/</loc>
-    <lastmod>2026-10-24</lastmod>
+    <lastmod>2026-11-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://caeamer.com/tags/Jetpack-Compose/</loc>
-    <lastmod>2026-10-24</lastmod>
+    <lastmod>2026-11-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://caeamer.com/tags/%E6%95%99%E8%82%B2/</loc>
-    <lastmod>2026-10-24</lastmod>
+    <lastmod>2026-11-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://caeamer.com/tags/USTB/</loc>
-    <lastmod>2026-10-24</lastmod>
+    <loc>https://caeamer.com/tags/%E5%BC%80%E6%BA%90/</loc>
+    <lastmod>2026-11-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://caeamer.com/tags/%E6%A0%A1%E5%9B%AD%E7%BD%91/</loc>
-    <lastmod>2026-10-24</lastmod>
+    <loc>https://caeamer.com/tags/%E5%AD%A6%E6%9C%AF%E5%B7%A5%E5%85%B7/</loc>
+    <lastmod>2026-11-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://caeamer.com/tags/%E6%95%B0%E5%AD%A6/</loc>
-    <lastmod>2026-10-24</lastmod>
+    <loc>https://caeamer.com/tags/AI%E8%BE%85%E5%8A%A9/</loc>
+    <lastmod>2026-11-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://caeamer.com/tags/AI/</loc>
-    <lastmod>2026-10-24</lastmod>
+    <loc>https://caeamer.com/tags/Claude-Code/</loc>
+    <lastmod>2026-11-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://caeamer.com/tags/API/</loc>
-    <lastmod>2026-10-24</lastmod>
+    <loc>https://caeamer.com/tags/LaTeX/</loc>
+    <lastmod>2026-11-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://caeamer.com/tags/%E7%9B%91%E6%8E%A7/</loc>
-    <lastmod>2026-10-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://caeamer.com/tags/Zotero/</loc>
-    <lastmod>2026-10-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://caeamer.com/tags/TypeScript/</loc>
-    <lastmod>2026-10-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://caeamer.com/tags/%E7%BF%BB%E8%AF%91/</loc>
-    <lastmod>2026-10-24</lastmod>
+    <loc>https://caeamer.com/tags/%E8%87%AA%E5%8A%A8%E5%8C%96/</loc>
+    <lastmod>2026-11-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://caeamer.com/tags/%E7%94%B5%E5%95%86/</loc>
-    <lastmod>2026-10-24</lastmod>
+    <lastmod>2026-11-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://caeamer.com/tags/%E5%AE%89%E5%85%A8/</loc>
-    <lastmod>2026-10-24</lastmod>
+    <lastmod>2026-11-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://caeamer.com/tags/MVVM/</loc>
-    <lastmod>2026-10-24</lastmod>
+    <lastmod>2026-11-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://caeamer.com/tags/Awesome-List/</loc>
-    <lastmod>2026-10-24</lastmod>
+    <loc>https://caeamer.com/tags/%E6%95%B0%E5%AD%A6/</loc>
+    <lastmod>2026-11-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://caeamer.com/tags/%E8%B5%84%E6%BA%90/</loc>
-    <lastmod>2026-10-24</lastmod>
+    <loc>https://caeamer.com/tags/AI/</loc>
+    <lastmod>2026-11-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://caeamer.com/tags/%E8%AF%BE%E8%A1%A8/</loc>
-    <lastmod>2026-10-24</lastmod>
+    <loc>https://caeamer.com/tags/API/</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://caeamer.com/tags/%E7%9B%91%E6%8E%A7/</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://caeamer.com/tags/USTB/</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://caeamer.com/tags/%E6%A0%A1%E5%9B%AD%E7%BD%91/</loc>
+    <lastmod>2026-11-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://caeamer.com/tags/%E5%B7%A5%E5%85%B7/</loc>
-    <lastmod>2026-10-24</lastmod>
+    <lastmod>2026-11-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://caeamer.com/tags/Tauri/</loc>
-    <lastmod>2026-10-24</lastmod>
+    <lastmod>2026-11-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://caeamer.com/tags/Rust/</loc>
-    <lastmod>2026-10-24</lastmod>
+    <lastmod>2026-11-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://caeamer.com/tags/%E6%A1%8C%E9%9D%A2%E5%BA%94%E7%94%A8/</loc>
-    <lastmod>2026-10-24</lastmod>
+    <lastmod>2026-11-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://caeamer.com/tags/%E6%95%88%E7%8E%87%E5%B7%A5%E5%85%B7/</loc>
-    <lastmod>2026-10-24</lastmod>
+    <lastmod>2026-11-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://caeamer.com/tags/Glance/</loc>
-    <lastmod>2026-10-24</lastmod>
+    <loc>https://caeamer.com/tags/Awesome-List/</loc>
+    <lastmod>2026-11-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://caeamer.com/tags/%E4%BA%A7%E5%93%81%E8%AE%BE%E8%AE%A1/</loc>
-    <lastmod>2026-10-24</lastmod>
+    <loc>https://caeamer.com/tags/%E8%B5%84%E6%BA%90/</loc>
+    <lastmod>2026-11-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://caeamer.com/tags/LLM/</loc>
-    <lastmod>2026-10-24</lastmod>
+    <loc>https://caeamer.com/tags/Zotero/</loc>
+    <lastmod>2026-11-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://caeamer.com/tags/Ollama/</loc>
-    <lastmod>2026-10-24</lastmod>
+    <loc>https://caeamer.com/tags/TypeScript/</loc>
+    <lastmod>2026-11-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://caeamer.com/tags/%E8%87%AA%E6%89%98%E7%AE%A1/</loc>
-    <lastmod>2026-10-24</lastmod>
+    <loc>https://caeamer.com/tags/%E7%BF%BB%E8%AF%91/</loc>
+    <lastmod>2026-11-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://caeamer.com/tags/%E7%BD%91%E7%BB%9C/</loc>
-    <lastmod>2026-10-24</lastmod>
+    <loc>https://caeamer.com/tags/%E8%AF%BE%E8%A1%A8/</loc>
+    <lastmod>2026-11-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://caeamer.com/tags/ML-Kit/</loc>
-    <lastmod>2026-10-24</lastmod>
+    <lastmod>2026-11-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://caeamer.com/tags/tinygrad/</loc>
-    <lastmod>2026-10-24</lastmod>
+    <loc>https://caeamer.com/tags/Glance/</loc>
+    <lastmod>2026-11-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://caeamer.com/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</loc>
-    <lastmod>2026-10-24</lastmod>
+    <loc>https://caeamer.com/tags/%E4%BA%A7%E5%93%81%E8%AE%BE%E8%AE%A1/</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://caeamer.com/tags/LLM/</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://caeamer.com/tags/Ollama/</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://caeamer.com/tags/%E8%87%AA%E6%89%98%E7%AE%A1/</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://caeamer.com/tags/%E7%BD%91%E7%BB%9C/</loc>
+    <lastmod>2026-11-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://caeamer.com/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/</loc>
-    <lastmod>2026-10-24</lastmod>
+    <lastmod>2026-11-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://caeamer.com/tags/%E4%BA%91%E5%BC%80%E5%8F%91/</loc>
-    <lastmod>2026-10-24</lastmod>
+    <lastmod>2026-11-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://caeamer.com/tags/JavaScript/</loc>
-    <lastmod>2026-10-24</lastmod>
+    <lastmod>2026-11-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://caeamer.com/tags/%E7%A4%BE%E5%8C%BA/</loc>
-    <lastmod>2026-10-24</lastmod>
+    <lastmod>2026-11-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://caeamer.com/tags/%E5%85%A8%E6%A0%88/</loc>
-    <lastmod>2026-10-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://caeamer.com/tags/Warp/</loc>
-    <lastmod>2026-10-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://caeamer.com/tags/%E7%BB%88%E7%AB%AF/</loc>
-    <lastmod>2026-10-24</lastmod>
+    <lastmod>2026-11-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://caeamer.com/tags/Leaflet/</loc>
-    <lastmod>2026-10-24</lastmod>
+    <lastmod>2026-11-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://caeamer.com/tags/Vite/</loc>
-    <lastmod>2026-10-24</lastmod>
+    <lastmod>2026-11-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://caeamer.com/tags/%E5%9C%B0%E5%9B%BE/</loc>
-    <lastmod>2026-10-24</lastmod>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://caeamer.com/tags/tinygrad/</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://caeamer.com/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://caeamer.com/tags/Windows/</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://caeamer.com/tags/Warp/</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://caeamer.com/tags/%E7%BB%88%E7%AB%AF/</loc>
+    <lastmod>2026-11-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://caeamer.com/tags/%E4%B8%AA%E4%BA%BA/</loc>
-    <lastmod>2026-10-24</lastmod>
+    <lastmod>2026-11-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -1076,28 +1110,28 @@
   
   <url>
     <loc>https://caeamer.com/categories/%E5%BC%80%E6%BA%90%E8%A7%82%E5%AF%9F/</loc>
-    <lastmod>2026-10-24</lastmod>
+    <lastmod>2026-11-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://caeamer.com/categories/%E9%A1%B9%E7%9B%AE/</loc>
-    <lastmod>2026-10-24</lastmod>
+    <lastmod>2026-11-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://caeamer.com/categories/%E8%BF%9B%E8%A1%8C%E4%B8%AD/</loc>
-    <lastmod>2026-10-24</lastmod>
+    <lastmod>2026-11-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://caeamer.com/categories/%E9%9A%8F%E7%AC%94/</loc>
-    <lastmod>2026-10-24</lastmod>
+    <lastmod>2026-11-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>

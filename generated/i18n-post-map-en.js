@@ -51,6 +51,11 @@ window.__I18N_POST_MAP__.byPath = {
     "en": "/en/2026/10/23/llmhub-self-hosted-gateway/",
     "ja": "/ja/2026/10/23/llmhub-self-hosted-gateway/"
   },
+  "/en/2026/11/11/meme-collector/": {
+    "zh-CN": "/2026/11/11/meme-collector/",
+    "en": "/en/2026/11/11/meme-collector/",
+    "ja": "/ja/2026/11/11/meme-collector/"
+  },
   "/en/2026/07/12/net-ustb/": {
     "zh-CN": "/2026/07/12/Net-USTB-北科校园网一键登录/",
     "en": "/en/2026/07/12/net-ustb/",

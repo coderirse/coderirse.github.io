@@ -10,7 +10,27 @@
   <rights>All rights reserved 2026, lizhichao</rights>
   <subtitle>Android · AI Agent</subtitle>
   <title>lizhichao</title>
-  <updated>2026-10-22T16:00:00.000Z</updated>
+  <updated>2026-11-10T16:00:00.000Z</updated>
+  <entry>
+    <author>
+      <name>lizhichao</name>
+    </author>
+    <category term="项目" scheme="https://caeamer.com/categories/%E9%A1%B9%E7%9B%AE/"/>
+    <category term="Python" scheme="https://caeamer.com/tags/Python/"/>
+    <category term="Android" scheme="https://caeamer.com/tags/Android/"/>
+    <category term="Kotlin" scheme="https://caeamer.com/tags/Kotlin/"/>
+    <category term="安全" scheme="https://caeamer.com/tags/%E5%AE%89%E5%85%A8/"/>
+    <category term="Windows" scheme="https://caeamer.com/tags/Windows/"/>
+    <content>
+      <![CDATA[<div class="note info flat"><p>状态：维护中 · 角色：基于 OhMyMeme 定制（独立开发） · 代码：<a href="https://github.com/coderirse/meme_sctaping">公开</a> · 最后更新：2026-11</p></div><h2 id="先说清楚：这是个-fork"><a href="#先说清楚：这是个-fork" class="headerlink" title="先说清楚：这是个 fork"></a>先说清楚：这是个 fork</h2><p>MemeCollector 不是我从零写的。它基于 <a href="https://github.com/OhMyMeme/OhMyMeme">OhMyMeme</a>（桌面，Python + Vue + pywebview）和 <a href="https://github.com/OhMyMeme/OhMyMeme-Android">OhMyMeme-Android</a>（Kotlin），两个上游都是 GPL-3.0，我按 GPL-3.0 分发，原始署名和许可证都随源码保留。上游固定在两个提交上（见仓库 <code>upstream-lock.json</code>），不是追着最新分支跑。</p><p>上游已经有的：整体框架、云同步、插件系统、GIF 隐写那一套。我加的：</p><ul><li><strong>Windows</strong>：候选勾选、惰性下载（预览或保存时才下原文件）、增量索引、严格格式校验、失败清理</li><li><strong>Android</strong>：过滤与动图预览、结果分类（成功&#x2F;重复&#x2F;不支持&#x2F;超限&#x2F;失败）、权限引导、有界读取、独立包名和签名</li><li><strong>两端</strong>：默认本地、不自动装上游更新；构建脚本和测试</li><li>以及下面要讲的那次安全审查，10 项修复</li></ul><p>把这条边界写在最前面，是因为后面所有「我做了」都只指上面这些，不指上游本来就有的东西。</p><h2 id="想解决什么"><a href="#想解决什么" class="headerlink" title="想解决什么"></a>想解决什么</h2><p>QQ 和微信里看到喜欢的表情，想存下来，结果常常是：动图存成静图，截图丢了动画，或者干脆存不下来。我要的是<strong>原文件</strong>——GIF 还是那个 GIF，动态 WebP 还是那个动态 WebP，不抽帧、不重编码。</p><p>还有一条隐私上的取舍：工具是<strong>主动选择后保存</strong>，你勾选哪个它存哪个，不持续读取全部聊天。微信那边甚至要你先在电脑端打开表情面板，它才去读清单。</p><h2 id="原字节这件事"><a href="#原字节这件事" class="headerlink" title="原字节这件事"></a>原字节这件事</h2><p>听起来简单，做起来全是坑。</p><p><strong>按内容识别，不信扩展名。</strong> 缓存里的文件扩展名经常是错的。我在 vivo X100 Ultra（Android 16）上实测，一个原名 <code>.jpg</code> 的文件，按内容识别出来其实是 240×240、28 帧的 GIF，保存后逐字节和 SHA-256 都对得上。要是信了扩展名，这张动图就被当静图处理了。</p><p><strong>不支持的就说不支持。</strong> 微信商城的专有格式、QQ 超级表情、解不开的文件，明确报「不支持」，而不是只存个首帧伪装成功。这条我觉得比多支持几种格式更重要——假装成功比失败更糟。</p><p><strong>去重和增量。</strong> SHA-256 去重；失败不登记成「已收集」，重扫能恢复；单个文件失败不影响别的。实测保存那一张 GIF 后，未保存候选从 755 降到 754。</p><p>默认导入上限 20 MiB、最长边 2560px（安卓为了控内存保持这个上限，桌面可调）。缩略图和原文件分开存。</p><h2 id="微信的密钥从哪来"><a href="#微信的密钥从哪来" class="headerlink" title="微信的密钥从哪来"></a>微信的密钥从哪来</h2><p>微信的表情库是个加密的 SQLite，密钥不在文件里，在微信进程的内存里。所以桌面端带了个 C++ 小 helper 做进程内存取证（只读，不联网，不写微信任何东西）。</p><p>取密钥的主路径是 <strong>mask recovery</strong>：表情库文件头 16 字节是已知的 salt，内存里有个 99 字节、被 32 字节 XOR mask 遮住的密钥缓冲，用 salt 就能把 mask 反推出来。好处是<strong>不依赖 RVA 偏移</strong>，微信换版本不用重新找偏移（旧的 RVA 扫描留作兜底）。SHA-512 这些原语我自己写在树里，不引 OpenSSL。</p><p>几个我比较在意的细节：</p><ul><li>helper 的 SHA-256 在<strong>构建期</strong>钉死——MSVC 构建不可复现（嵌时间戳），所以脚本编译完算实际产物的哈希、写回源码、再打包，而不是手工提交一个哈希。校验 fail-closed：没配真实哈希就拒绝运行。</li><li>测试用的 <code>--key</code> 参数（直接注入密钥跳过取证）在 release 里<strong>整个编译掉</strong>，只在显式开 CMake 选项时才存在。</li><li>密钥不写进采集索引，也不发给云服务。Python 侧 90 秒超时兜底。</li></ul><p>（这里只讲设计，不写怎么一步步操作——它是给我自己备份表情用的，不是教程。）</p><h2 id="安卓这边：Shizuku-和批量-stat"><a href="#安卓这边：Shizuku-和批量-stat" class="headerlink" title="安卓这边：Shizuku 和批量 stat"></a>安卓这边：Shizuku 和批量 stat</h2><p>安卓直读手机 QQ 缓存靠 <a href="https://shizuku.rikka.app/zh-hans/guide/setup/">Shizuku</a>，不是 root。两个具体的坑：</p><ul><li><strong>逐文件起 shell 太慢。</strong> 改成批量 stat 后，ADB 实测 756 个文件的大小&#x2F;mtime&#x2F;路径读取约 0.22 秒；最终签名 APK 从启动到列出 754 个未保存候选约 3 秒。</li><li><strong>远程进程等待的兼容性。</strong> Shizuku 远程进程用 Java 默认超时轮询会触发 <code>process hasn&#39;t exited</code>，加了回归用例防它再犯。</li></ul><p>没有 Shizuku 也能用：文件&#x2F;相册导入、接收系统图片分享、电脑采集后传回手机、桌面 ADB 拉取，都是不依赖手机 Shizuku 的入口。Shizuku 只是「直读 QQ 缓存」这一条路的硬依赖，不是整个应用的前提。</p><h2 id="给自己的-fork-做安全审查"><a href="#给自己的-fork-做安全审查" class="headerlink" title="给自己的 fork 做安全审查"></a>给自己的 fork 做安全审查</h2><p>这是我觉得最值得写的部分。fork 继承了上游的代码，也继承了上游的假设。要发布、要给别人用，就得自己把这些假设过一遍。我对着主要数据路径（QQ&#x2F;Shizuku、导入与原文件保存、存储迁移、备份恢复、云同步、双端 LAN）审了一次，找出 4 个 P1、6 个 P2，挑几个说：</p><ul><li><strong>拒绝设备后，LAN 数据接口还开着。</strong> 设备确认那段不管用户批准、拒绝还是超时，最后都 <code>confirmed.set()</code>，后续请求只查这个事件、不查 <code>approved</code>。官方安卓客户端收到拒绝会主动断开，但别的客户端可以继续拉数据。修成只有明确批准才授权，拒绝&#x2F;超时立即断开。</li><li><strong>空密钥等于全零 AES key，还接受重放帧。</strong> 空密码派生成全零 32 字节，同网段谁都能解；就算设了密码，会话密钥也只由密码和固定 salt 派生，不绑定本次握手随机数，帧没有序号——我把同一个加密帧连送两次，两次都被接受。LAN v2 改成强制非空密钥、双方随机数派生方向密钥、带认证序号，拒绝重复&#x2F;乱序帧。</li><li><strong>备份恢复先删后写，没回滚。</strong> 原来只要 ZIP 里有个叫 <code>memes.db</code> 的成员就敢覆盖现有库，先删光目标再逐个复制，中途失败就两头空。改成先校验备份格式&#x2F;数据库完整性&#x2F;引用媒体，完整写入新位置、可回滚提交，成功之前旧数据不动。</li><li><strong>云清单路径穿越。</strong> 批量拉取把清单里的文件名直接交给 <code>createFile</code>，<code>../memes.db</code> 这种能写到缓存外。在清单入口和写文件层各加一道约束。</li></ul><p>10 项全部修了。修完桌面 pytest 552 passed、1 skipped，安卓 JVM 84 项全过，模拟器导入与恢复安全 10 项全过，独立 LAN 双端动画往返 1 项过。</p><p>但验证记录里我把话说死了：<strong>模拟器不等于真机，USB TCP 转发不等于 Wi-Fi 发现。</strong> 真实 Shizuku 启停、厂商 SAF 的失效行为、真实 Wi-Fi 下的 UDP 自动发现和防火墙，都还没在真机上补测。而且这 10 项修复目前在 <code>codex/audit-hardening</code> 分支，<strong>还没出安装包</strong>——v0.1.0 是已发布的版本，审查修复是下一版的事。</p><h2 id="局限"><a href="#局限" class="headerlink" title="局限"></a>局限</h2><ul><li>Android 11 实机、Wi-Fi 自动发现、防火墙环境、手机微信新收藏到电脑再传回的完整往返，都还没补测</li><li>微信商城专有表情、QQ 超级表情不支持，也不承诺后续客户端版本</li><li>微信取密钥依赖特定客户端的内存布局，微信大版本更新可能让它失效</li><li>fork 的维护成本是实打实的：上游更新得重新合并，不能直接覆盖</li><li>仅个人自用，请遵守 QQ&#x2F;微信和所在平台的规定</li></ul><a class="btn-beautify " href="https://github.com/coderirse/meme_sctaping" title="查看源码"><i class="fab fa-github"></i><span>查看源码</span></a>]]>
+    </content>
+    <id>https://caeamer.com/2026/11/11/meme-collector/</id>
+    <link href="https://caeamer.com/2026/11/11/meme-collector/"/>
+    <published>2026-11-10T16:00:01.000Z</published>
+    <summary>基于 OhMyMeme 定制的 QQ/微信表情收集工具。保留原字节、按内容识别格式，以及一次针对自己 fork 的安全审查与 10 项修复。</summary>
+    <title>MemeCollector — 把 QQ/微信表情原样收下来，再给自己的 fork 做安全审查</title>
+    <updated>2026-11-10T16:00:00.000Z</updated>
+  </entry>
   <entry>
     <author>
       <name>lizhichao</name>
@@ -54,11 +74,11 @@
       <name>lizhichao</name>
     </author>
     <category term="项目" scheme="https://caeamer.com/categories/%E9%A1%B9%E7%9B%AE/"/>
-    <category term="开源" scheme="https://caeamer.com/tags/%E5%BC%80%E6%BA%90/"/>
     <category term="Android" scheme="https://caeamer.com/tags/Android/"/>
     <category term="Kotlin" scheme="https://caeamer.com/tags/Kotlin/"/>
     <category term="Jetpack Compose" scheme="https://caeamer.com/tags/Jetpack-Compose/"/>
     <category term="教育" scheme="https://caeamer.com/tags/%E6%95%99%E8%82%B2/"/>
+    <category term="开源" scheme="https://caeamer.com/tags/%E5%BC%80%E6%BA%90/"/>
     <content>
       <![CDATA[<div class="note info flat"><p>状态：公测 · 角色：独立开发 · 代码：未开源 · 最后更新：2026-10</p></div><h2 id="为什么做"><a href="#为什么做" class="headerlink" title="为什么做"></a>为什么做</h2><p>金工实习、思政、专业课……很多老师会直接下发一个 CSV 题库。电脑上翻着看不方便，市面上的刷题 App 又要登录、看广告、上传数据。</p><p>Reps 的想法很简单：<strong>把 CSV 丢进手机，离线刷。</strong> 不需要账号，不需要网络，也不收集刷题数据。</p><h2 id="它做了什么"><a href="#它做了什么" class="headerlink" title="它做了什么"></a>它做了什么</h2><ul><li><strong>通用 CSV 导入</strong>：UTF-8 &#x2F; GBK 自动识别，导入前预览校验，逐行报告错误</li><li><strong>四种练习模式</strong>：背题、模拟考试、错题重练、收藏练习，可配置题量、倒计时和抽题顺序</li><li><strong>考试式判分</strong>：作答时不揭示对错，交卷后统一出分并写入错题本</li><li><strong>错题本</strong>：答错自动收录，连对 2 次自动掌握，也支持手动标记</li><li><strong>进度恢复</strong>：切题即存 + 5 秒静默保存 + 退后台兜底，启动时可恢复 7 天内的进度</li><li><strong>夜间模式、字体大小、数据清除</strong>：该有的设置都有</li></ul><p>内置了一套金工实习题库（390 题），装上就能离线刷；也可以导入任意标准 CSV。</p><h2 id="技术实现"><a href="#技术实现" class="headerlink" title="技术实现"></a>技术实现</h2><p>Kotlin + Jetpack Compose（Material 3）+ Room&#x2F;SQLite。CSV 解析抽成独立模块，导入前先在本地校验；题库、进度、错题和笔记都只存在应用私有目录，卸载即清除。</p><p>网络边界是刻意收窄的：登录&#x2F;在线题库&#x2F;激活码&#x2F;资料下载&#x2F;更新检查之外，刷题数据不上传。构建时有一个 <code>verifyNetworkContainment</code> 检查，网络调用只能出现在指定包里，避免以后不小心把数据传出去。</p><h2 id="局限"><a href="#局限" class="headerlink" title="局限"></a>局限</h2><ul><li>目前是公测版（0.x），数据格式仍可能调整</li><li>在线题库和账号功能依赖服务端，纯离线使用只能导入本地 CSV</li><li>只做了 Android，没有 iOS 和 Web</li><li>非学校官方应用，题库内容仅供复习参考</li></ul><div class="note warning flat"><p>Reps 是个人开发者作品，非学校官方应用，与学校、教务处及教务系统运营方无关。题库内容不保证与考试一致，考试安排与成绩以学校教务为准。</p></div>]]>
     </content>
@@ -113,10 +133,10 @@
       <name>lizhichao</name>
     </author>
     <category term="项目" scheme="https://caeamer.com/categories/%E9%A1%B9%E7%9B%AE/"/>
-    <category term="开源" scheme="https://caeamer.com/tags/%E5%BC%80%E6%BA%90/"/>
     <category term="Android" scheme="https://caeamer.com/tags/Android/"/>
     <category term="Kotlin" scheme="https://caeamer.com/tags/Kotlin/"/>
     <category term="Jetpack Compose" scheme="https://caeamer.com/tags/Jetpack-Compose/"/>
+    <category term="开源" scheme="https://caeamer.com/tags/%E5%BC%80%E6%BA%90/"/>
     <category term="AI" scheme="https://caeamer.com/tags/AI/"/>
     <category term="ML Kit" scheme="https://caeamer.com/tags/ML-Kit/"/>
     <content>
@@ -154,10 +174,10 @@
       <name>lizhichao</name>
     </author>
     <category term="项目" scheme="https://caeamer.com/categories/%E9%A1%B9%E7%9B%AE/"/>
-    <category term="开源" scheme="https://caeamer.com/tags/%E5%BC%80%E6%BA%90/"/>
     <category term="Android" scheme="https://caeamer.com/tags/Android/"/>
     <category term="Kotlin" scheme="https://caeamer.com/tags/Kotlin/"/>
     <category term="Jetpack Compose" scheme="https://caeamer.com/tags/Jetpack-Compose/"/>
+    <category term="开源" scheme="https://caeamer.com/tags/%E5%BC%80%E6%BA%90/"/>
     <category term="USTB" scheme="https://caeamer.com/tags/USTB/"/>
     <category term="课表" scheme="https://caeamer.com/tags/%E8%AF%BE%E8%A1%A8/"/>
     <content>
@@ -175,10 +195,10 @@
       <name>lizhichao</name>
     </author>
     <category term="项目" scheme="https://caeamer.com/categories/%E9%A1%B9%E7%9B%AE/"/>
-    <category term="开源" scheme="https://caeamer.com/tags/%E5%BC%80%E6%BA%90/"/>
     <category term="Android" scheme="https://caeamer.com/tags/Android/"/>
     <category term="Kotlin" scheme="https://caeamer.com/tags/Kotlin/"/>
     <category term="Jetpack Compose" scheme="https://caeamer.com/tags/Jetpack-Compose/"/>
+    <category term="开源" scheme="https://caeamer.com/tags/%E5%BC%80%E6%BA%90/"/>
     <category term="工具" scheme="https://caeamer.com/tags/%E5%B7%A5%E5%85%B7/"/>
     <content>
       <![CDATA[<div class="note info flat"><p>状态：维护中 · 角色：独立开发 · 代码：公开 · 最后更新：2026-10</p></div><h2 id="项目概述"><a href="#项目概述" class="headerlink" title="项目概述"></a>项目概述</h2><p>BaseConversion 是一款面向程序员的安卓进制转换器，纯本地运行、零广告。打开即用，二进制 &#x2F; 八进制 &#x2F; 十进制 &#x2F; 十六进制四框实时联动转换，无需点击”转换”按钮，支持大整数、补码与 IEEE 754 浮点数位模式展示。</p><mark class="hl-label blue">Kotlin</mark> <mark class="hl-label green">Compose</mark> <mark class="hl-label orange">MVI</mark><h3 id="关键特性"><a href="#关键特性" class="headerlink" title="关键特性"></a>关键特性</h3><ul><li><strong>整数模式</strong>：四进制框双向实时联动；<code>BigInteger</code> 任意精度；固定位宽 8&#x2F;16&#x2F;32&#x2F;64 有符号补码，signed&#x2F;unsigned 切换，超范围自动截断并提示</li><li><strong>浮点模式</strong>：十进制输值，实时显示 float32 &#x2F; float64 的 IEEE 754 位模式与实际存储值，支持 <code>NaN</code> &#x2F; <code>±Infinity</code> &#x2F; <code>-0.0</code></li><li><strong>智能键盘</strong>：应用内自定义键盘，按进制动态禁用非法键、分区配色；长按退格连续删除；一键复制 &#x2F; 粘贴（自动识别 <code>0x</code> &#x2F; <code>0b</code> &#x2F; <code>0o</code> 前缀）</li><li><strong>个性化</strong>：主题三态切换、强调色可选、默认模式 &#x2F; 进制 &#x2F; 位宽 &#x2F; 精度均可配置，按键音效与震动反馈</li><li><strong>细节体验</strong>：中英双语、数值等宽字体；唯一联网功能是通过 GitHub Releases API 检查更新</li></ul><h3 id="技术栈"><a href="#技术栈" class="headerlink" title="技术栈"></a>技术栈</h3><p>Kotlin 2.0+ · Jetpack Compose (Material 3) · ViewModel + StateFlow (MVI) · Gradle Kotlin DSL · minSdk 29</p><p>架构上把转换算法抽成纯 Kotlin 的 <code>domain</code> 层，配合 JUnit 单元测试保证数值逻辑正确性；UI &#x2F; 数据 &#x2F; 领域三层清晰分离。</p><h2 id="局限与没做什么"><a href="#局限与没做什么" class="headerlink" title="局限与没做什么"></a>局限与没做什么</h2><p>主要面向开发者的日常换算，不追求任意精度浮点的完整语义；IEEE 754 展示偏教学和调试，不替代专业数值工具；没有做历史记录和批量转换。</p><a class="btn-beautify " href="https://github.com/coderirse/BaseConversion" title="查看源码"><i class="fab fa-github"></i><span>查看源码</span></a>]]>
@@ -295,10 +315,10 @@
       <name>lizhichao</name>
     </author>
     <category term="项目" scheme="https://caeamer.com/categories/%E9%A1%B9%E7%9B%AE/"/>
-    <category term="开源" scheme="https://caeamer.com/tags/%E5%BC%80%E6%BA%90/"/>
     <category term="Android" scheme="https://caeamer.com/tags/Android/"/>
     <category term="Kotlin" scheme="https://caeamer.com/tags/Kotlin/"/>
     <category term="Jetpack Compose" scheme="https://caeamer.com/tags/Jetpack-Compose/"/>
+    <category term="开源" scheme="https://caeamer.com/tags/%E5%BC%80%E6%BA%90/"/>
     <category term="数学" scheme="https://caeamer.com/tags/%E6%95%B0%E5%AD%A6/"/>
     <content>
       <![CDATA[<div class="note info flat"><p>状态：维护中 · 角色：独立开发 · 代码：公开 · 最后更新：2026-10</p></div><h2 id="项目概述"><a href="#项目概述" class="headerlink" title="项目概述"></a>项目概述</h2><p>一款功能完整的 Android 科学计算器应用，使用纯 Kotlin + Jetpack Compose 开发。不仅支持标准科学计算，还集成了方程求解器和矩阵计算器。</p><mark class="hl-label blue">Kotlin</mark> <mark class="hl-label green">Compose</mark> <mark class="hl-label orange">Material3</mark><h3 id="科学计算器"><a href="#科学计算器" class="headerlink" title="科学计算器"></a>科学计算器</h3><p>基础运算 + 三角函数（DEG&#x2F;RAD 切换）+ 对数函数 + 平方根&#x2F;绝对值。表达式求值引擎使用 Shunting-yard 算法 + 递归下降解析，支持可展开科学面板。</p><h3 id="方程求解器"><a href="#方程求解器" class="headerlink" title="方程求解器"></a>方程求解器</h3><p>一元一次&#x2F;二次方程（判别式分析）、二元一次&#x2F;三元一次方程组（Cramer 法则 + 行列式展开）。</p><h3 id="矩阵计算器"><a href="#矩阵计算器" class="headerlink" title="矩阵计算器"></a>矩阵计算器</h3><p>2x2&#x2F;3x3 矩阵加减乘、转置、行列式、逆矩阵（伴随矩阵法）、秩（高斯消元）。</p><mark class="hl-label green">Android</mark> <mark class="hl-label green">科学计算</mark> <mark class="hl-label green">开源</mark><a class="btn-beautify " href="https://github.com/coderirse/ScientificCalculator" title="查看源码"><i class="fab fa-github"></i><span>查看源码</span></a> <a class="btn-beautify " href="https://github.com/coderirse/ScientificCalculator/releases" title="下载 APK"><i class="fas fa-download"></i><span>下载 APK</span></a>]]>
@@ -376,8 +396,8 @@
     <category term="开源观察" scheme="https://caeamer.com/categories/%E5%BC%80%E6%BA%90%E8%A7%82%E5%AF%9F/"/>
     <category term="Python" scheme="https://caeamer.com/tags/Python/"/>
     <category term="AI Agent" scheme="https://caeamer.com/tags/AI-Agent/"/>
-    <category term="自动化" scheme="https://caeamer.com/tags/%E8%87%AA%E5%8A%A8%E5%8C%96/"/>
     <category term="开源" scheme="https://caeamer.com/tags/%E5%BC%80%E6%BA%90/"/>
+    <category term="自动化" scheme="https://caeamer.com/tags/%E8%87%AA%E5%8A%A8%E5%8C%96/"/>
     <content>
       <![CDATA[<div class="note info flat"><p>项目：<a href="https://github.com/NousResearch/hermes-agent">NousResearch&#x2F;hermes-agent</a> · 作者：Nous Research · License：MIT<br>我把仓库 fork 下来读过 Agent Loop、Skill Manager 和 Memory 的实现；我没有参与上游开发。</p></div><h2 id="它想解决什么"><a href="#它想解决什么" class="headerlink" title="它想解决什么"></a>它想解决什么</h2><p>Hermes Agent 是 Nous Research 在 2026 年 2 月发布的开源通用智能体。和「一次对话、一次回答」的聊天机器人不同，它把重点放在<strong>长期运行</strong>：能记住之前的任务，能把经验沉淀成技能，能在不同消息平台上被调用。</p><p>它和 OpenClaw 是同一赛道的竞品关系，不是「后继项目」——OpenClaw 更早爆发，Hermes 在几周后推出，定位更偏向自改进和深度定制。</p><h2 id="核心机制"><a href="#核心机制" class="headerlink" title="核心机制"></a>核心机制</h2><h3 id="闭环学习"><a href="#闭环学习" class="headerlink" title="闭环学习"></a>闭环学习</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">任务执行 → 经验记录 → 技能创建 → 技能优化 → 知识持久化</span><br><span class="line">    ↑                                          ↓</span><br><span class="line">    └──────────── 后续任务自动调用 ←──────────────┘</span><br></pre></td></tr></table></figure><p>真正值得看的不是流程图，而是三个问题：</p><ol><li>经验在什么条件下才会被写成技能？</li><li>新技能如何避免和旧技能冲突？</li><li>技能质量由谁验证？</li></ol><p>如果这三个问题没有答案，「自进化」很容易变成「自己给自己加 bug」。</p><h3 id="记忆"><a href="#记忆" class="headerlink" title="记忆"></a>记忆</h3><ul><li>基于 SQLite + FTS5 的全文搜索</li><li>自动生成记忆摘要</li><li>定期「记忆唤醒」</li><li>跨会话延续</li></ul><p>记忆层最大的风险不是「记不住」，而是「记错」和「记太多」。前者会污染后续决策，后者会让上下文成本和噪声一起上升。</p><h3 id="多平台与自动化"><a href="#多平台与自动化" class="headerlink" title="多平台与自动化"></a>多平台与自动化</h3><p>Telegram、Discord、Slack、WhatsApp、CLI 都能接；内置 Cron 调度器，可以跑每日报告、健康检查、备份等无人值守任务。</p><h2 id="我的判断"><a href="#我的判断" class="headerlink" title="我的判断"></a>我的判断</h2><p>Hermes 代表的方向是对的：Agent 不应该只是一次性的问答，而应该是一个持续积累的系统。但它也把问题从「模型会不会做」转移到了「你怎么管住它」——技能权限、记忆清理、成本控制、失败回滚，这些工程问题比演示视频更重要。</p><a class="btn-beautify " href="https://github.com/NousResearch/hermes-agent" title="查看原项目"><i class="fab fa-github"></i><span>查看原项目</span></a>]]>
     </content>
@@ -386,25 +406,6 @@
     <published>2026-06-13T14:28:14.000Z</published>
     <summary>拆解 Nous Research 的 Hermes Agent：技能自创建、SQLite/FTS5 记忆、多平台网关与 Cron 调度。本文是源码阅读笔记，不是项目贡献者。</summary>
     <title>Hermes Agent — 一个会自己攒技能的开源智能体</title>
-    <updated>2026-10-22T16:00:00.000Z</updated>
-  </entry>
-  <entry>
-    <author>
-      <name>lizhichao</name>
-    </author>
-    <category term="开源观察" scheme="https://caeamer.com/categories/%E5%BC%80%E6%BA%90%E8%A7%82%E5%AF%9F/"/>
-    <category term="Python" scheme="https://caeamer.com/tags/Python/"/>
-    <category term="AI Agent" scheme="https://caeamer.com/tags/AI-Agent/"/>
-    <category term="量化交易" scheme="https://caeamer.com/tags/%E9%87%8F%E5%8C%96%E4%BA%A4%E6%98%93/"/>
-    <category term="金融科技" scheme="https://caeamer.com/tags/%E9%87%91%E8%9E%8D%E7%A7%91%E6%8A%80/"/>
-    <content>
-      <![CDATA[<div class="note info flat"><p>项目：<a href="https://github.com/oficcejo/aiagents-stock">oficcejo&#x2F;aiagents-stock</a> · 作者：oficcejo · 仓库未声明 License<br>本文是阅读笔记，我没有参与这个项目的开发。</p></div><h2 id="它解决什么问题"><a href="#它解决什么问题" class="headerlink" title="它解决什么问题"></a>它解决什么问题</h2><p>AI Agents Stock 是一个用多个 AI Agent 模拟证券分析师团队的开源项目。它把「看一只股票」拆成技术面、基本面、资金流向、风险评估、情绪、新闻六个维度，每个维度交给一个 Agent，最后汇总成一份分析报告。</p><p>项目还包含两个横向模块：</p><ul><li><strong>智策板块</strong>：4 个 Agent 做板块轮动、宏观政策、资金流向和市场情绪分析</li><li><strong>智瞰龙虎</strong>：5 个 Agent 分析每日龙虎榜，跟踪游资与机构席位</li></ul><p>技术栈是 Python + Streamlit + Plotly，数据源包括 AKShare、Tushare、yfinance、pywencai，支持 Docker 部署，并预留了 MiniQMT 量化交易接口。</p><h2 id="我关注的设计"><a href="#我关注的设计" class="headerlink" title="我关注的设计"></a>我关注的设计</h2><p><strong>多 Agent 的价值不在于「更准」，而在于把判断拆开。</strong> 单模型一次性给出结论时，你很难知道它哪一步错了；拆成六个 Agent 后，技术面、基本面、资金面各自留下分析过程，至少可以逐项核对证据。</p><p>但这也带来两个问题：</p><ol><li><strong>一致性</strong>：六个 Agent 可能给出互相矛盾的结论，最后仍需要人来裁决。</li><li><strong>成本与延迟</strong>：每次分析要调用多次模型，长文本和实时行情会让 token 成本迅速上升。</li></ol><p>项目文档里还提到「筛选 3–5 只优质标的」「短线交易机会挖掘」这类能力。我的理解是：它们更适合作为研究线索，而不是直接照着下单。</p><div class="note warning flat"><p>本文不构成任何投资建议。AI 输出、数据源和回测结果都可能出错，实盘风险自负。</p></div><h2 id="适合谁"><a href="#适合谁" class="headerlink" title="适合谁"></a>适合谁</h2><ul><li>想学习多 Agent 编排、Prompt 分工和报告生成的开发者</li><li>需要一套本地可跑的 A 股分析工作台、愿意自己维护数据源的人</li><li>对量化交易接口（MiniQMT）感兴趣、但清楚它只是执行端的人</li></ul><p>如果你想要的是「开箱即用的稳赚策略」，这个项目不适合你——没有任何开源项目适合。</p><h2 id="我的判断"><a href="#我的判断" class="headerlink" title="我的判断"></a>我的判断</h2><p>它更像一个<strong>可改造的研究沙盒</strong>：Agent 分工、报告结构、数据源降级这些都值得借鉴；但把「分析」变成「交易」之间，还隔着风控、回测、执行和合规四道墙。</p><a class="btn-beautify " href="https://github.com/oficcejo/aiagents-stock" title="查看原项目"><i class="fab fa-github"></i><span>查看原项目</span></a>]]>
-    </content>
-    <id>https://caeamer.com/2026/06/13/AI-Agents-Stock-%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E8%82%A1%E7%A5%A8%E5%88%86%E6%9E%90%E7%B3%BB%E7%BB%9F/</id>
-    <link href="https://caeamer.com/2026/06/13/AI-Agents-Stock-%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E8%82%A1%E7%A5%A8%E5%88%86%E6%9E%90%E7%B3%BB%E7%BB%9F/"/>
-    <published>2026-06-13T14:28:12.000Z</published>
-    <summary>拆解 oficcejo/aiagents-stock：6 个分析 Agent、板块轮动、龙虎榜追踪与 MiniQMT 接口。本文是阅读笔记，不是项目作者。</summary>
-    <title>AI Agents Stock — 一个多智能体股票分析开源项目</title>
     <updated>2026-10-22T16:00:00.000Z</updated>
   </entry>
 </feed>
