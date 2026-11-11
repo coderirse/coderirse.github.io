@@ -78,6 +78,16 @@ Zotero 内で PDF 全体を、レイアウトを保った対訳 PDF に翻訳。
 
 ## ツールと小さな作品
 
+### MemeCollector — QQ/微信スタンプ収集
+
+OhMyMeme ベースのカスタマイズ · 保守中 · 単独開発 · コード公開（GPL-3.0）
+
+OhMyMeme のカスタマイズ fork：QQ/微信スタンプを内容で判定して原バイトを保存し、GIF/動画 WebP は再エンコードしない。fork 自身へのセキュリティ監査と 10 件の修正を含む。アップストリームのクレジットと変更範囲は記事に明記。
+
+[記事を読む](/ja/2026/11/11/meme-collector/) · [コード](https://github.com/coderirse/meme_sctaping) · [ダウンロード](https://github.com/coderirse/meme_sctaping/releases)
+
+---
+
 ### WatchDog — AI API 残高モニター
 
 個人プロジェクト · 保守中 · 単独開発 · コード公開

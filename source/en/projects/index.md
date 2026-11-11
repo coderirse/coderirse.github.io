@@ -78,6 +78,16 @@ Translates a whole PDF inside Zotero into a layout-preserving bilingual PDF, usi
 
 ## Tools and Small Projects
 
+### MemeCollector — QQ/WeChat Sticker Collector
+
+Customized from OhMyMeme · Maintained · Solo · Code public (GPL-3.0)
+
+A fork of OhMyMeme: detects QQ/WeChat stickers by content and preserves the original bytes — no re-encoding of GIF/animated WebP. Includes a security audit of the fork itself with 10 fixes. Upstream attribution and the change boundary are in the post.
+
+[Read post](/en/2026/11/11/meme-collector/) · [Code](https://github.com/coderirse/meme_sctaping) · [Download](https://github.com/coderirse/meme_sctaping/releases)
+
+---
+
 ### WatchDog — AI API Balance Monitor
 
 Personal project · Maintained · Solo · Code public

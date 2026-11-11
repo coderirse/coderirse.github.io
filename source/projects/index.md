@@ -78,6 +78,16 @@ ML Kit 端侧翻译 + LLM 流式长文翻译 + 韦氏词典查词，API Key 仅�
 
 ## 工具与小作品
 
+### MemeCollector — QQ/微信表情收集
+
+基于 OhMyMeme 定制 · 维护中 · 独立开发 · 代码公开（GPL-3.0）
+
+基于 OhMyMeme 的定制 fork：QQ/微信表情按内容识别、保留原字节，GIF/动态 WebP 不重编码。含一次针对自身的安全审查与 10 项修复。上游署名与改动边界见文章。
+
+<p>{% post_link meme-collector '阅读项目文章' %} · <a href="https://github.com/coderirse/meme_sctaping">代码</a> · <a href="https://github.com/coderirse/meme_sctaping/releases">下载</a></p>
+
+---
+
 ### WatchDog — AI API 额度监控
 
 个人项目 · 维护中 · 独立开发 · 代码公开
