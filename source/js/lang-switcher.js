@@ -18,6 +18,11 @@
     { key: 'ja', label: '日本語', short: '日' }
   ];
 
+  // 暂时隐藏日文切换项（2026-11 起新文章只维护中英）。
+  // 日文页面与内容仍保留、构建期仍会生成，只是不在切换器里出现；恢复时改回 [] 即可。
+  // LANGS 保留 ja，确保直接访问 /ja/ 页时当前语言标签仍能解析。
+  var HIDDEN_LANGS = ['ja'];
+
   // 本地化页面清单的单一来源是 scripts/i18n-posts.js（随路由映射下发）；
   // 映射脚本万一缺失时退回这份快照。归档/标签/分类无译版，不在清单内。
   var FALLBACK_LOCALIZED_PAGES = ['/', '/about/', '/resume/', '/projects/'];
@@ -136,6 +141,7 @@
     menu.className = 'lang-dropdown';
 
     LANGS.forEach(function(l) {
+      if (HIDDEN_LANGS.indexOf(l.key) !== -1) return;
       var a = document.createElement('a');
       a.textContent = l.label;
       a.href = toLangPath(window.location.pathname, l.key);

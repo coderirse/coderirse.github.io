@@ -8,7 +8,7 @@
 
 ### About
 
-Trilingual (中文 / English / 日本語) personal blog built with [Hexo](https://hexo.io) and **Butterfly** theme, deployed on **GitHub Pages**.
+Chinese / English personal blog built with [Hexo](https://hexo.io) and **Butterfly** theme, deployed on **GitHub Pages**. Japanese legacy pages are retained but **frozen** — no new Japanese updates, and the Japanese option is hidden from the language switcher.
 
 URL: [https://caeamer.com](https://caeamer.com) (custom domain; `coderirse.github.io` redirects here)
 
@@ -25,12 +25,16 @@ The site uses a heavily customized **editorial / magazine** style layered on top
 
 ### i18n Architecture
 
+- **Active languages are Chinese and English.** Japanese is frozen (since 2026-11): existing
+  `source/ja/` content is kept and still built, but no new Japanese translations are added and
+  the Japanese option is hidden from the switcher (`HIDDEN_LANGS = ['ja']` in
+  `source/js/lang-switcher.js`; set it back to `[]` to restore).
 - Chinese posts live in `source/_posts/` (real Hexo posts: archives / tags / categories / RSS).
-- English and Japanese translations live in `source/en/_posts/` and `source/ja/_posts/`.
+- English translations live in `source/en/_posts/` (Japanese legacy in `source/ja/_posts/`).
   `scripts/i18n-posts.js` materializes them as permalink pages into `source/generated/i18n-posts/` at build time.
 - Every version of a post shares the same `translation_key` frontmatter; the language switcher
   uses the generated per-language route map (`i18n-post-map-{zh,en,ja}.js`).
-- Localized static pages (home / about / resume / projects) exist under `source/{en,ja}/`.
+- Localized static pages (home / about / resume / projects) exist under `source/en/` (and legacy `source/ja/`).
 - The localized homepages (`/en/`, `/ja/`) render the same magazine-style table of contents
   as the Chinese homepage, listing all translated posts; the switcher greys out target
   languages without a translation (and stays on the current page for archives / tags / categories).
@@ -58,13 +62,13 @@ pnpm run server        # Local preview at http://localhost:4000
 
 1. **Use an English filename** — the URL slug comes from the filename; Chinese filenames produce
    percent-encoded links.
-2. Create the Chinese post, then mirror it under `source/en/_posts/` and `source/ja/_posts/`
-   with the same `translation_key`:
+2. Create the Chinese post, then mirror it under `source/en/_posts/` with the same
+   `translation_key` (Japanese is frozen — do not add a `source/ja/` version):
 
 ```bash
 npx hexo new "My New Post"
 # rename source/_posts/My-New-Post.md if needed, edit content, add translation_key
-# create source/en/_posts/my-new-post.md + source/ja/_posts/my-new-post.md
+# create source/en/_posts/my-new-post.md
 pnpm run deploy
 git add . && git commit -m "new post" && git push origin source
 ```
@@ -113,7 +117,7 @@ Releases are tagged on `source` (e.g. `v1.0.0`).
 
 ### 关于
 
-三语（中文 / English / 日本語）个人博客，基于 [Hexo](https://hexo.io) 和 **Butterfly** 主题构建，部署在 **GitHub Pages** 上。
+中文 / English 个人博客，基于 [Hexo](https://hexo.io) 和 **Butterfly** 主题构建，部署在 **GitHub Pages** 上。日文存量页面保留但**已冻结**——不再新增日文更新，语言切换器中也隐藏了日文项。
 
 访问地址：[https://caeamer.com](https://caeamer.com)（自定义域名，`coderirse.github.io` 会跳转到这里）
 
@@ -130,12 +134,14 @@ Releases are tagged on `source` (e.g. `v1.0.0`).
 
 ### 多语言架构
 
+- **当前维护中文和英文两种语言。** 日文已冻结（2026-11 起）：`source/ja/` 存量内容保留、构建期仍生成，
+  但不再新增日文翻译，切换器隐藏日文项（`source/js/lang-switcher.js` 的 `HIDDEN_LANGS=['ja']`，改回 `[]` 即可恢复）。
 - 中文文章在 `source/_posts/`（真正的 Hexo 文章：归档 / 标签 / 分类 / RSS）。
-- 英文、日文翻译在 `source/en/_posts/` 和 `source/ja/_posts/`，
+- 英文翻译在 `source/en/_posts/`（日文存量在 `source/ja/_posts/`），
   由 `scripts/i18n-posts.js` 在构建期物化为带 permalink 的页面（`source/generated/i18n-posts/`）。
-- 同一篇文章的三个版本共享相同的 `translation_key`；语言切换器使用生成的
+- 同一篇文章的各语言版本共享相同的 `translation_key`；语言切换器使用生成的
   分语言路由映射（`i18n-post-map-{zh,en,ja}.js`）。
-- 静态页面（首页 / 关于 / 简历 / 项目）在 `source/{en,ja}/` 下有对应语言版本。
+- 静态页面（首页 / 关于 / 简历 / 项目）在 `source/en/` 下有对应语言版本（日文存量在 `source/ja/`）。
 - `/en/`、`/ja/` 首页与中文首页同款杂志目次，列出全部已翻译文章；无译本的目标语言
   在切换器中置灰提示（归档/标签/分类页切语言停留在原页），不再出现点击无反应或 404。
 - 每个页面自动注入 hreflang 备用链接。
@@ -161,13 +167,13 @@ pnpm run server        # 本地预览 http://localhost:4000
 ### 发布新文章
 
 1. **文件名用英文 slug**——URL 由文件名生成，中文文件名会产生一长串百分号编码的链接。
-2. 先写中文文章，再在 `source/en/_posts/`、`source/ja/_posts/` 建立同名（英文文件名）翻译，
-   三个版本的 `translation_key` 保持一致：
+2. 先写中文文章，再在 `source/en/_posts/` 建立同名（英文文件名）翻译，
+   两个版本的 `translation_key` 保持一致（日文已冻结，不再建 `source/ja/` 版本）：
 
 ```bash
 npx hexo new "文章标题"
 # 将文件重命名为英文 slug，编辑内容并添加 translation_key
-# 创建 source/en/_posts/my-new-post.md 和 source/ja/_posts/my-new-post.md
+# 创建 source/en/_posts/my-new-post.md
 pnpm run deploy
 git add . && git commit -m "新文章" && git push origin source
 ```
