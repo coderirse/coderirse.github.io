@@ -33,7 +33,12 @@ The site uses a heavily customized **editorial / magazine** style layered on top
 - English translations live in `source/en/_posts/` (Japanese legacy in `source/ja/_posts/`).
   `scripts/i18n-posts.js` materializes them as permalink pages into `source/generated/i18n-posts/` at build time.
 - Every version of a post shares the same `translation_key` frontmatter; the language switcher
-  uses the generated per-language route map (`i18n-post-map-{zh,en,ja}.js`).
+  uses the generated per-language route map (`i18n-post-map-{zh,en,ja}.js`, compact JSON).
+- Materialized permalink dates use `config.timezone` (via `Intl.DateTimeFormat`) so they always
+  match the Chinese permalink, even for offset-bearing dates. Cover detection is shared with the
+  theme through `themes/butterfly/scripts/common/cover.js`. Nav language prefixes come solely from
+  the template helper `lang_url_for` (no whole-HTML string fallback). The pipeline is covered by
+  unit tests in `test/i18n-posts.test.js` (`pnpm test`, also run in CI).
 - Localized static pages (home / about / resume / projects) exist under `source/en/` (and legacy `source/ja/`).
 - The localized homepages (`/en/`, `/ja/`) render the same magazine-style table of contents
   as the Chinese homepage, listing all translated posts; the switcher greys out target
@@ -53,6 +58,7 @@ pnpm run server        # Local preview at http://localhost:4000
 
 | Command | Description |
 |---------|-------------|
+| `pnpm test`        | Run i18n pipeline unit tests (`node --test`, `test/`) |
 | `pnpm run server` | Start local dev server (i18n pages are generated automatically) |
 | `pnpm run build`  | Generate static files to `public/` |
 | `pnpm run clean`  | Clear cache and generated files |
@@ -61,7 +67,8 @@ pnpm run server        # Local preview at http://localhost:4000
 ### Writing a New Post
 
 1. **Use an English filename** — the URL slug comes from the filename; Chinese filenames produce
-   percent-encoded links.
+   percent-encoded links. (Legacy exception: early Chinese posts keep their Chinese filenames to
+   preserve published URLs; new posts always use an English slug.)
 2. Create the Chinese post, then mirror it under `source/en/_posts/` with the same
    `translation_key` (Japanese is frozen — do not add a `source/ja/` version):
 
@@ -140,7 +147,11 @@ Releases are tagged on `source` (e.g. `v1.0.0`).
 - 英文翻译在 `source/en/_posts/`（日文存量在 `source/ja/_posts/`），
   由 `scripts/i18n-posts.js` 在构建期物化为带 permalink 的页面（`source/generated/i18n-posts/`）。
 - 同一篇文章的各语言版本共享相同的 `translation_key`；语言切换器使用生成的
-  分语言路由映射（`i18n-post-map-{zh,en,ja}.js`）。
+  分语言路由映射（`i18n-post-map-{zh,en,ja}.js`，紧凑 JSON）。
+- 物化译文的 permalink 日期用 `config.timezone`（`Intl.DateTimeFormat`）计算，与中文 permalink 始终一致
+  （带时区偏移的日期也不会错位）；封面判定与主题共用 `themes/butterfly/scripts/common/cover.js`；
+  导航语言前缀只靠模板层 `lang_url_for`（无整页字符串兜底）。管线有单元测试
+  `test/i18n-posts.test.js`（`pnpm test`，CI 也会跑）。
 - 静态页面（首页 / 关于 / 简历 / 项目）在 `source/en/` 下有对应语言版本（日文存量在 `source/ja/`）。
 - `/en/`、`/ja/` 首页与中文首页同款杂志目次，列出全部已翻译文章；无译本的目标语言
   在切换器中置灰提示（归档/标签/分类页切语言停留在原页），不再出现点击无反应或 404。
@@ -159,6 +170,7 @@ pnpm run server        # 本地预览 http://localhost:4000
 
 | 命令 | 说明 |
 |------|------|
+| `pnpm test`        | 跑 i18n 管线单元测试（`node --test`，`test/` 目录） |
 | `pnpm run server` | 启动本地开发服务器（i18n 页面自动生成） |
 | `pnpm run build`  | 生成静态文件到 `public/` |
 | `pnpm run clean`  | 清除缓存和生成文件 |
@@ -167,6 +179,7 @@ pnpm run server        # 本地预览 http://localhost:4000
 ### 发布新文章
 
 1. **文件名用英文 slug**——URL 由文件名生成，中文文件名会产生一长串百分号编码的链接。
+   （存量例外：早期中文文章保留中文文件名以维持已发布 URL 稳定；新文章一律英文 slug。）
 2. 先写中文文章，再在 `source/en/_posts/` 建立同名（英文文件名）翻译，
    两个版本的 `translation_key` 保持一致（日文已冻结，不再建 `source/ja/` 版本）：
 

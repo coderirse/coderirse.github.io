@@ -37,17 +37,18 @@ git branch --show-current      # 5. 确认停在 source
 
 ```bash
 pnpm install        # 安装依赖
+pnpm test           # 跑 i18n 管线单元测试（node --test，test/ 目录）
 pnpm run server     # 本地预览 http://localhost:4000（i18n 页面自动生成）
 pnpm run build      # 生成到 public/
 pnpm run clean      # 清缓存（db.json）和生成物
 ```
 
-- push `source` 触发 `.github/workflows/build.yml`：构建 + 检查 `public/{,en/,ja/}index.html` 存在、检查 pug 源码泄漏
+- push `source` 触发 `.github/workflows/build.yml`：跑 `pnpm test` + 构建 + 检查 `public/{,en/,ja/}index.html` 存在、检查 pug 源码泄漏
 - `db.json`、`public/`、`.deploy_git/`、`source/generated/` 均已 gitignore，不要提交
 
 ## 写新文章
 
-1. **文件名用英文 slug**（URL 由文件名生成，中文文件名会变成百分号编码长链）。`npx hexo new "标题"` 后重命名文件
+1. **文件名用英文 slug**（URL 由文件名生成，中文文件名会变成百分号编码长链）。`npx hexo new "标题"` 后重命名文件。**存量例外**：早期中文文章保留中文文件名以维持已发布 URL 稳定，不迁移；新文章一律英文 slug
 2. **中英同步**：`source/_posts/<slug>.md` + `source/en/_posts/<slug>.md`，两版 `translation_key` 必须一致；只改内容时中英一起改。**日文已冻结**：不再新增或更新日文翻译，存量 `source/ja/` 内容保留不动（切换器已隐藏日文项，见 i18n 机制）
 3. frontmatter 必填：`title`、`translation_key`、`date`、`categories`、`tags`、`description`；可选 `cover`、`updated`。`updated_option: date`——不显式写 `updated` 就沿用 `date`，改旧文章记得补 `updated`
 4. 分类固定映射，不要自创：
@@ -76,20 +77,24 @@ pnpm run clean      # 清缓存（db.json）和生成物
 ## 主题与样式
 
 - 定制样式在 `source/css/custom.css`。**改它必须同步 bump `_config.butterfly.yml` 里 `custom.css?v=` 的版本号**（否则 Fastly 缓存 10 分钟不刷新）
+- 颜色统一走 `:root` 变量（纸墨体系 + label 调色板 + `--on-accent`）。**大量 `!important` 是覆盖 vendored Butterfly 的必要手段，属遗留债**：不要盲目批量删除，需配合视觉回归逐步提特异性收敛
 - 设计约束：杂志编辑风——无卡片、无阴影、无圆角、发丝线；暖纸底 + 墨色 + 朱砂 `#a63d2a`；字体自托管（Fraunces / JetBrains Mono），**不要加 Google Fonts 等第三方字体外链**
 - Cloudflare 统计 token 在 `_config.butterfly.yml` **顶层** `cloudflare_analytics` 键（Butterfly 5.x 不从 `analytics:` 下读）
 
 ## i18n 机制（不要手改生成物）
 
-- `scripts/i18n-posts.js` 在构建期把 en/ja 译文物化到 `source/generated/i18n-posts/`（gitignored），并生成语言切换路由映射 `i18n-post-map-{zh,en,ja}.js`
-- **日文冻结（2026-11 起）**：新文章只维护中英；`source/ja/` 存量保留、构建期仍生成（`TRANSLATED_LANGS` 不动），但切换器隐藏日文项——`source/js/lang-switcher.js` 的 `HIDDEN_LANGS=['ja']`，恢复时改回 `[]`。改 `lang-switcher.js` 记得 bump `_config.butterfly.yml` 里 `lang-switcher.js?v=`
+- `scripts/i18n-posts.js` 在构建期把 en/ja 译文物化到 `source/generated/i18n-posts/`（gitignored），并生成语言切换路由映射 `i18n-post-map-{zh,en,ja}.js`（紧凑 JSON，减小每页 payload）
+- **日期时区**：物化译文的 permalink 日期用 `config.timezone`（`Intl.DateTimeFormat`）计算，与 Hexo 中文 permalink 一致；不要改回 `getUTC*`（带偏移日期会错位一天）。单元测试在 `test/i18n-posts.test.js`（`pnpm test`）
+- **封面判定单一来源**：`themes/butterfly/scripts/common/cover.js`（`IMG_TEST_REG`/`isImageCover`），`random_cover.js` 与 i18n 管线共用，改规则只改这一处
+- **导航语言前缀只靠模板层 `lang_url_for`**（nav/侧栏菜单均已使用），i18n 的 `after_render:html` 不再做整页字符串兜底替换；新增导航项无需改 i18n
+- **日文冻结（2026-11 起）**：新文章只维护中英；`source/ja/` 存量保留、构建期仍生成（`TRANSLATED_LANGS` 不动），但切换器隐藏日文项——`source/js/lang-switcher.js` 的 `HIDDEN_LANGS=['ja']`，恢复时改回 `[]`。改 `lang-switcher.js` 记得 bump `_config.butterfly.yml` 里 `lang-switcher.js?v=`。**hreflang 仍保留 ja alternate**（页面真实存在、对搜索引擎准确），与切换器隐藏是有意取舍，不要"顺手"删 ja alternate
 - 改译文只改 `source/en/_posts/`（日文存量不再改）；`source/generated/` 永远不手改、不提交
 - 静态页（首页 / about / resume / projects）中英各自维护 `source/en/` 下对应文件；日文存量保留
 - 无译本的目标语言在切换器自动置灰，不要留死链
 
 ## 改动后验证清单
 
-- [ ] `pnpm run build` 成功，`public/index.html`、`public/en/index.html`、`public/ja/index.html` 都存在（日文存量仍生成）
+- [ ] `pnpm test` 通过；`pnpm run build` 成功，`public/index.html`、`public/en/index.html`、`public/ja/index.html` 都存在（日文存量仍生成）
 - [ ] 新文章中英 permalink 均可访问，中英切换器能正确互跳（日文项已隐藏）
 - [ ] 改了 `custom.css` → `?v=` 版本号已 bump；改了 `lang-switcher.js` → 其 `?v=` 也已 bump
 - [ ] 项目文章 → 状态行、项目页中英入口、署名/分类归属已检查

@@ -16,11 +16,11 @@ jobs:
   update:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           ref: source
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
           node-version: 22
 
@@ -42,5 +42,7 @@ jobs:
             git add source/_data/visitor-stats.json
             # [skip ci]：统计 JSON 由前端从 raw 直读，无需触发站点重建部署
             git commit -m "chore: update visitor stats (automated) [skip ci]"
+            # 期间若有人推了 source，先 rebase 再推，避免非快进失败
+            git pull --rebase origin source
             git push
           fi

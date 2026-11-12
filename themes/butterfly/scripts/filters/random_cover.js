@@ -5,7 +5,7 @@
 'use strict'
 
 hexo.extend.generator.register('post', locals => {
-  const imgTestReg = /\.(png|jpe?g|gif|svg|webp|avif)(\?.*)?$/i
+  const { IMG_TEST_REG: imgTestReg, isImageCover } = require('../common/cover')
   const { post_asset_folder: postAssetFolder } = hexo.config
   const { cover: { default_cover: defaultCover } } = hexo.theme.config
 
@@ -65,7 +65,7 @@ hexo.extend.generator.register('post', locals => {
       coverVal = randomCover
     }
 
-    if (coverVal && (coverVal.indexOf('//') !== -1 || imgTestReg.test(coverVal))) {
+    if (isImageCover(coverVal)) {
       data.cover_type = 'img'
     }
 

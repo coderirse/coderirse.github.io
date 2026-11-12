@@ -14,21 +14,17 @@
 const fs = require('fs');
 const path = require('path');
 const { parse: parseFrontmatter } = require('hexo-front-matter');
+// 封面判定与主题 random_cover.js 共用单一来源（物化译文是 Page，需手动补 cover_type）
+const { isImageCover } = require('../themes/butterfly/scripts/common/cover');
 
 const LANGS = ['zh-CN', 'en', 'ja'];
 const TRANSLATED_LANGS = ['en', 'ja'];
 // 每个语言根下都存在对应版本的页面（与 source/<lang>/ 目录一一对应）
 const LOCALIZED_PAGES = ['/', '/about/', '/resume/', '/projects/'];
 const MAP_FILE_SUFFIX = { 'zh-CN': 'zh', en: 'en', ja: 'ja' };
-// 与 themes/butterfly/scripts/filters/random_cover.js 的判定一致：
-// 该过滤器只处理 Post，物化出的译文是 Page，不会被打上 cover_type，
-// 模板会把图片路径当成纯色背景渲染（封面空白），因此这里手动补齐。
-const IMG_TEST_REG = /\.(png|jpe?g|gif|svg|webp|avif)(\?.*)?$/i;
 
 // 渲染期使用的路由映射（由 generateI18nPosts 刷新）
 let postMap = { byPath: {} };
-
-const pad = (n) => String(n).padStart(2, '0');
 
 function stripBom(text) {
   return text.charCodeAt(0) === 0xfeff ? text.slice(1) : text;
@@ -42,19 +38,34 @@ function splitFrontmatter(content, filePath) {
   return { frontmatterText: match[1], body: match[2] };
 }
 
-function getDateParts(dateValue, filePath) {
+function getDateParts(dateValue, filePath, timeZone) {
   if (dateValue instanceof Date && !Number.isNaN(dateValue.getTime())) {
-    return {
-      year: String(dateValue.getUTCFullYear()),
-      month: pad(dateValue.getUTCMonth() + 1),
-      day: pad(dateValue.getUTCDate())
-    };
+    // 与 Hexo permalink 使用时区（config.timezone）一致，避免带偏移的日期
+    // 让 en/ja 的 permalink 与中文错位一天。en-CA 输出 YYYY-MM-DD。
+    const formatted = new Intl.DateTimeFormat('en-CA', {
+      timeZone: timeZone || 'UTC',
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit'
+    }).format(dateValue);
+    const [year, month, day] = formatted.split('-');
+    return { year, month, day };
   }
   const match = String(dateValue || '').match(/(\d{4})-(\d{2})-(\d{2})/);
   if (!match) {
     throw new Error(`无法解析日期: ${filePath}`);
   }
   return { year: match[1], month: match[2], day: match[3] };
+}
+
+function readConfigTimeZone(baseDir) {
+  try {
+    const cfg = fs.readFileSync(path.join(baseDir, '_config.yml'), 'utf8');
+    const match = cfg.match(/^timezone:\s*['"]?([^'"\r\n#]+?)['"]?\s*$/m);
+    return match ? match[1].trim() : undefined;
+  } catch (e) {
+    return undefined;
+  }
 }
 
 function getSlug(filePath) {
@@ -97,10 +108,11 @@ function writeFileIfChanged(filePath, content) {
   return true;
 }
 
-function generateI18nPosts(baseDir, logger) {
+function generateI18nPosts(baseDir, logger, timeZone) {
   const sourceDir = path.join(baseDir, 'source');
   const generatedDir = path.join(sourceDir, 'generated');
   const generatedPagesDir = path.join(generatedDir, 'i18n-posts');
+  const tz = timeZone || readConfigTimeZone(baseDir) || 'UTC';
 
   const postsByKey = new Map();
 
@@ -119,7 +131,7 @@ function generateI18nPosts(baseDir, logger) {
           throw new Error(`缺少 translation_key: ${filePath}`);
         }
 
-        const { year, month, day } = getDateParts(meta.date, filePath);
+        const { year, month, day } = getDateParts(meta.date, filePath, tz);
         const slug = getSlug(filePath);
         const routePath = lang === 'zh-CN'
           ? `/${year}/${month}/${day}/${slug}/`
@@ -177,10 +189,7 @@ function generateI18nPosts(baseDir, logger) {
       expectedFiles.add(path.basename(outputFile));
 
       // 封面是图片路径时补 cover_type（与主题对 Post 的处理保持一致）
-      const coverVal = entry.cover ? String(entry.cover) : '';
-      const coverTypeLine = coverVal && (coverVal.indexOf('//') !== -1 || IMG_TEST_REG.test(coverVal))
-        ? 'cover_type: img'
-        : null;
+      const coverTypeLine = isImageCover(entry.cover) ? 'cover_type: img' : null;
 
       const output = [
         '---',
@@ -224,7 +233,7 @@ function generateI18nPosts(baseDir, logger) {
       'window.__I18N_POST_MAP__ = window.__I18N_POST_MAP__ || {};',
       // 本地化页面清单单一来源：lang-switcher 据此判断切语言是否可用
       `window.__I18N_POST_MAP__.localizedPages = ${JSON.stringify(LOCALIZED_PAGES)};`,
-      `window.__I18N_POST_MAP__.byPath = ${JSON.stringify(byPath, null, 2)};`
+      `window.__I18N_POST_MAP__.byPath = ${JSON.stringify(byPath)};`
     ].join('\n');
 
     writeFileIfChanged(path.join(generatedDir, `i18n-post-map-${MAP_FILE_SUFFIX[lang]}.js`), `${script}\n`);
@@ -305,23 +314,6 @@ function registerI18nHtmlFilter(hexo) {
       );
     }
 
-    // 兜底：修正 en/ja 页面上残留的中文导航链接（正常已被 lang_url_for 在模板层修正）
-    if (lang !== 'zh-CN') {
-      const prefix = `/${lang}`;
-      const swaps = [
-        ['<a class="site-page" href="/"', `<a class="site-page" href="${prefix}/"`],
-        ['<a class="site-page" href="/about/"', `<a class="site-page" href="${prefix}/about/"`],
-        ['<a class="site-page" href="/resume/"', `<a class="site-page" href="${prefix}/resume/"`],
-        ['<a class="site-page" href="/projects/"', `<a class="site-page" href="${prefix}/projects/"`],
-        ['<a class="nav-site-title" href="/"', `<a class="nav-site-title" href="${prefix}/"`]
-      ];
-      swaps.forEach((pair) => {
-        while (str.indexOf(pair[0]) !== -1) {
-          str = str.replace(pair[0], pair[1]);
-        }
-      });
-    }
-
     if (injections.length && str.indexOf('</head>') !== -1) {
       str = str.replace('</head>', `${injections.join('')}</head>`);
     }
@@ -348,7 +340,7 @@ function registerLangHelper(hexo) {
 }
 
 function registerHexoIntegration(hexo) {
-  const run = () => generateI18nPosts(hexo.base_dir || process.cwd(), hexo.log);
+  const run = () => generateI18nPosts(hexo.base_dir || process.cwd(), hexo.log, hexo.config.timezone);
   // 初始构建：init 完成后、source 处理前物化 en/ja 页面
   hexo.extend.filter.register('after_init', run);
   // watch 模式：每次重新 generate 前刷新（内容无变化时不写盘）
@@ -369,5 +361,12 @@ module.exports = {
   generateI18nPosts,
   registerHexoIntegration,
   registerI18nHtmlFilter,
-  registerLangHelper
+  registerLangHelper,
+  // 纯函数导出供测试
+  splitFrontmatter,
+  sanitizeFrontmatter,
+  getDateParts,
+  readConfigTimeZone,
+  registerPath,
+  buildPathVariants
 };

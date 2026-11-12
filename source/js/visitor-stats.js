@@ -5,6 +5,9 @@
  */
 (function () {
   var RAW_URL = 'https://raw.githubusercontent.com/coderirse/coderirse.github.io/source/source/_data/visitor-stats.json';
+  // 统计每小时才更新一次；本地缓存 1 小时，避免每页都请求 raw
+  var CACHE_KEY = 'visitor-stats-cache';
+  var CACHE_TTL = 3600000;
   var LABELS = {
     'zh-CN': { pv: '本站访问量', uv: '本站访客数' },
     en: { pv: 'Site Visits', uv: 'Site Visitors' },
@@ -53,12 +56,28 @@
     uvEl.textContent = formatNum(stats.visitors);
   }
 
+  function readCache() {
+    try {
+      var c = JSON.parse(localStorage.getItem(CACHE_KEY));
+      if (c && c.stats && Date.now() - c.t < CACHE_TTL) return c.stats;
+    } catch (e) { /* 隐私模式等不可用时忽略 */ }
+    return null;
+  }
+
+  function writeCache(stats) {
+    try {
+      localStorage.setItem(CACHE_KEY, JSON.stringify({ t: Date.now(), stats: stats }));
+    } catch (e) { /* 忽略 */ }
+  }
+
   function init() {
+    var cached = readCache();
+    if (cached) { apply(cached); return; }
     var controller = new AbortController();
     var timer = setTimeout(function () { controller.abort(); }, 5000);
     fetch(RAW_URL, { cache: 'no-store', signal: controller.signal })
       .then(function (r) { return r.ok ? r.json() : null; })
-      .then(function (stats) { clearTimeout(timer); apply(stats); })
+      .then(function (stats) { clearTimeout(timer); apply(stats); if (stats) writeCache(stats); })
       .catch(function () { clearTimeout(timer); });
   }
 

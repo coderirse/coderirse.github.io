@@ -8,6 +8,7 @@
   },
   "scripts": {
     "i18n:posts": "node scripts/i18n-posts.js",
+    "test": "node --test",
     "build": "hexo generate",
     "clean": "hexo clean",
     "deploy": "hexo generate && hexo deploy",

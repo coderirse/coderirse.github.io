@@ -210,7 +210,7 @@ inject:
   head:
     - <link rel="stylesheet" href="/css/fonts.css">
     # 版本号用于强制刷新 CSS 缓存（GitHub Pages/Fastly 缓存 10 分钟）；改 custom.css 后顺手改这里
-    - <link rel="stylesheet" href="/css/custom.css?v=20261007">
+    - <link rel="stylesheet" href="/css/custom.css?v=20261112">
   bottom:
     - <script src="/js/visitor-stats.js"></script>
     # 版本号用于强制刷新 JS 缓存（Fastly 缓存 10 分钟）；改 lang-switcher.js 后顺手改这里

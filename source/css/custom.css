@@ -12,6 +12,14 @@
   --hairline: #d9d2c2;
   --accent: #a63d2a;
   --accent-soft: rgba(166, 61, 42, 0.12);
+  --on-accent: #fff;
+  --label-default: #6b7280;
+  --label-blue: #2563eb;
+  --label-green: #047857;
+  --label-pink: #be185d;
+  --label-orange: #b45309;
+  --label-red: #b91c1c;
+  --label-purple: #7c3aed;
   --font-serif: "Fraunces", "Songti SC", "STSong", serif;
   --font-sans: -apple-system, BlinkMacSystemFont, "PingFang SC",
     "Hiragino Sans GB", "Noto Sans SC", "Microsoft YaHei", sans-serif;
@@ -48,7 +56,7 @@ body {
 }
 ::selection {
   background: var(--accent);
-  color: #fff;
+  color: var(--on-accent);
 }
 
 /* 内容区去卡片化：直接落在纸面上 */
@@ -673,16 +681,16 @@ html[lang] .code-block {
 .hl-label {
   font-weight: 600;
   font-size: 0.85em;
-  color: #fff !important;
+  color: var(--on-accent) !important;
   border-radius: 0;
 }
-.hl-label.default { background-color: #6b7280 !important; }
-.hl-label.blue    { background-color: #2563eb !important; }
-.hl-label.green   { background-color: #047857 !important; }
-.hl-label.pink    { background-color: #be185d !important; }
-.hl-label.orange  { background-color: #b45309 !important; }
-.hl-label.red     { background-color: #b91c1c !important; }
-.hl-label.purple  { background-color: #7c3aed !important; }
+.hl-label.default { background-color: var(--label-default) !important; }
+.hl-label.blue    { background-color: var(--label-blue) !important; }
+.hl-label.green   { background-color: var(--label-green) !important; }
+.hl-label.pink    { background-color: var(--label-pink) !important; }
+.hl-label.orange  { background-color: var(--label-orange) !important; }
+.hl-label.red     { background-color: var(--label-red) !important; }
+.hl-label.purple  { background-color: var(--label-purple) !important; }
 
 /* ================================================================
    en/ja 首页刊头结构修复（配合 i18n-posts.js / lang-home-subtitle.js）
