@@ -20,9 +20,9 @@ Status: maintained · Role: customized from OhMyMeme (solo developer) · Code: [
 
 ## First, the honest part: this is a fork
 
-MemeCollector is not something I wrote from scratch. It is based on [OhMyMeme](https://github.com/OhMyMeme/OhMyMeme) (desktop, Python + Vue + pywebview) and [OhMyMeme-Android](https://github.com/OhMyMeme/OhMyMeme-Android) (Kotlin). Both upstreams are GPL-3.0, I distribute under GPL-3.0, and the original attribution and licenses ship with the source. The upstreams are pinned to two commits (see `upstream-lock.json` in the repo), not chasing the latest branch.
+MemeCollector is not something I wrote from scratch. It is based on [OhMyMeme](https://github.com/OhMyMeme/OhMyMeme)[2] (desktop, Python + Vue + pywebview) and [OhMyMeme-Android](https://github.com/OhMyMeme/OhMyMeme-Android)[3] (Kotlin). Both upstreams are GPL-3.0, I distribute under GPL-3.0, and the original attribution and licenses ship with the source. The upstreams are pinned to two commits (see `upstream-lock.json` in the repo), not chasing the latest branch.
 
-What upstream already had: the overall framework, cloud sync, the plugin system, the GIF steganography stack. What I added:
+What upstream already had: the overall framework, cloud sync, the plugin system, the GIF steganography stack, and QQ favorite extraction (integrated from [QQFavoriteExtract](https://github.com/VanillaNahida/QQFavoriteExtract)[5]). What I added:
 
 - **Windows**: candidate selection, lazy download (fetch the original only on preview or save), an incremental index, strict format validation, failure cleanup
 - **Android**: filtering and animated preview, result categories (success / duplicate / unsupported / over-limit / failed), permission guidance, bounded reads, an independent package name and signature
@@ -36,6 +36,9 @@ I put this boundary up front because every "I did" later in this post refers onl
 You see a sticker you like in QQ or WeChat and want to keep it. What you usually get: an animated sticker saved as a still, a screenshot that lost the animation, or nothing saved at all. I wanted the **original file** — a GIF stays that GIF, an animated WebP stays that animated WebP, no frame extraction, no re-encoding.
 
 There is also a privacy trade-off: the tool **saves only what you actively select**. It stores what you tick, and does not continuously read all your chats. On WeChat it even requires you to open the sticker panel on desktop first, before it reads the manifest.
+
+![Collection pipeline: read-only scan, active selection, original bytes stored](/img/essays/meme-collector/collect-flow-en.svg)
+*Fig. 1: The collection pipeline — read-only scan, active selection, original bytes stored; GIF / animated WebP are not re-encoded. Source: author's own (CC BY-NC-SA 4.0) [1].*
 
 ## The byte-for-byte thing
 
@@ -65,12 +68,15 @@ A few details I care about:
 
 ## The Android side: Shizuku and batch stat
 
-Reading the phone's QQ cache directly on Android relies on [Shizuku](https://shizuku.rikka.app/zh-hans/guide/setup/), not root. Two concrete traps:
+Reading the phone's QQ cache directly on Android relies on [Shizuku](https://shizuku.rikka.app/zh-hans/guide/setup/)[4], not root. Two concrete traps:
 
 - **Spawning a shell per file is too slow.** After switching to batch stat, ADB measured reading size/mtime/path for 756 files at about 0.22 seconds; the final signed APK took about 3 seconds from launch to listing 754 unsaved candidates.
 - **Remote-process wait compatibility.** Polling a Shizuku remote process with Java's default timeout triggers `process hasn't exited`; I added a regression case to keep it from coming back.
 
 It works without Shizuku too: file/album import, receiving system image shares, collecting on desktop and transferring back to the phone, and desktop ADB pull are all entry points that do not depend on Shizuku on the phone. Shizuku is a hard dependency only for the "read the QQ cache directly" path, not a prerequisite for the whole app.
+
+![Two-device transfer: add on phone, collect on desktop, encrypted pull back](/img/essays/meme-collector/lan-sync-en.svg)
+*Fig. 2: Two-device transfer for WeChat stickers — add on the phone, collect on desktop, pull back over an encrypted LAN; only missing files move, original bytes preserved. Source: author's own (CC BY-NC-SA 4.0) [1].*
 
 ## Auditing my own fork
 
@@ -92,5 +98,13 @@ But the verification record draws a hard line: **an emulator is not a real devic
 - WeChat key extraction depends on a specific client's memory layout; a major WeChat update may break it
 - The maintenance cost of a fork is real: upstream updates have to be re-merged, not overwritten
 - Personal use only; please follow QQ/WeChat and your platform's rules
+
+## References
+
+[1] lizhichao. MemeCollector[CP/OL]. GitHub, 2026. <https://github.com/coderirse/meme_sctaping>. GPL-3.0.
+[2] OhMyMeme. OhMyMeme (desktop)[CP/OL]. GitHub, 2026. <https://github.com/OhMyMeme/OhMyMeme>. GPL-3.0.
+[3] OhMyMeme. OhMyMeme-Android[CP/OL]. GitHub, 2026. <https://github.com/OhMyMeme/OhMyMeme-Android>. GPL-3.0.
+[4] RikkaApps. Shizuku[CP/OL]. GitHub, 2026. <https://github.com/RikkaApps/Shizuku>. Apache-2.0.
+[5] VanillaNahida. QQFavoriteExtract[CP/OL]. GitHub, 2026. <https://github.com/VanillaNahida/QQFavoriteExtract>. GPL-3.0.
 
 {% btn https://github.com/coderirse/meme_sctaping, View source, fab fa-github %}

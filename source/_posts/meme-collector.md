@@ -20,9 +20,9 @@ description: 基于 OhMyMeme 定制的 QQ/微信表情收集工具。保留原�
 
 ## 先说清楚：这是个 fork
 
-MemeCollector 不是我从零写的。它基于 [OhMyMeme](https://github.com/OhMyMeme/OhMyMeme)（桌面，Python + Vue + pywebview）和 [OhMyMeme-Android](https://github.com/OhMyMeme/OhMyMeme-Android)（Kotlin），两个上游都是 GPL-3.0，我按 GPL-3.0 分发，原始署名和许可证都随源码保留。上游固定在两个提交上（见仓库 `upstream-lock.json`），不是追着最新分支跑。
+MemeCollector 不是我从零写的。它基于 [OhMyMeme](https://github.com/OhMyMeme/OhMyMeme)[2]（桌面，Python + Vue + pywebview）和 [OhMyMeme-Android](https://github.com/OhMyMeme/OhMyMeme-Android)[3]（Kotlin），两个上游都是 GPL-3.0，我按 GPL-3.0 分发，原始署名和许可证都随源码保留。上游固定在两个提交上（见仓库 `upstream-lock.json`），不是追着最新分支跑。
 
-上游已经有的：整体框架、云同步、插件系统、GIF 隐写那一套。我加的：
+上游已经有的：整体框架、云同步、插件系统、GIF 隐写那一套，以及 QQ 收藏提取（集成自 [QQFavoriteExtract](https://github.com/VanillaNahida/QQFavoriteExtract)[5]）。我加的：
 
 - **Windows**：候选勾选、惰性下载（预览或保存时才下原文件）、增量索引、严格格式校验、失败清理
 - **Android**：过滤与动图预览、结果分类（成功/重复/不支持/超限/失败）、权限引导、有界读取、独立包名和签名
@@ -36,6 +36,9 @@ MemeCollector 不是我从零写的。它基于 [OhMyMeme](https://github.com/Oh
 QQ 和微信里看到喜欢的表情，想存下来，结果常常是：动图存成静图，截图丢了动画，或者干脆存不下来。我要的是**原文件**——GIF 还是那个 GIF，动态 WebP 还是那个动态 WebP，不抽帧、不重编码。
 
 还有一条隐私上的取舍：工具是**主动选择后保存**，你勾选哪个它存哪个，不持续读取全部聊天。微信那边甚至要你先在电脑端打开表情面板，它才去读清单。
+
+![采集流程：只读扫描、主动勾选、原字节入库](/img/essays/meme-collector/collect-flow.png)
+*图 1：采集流程——只读扫描、主动勾选、原字节入库，GIF/动态 WebP 不抽帧、不重编码。出处：作者自制（CC BY-NC-SA 4.0）[1]。*
 
 ## 原字节这件事
 
@@ -65,12 +68,15 @@ QQ 和微信里看到喜欢的表情，想存下来，结果常常是：动图�
 
 ## 安卓这边：Shizuku 和批量 stat
 
-安卓直读手机 QQ 缓存靠 [Shizuku](https://shizuku.rikka.app/zh-hans/guide/setup/)，不是 root。两个具体的坑：
+安卓直读手机 QQ 缓存靠 [Shizuku](https://shizuku.rikka.app/zh-hans/guide/setup/)[4]，不是 root。两个具体的坑：
 
 - **逐文件起 shell 太慢。** 改成批量 stat 后，ADB 实测 756 个文件的大小/mtime/路径读取约 0.22 秒；最终签名 APK 从启动到列出 754 个未保存候选约 3 秒。
 - **远程进程等待的兼容性。** Shizuku 远程进程用 Java 默认超时轮询会触发 `process hasn't exited`，加了回归用例防它再犯。
 
 没有 Shizuku 也能用：文件/相册导入、接收系统图片分享、电脑采集后传回手机、桌面 ADB 拉取，都是不依赖手机 Shizuku 的入口。Shizuku 只是「直读 QQ 缓存」这一条路的硬依赖，不是整个应用的前提。
+
+![双端互传：手机添加、电脑收集、加密拉回](/img/essays/meme-collector/lan-sync.png)
+*图 2：微信表情的双端互传——手机添加、电脑收集、经加密局域网拉回手机；只传缺失文件，保留原字节。出处：作者自制（CC BY-NC-SA 4.0）[1]。*
 
 ## 给自己的 fork 做安全审查
 
@@ -92,5 +98,13 @@ QQ 和微信里看到喜欢的表情，想存下来，结果常常是：动图�
 - 微信取密钥依赖特定客户端的内存布局，微信大版本更新可能让它失效
 - fork 的维护成本是实打实的：上游更新得重新合并，不能直接覆盖
 - 仅个人自用，请遵守 QQ/微信和所在平台的规定
+
+## 参考文献
+
+[1] lizhichao. MemeCollector[CP/OL]. GitHub, 2026. <https://github.com/coderirse/meme_sctaping>. GPL-3.0.
+[2] OhMyMeme. OhMyMeme（桌面端）[CP/OL]. GitHub, 2026. <https://github.com/OhMyMeme/OhMyMeme>. GPL-3.0.
+[3] OhMyMeme. OhMyMeme-Android[CP/OL]. GitHub, 2026. <https://github.com/OhMyMeme/OhMyMeme-Android>. GPL-3.0.
+[4] RikkaApps. Shizuku[CP/OL]. GitHub, 2026. <https://github.com/RikkaApps/Shizuku>. Apache-2.0.
+[5] VanillaNahida. QQFavoriteExtract[CP/OL]. GitHub, 2026. <https://github.com/VanillaNahida/QQFavoriteExtract>. GPL-3.0.
 
 {% btn https://github.com/coderirse/meme_sctaping, 查看源码, fab fa-github %}
